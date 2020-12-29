@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <RootNamespace>vulcan_01</RootNamespace>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net5.0-windows</TargetFramework>
+        <UseWindowsForms>true</UseWindowsForms>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="GlmSharp" Version="0.9.8.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="glfw3.dll">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Shaders\frag.spv">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Shaders\vert.spv">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Shaders\shader.vert">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="Shaders\shader.frag">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SharpVk-master\src\SharpVk.Emit\SharpVk.Emit.csproj" />
+      <ProjectReference Include="..\SharpVk-master\src\SharpVk.Glfw\SharpVk.Glfw.csproj" />
+      <ProjectReference Include="..\SharpVk-master\src\SharpVk.Shanq.GlmSharp\SharpVk.Shanq.GlmSharp.csproj" />
+      <ProjectReference Include="..\SharpVk-master\src\SharpVk.Shanq.Numerics\SharpVk.Shanq.Numerics.csproj" />
+      <ProjectReference Include="..\SharpVk-master\src\SharpVk.Shanq\SharpVk.Shanq.csproj" />
+      <ProjectReference Include="..\SharpVk-master\src\SharpVk\SharpVk.csproj" />
+      <ProjectReference Include="..\WinFormsApp1\WinFormsApp1.csproj" />
+    </ItemGroup>
+
+    <!--    <ItemGroup>
+          <Reference Include="Vulkan, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <HintPath>..\VulkanSharp-master\src\Platforms\Windows\bin\Debug\net5.0-windows\Vulkan.dll</HintPath>
+          </Reference>
+          <Reference Include="Vulkan.Windows, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+            <HintPath>..\VulkanSharp-master\src\Platforms\Windows\bin\Debug\net5.0-windows\Vulkan.Windows.dll</HintPath>
+          </Reference>
+        </ItemGroup>-->
+
+</Project>
