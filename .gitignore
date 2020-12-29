@@ -3,3 +3,8 @@ obj/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
+/.idea/.idea.xaphante-vulcan/.idea/
+
+/vulcan-01/Shaders/*.spv
+/vulcan-01/Shaders/*.spv
+/xaphante-vulcan.sln.DotSettings.user
