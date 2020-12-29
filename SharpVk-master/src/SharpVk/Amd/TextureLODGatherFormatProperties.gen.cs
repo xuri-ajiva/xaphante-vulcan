@@ -29,11 +29,11 @@ namespace SharpVk.Amd
     /// <summary>
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public struct TextureLODGatherFormatProperties
+    public struct TextureLodGatherFormatProperties
     {
         /// <summary>
         /// </summary>
-        public bool SupportsTextureGatherLODBias
+        public bool SupportsTextureGatherLodBias
         {
             get;
             set;
@@ -43,10 +43,10 @@ namespace SharpVk.Amd
         /// </summary>
         /// <param name="pointer">
         /// </param>
-        internal static unsafe TextureLODGatherFormatProperties MarshalFrom(Interop.Amd.TextureLODGatherFormatProperties* pointer)
+        internal static unsafe TextureLodGatherFormatProperties MarshalFrom(Interop.Amd.TextureLodGatherFormatProperties* pointer)
         {
-            var result = default(TextureLODGatherFormatProperties);
-            result.SupportsTextureGatherLODBias = pointer->SupportsTextureGatherLODBias;
+            var result = default(TextureLodGatherFormatProperties);
+            result.SupportsTextureGatherLodBias = pointer->SupportsTextureGatherLODBias;
             return result;
         }
     }

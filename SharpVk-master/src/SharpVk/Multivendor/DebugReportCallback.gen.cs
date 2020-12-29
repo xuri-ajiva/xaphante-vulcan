@@ -32,22 +32,22 @@ namespace SharpVk.Multivendor
     public class DebugReportCallback
         : IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.Multivendor.DebugReportCallback handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.Multivendor.DebugReportCallback Handle;
 
-        internal readonly Instance parent;
+        internal readonly Instance Parent;
 
         internal DebugReportCallback(Instance parent, Interop.Multivendor.DebugReportCallback handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.Multivendor.DebugReportCallback RawHandle => handle;
+        public Interop.Multivendor.DebugReportCallback RawHandle => Handle;
 
         /// <summary>
         ///     Destroys the handles and releases any unmanaged resources
@@ -79,8 +79,8 @@ namespace SharpVk.Multivendor
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroyDebugReportCallbackEXT;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroyDebugReportCallbackExt;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {

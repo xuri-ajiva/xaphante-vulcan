@@ -57,7 +57,7 @@ namespace SharpVk
         ///     A unique identifier for the _vendor_ (see below) of the physical
         ///     device.
         /// </summary>
-        public uint VendorID
+        public uint VendorId
         {
             get;
             set;
@@ -67,7 +67,7 @@ namespace SharpVk
         ///     A unique identifier for the physical device among devices available
         ///     from the vendor.
         /// </summary>
-        public uint DeviceID
+        public uint DeviceId
         {
             get;
             set;
@@ -95,7 +95,7 @@ namespace SharpVk
         ///     An array of size VK_UUID_SIZE, containing 8-bit values that
         ///     represent a universally unique identifier for the device.
         /// </summary>
-        public Guid PipelineCacheUUID
+        public Guid PipelineCacheUuid
         {
             get;
             set;
@@ -131,11 +131,11 @@ namespace SharpVk
             var result = default(PhysicalDeviceProperties);
             result.ApiVersion = pointer->ApiVersion;
             result.DriverVersion = pointer->DriverVersion;
-            result.VendorID = pointer->VendorID;
-            result.DeviceID = pointer->DeviceID;
+            result.VendorId = pointer->VendorID;
+            result.DeviceId = pointer->DeviceID;
             result.DeviceType = pointer->DeviceType;
             result.DeviceName = HeapUtil.MarshalStringFrom(pointer->DeviceName, Constants.MaxPhysicalDeviceNameSize, true);
-            result.PipelineCacheUUID = new(HeapUtil.MarshalFrom(pointer->PipelineCacheUUID, Constants.UuidSize));
+            result.PipelineCacheUuid = new(HeapUtil.MarshalFrom(pointer->PipelineCacheUUID, Constants.UuidSize));
             result.Limits = PhysicalDeviceLimits.MarshalFrom(&pointer->Limits);
             result.SparseProperties = PhysicalDeviceSparseProperties.MarshalFrom(&pointer->SparseProperties);
             return result;

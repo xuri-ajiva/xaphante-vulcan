@@ -49,11 +49,11 @@ namespace SharpVk.NVidia
                 var commandCache = default(CommandCache);
                 var marshalledDataSize = default(HostSize);
                 var marshalledData = default(byte*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledDataSize = dataSize;
                 marshalledData = (byte*)HeapUtil.Allocate<byte>(marshalledDataSize);
-                var commandDelegate = commandCache.Cache.vkGetRayTracingShaderGroupHandlesNV;
-                var methodResult = commandDelegate(extendedHandle.parent.handle, extendedHandle.handle, firstGroup, groupCount, marshalledDataSize, marshalledData);
+                var commandDelegate = commandCache.Cache.VkGetRayTracingShaderGroupHandlesNv;
+                var methodResult = commandDelegate(extendedHandle.Parent.Handle, extendedHandle.Handle, firstGroup, groupCount, marshalledDataSize, marshalledData);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 if (marshalledData != null)
                 {
@@ -85,9 +85,9 @@ namespace SharpVk.NVidia
             try
             {
                 var commandCache = default(CommandCache);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkCompileDeferredNV;
-                var methodResult = commandDelegate(extendedHandle.parent.handle, extendedHandle.handle, shader);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkCompileDeferredNv;
+                var methodResult = commandDelegate(extendedHandle.Parent.Handle, extendedHandle.Handle, shader);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally

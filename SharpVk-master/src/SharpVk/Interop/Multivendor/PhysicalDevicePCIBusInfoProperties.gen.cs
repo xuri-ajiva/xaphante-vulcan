@@ -29,7 +29,7 @@ namespace SharpVk.Interop.Multivendor
     /// <summary>
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public unsafe struct PhysicalDevicePCIBusInfoProperties
+    public unsafe struct PhysicalDevicePciBusInfoProperties
     {
         /// <summary>
         ///     The type of this structure

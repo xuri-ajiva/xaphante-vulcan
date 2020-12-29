@@ -34,9 +34,9 @@ namespace SharpVk
     {
         /// <summary>
         /// </summary>
-        public SpecializationMapEntry(uint constantID, uint offset, HostSize size)
+        public SpecializationMapEntry(uint constantId, uint offset, HostSize size)
         {
-            ConstantID = constantID;
+            ConstantID = constantId;
             Offset = offset;
             Size = size;
         }

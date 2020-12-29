@@ -68,7 +68,7 @@ namespace SharpVk.NVidia.Experimental
         internal unsafe void MarshalTo(Interop.NVidia.Experimental.IndirectCommandsToken* pointer)
         {
             pointer->TokenType = TokenType;
-            pointer->Buffer = Buffer?.handle ?? default(Interop.Buffer);
+            pointer->Buffer = Buffer?.Handle ?? default(Interop.Buffer);
             pointer->Offset = Offset;
         }
 

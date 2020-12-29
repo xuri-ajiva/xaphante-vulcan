@@ -32,12 +32,12 @@ namespace SharpVk.MoltenVk
     ///     object.
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public struct MacOSSurfaceCreateInfo
+    public struct MacOsSurfaceCreateInfo
     {
         /// <summary>
         ///     Reserved for future use.
         /// </summary>
-        public MacOSSurfaceCreateFlags? Flags
+        public MacOsSurfaceCreateFlags? Flags
         {
             get;
             set;
@@ -58,7 +58,7 @@ namespace SharpVk.MoltenVk
         /// </summary>
         /// <param name="pointer">
         /// </param>
-        internal unsafe void MarshalTo(Interop.MoltenVk.MacOSSurfaceCreateInfo* pointer)
+        internal unsafe void MarshalTo(Interop.MoltenVk.MacOsSurfaceCreateInfo* pointer)
         {
             pointer->SType = StructureType.MacosSurfaceCreateInfo;
             pointer->Next = null;

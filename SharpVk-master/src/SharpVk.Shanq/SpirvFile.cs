@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using SharpVk.Spirv;
+#pragma warning disable 1591
 
 namespace SharpVk.Shanq
 {

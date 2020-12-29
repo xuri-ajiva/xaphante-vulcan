@@ -60,8 +60,8 @@ namespace SharpVk.NVidia
         {
             pointer->SType = StructureType.DedicatedAllocationMemoryAllocateInfo;
             pointer->Next = null;
-            pointer->Image = Image?.handle ?? default(Interop.Image);
-            pointer->Buffer = Buffer?.handle ?? default(Interop.Buffer);
+            pointer->Image = Image?.Handle ?? default(Interop.Image);
+            pointer->Buffer = Buffer?.Handle ?? default(Interop.Buffer);
         }
     }
 }

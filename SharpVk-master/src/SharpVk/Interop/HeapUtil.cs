@@ -7,7 +7,7 @@ namespace SharpVk.Interop
 {
     internal static unsafe class HeapUtil
     {
-        private const int perThreadSpace = 1 << 20;
+        private const int PerThreadSpace = 1 << 20;
 
         [ThreadStatic] private static IntPtr allocateSpace;
 
@@ -19,7 +19,7 @@ namespace SharpVk.Interop
             {
                 if (allocateSpace == IntPtr.Zero)
                 {
-                    allocateSpace = Marshal.AllocHGlobal(perThreadSpace);
+                    allocateSpace = Marshal.AllocHGlobal(PerThreadSpace);
 
                     allocatedCount = 0;
                 }
@@ -48,7 +48,7 @@ namespace SharpVk.Interop
 
             if (tailBytes > 0) requiredSize += (uint)IntPtr.Size - tailBytes;
 
-            if (allocatedCount + requiredSize > perThreadSpace) throw new("Out of interop heap memory");
+            if (allocatedCount + requiredSize > PerThreadSpace) throw new("Out of interop heap memory");
 
             var pointer = AllocateSpace + (int)allocatedCount;
 

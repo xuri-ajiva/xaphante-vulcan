@@ -10,7 +10,7 @@ namespace SharpVk.Shanq.GlmSharp
     public class VectorTypeLibrary
         : IVectorTypeLibrary
     {
-        private static readonly Dictionary<Type, Format> vectorFormats = new Dictionary<Type, Format>
+        private static readonly Dictionary<Type, Format> VectorFormats = new Dictionary<Type, Format>
         {
             [typeof(float)] = Format.R32SFloat,
             [typeof(vec2)] = Format.R32G32SFloat,
@@ -26,7 +26,7 @@ namespace SharpVk.Shanq.GlmSharp
             [typeof(uvec4)] = Format.R32G32B32A32UInt
         };
 
-        private static readonly Assembly glmSharpAssembly = typeof(mat4).Assembly;
+        private static readonly Assembly GlmSharpAssembly = typeof(mat4).Assembly;
 
         public static readonly VectorTypeLibrary Instance = new VectorTypeLibrary();
 
@@ -64,13 +64,13 @@ namespace SharpVk.Shanq.GlmSharp
 
         public bool IsVectorType(Type type)
         {
-            return type.Assembly == glmSharpAssembly
+            return type.Assembly == GlmSharpAssembly
                    && type.Name.Contains("vec");
         }
 
         public bool IsMatrixType(Type type)
         {
-            return type.Assembly == glmSharpAssembly
+            return type.Assembly == GlmSharpAssembly
                    && type.Name.Contains("mat");
         }
 
@@ -106,7 +106,7 @@ namespace SharpVk.Shanq.GlmSharp
 
         public Format GetVectorFormat(Type type)
         {
-            if (vectorFormats.TryGetValue(type, out var result))
+            if (VectorFormats.TryGetValue(type, out var result))
                 return result;
             throw new NotSupportedException();
         }

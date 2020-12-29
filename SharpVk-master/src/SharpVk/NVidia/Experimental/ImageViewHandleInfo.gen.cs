@@ -68,9 +68,9 @@ namespace SharpVk.NVidia.Experimental
         {
             pointer->SType = StructureType.ImageViewHandleInfo;
             pointer->Next = null;
-            pointer->ImageView = ImageView?.handle ?? default(Interop.ImageView);
+            pointer->ImageView = ImageView?.Handle ?? default(Interop.ImageView);
             pointer->DescriptorType = DescriptorType;
-            pointer->Sampler = Sampler?.handle ?? default(Interop.Sampler);
+            pointer->Sampler = Sampler?.Handle ?? default(Interop.Sampler);
         }
     }
 }

@@ -26,5 +26,5 @@ namespace SharpVk.Interop.Khronos
 {
     /// <summary>
     /// </summary>
-    public unsafe delegate void VkSwapchainKHRDestroyDelegate(Device device, Swapchain swapchain, AllocationCallbacks* allocator);
+    public unsafe delegate void VkSwapchainKhrDestroyDelegate(Device device, Swapchain swapchain, AllocationCallbacks* allocator);
 }

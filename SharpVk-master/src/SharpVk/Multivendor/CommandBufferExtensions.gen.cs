@@ -51,7 +51,7 @@ namespace SharpVk.Multivendor
                 var marshalledBuffers = default(Interop.Buffer*);
                 var marshalledOffsets = default(ulong*);
                 var marshalledSizes = default(ulong*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 if (buffers.IsNull())
                 {
                     marshalledBuffers = null;
@@ -61,12 +61,12 @@ namespace SharpVk.Multivendor
                     if (buffers.Value.Contents == ProxyContents.Single)
                     {
                         marshalledBuffers = (Interop.Buffer*)HeapUtil.Allocate<Interop.Buffer>();
-                        *marshalledBuffers = buffers.Value.GetSingleValue()?.handle ?? default(Interop.Buffer);
+                        *marshalledBuffers = buffers.Value.GetSingleValue()?.Handle ?? default(Interop.Buffer);
                     }
                     else
                     {
                         var fieldPointer = (Interop.Buffer*)HeapUtil.AllocateAndClear<Interop.Buffer>(HeapUtil.GetLength(buffers.Value)).ToPointer();
-                        for (var index = 0; index < HeapUtil.GetLength(buffers.Value); index++) fieldPointer[index] = buffers.Value[index]?.handle ?? default(Interop.Buffer);
+                        for (var index = 0; index < HeapUtil.GetLength(buffers.Value); index++) fieldPointer[index] = buffers.Value[index]?.Handle ?? default(Interop.Buffer);
                         marshalledBuffers = fieldPointer;
                     }
                 }
@@ -106,8 +106,8 @@ namespace SharpVk.Multivendor
                         marshalledSizes = fieldPointer;
                     }
                 }
-                var commandDelegate = commandCache.Cache.vkCmdBindTransformFeedbackBuffersEXT;
-                commandDelegate(extendedHandle.handle, firstBinding, HeapUtil.GetLength(buffers), marshalledBuffers, marshalledOffsets, marshalledSizes);
+                var commandDelegate = commandCache.Cache.VkCmdBindTransformFeedbackBuffersExt;
+                commandDelegate(extendedHandle.Handle, firstBinding, HeapUtil.GetLength(buffers), marshalledBuffers, marshalledOffsets, marshalledSizes);
             }
             finally
             {
@@ -133,7 +133,7 @@ namespace SharpVk.Multivendor
                 var commandCache = default(CommandCache);
                 var marshalledCounterBuffers = default(Interop.Buffer*);
                 var marshalledCounterBufferOffsets = default(ulong*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 if (counterBuffers.IsNull())
                 {
                     marshalledCounterBuffers = null;
@@ -143,12 +143,12 @@ namespace SharpVk.Multivendor
                     if (counterBuffers.Value.Contents == ProxyContents.Single)
                     {
                         marshalledCounterBuffers = (Interop.Buffer*)HeapUtil.Allocate<Interop.Buffer>();
-                        *marshalledCounterBuffers = counterBuffers.Value.GetSingleValue()?.handle ?? default(Interop.Buffer);
+                        *marshalledCounterBuffers = counterBuffers.Value.GetSingleValue()?.Handle ?? default(Interop.Buffer);
                     }
                     else
                     {
                         var fieldPointer = (Interop.Buffer*)HeapUtil.AllocateAndClear<Interop.Buffer>(HeapUtil.GetLength(counterBuffers.Value)).ToPointer();
-                        for (var index = 0; index < HeapUtil.GetLength(counterBuffers.Value); index++) fieldPointer[index] = counterBuffers.Value[index]?.handle ?? default(Interop.Buffer);
+                        for (var index = 0; index < HeapUtil.GetLength(counterBuffers.Value); index++) fieldPointer[index] = counterBuffers.Value[index]?.Handle ?? default(Interop.Buffer);
                         marshalledCounterBuffers = fieldPointer;
                     }
                 }
@@ -170,8 +170,8 @@ namespace SharpVk.Multivendor
                         marshalledCounterBufferOffsets = fieldPointer;
                     }
                 }
-                var commandDelegate = commandCache.Cache.vkCmdBeginTransformFeedbackEXT;
-                commandDelegate(extendedHandle.handle, firstCounterBuffer, HeapUtil.GetLength(counterBuffers), marshalledCounterBuffers, marshalledCounterBufferOffsets);
+                var commandDelegate = commandCache.Cache.VkCmdBeginTransformFeedbackExt;
+                commandDelegate(extendedHandle.Handle, firstCounterBuffer, HeapUtil.GetLength(counterBuffers), marshalledCounterBuffers, marshalledCounterBufferOffsets);
             }
             finally
             {
@@ -197,7 +197,7 @@ namespace SharpVk.Multivendor
                 var commandCache = default(CommandCache);
                 var marshalledCounterBuffers = default(Interop.Buffer*);
                 var marshalledCounterBufferOffsets = default(ulong*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 if (counterBuffers.IsNull())
                 {
                     marshalledCounterBuffers = null;
@@ -207,12 +207,12 @@ namespace SharpVk.Multivendor
                     if (counterBuffers.Value.Contents == ProxyContents.Single)
                     {
                         marshalledCounterBuffers = (Interop.Buffer*)HeapUtil.Allocate<Interop.Buffer>();
-                        *marshalledCounterBuffers = counterBuffers.Value.GetSingleValue()?.handle ?? default(Interop.Buffer);
+                        *marshalledCounterBuffers = counterBuffers.Value.GetSingleValue()?.Handle ?? default(Interop.Buffer);
                     }
                     else
                     {
                         var fieldPointer = (Interop.Buffer*)HeapUtil.AllocateAndClear<Interop.Buffer>(HeapUtil.GetLength(counterBuffers.Value)).ToPointer();
-                        for (var index = 0; index < HeapUtil.GetLength(counterBuffers.Value); index++) fieldPointer[index] = counterBuffers.Value[index]?.handle ?? default(Interop.Buffer);
+                        for (var index = 0; index < HeapUtil.GetLength(counterBuffers.Value); index++) fieldPointer[index] = counterBuffers.Value[index]?.Handle ?? default(Interop.Buffer);
                         marshalledCounterBuffers = fieldPointer;
                     }
                 }
@@ -234,8 +234,8 @@ namespace SharpVk.Multivendor
                         marshalledCounterBufferOffsets = fieldPointer;
                     }
                 }
-                var commandDelegate = commandCache.Cache.vkCmdEndTransformFeedbackEXT;
-                commandDelegate(extendedHandle.handle, firstCounterBuffer, HeapUtil.GetLength(counterBuffers), marshalledCounterBuffers, marshalledCounterBufferOffsets);
+                var commandDelegate = commandCache.Cache.VkCmdEndTransformFeedbackExt;
+                commandDelegate(extendedHandle.Handle, firstCounterBuffer, HeapUtil.GetLength(counterBuffers), marshalledCounterBuffers, marshalledCounterBufferOffsets);
             }
             finally
             {
@@ -262,13 +262,13 @@ namespace SharpVk.Multivendor
             {
                 var commandCache = default(CommandCache);
                 var marshalledFlags = default(QueryControlFlags);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 if (flags != null)
                     marshalledFlags = flags.Value;
                 else
                     marshalledFlags = default;
-                var commandDelegate = commandCache.Cache.vkCmdBeginQueryIndexedEXT;
-                commandDelegate(extendedHandle.handle, queryPool?.handle ?? default(Interop.QueryPool), query, marshalledFlags, index);
+                var commandDelegate = commandCache.Cache.VkCmdBeginQueryIndexedExt;
+                commandDelegate(extendedHandle.Handle, queryPool?.Handle ?? default(Interop.QueryPool), query, marshalledFlags, index);
             }
             finally
             {
@@ -292,9 +292,9 @@ namespace SharpVk.Multivendor
             try
             {
                 var commandCache = default(CommandCache);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkCmdEndQueryIndexedEXT;
-                commandDelegate(extendedHandle.handle, queryPool?.handle ?? default(Interop.QueryPool), query, index);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkCmdEndQueryIndexedExt;
+                commandDelegate(extendedHandle.Handle, queryPool?.Handle ?? default(Interop.QueryPool), query, index);
             }
             finally
             {
@@ -324,9 +324,9 @@ namespace SharpVk.Multivendor
             try
             {
                 var commandCache = default(CommandCache);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkCmdDrawIndirectByteCountEXT;
-                commandDelegate(extendedHandle.handle, instanceCount, firstInstance, counterBuffer?.handle ?? default(Interop.Buffer), counterBufferOffset, counterOffset, vertexStride);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkCmdDrawIndirectByteCountExt;
+                commandDelegate(extendedHandle.Handle, instanceCount, firstInstance, counterBuffer?.Handle ?? default(Interop.Buffer), counterBufferOffset, counterOffset, vertexStride);
             }
             finally
             {
@@ -351,19 +351,19 @@ namespace SharpVk.Multivendor
             {
                 var commandCache = default(CommandCache);
                 var marshalledConditionalRenderingBegin = default(Interop.Multivendor.ConditionalRenderingBeginInfo*);
-                var vkConditionalRenderingBeginInfoEXTNextPointer = default(void*);
-                commandCache = extendedHandle.commandCache;
+                var vkConditionalRenderingBeginInfoExtNextPointer = default(void*);
+                commandCache = extendedHandle.CommandCache;
                 marshalledConditionalRenderingBegin = (Interop.Multivendor.ConditionalRenderingBeginInfo*)HeapUtil.Allocate<Interop.Multivendor.ConditionalRenderingBeginInfo>();
                 marshalledConditionalRenderingBegin->SType = StructureType.ConditionalRenderingBeginInfo;
-                marshalledConditionalRenderingBegin->Next = vkConditionalRenderingBeginInfoEXTNextPointer;
-                marshalledConditionalRenderingBegin->Buffer = buffer?.handle ?? default(Interop.Buffer);
+                marshalledConditionalRenderingBegin->Next = vkConditionalRenderingBeginInfoExtNextPointer;
+                marshalledConditionalRenderingBegin->Buffer = buffer?.Handle ?? default(Interop.Buffer);
                 marshalledConditionalRenderingBegin->Offset = offset;
                 if (flags != null)
                     marshalledConditionalRenderingBegin->Flags = flags.Value;
                 else
                     marshalledConditionalRenderingBegin->Flags = default;
-                var commandDelegate = commandCache.Cache.vkCmdBeginConditionalRenderingEXT;
-                commandDelegate(extendedHandle.handle, marshalledConditionalRenderingBegin);
+                var commandDelegate = commandCache.Cache.VkCmdBeginConditionalRenderingExt;
+                commandDelegate(extendedHandle.Handle, marshalledConditionalRenderingBegin);
             }
             finally
             {
@@ -381,9 +381,9 @@ namespace SharpVk.Multivendor
             try
             {
                 var commandCache = default(CommandCache);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkCmdEndConditionalRenderingEXT;
-                commandDelegate(extendedHandle.handle);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkCmdEndConditionalRenderingExt;
+                commandDelegate(extendedHandle.Handle);
             }
             finally
             {
@@ -406,7 +406,7 @@ namespace SharpVk.Multivendor
             {
                 var commandCache = default(CommandCache);
                 var marshalledDiscardRectangles = default(Rect2D*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 if (discardRectangles.IsNull())
                 {
                     marshalledDiscardRectangles = null;
@@ -425,8 +425,8 @@ namespace SharpVk.Multivendor
                         marshalledDiscardRectangles = fieldPointer;
                     }
                 }
-                var commandDelegate = commandCache.Cache.vkCmdSetDiscardRectangleEXT;
-                commandDelegate(extendedHandle.handle, firstDiscardRectangle, HeapUtil.GetLength(discardRectangles), marshalledDiscardRectangles);
+                var commandDelegate = commandCache.Cache.VkCmdSetDiscardRectangleExt;
+                commandDelegate(extendedHandle.Handle, firstDiscardRectangle, HeapUtil.GetLength(discardRectangles), marshalledDiscardRectangles);
             }
             finally
             {
@@ -447,11 +447,11 @@ namespace SharpVk.Multivendor
             {
                 var commandCache = default(CommandCache);
                 var marshalledLabelInfo = default(Interop.Multivendor.DebugUtilsLabel*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledLabelInfo = (Interop.Multivendor.DebugUtilsLabel*)HeapUtil.Allocate<Interop.Multivendor.DebugUtilsLabel>();
                 labelInfo.MarshalTo(marshalledLabelInfo);
-                var commandDelegate = commandCache.Cache.vkCmdBeginDebugUtilsLabelEXT;
-                commandDelegate(extendedHandle.handle, marshalledLabelInfo);
+                var commandDelegate = commandCache.Cache.VkCmdBeginDebugUtilsLabelExt;
+                commandDelegate(extendedHandle.Handle, marshalledLabelInfo);
             }
             finally
             {
@@ -469,9 +469,9 @@ namespace SharpVk.Multivendor
             try
             {
                 var commandCache = default(CommandCache);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkCmdEndDebugUtilsLabelEXT;
-                commandDelegate(extendedHandle.handle);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkCmdEndDebugUtilsLabelExt;
+                commandDelegate(extendedHandle.Handle);
             }
             finally
             {
@@ -492,11 +492,11 @@ namespace SharpVk.Multivendor
             {
                 var commandCache = default(CommandCache);
                 var marshalledLabelInfo = default(Interop.Multivendor.DebugUtilsLabel*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledLabelInfo = (Interop.Multivendor.DebugUtilsLabel*)HeapUtil.Allocate<Interop.Multivendor.DebugUtilsLabel>();
                 labelInfo.MarshalTo(marshalledLabelInfo);
-                var commandDelegate = commandCache.Cache.vkCmdInsertDebugUtilsLabelEXT;
-                commandDelegate(extendedHandle.handle, marshalledLabelInfo);
+                var commandDelegate = commandCache.Cache.VkCmdInsertDebugUtilsLabelExt;
+                commandDelegate(extendedHandle.Handle, marshalledLabelInfo);
             }
             finally
             {
@@ -517,11 +517,11 @@ namespace SharpVk.Multivendor
             {
                 var commandCache = default(CommandCache);
                 var marshalledSampleLocationsInfo = default(Interop.Multivendor.SampleLocationsInfo*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledSampleLocationsInfo = (Interop.Multivendor.SampleLocationsInfo*)HeapUtil.Allocate<Interop.Multivendor.SampleLocationsInfo>();
                 sampleLocationsInfo.MarshalTo(marshalledSampleLocationsInfo);
-                var commandDelegate = commandCache.Cache.vkCmdSetSampleLocationsEXT;
-                commandDelegate(extendedHandle.handle, marshalledSampleLocationsInfo);
+                var commandDelegate = commandCache.Cache.VkCmdSetSampleLocationsExt;
+                commandDelegate(extendedHandle.Handle, marshalledSampleLocationsInfo);
             }
             finally
             {
@@ -543,9 +543,9 @@ namespace SharpVk.Multivendor
             try
             {
                 var commandCache = default(CommandCache);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkCmdSetLineStippleEXT;
-                commandDelegate(extendedHandle.handle, lineStippleFactor, lineStipplePattern);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkCmdSetLineStippleExt;
+                commandDelegate(extendedHandle.Handle, lineStippleFactor, lineStipplePattern);
             }
             finally
             {

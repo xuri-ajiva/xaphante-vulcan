@@ -43,9 +43,9 @@ namespace SharpVk.Google
                 var result = default(RefreshCycleDuration);
                 var commandCache = default(CommandCache);
                 var marshalledDisplayTimingProperties = default(RefreshCycleDuration);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkGetRefreshCycleDurationGOOGLE;
-                var methodResult = commandDelegate(extendedHandle.parent.handle, extendedHandle.handle, &marshalledDisplayTimingProperties);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkGetRefreshCycleDurationGoogle;
+                var methodResult = commandDelegate(extendedHandle.Parent.Handle, extendedHandle.Handle, &marshalledDisplayTimingProperties);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = marshalledDisplayTimingProperties;
                 return result;
@@ -69,12 +69,12 @@ namespace SharpVk.Google
                 var marshalledPresentationTimingCount = default(uint);
                 var commandCache = default(CommandCache);
                 var marshalledPresentationTimings = default(PastPresentationTiming*);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkGetPastPresentationTimingGOOGLE;
-                var methodResult = commandDelegate(extendedHandle.parent.handle, extendedHandle.handle, &marshalledPresentationTimingCount, marshalledPresentationTimings);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkGetPastPresentationTimingGoogle;
+                var methodResult = commandDelegate(extendedHandle.Parent.Handle, extendedHandle.Handle, &marshalledPresentationTimingCount, marshalledPresentationTimings);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 marshalledPresentationTimings = (PastPresentationTiming*)HeapUtil.Allocate<PastPresentationTiming>(marshalledPresentationTimingCount);
-                commandDelegate(extendedHandle.parent.handle, extendedHandle.handle, &marshalledPresentationTimingCount, marshalledPresentationTimings);
+                commandDelegate(extendedHandle.Parent.Handle, extendedHandle.Handle, &marshalledPresentationTimingCount, marshalledPresentationTimings);
                 if (marshalledPresentationTimings != null)
                 {
                     var fieldPointer = new PastPresentationTiming[marshalledPresentationTimingCount];

@@ -32,22 +32,22 @@ namespace SharpVk.NVidia
     public class AccelerationStructure
         : IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.NVidia.AccelerationStructure handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.NVidia.AccelerationStructure Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal AccelerationStructure(Device parent, Interop.NVidia.AccelerationStructure handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.NVidia.AccelerationStructure RawHandle => handle;
+        public Interop.NVidia.AccelerationStructure RawHandle => Handle;
 
         /// <summary>
         ///     Destroys the handles and releases any unmanaged resources
@@ -76,8 +76,8 @@ namespace SharpVk.NVidia
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroyAccelerationStructureNV;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroyAccelerationStructureNv;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {
@@ -98,8 +98,8 @@ namespace SharpVk.NVidia
                 var marshalledData = default(byte*);
                 marshalledDataSize = dataSize;
                 marshalledData = (byte*)HeapUtil.Allocate<byte>(marshalledDataSize);
-                var commandDelegate = commandCache.Cache.vkGetAccelerationStructureHandleNV;
-                var methodResult = commandDelegate(parent.handle, handle, marshalledDataSize, marshalledData);
+                var commandDelegate = CommandCache.Cache.VkGetAccelerationStructureHandleNv;
+                var methodResult = commandDelegate(Parent.Handle, Handle, marshalledDataSize, marshalledData);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 if (marshalledData != null)
                 {

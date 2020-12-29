@@ -33,7 +33,7 @@ namespace SharpVk.Multivendor
     {
         /// <summary>
         /// </summary>
-        public XYColor DisplayPrimaryRed
+        public XyColor DisplayPrimaryRed
         {
             get;
             set;
@@ -41,7 +41,7 @@ namespace SharpVk.Multivendor
 
         /// <summary>
         /// </summary>
-        public XYColor DisplayPrimaryGreen
+        public XyColor DisplayPrimaryGreen
         {
             get;
             set;
@@ -49,7 +49,7 @@ namespace SharpVk.Multivendor
 
         /// <summary>
         /// </summary>
-        public XYColor DisplayPrimaryBlue
+        public XyColor DisplayPrimaryBlue
         {
             get;
             set;
@@ -57,7 +57,7 @@ namespace SharpVk.Multivendor
 
         /// <summary>
         /// </summary>
-        public XYColor WhitePoint
+        public XyColor WhitePoint
         {
             get;
             set;

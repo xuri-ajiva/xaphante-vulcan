@@ -37,6 +37,6 @@ namespace SharpVk.Interop.NVidia
 
         /// <summary>
         /// </summary>
-        public GeometryAABB Aabbs;
+        public GeometryAabb Aabbs;
     }
 }

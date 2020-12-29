@@ -37,9 +37,9 @@ namespace SharpVk.Google
 
         /// <summary>
         /// </summary>
-        public PastPresentationTiming(uint presentID, ulong desiredPresentTime, ulong actualPresentTime, ulong earliestPresentTime, ulong presentMargin)
+        public PastPresentationTiming(uint presentId, ulong desiredPresentTime, ulong actualPresentTime, ulong earliestPresentTime, ulong presentMargin)
         {
-            PresentID = presentID;
+            PresentID = presentId;
             DesiredPresentTime = desiredPresentTime;
             ActualPresentTime = actualPresentTime;
             EarliestPresentTime = earliestPresentTime;

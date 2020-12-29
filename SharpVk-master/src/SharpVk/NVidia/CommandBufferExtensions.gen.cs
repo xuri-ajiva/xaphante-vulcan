@@ -47,7 +47,7 @@ namespace SharpVk.NVidia
             {
                 var commandCache = default(CommandCache);
                 var marshalledViewportWScalings = default(ViewportWScaling*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 if (viewportWScalings.IsNull())
                 {
                     marshalledViewportWScalings = null;
@@ -66,8 +66,8 @@ namespace SharpVk.NVidia
                         marshalledViewportWScalings = fieldPointer;
                     }
                 }
-                var commandDelegate = commandCache.Cache.vkCmdSetViewportWScalingNV;
-                commandDelegate(extendedHandle.handle, firstViewport, HeapUtil.GetLength(viewportWScalings), marshalledViewportWScalings);
+                var commandDelegate = commandCache.Cache.VkCmdSetViewportWScalingNv;
+                commandDelegate(extendedHandle.Handle, firstViewport, HeapUtil.GetLength(viewportWScalings), marshalledViewportWScalings);
             }
             finally
             {
@@ -89,9 +89,9 @@ namespace SharpVk.NVidia
             try
             {
                 var commandCache = default(CommandCache);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkCmdBindShadingRateImageNV;
-                commandDelegate(extendedHandle.handle, imageView?.handle ?? default(Interop.ImageView), imageLayout);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkCmdBindShadingRateImageNv;
+                commandDelegate(extendedHandle.Handle, imageView?.Handle ?? default(Interop.ImageView), imageLayout);
             }
             finally
             {
@@ -114,7 +114,7 @@ namespace SharpVk.NVidia
             {
                 var commandCache = default(CommandCache);
                 var marshalledShadingRatePalettes = default(Interop.NVidia.ShadingRatePalette*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 if (shadingRatePalettes.IsNull())
                 {
                     marshalledShadingRatePalettes = null;
@@ -133,8 +133,8 @@ namespace SharpVk.NVidia
                         marshalledShadingRatePalettes = fieldPointer;
                     }
                 }
-                var commandDelegate = commandCache.Cache.vkCmdSetViewportShadingRatePaletteNV;
-                commandDelegate(extendedHandle.handle, firstViewport, HeapUtil.GetLength(shadingRatePalettes), marshalledShadingRatePalettes);
+                var commandDelegate = commandCache.Cache.VkCmdSetViewportShadingRatePaletteNv;
+                commandDelegate(extendedHandle.Handle, firstViewport, HeapUtil.GetLength(shadingRatePalettes), marshalledShadingRatePalettes);
             }
             finally
             {
@@ -157,7 +157,7 @@ namespace SharpVk.NVidia
             {
                 var commandCache = default(CommandCache);
                 var marshalledCustomSampleOrders = default(Interop.NVidia.CoarseSampleOrderCustom*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 if (customSampleOrders.IsNull())
                 {
                     marshalledCustomSampleOrders = null;
@@ -176,8 +176,8 @@ namespace SharpVk.NVidia
                         marshalledCustomSampleOrders = fieldPointer;
                     }
                 }
-                var commandDelegate = commandCache.Cache.vkCmdSetCoarseSampleOrderNV;
-                commandDelegate(extendedHandle.handle, sampleOrderType, HeapUtil.GetLength(customSampleOrders), marshalledCustomSampleOrders);
+                var commandDelegate = commandCache.Cache.VkCmdSetCoarseSampleOrderNv;
+                commandDelegate(extendedHandle.Handle, sampleOrderType, HeapUtil.GetLength(customSampleOrders), marshalledCustomSampleOrders);
             }
             finally
             {
@@ -212,11 +212,11 @@ namespace SharpVk.NVidia
             {
                 var commandCache = default(CommandCache);
                 var marshalledInfo = default(Interop.NVidia.AccelerationStructureInfo*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledInfo = (Interop.NVidia.AccelerationStructureInfo*)HeapUtil.Allocate<Interop.NVidia.AccelerationStructureInfo>();
                 info.MarshalTo(marshalledInfo);
-                var commandDelegate = commandCache.Cache.vkCmdBuildAccelerationStructureNV;
-                commandDelegate(extendedHandle.handle, marshalledInfo, instanceData?.handle ?? default(Interop.Buffer), instanceOffset, update, destination?.handle ?? default(Interop.NVidia.AccelerationStructure), source?.handle ?? default(Interop.NVidia.AccelerationStructure), scratch?.handle ?? default(Interop.Buffer), scratchOffset);
+                var commandDelegate = commandCache.Cache.VkCmdBuildAccelerationStructureNv;
+                commandDelegate(extendedHandle.Handle, marshalledInfo, instanceData?.Handle ?? default(Interop.Buffer), instanceOffset, update, destination?.Handle ?? default(Interop.NVidia.AccelerationStructure), source?.Handle ?? default(Interop.NVidia.AccelerationStructure), scratch?.Handle ?? default(Interop.Buffer), scratchOffset);
             }
             finally
             {
@@ -240,9 +240,9 @@ namespace SharpVk.NVidia
             try
             {
                 var commandCache = default(CommandCache);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkCmdCopyAccelerationStructureNV;
-                commandDelegate(extendedHandle.handle, destination?.handle ?? default(Interop.NVidia.AccelerationStructure), source?.handle ?? default(Interop.NVidia.AccelerationStructure), mode);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkCmdCopyAccelerationStructureNv;
+                commandDelegate(extendedHandle.Handle, destination?.Handle ?? default(Interop.NVidia.AccelerationStructure), source?.Handle ?? default(Interop.NVidia.AccelerationStructure), mode);
             }
             finally
             {
@@ -288,9 +288,9 @@ namespace SharpVk.NVidia
             try
             {
                 var commandCache = default(CommandCache);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkCmdTraceRaysNV;
-                commandDelegate(extendedHandle.handle, raygenShaderBindingTableBuffer?.handle ?? default(Interop.Buffer), raygenShaderBindingOffset, missShaderBindingTableBuffer?.handle ?? default(Interop.Buffer), missShaderBindingOffset, missShaderBindingStride, hitShaderBindingTableBuffer?.handle ?? default(Interop.Buffer), hitShaderBindingOffset, hitShaderBindingStride, callableShaderBindingTableBuffer?.handle ?? default(Interop.Buffer), callableShaderBindingOffset, callableShaderBindingStride, width, height, depth);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkCmdTraceRaysNv;
+                commandDelegate(extendedHandle.Handle, raygenShaderBindingTableBuffer?.Handle ?? default(Interop.Buffer), raygenShaderBindingOffset, missShaderBindingTableBuffer?.Handle ?? default(Interop.Buffer), missShaderBindingOffset, missShaderBindingStride, hitShaderBindingTableBuffer?.Handle ?? default(Interop.Buffer), hitShaderBindingOffset, hitShaderBindingStride, callableShaderBindingTableBuffer?.Handle ?? default(Interop.Buffer), callableShaderBindingOffset, callableShaderBindingStride, width, height, depth);
             }
             finally
             {
@@ -317,7 +317,7 @@ namespace SharpVk.NVidia
             {
                 var commandCache = default(CommandCache);
                 var marshalledAccelerationStructures = default(Interop.NVidia.AccelerationStructure*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 if (accelerationStructures.IsNull())
                 {
                     marshalledAccelerationStructures = null;
@@ -327,17 +327,17 @@ namespace SharpVk.NVidia
                     if (accelerationStructures.Value.Contents == ProxyContents.Single)
                     {
                         marshalledAccelerationStructures = (Interop.NVidia.AccelerationStructure*)HeapUtil.Allocate<Interop.NVidia.AccelerationStructure>();
-                        *marshalledAccelerationStructures = accelerationStructures.Value.GetSingleValue()?.handle ?? default(Interop.NVidia.AccelerationStructure);
+                        *marshalledAccelerationStructures = accelerationStructures.Value.GetSingleValue()?.Handle ?? default(Interop.NVidia.AccelerationStructure);
                     }
                     else
                     {
                         var fieldPointer = (Interop.NVidia.AccelerationStructure*)HeapUtil.AllocateAndClear<Interop.NVidia.AccelerationStructure>(HeapUtil.GetLength(accelerationStructures.Value)).ToPointer();
-                        for (var index = 0; index < HeapUtil.GetLength(accelerationStructures.Value); index++) fieldPointer[index] = accelerationStructures.Value[index]?.handle ?? default(Interop.NVidia.AccelerationStructure);
+                        for (var index = 0; index < HeapUtil.GetLength(accelerationStructures.Value); index++) fieldPointer[index] = accelerationStructures.Value[index]?.Handle ?? default(Interop.NVidia.AccelerationStructure);
                         marshalledAccelerationStructures = fieldPointer;
                     }
                 }
-                var commandDelegate = commandCache.Cache.vkCmdWriteAccelerationStructuresPropertiesNV;
-                commandDelegate(extendedHandle.handle, HeapUtil.GetLength(accelerationStructures), marshalledAccelerationStructures, queryType, queryPool?.handle ?? default(Interop.QueryPool), firstQuery);
+                var commandDelegate = commandCache.Cache.VkCmdWriteAccelerationStructuresPropertiesNv;
+                commandDelegate(extendedHandle.Handle, HeapUtil.GetLength(accelerationStructures), marshalledAccelerationStructures, queryType, queryPool?.Handle ?? default(Interop.QueryPool), firstQuery);
             }
             finally
             {
@@ -359,9 +359,9 @@ namespace SharpVk.NVidia
             try
             {
                 var commandCache = default(CommandCache);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkCmdDrawMeshTasksNV;
-                commandDelegate(extendedHandle.handle, taskCount, firstTask);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkCmdDrawMeshTasksNv;
+                commandDelegate(extendedHandle.Handle, taskCount, firstTask);
             }
             finally
             {
@@ -387,9 +387,9 @@ namespace SharpVk.NVidia
             try
             {
                 var commandCache = default(CommandCache);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkCmdDrawMeshTasksIndirectNV;
-                commandDelegate(extendedHandle.handle, buffer?.handle ?? default(Interop.Buffer), offset, drawCount, stride);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkCmdDrawMeshTasksIndirectNv;
+                commandDelegate(extendedHandle.Handle, buffer?.Handle ?? default(Interop.Buffer), offset, drawCount, stride);
             }
             finally
             {
@@ -419,9 +419,9 @@ namespace SharpVk.NVidia
             try
             {
                 var commandCache = default(CommandCache);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkCmdDrawMeshTasksIndirectCountNV;
-                commandDelegate(extendedHandle.handle, buffer?.handle ?? default(Interop.Buffer), offset, countBuffer?.handle ?? default(Interop.Buffer), countBufferOffset, maxDrawCount, stride);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkCmdDrawMeshTasksIndirectCountNv;
+                commandDelegate(extendedHandle.Handle, buffer?.Handle ?? default(Interop.Buffer), offset, countBuffer?.Handle ?? default(Interop.Buffer), countBufferOffset, maxDrawCount, stride);
             }
             finally
             {
@@ -444,7 +444,7 @@ namespace SharpVk.NVidia
             {
                 var commandCache = default(CommandCache);
                 var marshalledExclusiveScissors = default(Rect2D*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 if (exclusiveScissors.IsNull())
                 {
                     marshalledExclusiveScissors = null;
@@ -463,8 +463,8 @@ namespace SharpVk.NVidia
                         marshalledExclusiveScissors = fieldPointer;
                     }
                 }
-                var commandDelegate = commandCache.Cache.vkCmdSetExclusiveScissorNV;
-                commandDelegate(extendedHandle.handle, firstExclusiveScissor, HeapUtil.GetLength(exclusiveScissors), marshalledExclusiveScissors);
+                var commandDelegate = commandCache.Cache.VkCmdSetExclusiveScissorNv;
+                commandDelegate(extendedHandle.Handle, firstExclusiveScissor, HeapUtil.GetLength(exclusiveScissors), marshalledExclusiveScissors);
             }
             finally
             {
@@ -484,9 +484,9 @@ namespace SharpVk.NVidia
             try
             {
                 var commandCache = default(CommandCache);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkCmdSetCheckpointNV;
-                commandDelegate(extendedHandle.handle, checkpointMarker.ToPointer());
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkCmdSetCheckpointNv;
+                commandDelegate(extendedHandle.Handle, checkpointMarker.ToPointer());
             }
             finally
             {

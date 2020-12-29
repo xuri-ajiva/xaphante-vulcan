@@ -29,7 +29,7 @@ namespace SharpVk.Multivendor
     /// <summary>
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public struct PhysicalDeviceTextureCompressionASTCHDRFeatures
+    public struct PhysicalDeviceTextureCompressionAstchdrFeatures
     {
         /// <summary>
         /// </summary>
@@ -43,7 +43,7 @@ namespace SharpVk.Multivendor
         /// </summary>
         /// <param name="pointer">
         /// </param>
-        internal unsafe void MarshalTo(Interop.Multivendor.PhysicalDeviceTextureCompressionASTCHDRFeatures* pointer)
+        internal unsafe void MarshalTo(Interop.Multivendor.PhysicalDeviceTextureCompressionAstchdrFeatures* pointer)
         {
             pointer->SType = StructureType.PhysicalDeviceTextureCompressionAstcHdrFeatures;
             pointer->Next = null;
@@ -54,9 +54,9 @@ namespace SharpVk.Multivendor
         /// </summary>
         /// <param name="pointer">
         /// </param>
-        internal static unsafe PhysicalDeviceTextureCompressionASTCHDRFeatures MarshalFrom(Interop.Multivendor.PhysicalDeviceTextureCompressionASTCHDRFeatures* pointer)
+        internal static unsafe PhysicalDeviceTextureCompressionAstchdrFeatures MarshalFrom(Interop.Multivendor.PhysicalDeviceTextureCompressionAstchdrFeatures* pointer)
         {
-            var result = default(PhysicalDeviceTextureCompressionASTCHDRFeatures);
+            var result = default(PhysicalDeviceTextureCompressionAstchdrFeatures);
             result.TexturecompressionastcHdr = pointer->TexturecompressionastcHdr;
             return result;
         }

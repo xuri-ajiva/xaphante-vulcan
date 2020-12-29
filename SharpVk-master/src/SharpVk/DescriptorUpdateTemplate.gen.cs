@@ -28,21 +28,21 @@ namespace SharpVk
     /// </summary>
     public class DescriptorUpdateTemplate
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.DescriptorUpdateTemplate handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.DescriptorUpdateTemplate Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal DescriptorUpdateTemplate(Device parent, Interop.DescriptorUpdateTemplate handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.DescriptorUpdateTemplate RawHandle => handle;
+        public Interop.DescriptorUpdateTemplate RawHandle => Handle;
     }
 }

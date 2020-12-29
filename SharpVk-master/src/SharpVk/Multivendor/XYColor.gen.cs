@@ -30,15 +30,15 @@ namespace SharpVk.Multivendor
     ///     Structure to specify X,Y chromaticity coordinates.
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public struct XYColor
+    public struct XyColor
     {
         /// <summary>
         /// </summary>
-        public static XYColor Zero => new();
+        public static XyColor Zero => new();
 
         /// <summary>
         /// </summary>
-        public XYColor(float x, float y)
+        public XyColor(float x, float y)
         {
             X = x;
             Y = y;

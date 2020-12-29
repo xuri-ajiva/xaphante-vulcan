@@ -31,22 +31,22 @@ namespace SharpVk.Intel
     /// </summary>
     public class PerformanceConfiguration
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.Intel.PerformanceConfiguration handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.Intel.PerformanceConfiguration Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal PerformanceConfiguration(Device parent, Interop.Intel.PerformanceConfiguration handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.Intel.PerformanceConfiguration RawHandle => handle;
+        public Interop.Intel.PerformanceConfiguration RawHandle => Handle;
 
         /// <summary>
         /// </summary>
@@ -54,8 +54,8 @@ namespace SharpVk.Intel
         {
             try
             {
-                var commandDelegate = commandCache.Cache.vkReleasePerformanceConfigurationINTEL;
-                var methodResult = commandDelegate(parent.handle, handle);
+                var commandDelegate = CommandCache.Cache.VkReleasePerformanceConfigurationIntel;
+                var methodResult = commandDelegate(Parent.Handle, Handle);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally

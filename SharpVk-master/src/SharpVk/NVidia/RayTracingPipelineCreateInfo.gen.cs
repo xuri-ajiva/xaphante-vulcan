@@ -123,8 +123,8 @@ namespace SharpVk.NVidia
                 pointer->Groups = null;
             }
             pointer->MaxRecursionDepth = MaxRecursionDepth;
-            pointer->Layout = Layout?.handle ?? default(Interop.PipelineLayout);
-            pointer->BasePipelineHandle = BasePipelineHandle?.handle ?? default(Interop.Pipeline);
+            pointer->Layout = Layout?.Handle ?? default(Interop.PipelineLayout);
+            pointer->BasePipelineHandle = BasePipelineHandle?.Handle ?? default(Interop.Pipeline);
             pointer->BasePipelineIndex = BasePipelineIndex;
         }
     }

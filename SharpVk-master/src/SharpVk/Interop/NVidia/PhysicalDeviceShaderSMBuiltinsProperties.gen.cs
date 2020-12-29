@@ -29,7 +29,7 @@ namespace SharpVk.Interop.NVidia
     /// <summary>
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public unsafe struct PhysicalDeviceShaderSMBuiltinsProperties
+    public unsafe struct PhysicalDeviceShaderSmBuiltinsProperties
     {
         /// <summary>
         ///     The type of this structure.

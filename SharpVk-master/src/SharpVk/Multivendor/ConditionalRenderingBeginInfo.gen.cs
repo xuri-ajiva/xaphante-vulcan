@@ -63,7 +63,7 @@ namespace SharpVk.Multivendor
         {
             pointer->SType = StructureType.ConditionalRenderingBeginInfo;
             pointer->Next = null;
-            pointer->Buffer = Buffer?.handle ?? default(Interop.Buffer);
+            pointer->Buffer = Buffer?.Handle ?? default(Interop.Buffer);
             pointer->Offset = Offset;
             if (Flags != null)
                 pointer->Flags = Flags.Value;

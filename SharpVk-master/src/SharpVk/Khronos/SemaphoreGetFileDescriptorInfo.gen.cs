@@ -55,7 +55,7 @@ namespace SharpVk.Khronos
         {
             pointer->SType = StructureType.SemaphoreGetFileDescriptorInfo;
             pointer->Next = null;
-            pointer->Semaphore = Semaphore?.handle ?? default(Interop.Semaphore);
+            pointer->Semaphore = Semaphore?.Handle ?? default(Interop.Semaphore);
             pointer->HandleType = HandleType;
         }
     }

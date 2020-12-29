@@ -31,22 +31,22 @@ namespace SharpVk
     /// </summary>
     public class Queue
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.Queue handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.Queue Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal Queue(Device parent, Interop.Queue handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.Queue RawHandle => handle;
+        public Interop.Queue RawHandle => Handle;
 
         /// <summary>
         ///     Submits a sequence of semaphores or command buffers to a queue.
@@ -78,8 +78,8 @@ namespace SharpVk
                         marshalledSubmits = fieldPointer;
                     }
                 }
-                var commandDelegate = commandCache.Cache.vkQueueSubmit;
-                var methodResult = commandDelegate(handle, HeapUtil.GetLength(submits), marshalledSubmits, fence?.handle ?? default(Interop.Fence));
+                var commandDelegate = CommandCache.Cache.VkQueueSubmit;
+                var methodResult = commandDelegate(Handle, HeapUtil.GetLength(submits), marshalledSubmits, fence?.Handle ?? default(Interop.Fence));
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally
@@ -95,8 +95,8 @@ namespace SharpVk
         {
             try
             {
-                var commandDelegate = commandCache.Cache.vkQueueWaitIdle;
-                var methodResult = commandDelegate(handle);
+                var commandDelegate = CommandCache.Cache.VkQueueWaitIdle;
+                var methodResult = commandDelegate(Handle);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally
@@ -135,8 +135,8 @@ namespace SharpVk
                         marshalledBindInfo = fieldPointer;
                     }
                 }
-                var commandDelegate = commandCache.Cache.vkQueueBindSparse;
-                var methodResult = commandDelegate(handle, HeapUtil.GetLength(bindInfo), marshalledBindInfo, fence?.handle ?? default(Interop.Fence));
+                var commandDelegate = CommandCache.Cache.VkQueueBindSparse;
+                var methodResult = commandDelegate(Handle, HeapUtil.GetLength(bindInfo), marshalledBindInfo, fence?.Handle ?? default(Interop.Fence));
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally

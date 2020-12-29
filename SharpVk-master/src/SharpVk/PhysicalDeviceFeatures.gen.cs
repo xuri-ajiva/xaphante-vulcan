@@ -195,7 +195,7 @@ namespace SharpVk
 
         /// <summary>
         /// </summary>
-        public bool TextureCompressionETC2
+        public bool TextureCompressionEtc2
         {
             get;
             set;
@@ -211,7 +211,7 @@ namespace SharpVk
 
         /// <summary>
         /// </summary>
-        public bool TextureCompressionBC
+        public bool TextureCompressionBc
         {
             get;
             set;
@@ -499,9 +499,9 @@ namespace SharpVk
             pointer->AlphaToOne = AlphaToOne;
             pointer->MultiViewport = MultiViewport;
             pointer->SamplerAnisotropy = SamplerAnisotropy;
-            pointer->TextureCompressionETC2 = TextureCompressionETC2;
+            pointer->TextureCompressionETC2 = TextureCompressionEtc2;
             pointer->TexturecompressionastcLdr = TexturecompressionastcLdr;
-            pointer->TextureCompressionBC = TextureCompressionBC;
+            pointer->TextureCompressionBC = TextureCompressionBc;
             pointer->OcclusionQueryPrecise = OcclusionQueryPrecise;
             pointer->PipelineStatisticsQuery = PipelineStatisticsQuery;
             pointer->VertexPipelineStoresAndAtomics = VertexPipelineStoresAndAtomics;
@@ -563,9 +563,9 @@ namespace SharpVk
             result.AlphaToOne = pointer->AlphaToOne;
             result.MultiViewport = pointer->MultiViewport;
             result.SamplerAnisotropy = pointer->SamplerAnisotropy;
-            result.TextureCompressionETC2 = pointer->TextureCompressionETC2;
+            result.TextureCompressionEtc2 = pointer->TextureCompressionETC2;
             result.TexturecompressionastcLdr = pointer->TexturecompressionastcLdr;
-            result.TextureCompressionBC = pointer->TextureCompressionBC;
+            result.TextureCompressionBc = pointer->TextureCompressionBC;
             result.OcclusionQueryPrecise = pointer->OcclusionQueryPrecise;
             result.PipelineStatisticsQuery = pointer->PipelineStatisticsQuery;
             result.VertexPipelineStoresAndAtomics = pointer->VertexPipelineStoresAndAtomics;

@@ -80,7 +80,7 @@ namespace SharpVk.Khronos
         {
             pointer->SType = StructureType.ImportSemaphoreWin32HandleInfo;
             pointer->Next = null;
-            pointer->Semaphore = Semaphore?.handle ?? default(Interop.Semaphore);
+            pointer->Semaphore = Semaphore?.Handle ?? default(Interop.Semaphore);
             if (Flags != null)
                 pointer->Flags = Flags.Value;
             else

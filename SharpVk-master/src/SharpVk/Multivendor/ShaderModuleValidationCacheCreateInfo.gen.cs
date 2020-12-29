@@ -47,7 +47,7 @@ namespace SharpVk.Multivendor
         {
             pointer->SType = StructureType.ShaderModuleValidationCacheCreateInfo;
             pointer->Next = null;
-            pointer->ValidationCache = ValidationCache?.handle ?? default(Interop.Multivendor.ValidationCache);
+            pointer->ValidationCache = ValidationCache?.Handle ?? default(Interop.Multivendor.ValidationCache);
         }
     }
 }

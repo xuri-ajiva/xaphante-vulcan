@@ -24,7 +24,7 @@
         /// </param>
         public void WriteDescriptorSet(uint destinationBinding, uint destinationArrayElement, DescriptorType descriptorType, ArrayProxy<DescriptorBufferInfo>? bufferInfos)
         {
-            parent.parent.WriteDescriptorSet(this, destinationBinding, destinationArrayElement, descriptorType, bufferInfos);
+            Parent.Parent.WriteDescriptorSet(this, destinationBinding, destinationArrayElement, descriptorType, bufferInfos);
         }
 
         /// <summary>
@@ -49,7 +49,7 @@
         /// </param>
         public void WriteDescriptorSet(uint destinationBinding, uint destinationArrayElement, DescriptorType descriptorType, ArrayProxy<DescriptorImageInfo>? imageInfos)
         {
-            parent.parent.WriteDescriptorSet(this, destinationBinding, destinationArrayElement, descriptorType, imageInfos);
+            Parent.Parent.WriteDescriptorSet(this, destinationBinding, destinationArrayElement, descriptorType, imageInfos);
         }
 
         /// <summary>
@@ -74,7 +74,7 @@
         /// </param>
         public void WriteDescriptorSet(uint destinationBinding, uint destinationArrayElement, DescriptorType descriptorType, ArrayProxy<BufferView>? texelBufferViews)
         {
-            parent.parent.WriteDescriptorSet(this, destinationBinding, destinationArrayElement, descriptorType, texelBufferViews);
+            Parent.Parent.WriteDescriptorSet(this, destinationBinding, destinationArrayElement, descriptorType, texelBufferViews);
         }
     }
 }

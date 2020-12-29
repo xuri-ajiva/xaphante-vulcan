@@ -47,7 +47,7 @@ namespace SharpVk.Khronos
         {
             pointer->SType = StructureType.PhysicalDeviceSurfaceInfo2;
             pointer->Next = null;
-            pointer->Surface = Surface?.handle ?? default(Interop.Khronos.Surface);
+            pointer->Surface = Surface?.Handle ?? default(Interop.Khronos.Surface);
         }
 
         /// <summary>

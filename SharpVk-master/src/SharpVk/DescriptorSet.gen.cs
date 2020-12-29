@@ -29,21 +29,21 @@ namespace SharpVk
     /// </summary>
     public partial class DescriptorSet
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.DescriptorSet handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.DescriptorSet Handle;
 
-        internal readonly DescriptorPool parent;
+        internal readonly DescriptorPool Parent;
 
         internal DescriptorSet(DescriptorPool parent, Interop.DescriptorSet handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.DescriptorSet RawHandle => handle;
+        public Interop.DescriptorSet RawHandle => Handle;
     }
 }

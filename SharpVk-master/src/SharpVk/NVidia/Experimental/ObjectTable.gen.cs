@@ -33,22 +33,22 @@ namespace SharpVk.NVidia.Experimental
     public class ObjectTable
         : IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.NVidia.Experimental.ObjectTable handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.NVidia.Experimental.ObjectTable Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal ObjectTable(Device parent, Interop.NVidia.Experimental.ObjectTable handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.NVidia.Experimental.ObjectTable RawHandle => handle;
+        public Interop.NVidia.Experimental.ObjectTable RawHandle => Handle;
 
         /// <summary>
         ///     Destroys the handles and releases any unmanaged resources
@@ -80,8 +80,8 @@ namespace SharpVk.NVidia.Experimental
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroyObjectTableNVX;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroyObjectTableNvx;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {
@@ -141,8 +141,8 @@ namespace SharpVk.NVidia.Experimental
                         marshalledObjectIndices = fieldPointer;
                     }
                 }
-                var commandDelegate = commandCache.Cache.vkRegisterObjectsNVX;
-                var methodResult = commandDelegate(parent.handle, handle, HeapUtil.GetLength(objectTableEntries), marshalledObjectTableEntries, marshalledObjectIndices);
+                var commandDelegate = CommandCache.Cache.VkRegisterObjectsNvx;
+                var methodResult = commandDelegate(Parent.Handle, Handle, HeapUtil.GetLength(objectTableEntries), marshalledObjectTableEntries, marshalledObjectIndices);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally
@@ -199,8 +199,8 @@ namespace SharpVk.NVidia.Experimental
                         marshalledObjectIndices = fieldPointer;
                     }
                 }
-                var commandDelegate = commandCache.Cache.vkUnregisterObjectsNVX;
-                var methodResult = commandDelegate(parent.handle, handle, HeapUtil.GetLength(objectEntryTypes), marshalledObjectEntryTypes, marshalledObjectIndices);
+                var commandDelegate = CommandCache.Cache.VkUnregisterObjectsNvx;
+                var methodResult = commandDelegate(Parent.Handle, Handle, HeapUtil.GetLength(objectEntryTypes), marshalledObjectEntryTypes, marshalledObjectIndices);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally

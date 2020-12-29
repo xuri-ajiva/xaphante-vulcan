@@ -28,5 +28,5 @@ namespace SharpVk.Interop.NVidia.Experimental
 {
     /// <summary>
     /// </summary>
-    public unsafe delegate Result VkObjectTableNVXRegisterObjectsDelegate(Device device, ObjectTable objectTable, uint objectCount, ObjectTableEntry** objectTableEntries, uint* objectIndices);
+    public unsafe delegate Result VkObjectTableNvxRegisterObjectsDelegate(Device device, ObjectTable objectTable, uint objectCount, ObjectTableEntry** objectTableEntries, uint* objectIndices);
 }

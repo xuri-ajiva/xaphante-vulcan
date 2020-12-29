@@ -26,5 +26,5 @@ namespace SharpVk.Interop.Khronos
 {
     /// <summary>
     /// </summary>
-    public delegate Result VkSwapchainKHRGetStatusDelegate(Device device, Swapchain swapchain);
+    public delegate Result VkSwapchainKhrGetStatusDelegate(Device device, Swapchain swapchain);
 }

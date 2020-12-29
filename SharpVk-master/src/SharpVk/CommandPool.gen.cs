@@ -33,22 +33,22 @@ namespace SharpVk
     public class CommandPool
         : IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.CommandPool handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.CommandPool Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal CommandPool(Device parent, Interop.CommandPool handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.CommandPool RawHandle => handle;
+        public Interop.CommandPool RawHandle => Handle;
 
         /// <summary>
         ///     Destroys the handles and releases any unmanaged resources
@@ -80,8 +80,8 @@ namespace SharpVk
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroyCommandPool;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroyCommandPool;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {
@@ -103,8 +103,8 @@ namespace SharpVk
                     marshalledFlags = flags.Value;
                 else
                     marshalledFlags = default;
-                var commandDelegate = commandCache.Cache.vkResetCommandPool;
-                var methodResult = commandDelegate(parent.handle, handle, marshalledFlags);
+                var commandDelegate = CommandCache.Cache.VkResetCommandPool;
+                var methodResult = commandDelegate(Parent.Handle, Handle, marshalledFlags);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally
@@ -132,17 +132,17 @@ namespace SharpVk
                     if (commandBuffers.Value.Contents == ProxyContents.Single)
                     {
                         marshalledCommandBuffers = (Interop.CommandBuffer*)HeapUtil.Allocate<Interop.CommandBuffer>();
-                        *marshalledCommandBuffers = commandBuffers.Value.GetSingleValue()?.handle ?? default(Interop.CommandBuffer);
+                        *marshalledCommandBuffers = commandBuffers.Value.GetSingleValue()?.Handle ?? default(Interop.CommandBuffer);
                     }
                     else
                     {
                         var fieldPointer = (Interop.CommandBuffer*)HeapUtil.AllocateAndClear<Interop.CommandBuffer>(HeapUtil.GetLength(commandBuffers.Value)).ToPointer();
-                        for (var index = 0; index < HeapUtil.GetLength(commandBuffers.Value); index++) fieldPointer[index] = commandBuffers.Value[index]?.handle ?? default(Interop.CommandBuffer);
+                        for (var index = 0; index < HeapUtil.GetLength(commandBuffers.Value); index++) fieldPointer[index] = commandBuffers.Value[index]?.Handle ?? default(Interop.CommandBuffer);
                         marshalledCommandBuffers = fieldPointer;
                     }
                 }
-                var commandDelegate = commandCache.Cache.vkFreeCommandBuffers;
-                commandDelegate(parent.handle, handle, HeapUtil.GetLength(commandBuffers), marshalledCommandBuffers);
+                var commandDelegate = CommandCache.Cache.VkFreeCommandBuffers;
+                commandDelegate(Parent.Handle, Handle, HeapUtil.GetLength(commandBuffers), marshalledCommandBuffers);
             }
             finally
             {
@@ -163,8 +163,8 @@ namespace SharpVk
                     marshalledFlags = flags.Value;
                 else
                     marshalledFlags = default;
-                var commandDelegate = commandCache.Cache.vkTrimCommandPool;
-                commandDelegate(parent.handle, handle, marshalledFlags);
+                var commandDelegate = CommandCache.Cache.VkTrimCommandPool;
+                commandDelegate(Parent.Handle, Handle, marshalledFlags);
             }
             finally
             {

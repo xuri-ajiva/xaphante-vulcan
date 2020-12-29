@@ -71,7 +71,7 @@ namespace SharpVk.Khronos
         {
             pointer->SType = StructureType.ImportFenceFileDescriptorInfo;
             pointer->Next = null;
-            pointer->Fence = Fence?.handle ?? default(Interop.Fence);
+            pointer->Fence = Fence?.Handle ?? default(Interop.Fence);
             if (Flags != null)
                 pointer->Flags = Flags.Value;
             else

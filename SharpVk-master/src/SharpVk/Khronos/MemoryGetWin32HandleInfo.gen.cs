@@ -55,7 +55,7 @@ namespace SharpVk.Khronos
         {
             pointer->SType = StructureType.MemoryGetWin32HandleInfo;
             pointer->Next = null;
-            pointer->Memory = Memory?.handle ?? default(Interop.DeviceMemory);
+            pointer->Memory = Memory?.Handle ?? default(Interop.DeviceMemory);
             pointer->HandleType = HandleType;
         }
     }

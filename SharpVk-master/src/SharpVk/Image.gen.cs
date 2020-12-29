@@ -33,22 +33,22 @@ namespace SharpVk
     public partial class Image
         : IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.Image handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.Image Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal Image(Device parent, Interop.Image handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.Image RawHandle => handle;
+        public Interop.Image RawHandle => Handle;
 
         /// <summary>
         ///     Destroys the handles and releases any unmanaged resources
@@ -70,8 +70,8 @@ namespace SharpVk
         {
             try
             {
-                var commandDelegate = commandCache.Cache.vkBindImageMemory;
-                var methodResult = commandDelegate(parent.handle, handle, memory?.handle ?? default(Interop.DeviceMemory), memoryOffset);
+                var commandDelegate = CommandCache.Cache.VkBindImageMemory;
+                var methodResult = commandDelegate(Parent.Handle, Handle, memory?.Handle ?? default(Interop.DeviceMemory), memoryOffset);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally
@@ -89,8 +89,8 @@ namespace SharpVk
             {
                 var result = default(MemoryRequirements);
                 var marshalledMemoryRequirements = default(MemoryRequirements);
-                var commandDelegate = commandCache.Cache.vkGetImageMemoryRequirements;
-                commandDelegate(parent.handle, handle, &marshalledMemoryRequirements);
+                var commandDelegate = CommandCache.Cache.VkGetImageMemoryRequirements;
+                commandDelegate(Parent.Handle, Handle, &marshalledMemoryRequirements);
                 result = marshalledMemoryRequirements;
                 return result;
             }
@@ -110,10 +110,10 @@ namespace SharpVk
                 var result = default(SparseImageMemoryRequirements[]);
                 var marshalledSparseMemoryRequirementCount = default(uint);
                 var marshalledSparseMemoryRequirements = default(SparseImageMemoryRequirements*);
-                var commandDelegate = commandCache.Cache.vkGetImageSparseMemoryRequirements;
-                commandDelegate(parent.handle, handle, &marshalledSparseMemoryRequirementCount, marshalledSparseMemoryRequirements);
+                var commandDelegate = CommandCache.Cache.VkGetImageSparseMemoryRequirements;
+                commandDelegate(Parent.Handle, Handle, &marshalledSparseMemoryRequirementCount, marshalledSparseMemoryRequirements);
                 marshalledSparseMemoryRequirements = (SparseImageMemoryRequirements*)HeapUtil.Allocate<SparseImageMemoryRequirements>(marshalledSparseMemoryRequirementCount);
-                commandDelegate(parent.handle, handle, &marshalledSparseMemoryRequirementCount, marshalledSparseMemoryRequirements);
+                commandDelegate(Parent.Handle, Handle, &marshalledSparseMemoryRequirementCount, marshalledSparseMemoryRequirements);
                 if (marshalledSparseMemoryRequirements != null)
                 {
                     var fieldPointer = new SparseImageMemoryRequirements[marshalledSparseMemoryRequirementCount];
@@ -153,8 +153,8 @@ namespace SharpVk
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroyImage;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroyImage;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {
@@ -176,8 +176,8 @@ namespace SharpVk
                 var marshalledLayout = default(SubresourceLayout);
                 marshalledSubresource = (ImageSubresource*)HeapUtil.Allocate<ImageSubresource>();
                 *marshalledSubresource = subresource;
-                var commandDelegate = commandCache.Cache.vkGetImageSubresourceLayout;
-                commandDelegate(parent.handle, handle, marshalledSubresource, &marshalledLayout);
+                var commandDelegate = CommandCache.Cache.VkGetImageSubresourceLayout;
+                commandDelegate(Parent.Handle, Handle, marshalledSubresource, &marshalledLayout);
                 result = marshalledLayout;
                 return result;
             }

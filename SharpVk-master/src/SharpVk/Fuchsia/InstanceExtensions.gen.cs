@@ -49,13 +49,13 @@ namespace SharpVk.Fuchsia
                 var result = default(Surface);
                 var commandCache = default(CommandCache);
                 var marshalledCreateInfo = default(Interop.Fuchsia.ImagePipeSurfaceCreateInfo*);
-                var vkImagePipeSurfaceCreateInfoFUCHSIANextPointer = default(void*);
+                var vkImagePipeSurfaceCreateInfoFuchsiaNextPointer = default(void*);
                 var marshalledAllocator = default(Interop.AllocationCallbacks*);
                 var marshalledSurface = default(Interop.Khronos.Surface);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledCreateInfo = (Interop.Fuchsia.ImagePipeSurfaceCreateInfo*)HeapUtil.Allocate<Interop.Fuchsia.ImagePipeSurfaceCreateInfo>();
                 marshalledCreateInfo->SType = StructureType.ImagepipeSurfaceCreateInfo;
-                marshalledCreateInfo->Next = vkImagePipeSurfaceCreateInfoFUCHSIANextPointer;
+                marshalledCreateInfo->Next = vkImagePipeSurfaceCreateInfoFuchsiaNextPointer;
                 if (flags != null)
                     marshalledCreateInfo->Flags = flags.Value;
                 else
@@ -70,8 +70,8 @@ namespace SharpVk.Fuchsia
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkCreateImagePipeSurfaceFUCHSIA;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledCreateInfo, marshalledAllocator, &marshalledSurface);
+                var commandDelegate = commandCache.Cache.VkCreateImagePipeSurfaceFuchsia;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledCreateInfo, marshalledAllocator, &marshalledSurface);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = new(extendedHandle, marshalledSurface);
                 return result;

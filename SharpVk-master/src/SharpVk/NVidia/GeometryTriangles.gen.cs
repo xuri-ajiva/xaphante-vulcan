@@ -127,16 +127,16 @@ namespace SharpVk.NVidia
         {
             pointer->SType = StructureType.GeometryTriangles;
             pointer->Next = null;
-            pointer->VertexData = VertexData?.handle ?? default(Interop.Buffer);
+            pointer->VertexData = VertexData?.Handle ?? default(Interop.Buffer);
             pointer->VertexOffset = VertexOffset;
             pointer->VertexCount = VertexCount;
             pointer->VertexStride = VertexStride;
             pointer->VertexFormat = VertexFormat;
-            pointer->IndexData = IndexData?.handle ?? default(Interop.Buffer);
+            pointer->IndexData = IndexData?.Handle ?? default(Interop.Buffer);
             pointer->IndexOffset = IndexOffset;
             pointer->IndexCount = IndexCount;
             pointer->IndexType = IndexType;
-            pointer->TransformData = TransformData?.handle ?? default(Interop.Buffer);
+            pointer->TransformData = TransformData?.Handle ?? default(Interop.Buffer);
             pointer->TransformOffset = TransformOffset;
         }
 

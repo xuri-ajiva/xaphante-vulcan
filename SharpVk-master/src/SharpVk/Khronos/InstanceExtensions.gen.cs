@@ -74,18 +74,18 @@ namespace SharpVk.Khronos
                 var result = default(Surface);
                 var commandCache = default(CommandCache);
                 var marshalledCreateInfo = default(Interop.Khronos.DisplaySurfaceCreateInfo*);
-                var vkDisplaySurfaceCreateInfoKHRNextPointer = default(void*);
+                var vkDisplaySurfaceCreateInfoKhrNextPointer = default(void*);
                 var marshalledAllocator = default(Interop.AllocationCallbacks*);
                 var marshalledSurface = default(Interop.Khronos.Surface);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledCreateInfo = (Interop.Khronos.DisplaySurfaceCreateInfo*)HeapUtil.Allocate<Interop.Khronos.DisplaySurfaceCreateInfo>();
                 marshalledCreateInfo->SType = StructureType.DisplaySurfaceCreateInfo;
-                marshalledCreateInfo->Next = vkDisplaySurfaceCreateInfoKHRNextPointer;
+                marshalledCreateInfo->Next = vkDisplaySurfaceCreateInfoKhrNextPointer;
                 if (flags != null)
                     marshalledCreateInfo->Flags = flags.Value;
                 else
                     marshalledCreateInfo->Flags = default;
-                marshalledCreateInfo->DisplayMode = displayMode?.handle ?? default(Interop.Khronos.DisplayMode);
+                marshalledCreateInfo->DisplayMode = displayMode?.Handle ?? default(Interop.Khronos.DisplayMode);
                 marshalledCreateInfo->PlaneIndex = planeIndex;
                 marshalledCreateInfo->PlaneStackIndex = planeStackIndex;
                 marshalledCreateInfo->Transform = transform;
@@ -101,8 +101,8 @@ namespace SharpVk.Khronos
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkCreateDisplayPlaneSurfaceKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledCreateInfo, marshalledAllocator, &marshalledSurface);
+                var commandDelegate = commandCache.Cache.VkCreateDisplayPlaneSurfaceKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledCreateInfo, marshalledAllocator, &marshalledSurface);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = new(extendedHandle, marshalledSurface);
                 return result;
@@ -140,13 +140,13 @@ namespace SharpVk.Khronos
                 var result = default(Surface);
                 var commandCache = default(CommandCache);
                 var marshalledCreateInfo = default(Interop.Khronos.XlibSurfaceCreateInfo*);
-                var vkXlibSurfaceCreateInfoKHRNextPointer = default(void*);
+                var vkXlibSurfaceCreateInfoKhrNextPointer = default(void*);
                 var marshalledAllocator = default(Interop.AllocationCallbacks*);
                 var marshalledSurface = default(Interop.Khronos.Surface);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledCreateInfo = (Interop.Khronos.XlibSurfaceCreateInfo*)HeapUtil.Allocate<Interop.Khronos.XlibSurfaceCreateInfo>();
                 marshalledCreateInfo->SType = StructureType.XlibSurfaceCreateInfo;
-                marshalledCreateInfo->Next = vkXlibSurfaceCreateInfoKHRNextPointer;
+                marshalledCreateInfo->Next = vkXlibSurfaceCreateInfoKhrNextPointer;
                 if (flags != null)
                     marshalledCreateInfo->Flags = flags.Value;
                 else
@@ -163,8 +163,8 @@ namespace SharpVk.Khronos
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkCreateXlibSurfaceKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledCreateInfo, marshalledAllocator, &marshalledSurface);
+                var commandDelegate = commandCache.Cache.VkCreateXlibSurfaceKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledCreateInfo, marshalledAllocator, &marshalledSurface);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = new(extendedHandle, marshalledSurface);
                 return result;
@@ -202,13 +202,13 @@ namespace SharpVk.Khronos
                 var result = default(Surface);
                 var commandCache = default(CommandCache);
                 var marshalledCreateInfo = default(Interop.Khronos.XcbSurfaceCreateInfo*);
-                var vkXcbSurfaceCreateInfoKHRNextPointer = default(void*);
+                var vkXcbSurfaceCreateInfoKhrNextPointer = default(void*);
                 var marshalledAllocator = default(Interop.AllocationCallbacks*);
                 var marshalledSurface = default(Interop.Khronos.Surface);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledCreateInfo = (Interop.Khronos.XcbSurfaceCreateInfo*)HeapUtil.Allocate<Interop.Khronos.XcbSurfaceCreateInfo>();
                 marshalledCreateInfo->SType = StructureType.XcbSurfaceCreateInfo;
-                marshalledCreateInfo->Next = vkXcbSurfaceCreateInfoKHRNextPointer;
+                marshalledCreateInfo->Next = vkXcbSurfaceCreateInfoKhrNextPointer;
                 if (flags != null)
                     marshalledCreateInfo->Flags = flags.Value;
                 else
@@ -225,8 +225,8 @@ namespace SharpVk.Khronos
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkCreateXcbSurfaceKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledCreateInfo, marshalledAllocator, &marshalledSurface);
+                var commandDelegate = commandCache.Cache.VkCreateXcbSurfaceKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledCreateInfo, marshalledAllocator, &marshalledSurface);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = new(extendedHandle, marshalledSurface);
                 return result;
@@ -263,13 +263,13 @@ namespace SharpVk.Khronos
                 var result = default(Surface);
                 var commandCache = default(CommandCache);
                 var marshalledCreateInfo = default(Interop.Khronos.WaylandSurfaceCreateInfo*);
-                var vkWaylandSurfaceCreateInfoKHRNextPointer = default(void*);
+                var vkWaylandSurfaceCreateInfoKhrNextPointer = default(void*);
                 var marshalledAllocator = default(Interop.AllocationCallbacks*);
                 var marshalledSurface = default(Interop.Khronos.Surface);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledCreateInfo = (Interop.Khronos.WaylandSurfaceCreateInfo*)HeapUtil.Allocate<Interop.Khronos.WaylandSurfaceCreateInfo>();
                 marshalledCreateInfo->SType = StructureType.WaylandSurfaceCreateInfo;
-                marshalledCreateInfo->Next = vkWaylandSurfaceCreateInfoKHRNextPointer;
+                marshalledCreateInfo->Next = vkWaylandSurfaceCreateInfoKhrNextPointer;
                 if (flags != null)
                     marshalledCreateInfo->Flags = flags.Value;
                 else
@@ -287,8 +287,8 @@ namespace SharpVk.Khronos
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkCreateWaylandSurfaceKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledCreateInfo, marshalledAllocator, &marshalledSurface);
+                var commandDelegate = commandCache.Cache.VkCreateWaylandSurfaceKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledCreateInfo, marshalledAllocator, &marshalledSurface);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = new(extendedHandle, marshalledSurface);
                 return result;
@@ -322,13 +322,13 @@ namespace SharpVk.Khronos
                 var result = default(Surface);
                 var commandCache = default(CommandCache);
                 var marshalledCreateInfo = default(Interop.Khronos.AndroidSurfaceCreateInfo*);
-                var vkAndroidSurfaceCreateInfoKHRNextPointer = default(void*);
+                var vkAndroidSurfaceCreateInfoKhrNextPointer = default(void*);
                 var marshalledAllocator = default(Interop.AllocationCallbacks*);
                 var marshalledSurface = default(Interop.Khronos.Surface);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledCreateInfo = (Interop.Khronos.AndroidSurfaceCreateInfo*)HeapUtil.Allocate<Interop.Khronos.AndroidSurfaceCreateInfo>();
                 marshalledCreateInfo->SType = StructureType.AndroidSurfaceCreateInfo;
-                marshalledCreateInfo->Next = vkAndroidSurfaceCreateInfoKHRNextPointer;
+                marshalledCreateInfo->Next = vkAndroidSurfaceCreateInfoKhrNextPointer;
                 if (flags != null)
                     marshalledCreateInfo->Flags = flags.Value;
                 else
@@ -344,8 +344,8 @@ namespace SharpVk.Khronos
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkCreateAndroidSurfaceKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledCreateInfo, marshalledAllocator, &marshalledSurface);
+                var commandDelegate = commandCache.Cache.VkCreateAndroidSurfaceKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledCreateInfo, marshalledAllocator, &marshalledSurface);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = new(extendedHandle, marshalledSurface);
                 return result;
@@ -382,13 +382,13 @@ namespace SharpVk.Khronos
                 var result = default(Surface);
                 var commandCache = default(CommandCache);
                 var marshalledCreateInfo = default(Interop.Khronos.Win32SurfaceCreateInfo*);
-                var vkWin32SurfaceCreateInfoKHRNextPointer = default(void*);
+                var vkWin32SurfaceCreateInfoKhrNextPointer = default(void*);
                 var marshalledAllocator = default(Interop.AllocationCallbacks*);
                 var marshalledSurface = default(Interop.Khronos.Surface);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledCreateInfo = (Interop.Khronos.Win32SurfaceCreateInfo*)HeapUtil.Allocate<Interop.Khronos.Win32SurfaceCreateInfo>();
                 marshalledCreateInfo->SType = StructureType.Win32SurfaceCreateInfo;
-                marshalledCreateInfo->Next = vkWin32SurfaceCreateInfoKHRNextPointer;
+                marshalledCreateInfo->Next = vkWin32SurfaceCreateInfoKhrNextPointer;
                 if (flags != null)
                     marshalledCreateInfo->Flags = flags.Value;
                 else
@@ -404,8 +404,8 @@ namespace SharpVk.Khronos
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkCreateWin32SurfaceKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledCreateInfo, marshalledAllocator, &marshalledSurface);
+                var commandDelegate = commandCache.Cache.VkCreateWin32SurfaceKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledCreateInfo, marshalledAllocator, &marshalledSurface);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = new(extendedHandle, marshalledSurface);
                 return result;

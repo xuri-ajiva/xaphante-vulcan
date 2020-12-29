@@ -33,22 +33,22 @@ namespace SharpVk
     public class QueryPool
         : IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.QueryPool handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.QueryPool Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal QueryPool(Device parent, Interop.QueryPool handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.QueryPool RawHandle => handle;
+        public Interop.QueryPool RawHandle => Handle;
 
         /// <summary>
         ///     Destroys the handles and releases any unmanaged resources
@@ -80,8 +80,8 @@ namespace SharpVk
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroyQueryPool;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroyQueryPool;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {
@@ -131,8 +131,8 @@ namespace SharpVk
                     marshalledFlags = flags.Value;
                 else
                     marshalledFlags = default;
-                var commandDelegate = commandCache.Cache.vkGetQueryPoolResults;
-                result = commandDelegate(parent.handle, handle, firstQuery, queryCount, HeapUtil.GetLength(data), marshalledData, stride, marshalledFlags);
+                var commandDelegate = CommandCache.Cache.VkGetQueryPoolResults;
+                result = commandDelegate(Parent.Handle, Handle, firstQuery, queryCount, HeapUtil.GetLength(data), marshalledData, stride, marshalledFlags);
                 if (SharpVkException.IsError(result)) throw SharpVkException.Create(result);
                 return result;
             }
@@ -152,8 +152,8 @@ namespace SharpVk
         {
             try
             {
-                var commandDelegate = commandCache.Cache.vkResetQueryPool;
-                commandDelegate(parent.handle, handle, firstQuery, queryCount);
+                var commandDelegate = CommandCache.Cache.VkResetQueryPool;
+                commandDelegate(Parent.Handle, Handle, firstQuery, queryCount);
             }
             finally
             {

@@ -29,7 +29,7 @@ namespace SharpVk.Multivendor
     /// <summary>
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public struct PhysicalDeviceASTCDecodeFeatures
+    public struct PhysicalDeviceAstcDecodeFeatures
     {
         /// <summary>
         /// </summary>
@@ -43,7 +43,7 @@ namespace SharpVk.Multivendor
         /// </summary>
         /// <param name="pointer">
         /// </param>
-        internal unsafe void MarshalTo(Interop.Multivendor.PhysicalDeviceASTCDecodeFeatures* pointer)
+        internal unsafe void MarshalTo(Interop.Multivendor.PhysicalDeviceAstcDecodeFeatures* pointer)
         {
             pointer->SType = StructureType.PhysicalDeviceAstcDecodeFeatures;
             pointer->Next = null;
@@ -54,9 +54,9 @@ namespace SharpVk.Multivendor
         /// </summary>
         /// <param name="pointer">
         /// </param>
-        internal static unsafe PhysicalDeviceASTCDecodeFeatures MarshalFrom(Interop.Multivendor.PhysicalDeviceASTCDecodeFeatures* pointer)
+        internal static unsafe PhysicalDeviceAstcDecodeFeatures MarshalFrom(Interop.Multivendor.PhysicalDeviceAstcDecodeFeatures* pointer)
         {
-            var result = default(PhysicalDeviceASTCDecodeFeatures);
+            var result = default(PhysicalDeviceAstcDecodeFeatures);
             result.DecodeModeSharedExponent = pointer->DecodeModeSharedExponent;
             return result;
         }

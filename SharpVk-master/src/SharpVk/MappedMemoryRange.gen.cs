@@ -69,7 +69,7 @@ namespace SharpVk
         {
             pointer->SType = StructureType.MappedMemoryRange;
             pointer->Next = null;
-            pointer->Memory = Memory?.handle ?? default(Interop.DeviceMemory);
+            pointer->Memory = Memory?.Handle ?? default(Interop.DeviceMemory);
             pointer->Offset = Offset;
             pointer->Size = Size;
         }

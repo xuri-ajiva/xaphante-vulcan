@@ -33,22 +33,22 @@ namespace SharpVk
     public class ImageView
         : IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.ImageView handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.ImageView Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal ImageView(Device parent, Interop.ImageView handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.ImageView RawHandle => handle;
+        public Interop.ImageView RawHandle => Handle;
 
         /// <summary>
         ///     Destroys the handles and releases any unmanaged resources
@@ -80,8 +80,8 @@ namespace SharpVk
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroyImageView;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroyImageView;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {

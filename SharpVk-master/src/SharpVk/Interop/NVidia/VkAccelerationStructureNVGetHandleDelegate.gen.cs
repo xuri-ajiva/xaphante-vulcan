@@ -26,5 +26,5 @@ namespace SharpVk.Interop.NVidia
 {
     /// <summary>
     /// </summary>
-    public unsafe delegate Result VkAccelerationStructureNVGetHandleDelegate(Device device, AccelerationStructure accelerationStructure, HostSize dataSize, void* data);
+    public unsafe delegate Result VkAccelerationStructureNvGetHandleDelegate(Device device, AccelerationStructure accelerationStructure, HostSize dataSize, void* data);
 }

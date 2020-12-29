@@ -1056,14 +1056,14 @@ namespace SharpVk
         ///     compressed texel block encodes a 4x4 rectangle of unsigned
         ///     floating-point RGB texel data.
         /// </summary>
-        Bc6hUFloatBlock = 143,
+        Bc6HUFloatBlock = 143,
 
         /// <summary>
         ///     A three-component, block-compressed format where each 128-bit
         ///     compressed texel block encodes a 4x4 rectangle of signed
         ///     floating-point RGB texel data.
         /// </summary>
-        Bc6hSFloatBlock = 144,
+        Bc6HSFloatBlock = 144,
 
         /// <summary>
         ///     A four-component, block-compressed format where each 128-bit
@@ -1163,7 +1163,7 @@ namespace SharpVk
         ///     compressed texel block encodes a 4x4 rectangle of unsigned
         ///     normalized RGBA texel data.
         /// </summary>
-        Astc4x4UNormBlock = 157,
+        Astc4X4UNormBlock = 157,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
@@ -1171,14 +1171,14 @@ namespace SharpVk
         ///     normalized RGBA texel data with sRGB nonlinear encoding applied to
         ///     the RGB components.
         /// </summary>
-        Astc4x4SrgbBlock = 158,
+        Astc4X4SrgbBlock = 158,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
         ///     compressed texel block encodes a 5x4 rectangle of unsigned
         ///     normalized RGBA texel data.
         /// </summary>
-        Astc5x4UNormBlock = 159,
+        Astc5X4UNormBlock = 159,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
@@ -1186,14 +1186,14 @@ namespace SharpVk
         ///     normalized RGBA texel data with sRGB nonlinear encoding applied to
         ///     the RGB components.
         /// </summary>
-        Astc5x4SrgbBlock = 160,
+        Astc5X4SrgbBlock = 160,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
         ///     compressed texel block encodes a 5x5 rectangle of unsigned
         ///     normalized RGBA texel data.
         /// </summary>
-        Astc5x5UNormBlock = 161,
+        Astc5X5UNormBlock = 161,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
@@ -1201,14 +1201,14 @@ namespace SharpVk
         ///     normalized RGBA texel data with sRGB nonlinear encoding applied to
         ///     the RGB components.
         /// </summary>
-        Astc5x5SrgbBlock = 162,
+        Astc5X5SrgbBlock = 162,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
         ///     compressed texel block encodes a 6x5 rectangle of unsigned
         ///     normalized RGBA texel data.
         /// </summary>
-        Astc6x5UNormBlock = 163,
+        Astc6X5UNormBlock = 163,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
@@ -1216,14 +1216,14 @@ namespace SharpVk
         ///     normalized RGBA texel data with sRGB nonlinear encoding applied to
         ///     the RGB components.
         /// </summary>
-        Astc6x5SrgbBlock = 164,
+        Astc6X5SrgbBlock = 164,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
         ///     compressed texel block encodes a 6x6 rectangle of unsigned
         ///     normalized RGBA texel data.
         /// </summary>
-        Astc6x6UNormBlock = 165,
+        Astc6X6UNormBlock = 165,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
@@ -1231,14 +1231,14 @@ namespace SharpVk
         ///     normalized RGBA texel data with sRGB nonlinear encoding applied to
         ///     the RGB components.
         /// </summary>
-        Astc6x6SrgbBlock = 166,
+        Astc6X6SrgbBlock = 166,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
         ///     compressed texel block encodes an 8x5 rectangle of unsigned
         ///     normalized RGBA texel data.
         /// </summary>
-        Astc8x5UNormBlock = 167,
+        Astc8X5UNormBlock = 167,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
@@ -1246,14 +1246,14 @@ namespace SharpVk
         ///     normalized RGBA texel data with sRGB nonlinear encoding applied to
         ///     the RGB components.
         /// </summary>
-        Astc8x5SrgbBlock = 168,
+        Astc8X5SrgbBlock = 168,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
         ///     compressed texel block encodes an 8x6 rectangle of unsigned
         ///     normalized RGBA texel data.
         /// </summary>
-        Astc8x6UNormBlock = 169,
+        Astc8X6UNormBlock = 169,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
@@ -1261,14 +1261,14 @@ namespace SharpVk
         ///     normalized RGBA texel data with sRGB nonlinear encoding applied to
         ///     the RGB components.
         /// </summary>
-        Astc8x6SrgbBlock = 170,
+        Astc8X6SrgbBlock = 170,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
         ///     compressed texel block encodes an 8x8 rectangle of unsigned
         ///     normalized RGBA texel data.
         /// </summary>
-        Astc8x8UNormBlock = 171,
+        Astc8X8UNormBlock = 171,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
@@ -1276,14 +1276,14 @@ namespace SharpVk
         ///     normalized RGBA texel data with sRGB nonlinear encoding applied to
         ///     the RGB components.
         /// </summary>
-        Astc8x8SrgbBlock = 172,
+        Astc8X8SrgbBlock = 172,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
         ///     compressed texel block encodes a 10x5 rectangle of unsigned
         ///     normalized RGBA texel data.
         /// </summary>
-        Astc10x5UNormBlock = 173,
+        Astc10X5UNormBlock = 173,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
@@ -1291,14 +1291,14 @@ namespace SharpVk
         ///     normalized RGBA texel data with sRGB nonlinear encoding applied to
         ///     the RGB components.
         /// </summary>
-        Astc10x5SrgbBlock = 174,
+        Astc10X5SrgbBlock = 174,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
         ///     compressed texel block encodes a 10x6 rectangle of unsigned
         ///     normalized RGBA texel data.
         /// </summary>
-        Astc10x6UNormBlock = 175,
+        Astc10X6UNormBlock = 175,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
@@ -1306,14 +1306,14 @@ namespace SharpVk
         ///     normalized RGBA texel data with sRGB nonlinear encoding applied to
         ///     the RGB components.
         /// </summary>
-        Astc10x6SrgbBlock = 176,
+        Astc10X6SrgbBlock = 176,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
         ///     compressed texel block encodes a 10x8 rectangle of unsigned
         ///     normalized RGBA texel data.
         /// </summary>
-        Astc10x8UNormBlock = 177,
+        Astc10X8UNormBlock = 177,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
@@ -1321,14 +1321,14 @@ namespace SharpVk
         ///     normalized RGBA texel data with sRGB nonlinear encoding applied to
         ///     the RGB components.
         /// </summary>
-        Astc10x8SrgbBlock = 178,
+        Astc10X8SrgbBlock = 178,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
         ///     compressed texel block encodes a 10x10 rectangle of unsigned
         ///     normalized RGBA texel data.
         /// </summary>
-        Astc10x10UNormBlock = 179,
+        Astc10X10UNormBlock = 179,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
@@ -1336,14 +1336,14 @@ namespace SharpVk
         ///     normalized RGBA texel data with sRGB nonlinear encoding applied to
         ///     the RGB components.
         /// </summary>
-        Astc10x10SrgbBlock = 180,
+        Astc10X10SrgbBlock = 180,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
         ///     compressed texel block encodes a 12x10 rectangle of unsigned
         ///     normalized RGBA texel data.
         /// </summary>
-        Astc12x10UNormBlock = 181,
+        Astc12X10UNormBlock = 181,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
@@ -1351,14 +1351,14 @@ namespace SharpVk
         ///     normalized RGBA texel data with sRGB nonlinear encoding applied to
         ///     the RGB components.
         /// </summary>
-        Astc12x10SrgbBlock = 182,
+        Astc12X10SrgbBlock = 182,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
         ///     compressed texel block encodes a 12x12 rectangle of unsigned
         ///     normalized RGBA texel data.
         /// </summary>
-        Astc12x12UNormBlock = 183,
+        Astc12X12UNormBlock = 183,
 
         /// <summary>
         ///     A four-component, ASTC compressed format where each 128-bit
@@ -1366,7 +1366,7 @@ namespace SharpVk
         ///     normalized RGBA texel data with sRGB nonlinear encoding applied to
         ///     the RGB components.
         /// </summary>
-        Astc12x12SrgbBlock = 184,
+        Astc12X12SrgbBlock = 184,
 
         /// <summary>
         /// </summary>
@@ -1378,23 +1378,23 @@ namespace SharpVk
 
         /// <summary>
         /// </summary>
-        G8B8R83plane420UNormVersion = 1000156002,
+        G8B8R83Plane420UNormVersion = 1000156002,
 
         /// <summary>
         /// </summary>
-        G8B8R82plane420UNormVersion = 1000156003,
+        G8B8R82Plane420UNormVersion = 1000156003,
 
         /// <summary>
         /// </summary>
-        G8B8R83plane422UNormVersion = 1000156004,
+        G8B8R83Plane422UNormVersion = 1000156004,
 
         /// <summary>
         /// </summary>
-        G8B8R82plane422UNormVersion = 1000156005,
+        G8B8R82Plane422UNormVersion = 1000156005,
 
         /// <summary>
         /// </summary>
-        G8B8R83plane444UNormVersion = 1000156006,
+        G8B8R83Plane444UNormVersion = 1000156006,
 
         /// <summary>
         /// </summary>
@@ -1418,23 +1418,23 @@ namespace SharpVk
 
         /// <summary>
         /// </summary>
-        G10X6B10X6R10X63plane420UNorm3Pack16Version = 1000156012,
+        G10X6B10X6R10X63Plane420UNorm3Pack16Version = 1000156012,
 
         /// <summary>
         /// </summary>
-        G10X6B10X6R10X62plane420UNorm3Pack16Version = 1000156013,
+        G10X6B10X6R10X62Plane420UNorm3Pack16Version = 1000156013,
 
         /// <summary>
         /// </summary>
-        G10X6B10X6R10X63plane422UNorm3Pack16Version = 1000156014,
+        G10X6B10X6R10X63Plane422UNorm3Pack16Version = 1000156014,
 
         /// <summary>
         /// </summary>
-        G10X6B10X6R10X62plane422UNorm3Pack16Version = 1000156015,
+        G10X6B10X6R10X62Plane422UNorm3Pack16Version = 1000156015,
 
         /// <summary>
         /// </summary>
-        G10X6B10X6R10X63plane444UNorm3Pack16Version = 1000156016,
+        G10X6B10X6R10X63Plane444UNorm3Pack16Version = 1000156016,
 
         /// <summary>
         /// </summary>
@@ -1458,23 +1458,23 @@ namespace SharpVk
 
         /// <summary>
         /// </summary>
-        G12X4B12X4R12X43plane420UNorm3Pack16Version = 1000156022,
+        G12X4B12X4R12X43Plane420UNorm3Pack16Version = 1000156022,
 
         /// <summary>
         /// </summary>
-        G12X4B12X4R12X42plane420UNorm3Pack16Version = 1000156023,
+        G12X4B12X4R12X42Plane420UNorm3Pack16Version = 1000156023,
 
         /// <summary>
         /// </summary>
-        G12X4B12X4R12X43plane422UNorm3Pack16Version = 1000156024,
+        G12X4B12X4R12X43Plane422UNorm3Pack16Version = 1000156024,
 
         /// <summary>
         /// </summary>
-        G12X4B12X4R12X42plane422UNorm3Pack16Version = 1000156025,
+        G12X4B12X4R12X42Plane422UNorm3Pack16Version = 1000156025,
 
         /// <summary>
         /// </summary>
-        G12X4B12X4R12X43plane444UNorm3Pack16Version = 1000156026,
+        G12X4B12X4R12X43Plane444UNorm3Pack16Version = 1000156026,
 
         /// <summary>
         /// </summary>
@@ -1486,110 +1486,110 @@ namespace SharpVk
 
         /// <summary>
         /// </summary>
-        G16B16R163plane420UNormVersion = 1000156029,
+        G16B16R163Plane420UNormVersion = 1000156029,
 
         /// <summary>
         /// </summary>
-        G16B16R162plane420UNormVersion = 1000156030,
+        G16B16R162Plane420UNormVersion = 1000156030,
 
         /// <summary>
         /// </summary>
-        G16B16R163plane422UNormVersion = 1000156031,
+        G16B16R163Plane422UNormVersion = 1000156031,
 
         /// <summary>
         /// </summary>
-        G16B16R162plane422UNormVersion = 1000156032,
+        G16B16R162Plane422UNormVersion = 1000156032,
 
         /// <summary>
         /// </summary>
-        G16B16R163plane444UNormVersion = 1000156033,
+        G16B16R163Plane444UNormVersion = 1000156033,
 
         /// <summary>
         /// </summary>
-        Pvrtc12bppUNormBlock = 1000054000,
+        Pvrtc12BppUNormBlock = 1000054000,
 
         /// <summary>
         /// </summary>
-        Pvrtc14bppUNormBlock = 1000054001,
+        Pvrtc14BppUNormBlock = 1000054001,
 
         /// <summary>
         /// </summary>
-        Pvrtc22bppUNormBlock = 1000054002,
+        Pvrtc22BppUNormBlock = 1000054002,
 
         /// <summary>
         /// </summary>
-        Pvrtc24bppUNormBlock = 1000054003,
+        Pvrtc24BppUNormBlock = 1000054003,
 
         /// <summary>
         /// </summary>
-        Pvrtc12bppSrgbBlock = 1000054004,
+        Pvrtc12BppSrgbBlock = 1000054004,
 
         /// <summary>
         /// </summary>
-        Pvrtc14bppSrgbBlock = 1000054005,
+        Pvrtc14BppSrgbBlock = 1000054005,
 
         /// <summary>
         /// </summary>
-        Pvrtc22bppSrgbBlock = 1000054006,
+        Pvrtc22BppSrgbBlock = 1000054006,
 
         /// <summary>
         /// </summary>
-        Pvrtc24bppSrgbBlock = 1000054007,
+        Pvrtc24BppSrgbBlock = 1000054007,
 
         /// <summary>
         /// </summary>
-        Astc4x4SFloatBlock = 1000066000,
+        Astc4X4SFloatBlock = 1000066000,
 
         /// <summary>
         /// </summary>
-        Astc5x4SFloatBlock = 1000066001,
+        Astc5X4SFloatBlock = 1000066001,
 
         /// <summary>
         /// </summary>
-        Astc5x5SFloatBlock = 1000066002,
+        Astc5X5SFloatBlock = 1000066002,
 
         /// <summary>
         /// </summary>
-        Astc6x5SFloatBlock = 1000066003,
+        Astc6X5SFloatBlock = 1000066003,
 
         /// <summary>
         /// </summary>
-        Astc6x6SFloatBlock = 1000066004,
+        Astc6X6SFloatBlock = 1000066004,
 
         /// <summary>
         /// </summary>
-        Astc8x5SFloatBlock = 1000066005,
+        Astc8X5SFloatBlock = 1000066005,
 
         /// <summary>
         /// </summary>
-        Astc8x6SFloatBlock = 1000066006,
+        Astc8X6SFloatBlock = 1000066006,
 
         /// <summary>
         /// </summary>
-        Astc8x8SFloatBlock = 1000066007,
+        Astc8X8SFloatBlock = 1000066007,
 
         /// <summary>
         /// </summary>
-        Astc10x5SFloatBlock = 1000066008,
+        Astc10X5SFloatBlock = 1000066008,
 
         /// <summary>
         /// </summary>
-        Astc10x6SFloatBlock = 1000066009,
+        Astc10X6SFloatBlock = 1000066009,
 
         /// <summary>
         /// </summary>
-        Astc10x8SFloatBlock = 1000066010,
+        Astc10X8SFloatBlock = 1000066010,
 
         /// <summary>
         /// </summary>
-        Astc10x10SFloatBlock = 1000066011,
+        Astc10X10SFloatBlock = 1000066011,
 
         /// <summary>
         /// </summary>
-        Astc12x10SFloatBlock = 1000066012,
+        Astc12X10SFloatBlock = 1000066012,
 
         /// <summary>
         /// </summary>
-        Astc12x12SFloatBlock = 1000066013
+        Astc12X12SFloatBlock = 1000066013
     }
 }

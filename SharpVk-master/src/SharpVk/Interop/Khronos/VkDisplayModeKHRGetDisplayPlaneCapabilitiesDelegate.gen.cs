@@ -28,5 +28,5 @@ namespace SharpVk.Interop.Khronos
 {
     /// <summary>
     /// </summary>
-    public unsafe delegate Result VkDisplayModeKHRGetDisplayPlaneCapabilitiesDelegate(PhysicalDevice physicalDevice, DisplayMode mode, uint planeIndex, DisplayPlaneCapabilities* capabilities);
+    public unsafe delegate Result VkDisplayModeKhrGetDisplayPlaneCapabilitiesDelegate(PhysicalDevice physicalDevice, DisplayMode mode, uint planeIndex, DisplayPlaneCapabilities* capabilities);
 }

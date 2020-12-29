@@ -36,22 +36,22 @@ namespace SharpVk
     public partial class Buffer
         : IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.Buffer handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.Buffer Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal Buffer(Device parent, Interop.Buffer handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.Buffer RawHandle => handle;
+        public Interop.Buffer RawHandle => Handle;
 
         /// <summary>
         ///     Bind device memory to a buffer object.
@@ -64,8 +64,8 @@ namespace SharpVk
         {
             try
             {
-                var commandDelegate = commandCache.Cache.vkBindBufferMemory;
-                var methodResult = commandDelegate(parent.handle, handle, memory?.handle ?? default(Interop.DeviceMemory), memoryOffset);
+                var commandDelegate = CommandCache.Cache.VkBindBufferMemory;
+                var methodResult = commandDelegate(Parent.Handle, Handle, memory?.Handle ?? default(Interop.DeviceMemory), memoryOffset);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally
@@ -83,8 +83,8 @@ namespace SharpVk
             {
                 var result = default(MemoryRequirements);
                 var marshalledMemoryRequirements = default(MemoryRequirements);
-                var commandDelegate = commandCache.Cache.vkGetBufferMemoryRequirements;
-                commandDelegate(parent.handle, handle, &marshalledMemoryRequirements);
+                var commandDelegate = CommandCache.Cache.VkGetBufferMemoryRequirements;
+                commandDelegate(Parent.Handle, Handle, &marshalledMemoryRequirements);
                 result = marshalledMemoryRequirements;
                 return result;
             }
@@ -124,8 +124,8 @@ namespace SharpVk
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroyBuffer;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroyBuffer;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {

@@ -52,7 +52,7 @@ namespace SharpVk
             if (PhysicalDevices != null)
             {
                 var fieldPointer = (Interop.PhysicalDevice*)HeapUtil.AllocateAndClear<Interop.PhysicalDevice>(PhysicalDevices.Length).ToPointer();
-                for (var index = 0; index < (uint)PhysicalDevices.Length; index++) fieldPointer[index] = PhysicalDevices[index]?.handle ?? default(Interop.PhysicalDevice);
+                for (var index = 0; index < (uint)PhysicalDevices.Length; index++) fieldPointer[index] = PhysicalDevices[index]?.Handle ?? default(Interop.PhysicalDevice);
                 pointer->PhysicalDevices = fieldPointer;
             }
             else

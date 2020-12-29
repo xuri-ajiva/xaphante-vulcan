@@ -33,22 +33,22 @@ namespace SharpVk
     public class BufferView
         : IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.BufferView handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.BufferView Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal BufferView(Device parent, Interop.BufferView handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.BufferView RawHandle => handle;
+        public Interop.BufferView RawHandle => Handle;
 
         /// <summary>
         ///     Destroys the handles and releases any unmanaged resources
@@ -80,8 +80,8 @@ namespace SharpVk
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroyBufferView;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroyBufferView;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {

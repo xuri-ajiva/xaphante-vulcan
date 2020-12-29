@@ -120,7 +120,7 @@ namespace SharpVk
             if (ImmutableSamplers != null)
             {
                 var fieldPointer = (Interop.Sampler*)HeapUtil.AllocateAndClear<Interop.Sampler>(ImmutableSamplers.Length).ToPointer();
-                for (var index = 0; index < (uint)ImmutableSamplers.Length; index++) fieldPointer[index] = ImmutableSamplers[index]?.handle ?? default(Interop.Sampler);
+                for (var index = 0; index < (uint)ImmutableSamplers.Length; index++) fieldPointer[index] = ImmutableSamplers[index]?.Handle ?? default(Interop.Sampler);
                 pointer->ImmutableSamplers = fieldPointer;
             }
             else

@@ -31,11 +31,11 @@ namespace SharpVk
     /// <summary>
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public struct PhysicalDeviceIDProperties
+    public struct PhysicalDeviceIdProperties
     {
         /// <summary>
         /// </summary>
-        public Guid DeviceUUID
+        public Guid DeviceUuid
         {
             get;
             set;
@@ -43,7 +43,7 @@ namespace SharpVk
 
         /// <summary>
         /// </summary>
-        public Guid DriverUUID
+        public Guid DriverUuid
         {
             get;
             set;
@@ -51,7 +51,7 @@ namespace SharpVk
 
         /// <summary>
         /// </summary>
-        public Guid DeviceLUID
+        public Guid DeviceLuid
         {
             get;
             set;
@@ -67,7 +67,7 @@ namespace SharpVk
 
         /// <summary>
         /// </summary>
-        public bool DeviceLUIDValid
+        public bool DeviceLuidValid
         {
             get;
             set;
@@ -77,14 +77,14 @@ namespace SharpVk
         /// </summary>
         /// <param name="pointer">
         /// </param>
-        internal static unsafe PhysicalDeviceIDProperties MarshalFrom(Interop.PhysicalDeviceIDProperties* pointer)
+        internal static unsafe PhysicalDeviceIdProperties MarshalFrom(Interop.PhysicalDeviceIdProperties* pointer)
         {
-            var result = default(PhysicalDeviceIDProperties);
-            result.DeviceUUID = new(HeapUtil.MarshalFrom(pointer->DeviceUUID, Constants.UuidSize));
-            result.DriverUUID = new(HeapUtil.MarshalFrom(pointer->DriverUUID, Constants.UuidSize));
-            result.DeviceLUID = new(HeapUtil.MarshalFrom(pointer->DeviceLUID, Constants.LuidSize));
+            var result = default(PhysicalDeviceIdProperties);
+            result.DeviceUuid = new(HeapUtil.MarshalFrom(pointer->DeviceUUID, Constants.UuidSize));
+            result.DriverUuid = new(HeapUtil.MarshalFrom(pointer->DriverUUID, Constants.UuidSize));
+            result.DeviceLuid = new(HeapUtil.MarshalFrom(pointer->DeviceLUID, Constants.LuidSize));
             result.DeviceNodeMask = pointer->DeviceNodeMask;
-            result.DeviceLUIDValid = pointer->DeviceLUIDValid;
+            result.DeviceLuidValid = pointer->DeviceLUIDValid;
             return result;
         }
     }

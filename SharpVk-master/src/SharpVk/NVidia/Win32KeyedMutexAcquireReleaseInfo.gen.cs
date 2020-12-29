@@ -85,7 +85,7 @@ namespace SharpVk.NVidia
             if (AcquireSyncs != null)
             {
                 var fieldPointer = (Interop.DeviceMemory*)HeapUtil.AllocateAndClear<Interop.DeviceMemory>(AcquireSyncs.Length).ToPointer();
-                for (var index = 0; index < (uint)AcquireSyncs.Length; index++) fieldPointer[index] = AcquireSyncs[index]?.handle ?? default(Interop.DeviceMemory);
+                for (var index = 0; index < (uint)AcquireSyncs.Length; index++) fieldPointer[index] = AcquireSyncs[index]?.Handle ?? default(Interop.DeviceMemory);
                 pointer->AcquireSyncs = fieldPointer;
             }
             else
@@ -116,7 +116,7 @@ namespace SharpVk.NVidia
             if (ReleaseSyncs != null)
             {
                 var fieldPointer = (Interop.DeviceMemory*)HeapUtil.AllocateAndClear<Interop.DeviceMemory>(ReleaseSyncs.Length).ToPointer();
-                for (var index = 0; index < (uint)ReleaseSyncs.Length; index++) fieldPointer[index] = ReleaseSyncs[index]?.handle ?? default(Interop.DeviceMemory);
+                for (var index = 0; index < (uint)ReleaseSyncs.Length; index++) fieldPointer[index] = ReleaseSyncs[index]?.Handle ?? default(Interop.DeviceMemory);
                 pointer->ReleaseSyncs = fieldPointer;
             }
             else

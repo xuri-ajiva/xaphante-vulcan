@@ -26,5 +26,5 @@ namespace SharpVk.Interop.Khronos
 {
     /// <summary>
     /// </summary>
-    public unsafe delegate Result VkSwapchainKHRGetImagesDelegate(Device device, Swapchain swapchain, uint* swapchainImageCount, Image* swapchainImages);
+    public unsafe delegate Result VkSwapchainKhrGetImagesDelegate(Device device, Swapchain swapchain, uint* swapchainImageCount, Image* swapchainImages);
 }

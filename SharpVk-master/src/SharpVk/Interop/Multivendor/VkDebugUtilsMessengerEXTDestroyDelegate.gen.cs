@@ -26,5 +26,5 @@ namespace SharpVk.Interop.Multivendor
 {
     /// <summary>
     /// </summary>
-    public unsafe delegate void VkDebugUtilsMessengerEXTDestroyDelegate(Instance instance, DebugUtilsMessenger messenger, AllocationCallbacks* allocator);
+    public unsafe delegate void VkDebugUtilsMessengerExtDestroyDelegate(Instance instance, DebugUtilsMessenger messenger, AllocationCallbacks* allocator);
 }

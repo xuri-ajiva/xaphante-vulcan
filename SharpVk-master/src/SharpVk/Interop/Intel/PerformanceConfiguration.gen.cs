@@ -29,13 +29,13 @@ namespace SharpVk.Interop.Intel
     /// </summary>
     public struct PerformanceConfiguration
     {
-        internal ulong handle;
+        internal ulong Handle;
 
         /// <summary>
         /// </summary>
         public PerformanceConfiguration(ulong handle)
         {
-            this.handle = handle;
+            this.Handle = handle;
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace SharpVk.Interop.Intel
         /// </summary>
         public ulong ToUInt64()
         {
-            return handle;
+            return Handle;
         }
     }
 }

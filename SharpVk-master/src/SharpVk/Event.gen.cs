@@ -33,22 +33,22 @@ namespace SharpVk
     public class Event
         : IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.Event handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.Event Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal Event(Device parent, Interop.Event handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.Event RawHandle => handle;
+        public Interop.Event RawHandle => Handle;
 
         /// <summary>
         ///     Destroys the handles and releases any unmanaged resources
@@ -80,8 +80,8 @@ namespace SharpVk
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroyEvent;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroyEvent;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {
@@ -97,8 +97,8 @@ namespace SharpVk
             try
             {
                 var result = default(Result);
-                var commandDelegate = commandCache.Cache.vkGetEventStatus;
-                result = commandDelegate(parent.handle, handle);
+                var commandDelegate = CommandCache.Cache.VkGetEventStatus;
+                result = commandDelegate(Parent.Handle, Handle);
                 if (SharpVkException.IsError(result)) throw SharpVkException.Create(result);
                 return result;
             }
@@ -115,8 +115,8 @@ namespace SharpVk
         {
             try
             {
-                var commandDelegate = commandCache.Cache.vkSetEvent;
-                var methodResult = commandDelegate(parent.handle, handle);
+                var commandDelegate = CommandCache.Cache.VkSetEvent;
+                var methodResult = commandDelegate(Parent.Handle, Handle);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally
@@ -132,8 +132,8 @@ namespace SharpVk
         {
             try
             {
-                var commandDelegate = commandCache.Cache.vkResetEvent;
-                var methodResult = commandDelegate(parent.handle, handle);
+                var commandDelegate = CommandCache.Cache.VkResetEvent;
+                var methodResult = commandDelegate(Parent.Handle, Handle);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally

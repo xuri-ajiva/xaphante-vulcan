@@ -47,7 +47,7 @@ namespace SharpVk
         {
             pointer->SType = StructureType.SamplerYcbcrConversionInfoVersion;
             pointer->Next = null;
-            pointer->Conversion = Conversion?.handle ?? default(Interop.SamplerYcbcrConversion);
+            pointer->Conversion = Conversion?.Handle ?? default(Interop.SamplerYcbcrConversion);
         }
     }
 }

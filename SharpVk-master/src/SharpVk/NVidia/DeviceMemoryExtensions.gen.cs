@@ -46,9 +46,9 @@ namespace SharpVk.NVidia
                 var result = default(IntPtr);
                 var commandCache = default(CommandCache);
                 var marshalledHandle = default(IntPtr);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkGetMemoryWin32HandleNV;
-                var methodResult = commandDelegate(extendedHandle.parent.handle, extendedHandle.handle, handleType, &marshalledHandle);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkGetMemoryWin32HandleNv;
+                var methodResult = commandDelegate(extendedHandle.Parent.Handle, extendedHandle.Handle, handleType, &marshalledHandle);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = marshalledHandle;
                 return result;

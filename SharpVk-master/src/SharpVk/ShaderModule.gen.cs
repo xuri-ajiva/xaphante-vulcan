@@ -33,22 +33,22 @@ namespace SharpVk
     public class ShaderModule
         : IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.ShaderModule handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.ShaderModule Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal ShaderModule(Device parent, Interop.ShaderModule handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.ShaderModule RawHandle => handle;
+        public Interop.ShaderModule RawHandle => Handle;
 
         /// <summary>
         ///     Destroys the handles and releases any unmanaged resources
@@ -80,8 +80,8 @@ namespace SharpVk
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroyShaderModule;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroyShaderModule;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {

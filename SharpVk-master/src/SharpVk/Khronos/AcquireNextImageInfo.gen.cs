@@ -87,10 +87,10 @@ namespace SharpVk.Khronos
         {
             pointer->SType = StructureType.AcquireNextImageInfo;
             pointer->Next = null;
-            pointer->Swapchain = Swapchain?.handle ?? default(Interop.Khronos.Swapchain);
+            pointer->Swapchain = Swapchain?.Handle ?? default(Interop.Khronos.Swapchain);
             pointer->Timeout = Timeout;
-            pointer->Semaphore = Semaphore?.handle ?? default(Interop.Semaphore);
-            pointer->Fence = Fence?.handle ?? default(Interop.Fence);
+            pointer->Semaphore = Semaphore?.Handle ?? default(Interop.Semaphore);
+            pointer->Fence = Fence?.Handle ?? default(Interop.Fence);
             pointer->DeviceMask = DeviceMask;
         }
     }

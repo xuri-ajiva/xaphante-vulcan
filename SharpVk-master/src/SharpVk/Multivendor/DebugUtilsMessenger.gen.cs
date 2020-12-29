@@ -32,22 +32,22 @@ namespace SharpVk.Multivendor
     public class DebugUtilsMessenger
         : IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.Multivendor.DebugUtilsMessenger handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.Multivendor.DebugUtilsMessenger Handle;
 
-        internal readonly Instance parent;
+        internal readonly Instance Parent;
 
         internal DebugUtilsMessenger(Instance parent, Interop.Multivendor.DebugUtilsMessenger handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.Multivendor.DebugUtilsMessenger RawHandle => handle;
+        public Interop.Multivendor.DebugUtilsMessenger RawHandle => Handle;
 
         /// <summary>
         ///     Destroys the handles and releases any unmanaged resources
@@ -76,8 +76,8 @@ namespace SharpVk.Multivendor
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroyDebugUtilsMessengerEXT;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroyDebugUtilsMessengerExt;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {

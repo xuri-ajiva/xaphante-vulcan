@@ -47,7 +47,7 @@ namespace SharpVk
         {
             pointer->SType = StructureType.ImageSparseMemoryRequirementsInfo2Version;
             pointer->Next = null;
-            pointer->Image = Image?.handle ?? default(Interop.Image);
+            pointer->Image = Image?.Handle ?? default(Interop.Image);
         }
 
         /// <summary>

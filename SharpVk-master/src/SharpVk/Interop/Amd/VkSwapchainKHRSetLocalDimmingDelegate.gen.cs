@@ -28,5 +28,5 @@ namespace SharpVk.Interop.Amd
 {
     /// <summary>
     /// </summary>
-    public delegate void VkSwapchainKHRSetLocalDimmingDelegate(Device device, Swapchain swapChain, Bool32 localDimmingEnable);
+    public delegate void VkSwapchainKhrSetLocalDimmingDelegate(Device device, Swapchain swapChain, Bool32 localDimmingEnable);
 }

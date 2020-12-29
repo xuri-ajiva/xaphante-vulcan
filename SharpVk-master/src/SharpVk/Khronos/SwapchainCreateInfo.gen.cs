@@ -167,7 +167,7 @@ namespace SharpVk.Khronos
                 pointer->Flags = Flags.Value;
             else
                 pointer->Flags = default;
-            pointer->Surface = Surface?.handle ?? default(Interop.Khronos.Surface);
+            pointer->Surface = Surface?.Handle ?? default(Interop.Khronos.Surface);
             pointer->MinImageCount = MinImageCount;
             pointer->ImageFormat = ImageFormat;
             pointer->ImageColorSpace = ImageColorSpace;
@@ -190,7 +190,7 @@ namespace SharpVk.Khronos
             pointer->CompositeAlpha = CompositeAlpha;
             pointer->PresentMode = PresentMode;
             pointer->Clipped = Clipped;
-            pointer->OldSwapchain = OldSwapchain?.handle ?? default(Interop.Khronos.Swapchain);
+            pointer->OldSwapchain = OldSwapchain?.Handle ?? default(Interop.Khronos.Swapchain);
         }
     }
 }

@@ -26,5 +26,5 @@ namespace SharpVk.Interop.Intel
 {
     /// <summary>
     /// </summary>
-    public delegate Result VkPerformanceConfigurationINTELReleaseDelegate(Device device, PerformanceConfiguration configuration);
+    public delegate Result VkPerformanceConfigurationIntelReleaseDelegate(Device device, PerformanceConfiguration configuration);
 }

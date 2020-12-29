@@ -73,8 +73,8 @@ namespace SharpVk.NVidia.Experimental
         {
             pointer->SType = StructureType.CommandReserveSpaceForCommandsInfo;
             pointer->Next = null;
-            pointer->ObjectTable = ObjectTable?.handle ?? default(Interop.NVidia.Experimental.ObjectTable);
-            pointer->IndirectCommandsLayout = IndirectCommandsLayout?.handle ?? default(Interop.NVidia.Experimental.IndirectCommandsLayout);
+            pointer->ObjectTable = ObjectTable?.Handle ?? default(Interop.NVidia.Experimental.ObjectTable);
+            pointer->IndirectCommandsLayout = IndirectCommandsLayout?.Handle ?? default(Interop.NVidia.Experimental.IndirectCommandsLayout);
             pointer->MaxSequencesCount = MaxSequencesCount;
         }
     }

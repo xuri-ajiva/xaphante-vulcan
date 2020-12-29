@@ -29,7 +29,7 @@ namespace SharpVk.Interop.Multivendor
     /// <summary>
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public unsafe struct PhysicalDeviceASTCDecodeFeatures
+    public unsafe struct PhysicalDeviceAstcDecodeFeatures
     {
         /// <summary>
         ///     The type of this structure.

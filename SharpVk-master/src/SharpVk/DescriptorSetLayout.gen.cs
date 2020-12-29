@@ -33,22 +33,22 @@ namespace SharpVk
     public class DescriptorSetLayout
         : IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.DescriptorSetLayout handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.DescriptorSetLayout Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal DescriptorSetLayout(Device parent, Interop.DescriptorSetLayout handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.DescriptorSetLayout RawHandle => handle;
+        public Interop.DescriptorSetLayout RawHandle => Handle;
 
         /// <summary>
         ///     Destroys the handles and releases any unmanaged resources
@@ -80,8 +80,8 @@ namespace SharpVk
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroyDescriptorSetLayout;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroyDescriptorSetLayout;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {

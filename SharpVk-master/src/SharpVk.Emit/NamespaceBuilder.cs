@@ -27,16 +27,16 @@ namespace SharpVk.Emit
         {
             EmitTypePreamble(summary, docs, attributes);
 
-            writer.WriteLine($"{accessModifier.Emit()} {RenderTypeModifiers(modifiers)}{kind.ToString().ToLowerInvariant()} {name}");
+            Writer.WriteLine($"{accessModifier.Emit()} {RenderTypeModifiers(modifiers)}{kind.ToString().ToLowerInvariant()} {name}");
 
             if (baseTypes != null && baseTypes.Any())
             {
-                writer.IncreaseIndent();
-                writer.WriteLine($": {string.Join(", ", baseTypes)}");
-                writer.DecreaseIndent();
+                Writer.IncreaseIndent();
+                Writer.WriteLine($": {string.Join(", ", baseTypes)}");
+                Writer.DecreaseIndent();
             }
 
-            using (var builder = new TypeBuilder(writer.GetSubWriter(), name))
+            using (var builder = new TypeBuilder(Writer.GetSubWriter(), name))
             {
                 type(builder);
             }
@@ -57,7 +57,7 @@ namespace SharpVk.Emit
                 ? ParameterBuilder.Apply(parameters)
                 : "";
 
-            writer.WriteLine($"{accessModifier.Emit()} {RenderTypeModifiers(modifiers)}delegate {type} {name}({parameterList});");
+            Writer.WriteLine($"{accessModifier.Emit()} {RenderTypeModifiers(modifiers)}delegate {type} {name}({parameterList});");
         }
 
         public void EmitEnum(string name,
@@ -69,8 +69,8 @@ namespace SharpVk.Emit
         {
             EmitTypePreamble(summary, docs, attributes);
 
-            writer.WriteLine($"{accessModifier.Emit()} enum {name}");
-            using (var builder = new EnumBuilder(writer.GetSubWriter()))
+            Writer.WriteLine($"{accessModifier.Emit()} enum {name}");
+            using (var builder = new EnumBuilder(Writer.GetSubWriter()))
             {
                 @enum(builder);
             }
@@ -79,17 +79,17 @@ namespace SharpVk.Emit
         private void EmitTypePreamble(IEnumerable<string> summary, Action<DocBuilder> docs, IEnumerable<string> attributes)
         {
             if (hasFirstElement)
-                writer.WriteLine();
+                Writer.WriteLine();
             else
                 hasFirstElement = true;
 
-            var docsBuilder = new DocBuilder(writer.GetSubWriter(), summary);
+            var docsBuilder = new DocBuilder(Writer.GetSubWriter(), summary);
 
             docs?.Invoke(docsBuilder);
 
             if (attributes != null)
                 foreach (var attributeName in attributes)
-                    writer.WriteLine($"[{attributeName}]");
+                    Writer.WriteLine($"[{attributeName}]");
         }
 
         private string RenderTypeModifiers(TypeModifier modifiers)

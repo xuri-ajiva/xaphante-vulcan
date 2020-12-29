@@ -33,22 +33,22 @@ namespace SharpVk
     public class Sampler
         : IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.Sampler handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.Sampler Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal Sampler(Device parent, Interop.Sampler handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.Sampler RawHandle => handle;
+        public Interop.Sampler RawHandle => Handle;
 
         /// <summary>
         ///     Destroys the handles and releases any unmanaged resources
@@ -80,8 +80,8 @@ namespace SharpVk
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroySampler;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroySampler;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {

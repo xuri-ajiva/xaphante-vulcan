@@ -26,5 +26,5 @@ namespace SharpVk.Interop.Khronos
 {
     /// <summary>
     /// </summary>
-    public unsafe delegate Result VkSwapchainKHRAcquireNextImageDelegate(Device device, Swapchain swapchain, ulong timeout, Semaphore semaphore, Fence fence, uint* imageIndex);
+    public unsafe delegate Result VkSwapchainKhrAcquireNextImageDelegate(Device device, Swapchain swapchain, ulong timeout, Semaphore semaphore, Fence fence, uint* imageIndex);
 }

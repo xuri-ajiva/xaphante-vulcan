@@ -30,7 +30,7 @@ namespace SharpVk.Interop.MoltenVk
     /// <summary>
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public unsafe struct IOSSurfaceCreateInfo
+    public unsafe struct IosSurfaceCreateInfo
     {
         /// <summary>
         ///     The type of this structure.
@@ -45,7 +45,7 @@ namespace SharpVk.Interop.MoltenVk
         /// <summary>
         ///     Reserved for future use.
         /// </summary>
-        public IOSSurfaceCreateFlags Flags;
+        public IosSurfaceCreateFlags Flags;
 
         /// <summary>
         ///     A reference to a UIView object which will display this surface.

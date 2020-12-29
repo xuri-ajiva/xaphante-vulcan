@@ -57,7 +57,7 @@ namespace SharpVk
         /// </param>
         internal unsafe void MarshalTo(Interop.SparseImageOpaqueMemoryBindInfo* pointer)
         {
-            pointer->Image = Image?.handle ?? default(Interop.Image);
+            pointer->Image = Image?.Handle ?? default(Interop.Image);
             pointer->BindCount = HeapUtil.GetLength(Binds);
             if (Binds != null)
             {

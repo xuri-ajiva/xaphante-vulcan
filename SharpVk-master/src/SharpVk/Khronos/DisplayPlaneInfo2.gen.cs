@@ -55,7 +55,7 @@ namespace SharpVk.Khronos
         {
             pointer->SType = StructureType.DisplayPlaneInfo2;
             pointer->Next = null;
-            pointer->Mode = Mode?.handle ?? default(Interop.Khronos.DisplayMode);
+            pointer->Mode = Mode?.Handle ?? default(Interop.Khronos.DisplayMode);
             pointer->PlaneIndex = PlaneIndex;
         }
 

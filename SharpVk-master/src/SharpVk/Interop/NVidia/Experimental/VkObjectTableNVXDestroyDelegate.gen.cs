@@ -26,5 +26,5 @@ namespace SharpVk.Interop.NVidia.Experimental
 {
     /// <summary>
     /// </summary>
-    public unsafe delegate void VkObjectTableNVXDestroyDelegate(Device device, ObjectTable objectTable, AllocationCallbacks* allocator);
+    public unsafe delegate void VkObjectTableNvxDestroyDelegate(Device device, ObjectTable objectTable, AllocationCallbacks* allocator);
 }

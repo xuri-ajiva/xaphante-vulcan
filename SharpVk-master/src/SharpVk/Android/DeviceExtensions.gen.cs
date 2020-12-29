@@ -46,11 +46,11 @@ namespace SharpVk.Android
                 var commandCache = default(CommandCache);
                 var marshalledBuffer = default(IntPtr*);
                 var marshalledProperties = default(Interop.Android.AndroidHardwareBufferProperties);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledBuffer = (IntPtr*)HeapUtil.Allocate<IntPtr>();
                 *marshalledBuffer = buffer;
-                var commandDelegate = commandCache.Cache.vkGetAndroidHardwareBufferPropertiesANDROID;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledBuffer, &marshalledProperties);
+                var commandDelegate = commandCache.Cache.VkGetAndroidHardwareBufferPropertiesAndroid;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledBuffer, &marshalledProperties);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = AndroidHardwareBufferProperties.MarshalFrom(&marshalledProperties);
                 return result;
@@ -77,13 +77,13 @@ namespace SharpVk.Android
                 var commandCache = default(CommandCache);
                 var marshalledInfo = default(Interop.Android.MemoryGetAndroidHardwareBufferInfo*);
                 var marshalledBuffer = default(IntPtr*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledInfo = (Interop.Android.MemoryGetAndroidHardwareBufferInfo*)HeapUtil.Allocate<Interop.Android.MemoryGetAndroidHardwareBufferInfo>();
                 info.MarshalTo(marshalledInfo);
                 marshalledBuffer = (IntPtr*)HeapUtil.Allocate<IntPtr>();
                 *marshalledBuffer = buffer;
-                var commandDelegate = commandCache.Cache.vkGetMemoryAndroidHardwareBufferANDROID;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledInfo, marshalledBuffer);
+                var commandDelegate = commandCache.Cache.VkGetMemoryAndroidHardwareBufferAndroid;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledInfo, marshalledBuffer);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally

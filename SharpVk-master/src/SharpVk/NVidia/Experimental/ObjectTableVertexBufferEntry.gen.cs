@@ -63,7 +63,7 @@ namespace SharpVk.NVidia.Experimental
         {
             pointer->Type = Type;
             pointer->Flags = Flags;
-            pointer->Buffer = Buffer?.handle ?? default(Interop.Buffer);
+            pointer->Buffer = Buffer?.Handle ?? default(Interop.Buffer);
         }
 
         /// <summary>

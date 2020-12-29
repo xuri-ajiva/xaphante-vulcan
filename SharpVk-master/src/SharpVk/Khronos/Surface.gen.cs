@@ -32,22 +32,22 @@ namespace SharpVk.Khronos
     public partial class Surface
         : IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.Khronos.Surface handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.Khronos.Surface Handle;
 
-        internal readonly Instance parent;
+        internal readonly Instance Parent;
 
         internal Surface(Instance parent, Interop.Khronos.Surface handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.Khronos.Surface RawHandle => handle;
+        public Interop.Khronos.Surface RawHandle => Handle;
 
         /// <summary>
         ///     Destroys the handles and releases any unmanaged resources
@@ -79,8 +79,8 @@ namespace SharpVk.Khronos
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroySurfaceKHR;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroySurfaceKhr;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {

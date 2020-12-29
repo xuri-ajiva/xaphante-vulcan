@@ -55,7 +55,7 @@ namespace SharpVk
             if (Attachments != null)
             {
                 var fieldPointer = (Interop.ImageView*)HeapUtil.AllocateAndClear<Interop.ImageView>(Attachments.Length).ToPointer();
-                for (var index = 0; index < (uint)Attachments.Length; index++) fieldPointer[index] = Attachments[index]?.handle ?? default(Interop.ImageView);
+                for (var index = 0; index < (uint)Attachments.Length; index++) fieldPointer[index] = Attachments[index]?.Handle ?? default(Interop.ImageView);
                 pointer->Attachments = fieldPointer;
             }
             else

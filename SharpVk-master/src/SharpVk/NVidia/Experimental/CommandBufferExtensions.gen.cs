@@ -44,11 +44,11 @@ namespace SharpVk.NVidia.Experimental
             {
                 var commandCache = default(CommandCache);
                 var marshalledProcessCommandsInfo = default(Interop.NVidia.Experimental.CommandProcessCommandsInfo*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledProcessCommandsInfo = (Interop.NVidia.Experimental.CommandProcessCommandsInfo*)HeapUtil.Allocate<Interop.NVidia.Experimental.CommandProcessCommandsInfo>();
                 processCommandsInfo.MarshalTo(marshalledProcessCommandsInfo);
-                var commandDelegate = commandCache.Cache.vkCmdProcessCommandsNVX;
-                commandDelegate(extendedHandle.handle, marshalledProcessCommandsInfo);
+                var commandDelegate = commandCache.Cache.VkCmdProcessCommandsNvx;
+                commandDelegate(extendedHandle.Handle, marshalledProcessCommandsInfo);
             }
             finally
             {
@@ -70,11 +70,11 @@ namespace SharpVk.NVidia.Experimental
             {
                 var commandCache = default(CommandCache);
                 var marshalledReserveSpaceInfo = default(Interop.NVidia.Experimental.CommandReserveSpaceForCommandsInfo*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledReserveSpaceInfo = (Interop.NVidia.Experimental.CommandReserveSpaceForCommandsInfo*)HeapUtil.Allocate<Interop.NVidia.Experimental.CommandReserveSpaceForCommandsInfo>();
                 reserveSpaceInfo.MarshalTo(marshalledReserveSpaceInfo);
-                var commandDelegate = commandCache.Cache.vkCmdReserveSpaceForCommandsNVX;
-                commandDelegate(extendedHandle.handle, marshalledReserveSpaceInfo);
+                var commandDelegate = commandCache.Cache.VkCmdReserveSpaceForCommandsNvx;
+                commandDelegate(extendedHandle.Handle, marshalledReserveSpaceInfo);
             }
             finally
             {

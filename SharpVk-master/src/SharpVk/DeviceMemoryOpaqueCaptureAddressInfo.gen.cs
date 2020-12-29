@@ -47,7 +47,7 @@ namespace SharpVk
         {
             pointer->SType = StructureType.DeviceMemoryOpaqueCaptureAddressInfoVersion;
             pointer->Next = null;
-            pointer->Memory = Memory?.handle ?? default(Interop.DeviceMemory);
+            pointer->Memory = Memory?.Handle ?? default(Interop.DeviceMemory);
         }
     }
 }

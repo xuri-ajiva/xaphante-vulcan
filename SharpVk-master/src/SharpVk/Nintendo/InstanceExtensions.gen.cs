@@ -56,13 +56,13 @@ namespace SharpVk.Nintendo
                 var result = default(Surface);
                 var commandCache = default(CommandCache);
                 var marshalledCreateInfo = default(Interop.Nintendo.ViSurfaceCreateInfo*);
-                var vkViSurfaceCreateInfoNNNextPointer = default(void*);
+                var vkViSurfaceCreateInfoNnNextPointer = default(void*);
                 var marshalledAllocator = default(Interop.AllocationCallbacks*);
                 var marshalledSurface = default(Interop.Khronos.Surface);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledCreateInfo = (Interop.Nintendo.ViSurfaceCreateInfo*)HeapUtil.Allocate<Interop.Nintendo.ViSurfaceCreateInfo>();
                 marshalledCreateInfo->SType = StructureType.ViSurfaceCreateInfo;
-                marshalledCreateInfo->Next = vkViSurfaceCreateInfoNNNextPointer;
+                marshalledCreateInfo->Next = vkViSurfaceCreateInfoNnNextPointer;
                 if (flags != null)
                     marshalledCreateInfo->Flags = flags.Value;
                 else
@@ -77,8 +77,8 @@ namespace SharpVk.Nintendo
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkCreateViSurfaceNN;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledCreateInfo, marshalledAllocator, &marshalledSurface);
+                var commandDelegate = commandCache.Cache.VkCreateViSurfaceNn;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledCreateInfo, marshalledAllocator, &marshalledSurface);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = new(extendedHandle, marshalledSurface);
                 return result;

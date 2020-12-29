@@ -51,7 +51,7 @@ namespace SharpVk.Khronos
             {
                 var commandCache = default(CommandCache);
                 var marshalledDescriptorWrites = default(Interop.WriteDescriptorSet*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 if (descriptorWrites.IsNull())
                 {
                     marshalledDescriptorWrites = null;
@@ -70,8 +70,8 @@ namespace SharpVk.Khronos
                         marshalledDescriptorWrites = fieldPointer;
                     }
                 }
-                var commandDelegate = commandCache.Cache.vkCmdPushDescriptorSetKHR;
-                commandDelegate(extendedHandle.handle, pipelineBindPoint, layout?.handle ?? default(Interop.PipelineLayout), set, HeapUtil.GetLength(descriptorWrites), marshalledDescriptorWrites);
+                var commandDelegate = commandCache.Cache.VkCmdPushDescriptorSetKhr;
+                commandDelegate(extendedHandle.Handle, pipelineBindPoint, layout?.Handle ?? default(Interop.PipelineLayout), set, HeapUtil.GetLength(descriptorWrites), marshalledDescriptorWrites);
             }
             finally
             {
@@ -99,9 +99,9 @@ namespace SharpVk.Khronos
             try
             {
                 var commandCache = default(CommandCache);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkCmdPushDescriptorSetWithTemplateKHR;
-                commandDelegate(extendedHandle.handle, descriptorUpdateTemplate?.handle ?? default(Interop.DescriptorUpdateTemplate), layout?.handle ?? default(Interop.PipelineLayout), set, data.ToPointer());
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkCmdPushDescriptorSetWithTemplateKhr;
+                commandDelegate(extendedHandle.Handle, descriptorUpdateTemplate?.Handle ?? default(Interop.DescriptorUpdateTemplate), layout?.Handle ?? default(Interop.PipelineLayout), set, data.ToPointer());
             }
             finally
             {

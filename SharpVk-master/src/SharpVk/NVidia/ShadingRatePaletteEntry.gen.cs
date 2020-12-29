@@ -54,26 +54,26 @@ namespace SharpVk.NVidia
 
         /// <summary>
         /// </summary>
-        ShadingRatePaletteEntry1InvocationPer2x1Pixels = 6,
+        ShadingRatePaletteEntry1InvocationPer2X1Pixels = 6,
 
         /// <summary>
         /// </summary>
-        ShadingRatePaletteEntry1InvocationPer1x2Pixels = 7,
+        ShadingRatePaletteEntry1InvocationPer1X2Pixels = 7,
 
         /// <summary>
         /// </summary>
-        ShadingRatePaletteEntry1InvocationPer2x2Pixels = 8,
+        ShadingRatePaletteEntry1InvocationPer2X2Pixels = 8,
 
         /// <summary>
         /// </summary>
-        ShadingRatePaletteEntry1InvocationPer4x2Pixels = 9,
+        ShadingRatePaletteEntry1InvocationPer4X2Pixels = 9,
 
         /// <summary>
         /// </summary>
-        ShadingRatePaletteEntry1InvocationPer2x4Pixels = 10,
+        ShadingRatePaletteEntry1InvocationPer2X4Pixels = 10,
 
         /// <summary>
         /// </summary>
-        ShadingRatePaletteEntry1InvocationPer4x4Pixels = 11
+        ShadingRatePaletteEntry1InvocationPer4X4Pixels = 11
     }
 }

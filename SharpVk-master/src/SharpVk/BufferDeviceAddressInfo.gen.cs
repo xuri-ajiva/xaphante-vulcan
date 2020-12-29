@@ -49,7 +49,7 @@ namespace SharpVk
         {
             pointer->SType = StructureType.BufferDeviceAddressInfoVersion;
             pointer->Next = null;
-            pointer->Buffer = Buffer?.handle ?? default(Interop.Buffer);
+            pointer->Buffer = Buffer?.Handle ?? default(Interop.Buffer);
         }
     }
 }

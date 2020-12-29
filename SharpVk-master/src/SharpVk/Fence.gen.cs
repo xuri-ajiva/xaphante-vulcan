@@ -33,22 +33,22 @@ namespace SharpVk
     public partial class Fence
         : IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.Fence handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.Fence Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal Fence(Device parent, Interop.Fence handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.Fence RawHandle => handle;
+        public Interop.Fence RawHandle => Handle;
 
         /// <summary>
         ///     Destroys the handles and releases any unmanaged resources
@@ -80,8 +80,8 @@ namespace SharpVk
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroyFence;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroyFence;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {
@@ -97,8 +97,8 @@ namespace SharpVk
             try
             {
                 var result = default(Result);
-                var commandDelegate = commandCache.Cache.vkGetFenceStatus;
-                result = commandDelegate(parent.handle, handle);
+                var commandDelegate = CommandCache.Cache.VkGetFenceStatus;
+                result = commandDelegate(Parent.Handle, Handle);
                 if (SharpVkException.IsError(result)) throw SharpVkException.Create(result);
                 return result;
             }

@@ -35,7 +35,7 @@ namespace SharpVk
     {
         /// <summary>
         /// </summary>
-        public Guid DeviceUUID
+        public Guid DeviceUuid
         {
             get;
             set;
@@ -43,7 +43,7 @@ namespace SharpVk
 
         /// <summary>
         /// </summary>
-        public Guid DriverUUID
+        public Guid DriverUuid
         {
             get;
             set;
@@ -51,7 +51,7 @@ namespace SharpVk
 
         /// <summary>
         /// </summary>
-        public Guid DeviceLUID
+        public Guid DeviceLuid
         {
             get;
             set;
@@ -67,7 +67,7 @@ namespace SharpVk
 
         /// <summary>
         /// </summary>
-        public bool DeviceLUIDValid
+        public bool DeviceLuidValid
         {
             get;
             set;
@@ -161,11 +161,11 @@ namespace SharpVk
         {
             pointer->SType = StructureType.PhysicalDeviceVulkan11Properties;
             pointer->Next = null;
-            HeapUtil.MarshalTo(DeviceUUID, Constants.UuidSize, pointer->DeviceUUID);
-            HeapUtil.MarshalTo(DriverUUID, Constants.UuidSize, pointer->DriverUUID);
-            HeapUtil.MarshalTo(DeviceLUID, Constants.LuidSize, pointer->DeviceLUID);
+            HeapUtil.MarshalTo(DeviceUuid, Constants.UuidSize, pointer->DeviceUUID);
+            HeapUtil.MarshalTo(DriverUuid, Constants.UuidSize, pointer->DriverUUID);
+            HeapUtil.MarshalTo(DeviceLuid, Constants.LuidSize, pointer->DeviceLUID);
             pointer->DeviceNodeMask = DeviceNodeMask;
-            pointer->DeviceLUIDValid = DeviceLUIDValid;
+            pointer->DeviceLUIDValid = DeviceLuidValid;
             pointer->SubgroupSize = SubgroupSize;
             pointer->SubgroupSupportedStages = SubgroupSupportedStages;
             pointer->SubgroupSupportedOperations = SubgroupSupportedOperations;
@@ -185,11 +185,11 @@ namespace SharpVk
         internal static unsafe PhysicalDeviceVulkan11Properties MarshalFrom(Interop.PhysicalDeviceVulkan11Properties* pointer)
         {
             var result = default(PhysicalDeviceVulkan11Properties);
-            result.DeviceUUID = new(HeapUtil.MarshalFrom(pointer->DeviceUUID, Constants.UuidSize));
-            result.DriverUUID = new(HeapUtil.MarshalFrom(pointer->DriverUUID, Constants.UuidSize));
-            result.DeviceLUID = new(HeapUtil.MarshalFrom(pointer->DeviceLUID, Constants.LuidSize));
+            result.DeviceUuid = new(HeapUtil.MarshalFrom(pointer->DeviceUUID, Constants.UuidSize));
+            result.DriverUuid = new(HeapUtil.MarshalFrom(pointer->DriverUUID, Constants.UuidSize));
+            result.DeviceLuid = new(HeapUtil.MarshalFrom(pointer->DeviceLUID, Constants.LuidSize));
             result.DeviceNodeMask = pointer->DeviceNodeMask;
-            result.DeviceLUIDValid = pointer->DeviceLUIDValid;
+            result.DeviceLuidValid = pointer->DeviceLUIDValid;
             result.SubgroupSize = pointer->SubgroupSize;
             result.SubgroupSupportedStages = pointer->SubgroupSupportedStages;
             result.SubgroupSupportedOperations = pointer->SubgroupSupportedOperations;

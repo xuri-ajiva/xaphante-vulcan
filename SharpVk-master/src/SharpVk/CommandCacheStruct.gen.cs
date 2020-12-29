@@ -45,1728 +45,1728 @@ namespace SharpVk
     {
         /// <summary>
         /// </summary>
-        public readonly VkInstanceCreateDelegate vkCreateInstance;
+        public readonly VkInstanceCreateDelegate VkCreateInstance;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceDestroyDelegate vkDestroyInstance;
+        public readonly VkInstanceDestroyDelegate VkDestroyInstance;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceEnumeratePhysicalDevicesDelegate vkEnumeratePhysicalDevices;
+        public readonly VkInstanceEnumeratePhysicalDevicesDelegate VkEnumeratePhysicalDevices;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetFeaturesDelegate vkGetPhysicalDeviceFeatures;
+        public readonly VkPhysicalDeviceGetFeaturesDelegate VkGetPhysicalDeviceFeatures;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetFormatPropertiesDelegate vkGetPhysicalDeviceFormatProperties;
+        public readonly VkPhysicalDeviceGetFormatPropertiesDelegate VkGetPhysicalDeviceFormatProperties;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetImageFormatPropertiesDelegate vkGetPhysicalDeviceImageFormatProperties;
+        public readonly VkPhysicalDeviceGetImageFormatPropertiesDelegate VkGetPhysicalDeviceImageFormatProperties;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetPropertiesDelegate vkGetPhysicalDeviceProperties;
+        public readonly VkPhysicalDeviceGetPropertiesDelegate VkGetPhysicalDeviceProperties;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetQueueFamilyPropertiesDelegate vkGetPhysicalDeviceQueueFamilyProperties;
+        public readonly VkPhysicalDeviceGetQueueFamilyPropertiesDelegate VkGetPhysicalDeviceQueueFamilyProperties;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetMemoryPropertiesDelegate vkGetPhysicalDeviceMemoryProperties;
+        public readonly VkPhysicalDeviceGetMemoryPropertiesDelegate VkGetPhysicalDeviceMemoryProperties;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceGetProcedureAddressDelegate vkGetInstanceProcAddr;
+        public readonly VkInstanceGetProcedureAddressDelegate VkGetInstanceProcAddr;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetProcedureAddressDelegate vkGetDeviceProcAddr;
+        public readonly VkDeviceGetProcedureAddressDelegate VkGetDeviceProcAddr;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceCreateDeviceDelegate vkCreateDevice;
+        public readonly VkPhysicalDeviceCreateDeviceDelegate VkCreateDevice;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceDestroyDelegate vkDestroyDevice;
+        public readonly VkDeviceDestroyDelegate VkDestroyDevice;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceEnumerateExtensionPropertiesDelegate vkEnumerateInstanceExtensionProperties;
+        public readonly VkInstanceEnumerateExtensionPropertiesDelegate VkEnumerateInstanceExtensionProperties;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceEnumerateDeviceExtensionPropertiesDelegate vkEnumerateDeviceExtensionProperties;
+        public readonly VkPhysicalDeviceEnumerateDeviceExtensionPropertiesDelegate VkEnumerateDeviceExtensionProperties;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceEnumerateLayerPropertiesDelegate vkEnumerateInstanceLayerProperties;
+        public readonly VkInstanceEnumerateLayerPropertiesDelegate VkEnumerateInstanceLayerProperties;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceEnumerateDeviceLayerPropertiesDelegate vkEnumerateDeviceLayerProperties;
+        public readonly VkPhysicalDeviceEnumerateDeviceLayerPropertiesDelegate VkEnumerateDeviceLayerProperties;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetQueueDelegate vkGetDeviceQueue;
+        public readonly VkDeviceGetQueueDelegate VkGetDeviceQueue;
 
         /// <summary>
         /// </summary>
-        public readonly VkQueueSubmitDelegate vkQueueSubmit;
+        public readonly VkQueueSubmitDelegate VkQueueSubmit;
 
         /// <summary>
         /// </summary>
-        public readonly VkQueueWaitIdleDelegate vkQueueWaitIdle;
+        public readonly VkQueueWaitIdleDelegate VkQueueWaitIdle;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceWaitIdleDelegate vkDeviceWaitIdle;
+        public readonly VkDeviceWaitIdleDelegate VkDeviceWaitIdle;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceAllocateMemoryDelegate vkAllocateMemory;
+        public readonly VkDeviceAllocateMemoryDelegate VkAllocateMemory;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceMemoryFreeDelegate vkFreeMemory;
+        public readonly VkDeviceMemoryFreeDelegate VkFreeMemory;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceMemoryMapDelegate vkMapMemory;
+        public readonly VkDeviceMemoryMapDelegate VkMapMemory;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceMemoryUnmapDelegate vkUnmapMemory;
+        public readonly VkDeviceMemoryUnmapDelegate VkUnmapMemory;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceFlushMappedMemoryRangesDelegate vkFlushMappedMemoryRanges;
+        public readonly VkDeviceFlushMappedMemoryRangesDelegate VkFlushMappedMemoryRanges;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceInvalidateMappedMemoryRangesDelegate vkInvalidateMappedMemoryRanges;
+        public readonly VkDeviceInvalidateMappedMemoryRangesDelegate VkInvalidateMappedMemoryRanges;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceMemoryGetCommitmentDelegate vkGetDeviceMemoryCommitment;
+        public readonly VkDeviceMemoryGetCommitmentDelegate VkGetDeviceMemoryCommitment;
 
         /// <summary>
         /// </summary>
-        public readonly VkBufferBindMemoryDelegate vkBindBufferMemory;
+        public readonly VkBufferBindMemoryDelegate VkBindBufferMemory;
 
         /// <summary>
         /// </summary>
-        public readonly VkImageBindMemoryDelegate vkBindImageMemory;
+        public readonly VkImageBindMemoryDelegate VkBindImageMemory;
 
         /// <summary>
         /// </summary>
-        public readonly VkBufferGetMemoryRequirementsDelegate vkGetBufferMemoryRequirements;
+        public readonly VkBufferGetMemoryRequirementsDelegate VkGetBufferMemoryRequirements;
 
         /// <summary>
         /// </summary>
-        public readonly VkImageGetMemoryRequirementsDelegate vkGetImageMemoryRequirements;
+        public readonly VkImageGetMemoryRequirementsDelegate VkGetImageMemoryRequirements;
 
         /// <summary>
         /// </summary>
-        public readonly VkImageGetSparseMemoryRequirementsDelegate vkGetImageSparseMemoryRequirements;
+        public readonly VkImageGetSparseMemoryRequirementsDelegate VkGetImageSparseMemoryRequirements;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetSparseImageFormatPropertiesDelegate vkGetPhysicalDeviceSparseImageFormatProperties;
+        public readonly VkPhysicalDeviceGetSparseImageFormatPropertiesDelegate VkGetPhysicalDeviceSparseImageFormatProperties;
 
         /// <summary>
         /// </summary>
-        public readonly VkQueueBindSparseDelegate vkQueueBindSparse;
+        public readonly VkQueueBindSparseDelegate VkQueueBindSparse;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateFenceDelegate vkCreateFence;
+        public readonly VkDeviceCreateFenceDelegate VkCreateFence;
 
         /// <summary>
         /// </summary>
-        public readonly VkFenceDestroyDelegate vkDestroyFence;
+        public readonly VkFenceDestroyDelegate VkDestroyFence;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceResetFencesDelegate vkResetFences;
+        public readonly VkDeviceResetFencesDelegate VkResetFences;
 
         /// <summary>
         /// </summary>
-        public readonly VkFenceGetStatusDelegate vkGetFenceStatus;
+        public readonly VkFenceGetStatusDelegate VkGetFenceStatus;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceWaitForFencesDelegate vkWaitForFences;
+        public readonly VkDeviceWaitForFencesDelegate VkWaitForFences;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateSemaphoreDelegate vkCreateSemaphore;
+        public readonly VkDeviceCreateSemaphoreDelegate VkCreateSemaphore;
 
         /// <summary>
         /// </summary>
-        public readonly VkSemaphoreDestroyDelegate vkDestroySemaphore;
+        public readonly VkSemaphoreDestroyDelegate VkDestroySemaphore;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateEventDelegate vkCreateEvent;
+        public readonly VkDeviceCreateEventDelegate VkCreateEvent;
 
         /// <summary>
         /// </summary>
-        public readonly VkEventDestroyDelegate vkDestroyEvent;
+        public readonly VkEventDestroyDelegate VkDestroyEvent;
 
         /// <summary>
         /// </summary>
-        public readonly VkEventGetStatusDelegate vkGetEventStatus;
+        public readonly VkEventGetStatusDelegate VkGetEventStatus;
 
         /// <summary>
         /// </summary>
-        public readonly VkEventSetDelegate vkSetEvent;
+        public readonly VkEventSetDelegate VkSetEvent;
 
         /// <summary>
         /// </summary>
-        public readonly VkEventResetDelegate vkResetEvent;
+        public readonly VkEventResetDelegate VkResetEvent;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateQueryPoolDelegate vkCreateQueryPool;
+        public readonly VkDeviceCreateQueryPoolDelegate VkCreateQueryPool;
 
         /// <summary>
         /// </summary>
-        public readonly VkQueryPoolDestroyDelegate vkDestroyQueryPool;
+        public readonly VkQueryPoolDestroyDelegate VkDestroyQueryPool;
 
         /// <summary>
         /// </summary>
-        public readonly VkQueryPoolGetResultsDelegate vkGetQueryPoolResults;
+        public readonly VkQueryPoolGetResultsDelegate VkGetQueryPoolResults;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateBufferDelegate vkCreateBuffer;
+        public readonly VkDeviceCreateBufferDelegate VkCreateBuffer;
 
         /// <summary>
         /// </summary>
-        public readonly VkBufferDestroyDelegate vkDestroyBuffer;
+        public readonly VkBufferDestroyDelegate VkDestroyBuffer;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateBufferViewDelegate vkCreateBufferView;
+        public readonly VkDeviceCreateBufferViewDelegate VkCreateBufferView;
 
         /// <summary>
         /// </summary>
-        public readonly VkBufferViewDestroyDelegate vkDestroyBufferView;
+        public readonly VkBufferViewDestroyDelegate VkDestroyBufferView;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateImageDelegate vkCreateImage;
+        public readonly VkDeviceCreateImageDelegate VkCreateImage;
 
         /// <summary>
         /// </summary>
-        public readonly VkImageDestroyDelegate vkDestroyImage;
+        public readonly VkImageDestroyDelegate VkDestroyImage;
 
         /// <summary>
         /// </summary>
-        public readonly VkImageGetSubresourceLayoutDelegate vkGetImageSubresourceLayout;
+        public readonly VkImageGetSubresourceLayoutDelegate VkGetImageSubresourceLayout;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateImageViewDelegate vkCreateImageView;
+        public readonly VkDeviceCreateImageViewDelegate VkCreateImageView;
 
         /// <summary>
         /// </summary>
-        public readonly VkImageViewDestroyDelegate vkDestroyImageView;
+        public readonly VkImageViewDestroyDelegate VkDestroyImageView;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateShaderModuleDelegate vkCreateShaderModule;
+        public readonly VkDeviceCreateShaderModuleDelegate VkCreateShaderModule;
 
         /// <summary>
         /// </summary>
-        public readonly VkShaderModuleDestroyDelegate vkDestroyShaderModule;
+        public readonly VkShaderModuleDestroyDelegate VkDestroyShaderModule;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreatePipelineCacheDelegate vkCreatePipelineCache;
+        public readonly VkDeviceCreatePipelineCacheDelegate VkCreatePipelineCache;
 
         /// <summary>
         /// </summary>
-        public readonly VkPipelineCacheDestroyDelegate vkDestroyPipelineCache;
+        public readonly VkPipelineCacheDestroyDelegate VkDestroyPipelineCache;
 
         /// <summary>
         /// </summary>
-        public readonly VkPipelineCacheGetDataDelegate vkGetPipelineCacheData;
+        public readonly VkPipelineCacheGetDataDelegate VkGetPipelineCacheData;
 
         /// <summary>
         /// </summary>
-        public readonly VkPipelineCacheMergePipelineCachesDelegate vkMergePipelineCaches;
+        public readonly VkPipelineCacheMergePipelineCachesDelegate VkMergePipelineCaches;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateGraphicsPipelinesDelegate vkCreateGraphicsPipelines;
+        public readonly VkDeviceCreateGraphicsPipelinesDelegate VkCreateGraphicsPipelines;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateComputePipelinesDelegate vkCreateComputePipelines;
+        public readonly VkDeviceCreateComputePipelinesDelegate VkCreateComputePipelines;
 
         /// <summary>
         /// </summary>
-        public readonly VkPipelineDestroyDelegate vkDestroyPipeline;
+        public readonly VkPipelineDestroyDelegate VkDestroyPipeline;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreatePipelineLayoutDelegate vkCreatePipelineLayout;
+        public readonly VkDeviceCreatePipelineLayoutDelegate VkCreatePipelineLayout;
 
         /// <summary>
         /// </summary>
-        public readonly VkPipelineLayoutDestroyDelegate vkDestroyPipelineLayout;
+        public readonly VkPipelineLayoutDestroyDelegate VkDestroyPipelineLayout;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateSamplerDelegate vkCreateSampler;
+        public readonly VkDeviceCreateSamplerDelegate VkCreateSampler;
 
         /// <summary>
         /// </summary>
-        public readonly VkSamplerDestroyDelegate vkDestroySampler;
+        public readonly VkSamplerDestroyDelegate VkDestroySampler;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateDescriptorSetLayoutDelegate vkCreateDescriptorSetLayout;
+        public readonly VkDeviceCreateDescriptorSetLayoutDelegate VkCreateDescriptorSetLayout;
 
         /// <summary>
         /// </summary>
-        public readonly VkDescriptorSetLayoutDestroyDelegate vkDestroyDescriptorSetLayout;
+        public readonly VkDescriptorSetLayoutDestroyDelegate VkDestroyDescriptorSetLayout;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateDescriptorPoolDelegate vkCreateDescriptorPool;
+        public readonly VkDeviceCreateDescriptorPoolDelegate VkCreateDescriptorPool;
 
         /// <summary>
         /// </summary>
-        public readonly VkDescriptorPoolDestroyDelegate vkDestroyDescriptorPool;
+        public readonly VkDescriptorPoolDestroyDelegate VkDestroyDescriptorPool;
 
         /// <summary>
         /// </summary>
-        public readonly VkDescriptorPoolResetDelegate vkResetDescriptorPool;
+        public readonly VkDescriptorPoolResetDelegate VkResetDescriptorPool;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceAllocateDescriptorSetsDelegate vkAllocateDescriptorSets;
+        public readonly VkDeviceAllocateDescriptorSetsDelegate VkAllocateDescriptorSets;
 
         /// <summary>
         /// </summary>
-        public readonly VkDescriptorPoolFreeDescriptorSetsDelegate vkFreeDescriptorSets;
+        public readonly VkDescriptorPoolFreeDescriptorSetsDelegate VkFreeDescriptorSets;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceUpdateDescriptorSetsDelegate vkUpdateDescriptorSets;
+        public readonly VkDeviceUpdateDescriptorSetsDelegate VkUpdateDescriptorSets;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateFramebufferDelegate vkCreateFramebuffer;
+        public readonly VkDeviceCreateFramebufferDelegate VkCreateFramebuffer;
 
         /// <summary>
         /// </summary>
-        public readonly VkFramebufferDestroyDelegate vkDestroyFramebuffer;
+        public readonly VkFramebufferDestroyDelegate VkDestroyFramebuffer;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateRenderPassDelegate vkCreateRenderPass;
+        public readonly VkDeviceCreateRenderPassDelegate VkCreateRenderPass;
 
         /// <summary>
         /// </summary>
-        public readonly VkRenderPassDestroyDelegate vkDestroyRenderPass;
+        public readonly VkRenderPassDestroyDelegate VkDestroyRenderPass;
 
         /// <summary>
         /// </summary>
-        public readonly VkRenderPassGetRenderAreaGranularityDelegate vkGetRenderAreaGranularity;
+        public readonly VkRenderPassGetRenderAreaGranularityDelegate VkGetRenderAreaGranularity;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateCommandPoolDelegate vkCreateCommandPool;
+        public readonly VkDeviceCreateCommandPoolDelegate VkCreateCommandPool;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandPoolDestroyDelegate vkDestroyCommandPool;
+        public readonly VkCommandPoolDestroyDelegate VkDestroyCommandPool;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandPoolResetDelegate vkResetCommandPool;
+        public readonly VkCommandPoolResetDelegate VkResetCommandPool;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceAllocateCommandBuffersDelegate vkAllocateCommandBuffers;
+        public readonly VkDeviceAllocateCommandBuffersDelegate VkAllocateCommandBuffers;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandPoolFreeCommandBuffersDelegate vkFreeCommandBuffers;
+        public readonly VkCommandPoolFreeCommandBuffersDelegate VkFreeCommandBuffers;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferBeginDelegate vkBeginCommandBuffer;
+        public readonly VkCommandBufferBeginDelegate VkBeginCommandBuffer;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferEndDelegate vkEndCommandBuffer;
+        public readonly VkCommandBufferEndDelegate VkEndCommandBuffer;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferResetDelegate vkResetCommandBuffer;
+        public readonly VkCommandBufferResetDelegate VkResetCommandBuffer;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferBindPipelineDelegate vkCmdBindPipeline;
+        public readonly VkCommandBufferBindPipelineDelegate VkCmdBindPipeline;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferSetViewportDelegate vkCmdSetViewport;
+        public readonly VkCommandBufferSetViewportDelegate VkCmdSetViewport;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferSetScissorDelegate vkCmdSetScissor;
+        public readonly VkCommandBufferSetScissorDelegate VkCmdSetScissor;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferSetLineWidthDelegate vkCmdSetLineWidth;
+        public readonly VkCommandBufferSetLineWidthDelegate VkCmdSetLineWidth;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferSetDepthBiasDelegate vkCmdSetDepthBias;
+        public readonly VkCommandBufferSetDepthBiasDelegate VkCmdSetDepthBias;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferSetBlendConstantsDelegate vkCmdSetBlendConstants;
+        public readonly VkCommandBufferSetBlendConstantsDelegate VkCmdSetBlendConstants;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferSetDepthBoundsDelegate vkCmdSetDepthBounds;
+        public readonly VkCommandBufferSetDepthBoundsDelegate VkCmdSetDepthBounds;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferSetStencilCompareMaskDelegate vkCmdSetStencilCompareMask;
+        public readonly VkCommandBufferSetStencilCompareMaskDelegate VkCmdSetStencilCompareMask;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferSetStencilWriteMaskDelegate vkCmdSetStencilWriteMask;
+        public readonly VkCommandBufferSetStencilWriteMaskDelegate VkCmdSetStencilWriteMask;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferSetStencilReferenceDelegate vkCmdSetStencilReference;
+        public readonly VkCommandBufferSetStencilReferenceDelegate VkCmdSetStencilReference;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferBindDescriptorSetsDelegate vkCmdBindDescriptorSets;
+        public readonly VkCommandBufferBindDescriptorSetsDelegate VkCmdBindDescriptorSets;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferBindIndexBufferDelegate vkCmdBindIndexBuffer;
+        public readonly VkCommandBufferBindIndexBufferDelegate VkCmdBindIndexBuffer;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferBindVertexBuffersDelegate vkCmdBindVertexBuffers;
+        public readonly VkCommandBufferBindVertexBuffersDelegate VkCmdBindVertexBuffers;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferDrawDelegate vkCmdDraw;
+        public readonly VkCommandBufferDrawDelegate VkCmdDraw;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferDrawIndexedDelegate vkCmdDrawIndexed;
+        public readonly VkCommandBufferDrawIndexedDelegate VkCmdDrawIndexed;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferDrawIndirectDelegate vkCmdDrawIndirect;
+        public readonly VkCommandBufferDrawIndirectDelegate VkCmdDrawIndirect;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferDrawIndexedIndirectDelegate vkCmdDrawIndexedIndirect;
+        public readonly VkCommandBufferDrawIndexedIndirectDelegate VkCmdDrawIndexedIndirect;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferDispatchDelegate vkCmdDispatch;
+        public readonly VkCommandBufferDispatchDelegate VkCmdDispatch;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferDispatchIndirectDelegate vkCmdDispatchIndirect;
+        public readonly VkCommandBufferDispatchIndirectDelegate VkCmdDispatchIndirect;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferCopyBufferDelegate vkCmdCopyBuffer;
+        public readonly VkCommandBufferCopyBufferDelegate VkCmdCopyBuffer;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferCopyImageDelegate vkCmdCopyImage;
+        public readonly VkCommandBufferCopyImageDelegate VkCmdCopyImage;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferBlitImageDelegate vkCmdBlitImage;
+        public readonly VkCommandBufferBlitImageDelegate VkCmdBlitImage;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferCopyBufferToImageDelegate vkCmdCopyBufferToImage;
+        public readonly VkCommandBufferCopyBufferToImageDelegate VkCmdCopyBufferToImage;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferCopyImageToBufferDelegate vkCmdCopyImageToBuffer;
+        public readonly VkCommandBufferCopyImageToBufferDelegate VkCmdCopyImageToBuffer;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferUpdateBufferDelegate vkCmdUpdateBuffer;
+        public readonly VkCommandBufferUpdateBufferDelegate VkCmdUpdateBuffer;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferFillBufferDelegate vkCmdFillBuffer;
+        public readonly VkCommandBufferFillBufferDelegate VkCmdFillBuffer;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferClearColorImageDelegate vkCmdClearColorImage;
+        public readonly VkCommandBufferClearColorImageDelegate VkCmdClearColorImage;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferClearDepthStencilImageDelegate vkCmdClearDepthStencilImage;
+        public readonly VkCommandBufferClearDepthStencilImageDelegate VkCmdClearDepthStencilImage;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferClearAttachmentsDelegate vkCmdClearAttachments;
+        public readonly VkCommandBufferClearAttachmentsDelegate VkCmdClearAttachments;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferResolveImageDelegate vkCmdResolveImage;
+        public readonly VkCommandBufferResolveImageDelegate VkCmdResolveImage;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferSetEventDelegate vkCmdSetEvent;
+        public readonly VkCommandBufferSetEventDelegate VkCmdSetEvent;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferResetEventDelegate vkCmdResetEvent;
+        public readonly VkCommandBufferResetEventDelegate VkCmdResetEvent;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferWaitEventsDelegate vkCmdWaitEvents;
+        public readonly VkCommandBufferWaitEventsDelegate VkCmdWaitEvents;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferPipelineBarrierDelegate vkCmdPipelineBarrier;
+        public readonly VkCommandBufferPipelineBarrierDelegate VkCmdPipelineBarrier;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferBeginQueryDelegate vkCmdBeginQuery;
+        public readonly VkCommandBufferBeginQueryDelegate VkCmdBeginQuery;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferEndQueryDelegate vkCmdEndQuery;
+        public readonly VkCommandBufferEndQueryDelegate VkCmdEndQuery;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferResetQueryPoolDelegate vkCmdResetQueryPool;
+        public readonly VkCommandBufferResetQueryPoolDelegate VkCmdResetQueryPool;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferWriteTimestampDelegate vkCmdWriteTimestamp;
+        public readonly VkCommandBufferWriteTimestampDelegate VkCmdWriteTimestamp;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferCopyQueryPoolResultsDelegate vkCmdCopyQueryPoolResults;
+        public readonly VkCommandBufferCopyQueryPoolResultsDelegate VkCmdCopyQueryPoolResults;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferPushConstantsDelegate vkCmdPushConstants;
+        public readonly VkCommandBufferPushConstantsDelegate VkCmdPushConstants;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferBeginRenderPassDelegate vkCmdBeginRenderPass;
+        public readonly VkCommandBufferBeginRenderPassDelegate VkCmdBeginRenderPass;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferNextSubpassDelegate vkCmdNextSubpass;
+        public readonly VkCommandBufferNextSubpassDelegate VkCmdNextSubpass;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferEndRenderPassDelegate vkCmdEndRenderPass;
+        public readonly VkCommandBufferEndRenderPassDelegate VkCmdEndRenderPass;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferExecuteCommandsDelegate vkCmdExecuteCommands;
+        public readonly VkCommandBufferExecuteCommandsDelegate VkCmdExecuteCommands;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceEnumerateVersionDelegate vkEnumerateInstanceVersion;
+        public readonly VkInstanceEnumerateVersionDelegate VkEnumerateInstanceVersion;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceBindBufferMemory2Delegate vkBindBufferMemory2;
+        public readonly VkDeviceBindBufferMemory2Delegate VkBindBufferMemory2;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceBindImageMemory2Delegate vkBindImageMemory2;
+        public readonly VkDeviceBindImageMemory2Delegate VkBindImageMemory2;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetGroupPeerMemoryFeaturesDelegate vkGetDeviceGroupPeerMemoryFeatures;
+        public readonly VkDeviceGetGroupPeerMemoryFeaturesDelegate VkGetDeviceGroupPeerMemoryFeatures;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferSetDeviceMaskDelegate vkCmdSetDeviceMask;
+        public readonly VkCommandBufferSetDeviceMaskDelegate VkCmdSetDeviceMask;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferDispatchBaseDelegate vkCmdDispatchBase;
+        public readonly VkCommandBufferDispatchBaseDelegate VkCmdDispatchBase;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceEnumeratePhysicalDeviceGroupsDelegate vkEnumeratePhysicalDeviceGroups;
+        public readonly VkInstanceEnumeratePhysicalDeviceGroupsDelegate VkEnumeratePhysicalDeviceGroups;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetImageMemoryRequirements2Delegate vkGetImageMemoryRequirements2;
+        public readonly VkDeviceGetImageMemoryRequirements2Delegate VkGetImageMemoryRequirements2;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetBufferMemoryRequirements2Delegate vkGetBufferMemoryRequirements2;
+        public readonly VkDeviceGetBufferMemoryRequirements2Delegate VkGetBufferMemoryRequirements2;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetImageSparseMemoryRequirements2Delegate vkGetImageSparseMemoryRequirements2;
+        public readonly VkDeviceGetImageSparseMemoryRequirements2Delegate VkGetImageSparseMemoryRequirements2;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetFeatures2Delegate vkGetPhysicalDeviceFeatures2;
+        public readonly VkPhysicalDeviceGetFeatures2Delegate VkGetPhysicalDeviceFeatures2;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetProperties2Delegate vkGetPhysicalDeviceProperties2;
+        public readonly VkPhysicalDeviceGetProperties2Delegate VkGetPhysicalDeviceProperties2;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetFormatProperties2Delegate vkGetPhysicalDeviceFormatProperties2;
+        public readonly VkPhysicalDeviceGetFormatProperties2Delegate VkGetPhysicalDeviceFormatProperties2;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetImageFormatProperties2Delegate vkGetPhysicalDeviceImageFormatProperties2;
+        public readonly VkPhysicalDeviceGetImageFormatProperties2Delegate VkGetPhysicalDeviceImageFormatProperties2;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetQueueFamilyProperties2Delegate vkGetPhysicalDeviceQueueFamilyProperties2;
+        public readonly VkPhysicalDeviceGetQueueFamilyProperties2Delegate VkGetPhysicalDeviceQueueFamilyProperties2;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetMemoryProperties2Delegate vkGetPhysicalDeviceMemoryProperties2;
+        public readonly VkPhysicalDeviceGetMemoryProperties2Delegate VkGetPhysicalDeviceMemoryProperties2;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetSparseImageFormatProperties2Delegate vkGetPhysicalDeviceSparseImageFormatProperties2;
+        public readonly VkPhysicalDeviceGetSparseImageFormatProperties2Delegate VkGetPhysicalDeviceSparseImageFormatProperties2;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandPoolTrimDelegate vkTrimCommandPool;
+        public readonly VkCommandPoolTrimDelegate VkTrimCommandPool;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetQueue2Delegate vkGetDeviceQueue2;
+        public readonly VkDeviceGetQueue2Delegate VkGetDeviceQueue2;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateSamplerYcbcrConversionDelegate vkCreateSamplerYcbcrConversion;
+        public readonly VkDeviceCreateSamplerYcbcrConversionDelegate VkCreateSamplerYcbcrConversion;
 
         /// <summary>
         /// </summary>
-        public readonly VkSamplerYcbcrConversionDestroyDelegate vkDestroySamplerYcbcrConversion;
+        public readonly VkSamplerYcbcrConversionDestroyDelegate VkDestroySamplerYcbcrConversion;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateDescriptorUpdateTemplateDelegate vkCreateDescriptorUpdateTemplate;
+        public readonly VkDeviceCreateDescriptorUpdateTemplateDelegate VkCreateDescriptorUpdateTemplate;
 
         /// <summary>
         /// </summary>
-        public readonly VkDescriptorUpdateTemplateDestroyDelegate vkDestroyDescriptorUpdateTemplate;
+        public readonly VkDescriptorUpdateTemplateDestroyDelegate VkDestroyDescriptorUpdateTemplate;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceUpdateDescriptorSetWithTemplateDelegate vkUpdateDescriptorSetWithTemplate;
+        public readonly VkDeviceUpdateDescriptorSetWithTemplateDelegate VkUpdateDescriptorSetWithTemplate;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetExternalBufferPropertiesDelegate vkGetPhysicalDeviceExternalBufferProperties;
+        public readonly VkPhysicalDeviceGetExternalBufferPropertiesDelegate VkGetPhysicalDeviceExternalBufferProperties;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetExternalFencePropertiesDelegate vkGetPhysicalDeviceExternalFenceProperties;
+        public readonly VkPhysicalDeviceGetExternalFencePropertiesDelegate VkGetPhysicalDeviceExternalFenceProperties;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetExternalSemaphorePropertiesDelegate vkGetPhysicalDeviceExternalSemaphoreProperties;
+        public readonly VkPhysicalDeviceGetExternalSemaphorePropertiesDelegate VkGetPhysicalDeviceExternalSemaphoreProperties;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetDescriptorSetLayoutSupportDelegate vkGetDescriptorSetLayoutSupport;
+        public readonly VkDeviceGetDescriptorSetLayoutSupportDelegate VkGetDescriptorSetLayoutSupport;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferDrawIndirectCountDelegate vkCmdDrawIndirectCount;
+        public readonly VkCommandBufferDrawIndirectCountDelegate VkCmdDrawIndirectCount;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferDrawIndexedIndirectCountDelegate vkCmdDrawIndexedIndirectCount;
+        public readonly VkCommandBufferDrawIndexedIndirectCountDelegate VkCmdDrawIndexedIndirectCount;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateRenderPass2Delegate vkCreateRenderPass2;
+        public readonly VkDeviceCreateRenderPass2Delegate VkCreateRenderPass2;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferBeginRenderPass2Delegate vkCmdBeginRenderPass2;
+        public readonly VkCommandBufferBeginRenderPass2Delegate VkCmdBeginRenderPass2;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferNextSubpass2Delegate vkCmdNextSubpass2;
+        public readonly VkCommandBufferNextSubpass2Delegate VkCmdNextSubpass2;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferEndRenderPass2Delegate vkCmdEndRenderPass2;
+        public readonly VkCommandBufferEndRenderPass2Delegate VkCmdEndRenderPass2;
 
         /// <summary>
         /// </summary>
-        public readonly VkQueryPoolResetDelegate vkResetQueryPool;
+        public readonly VkQueryPoolResetDelegate VkResetQueryPool;
 
         /// <summary>
         /// </summary>
-        public readonly VkSemaphoreGetCounterValueDelegate vkGetSemaphoreCounterValue;
+        public readonly VkSemaphoreGetCounterValueDelegate VkGetSemaphoreCounterValue;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceWaitSemaphoresDelegate vkWaitSemaphores;
+        public readonly VkDeviceWaitSemaphoresDelegate VkWaitSemaphores;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceSignalSemaphoreDelegate vkSignalSemaphore;
+        public readonly VkDeviceSignalSemaphoreDelegate VkSignalSemaphore;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetBufferDeviceAddressDelegate vkGetBufferDeviceAddress;
+        public readonly VkDeviceGetBufferDeviceAddressDelegate VkGetBufferDeviceAddress;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetBufferOpaqueCaptureAddressDelegate vkGetBufferOpaqueCaptureAddress;
+        public readonly VkDeviceGetBufferOpaqueCaptureAddressDelegate VkGetBufferOpaqueCaptureAddress;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetMemoryOpaqueCaptureAddressDelegate vkGetDeviceMemoryOpaqueCaptureAddress;
+        public readonly VkDeviceGetMemoryOpaqueCaptureAddressDelegate VkGetDeviceMemoryOpaqueCaptureAddress;
 
         /// <summary>
         /// </summary>
-        public readonly VkSurfaceKHRDestroyDelegate vkDestroySurfaceKHR;
+        public readonly VkSurfaceKhrDestroyDelegate VkDestroySurfaceKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetSurfaceSupportDelegate vkGetPhysicalDeviceSurfaceSupportKHR;
+        public readonly VkPhysicalDeviceGetSurfaceSupportDelegate VkGetPhysicalDeviceSurfaceSupportKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetSurfaceCapabilitiesDelegate vkGetPhysicalDeviceSurfaceCapabilitiesKHR;
+        public readonly VkPhysicalDeviceGetSurfaceCapabilitiesDelegate VkGetPhysicalDeviceSurfaceCapabilitiesKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetSurfaceFormatsDelegate vkGetPhysicalDeviceSurfaceFormatsKHR;
+        public readonly VkPhysicalDeviceGetSurfaceFormatsDelegate VkGetPhysicalDeviceSurfaceFormatsKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetSurfacePresentModesDelegate vkGetPhysicalDeviceSurfacePresentModesKHR;
+        public readonly VkPhysicalDeviceGetSurfacePresentModesDelegate VkGetPhysicalDeviceSurfacePresentModesKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateSwapchainDelegate vkCreateSwapchainKHR;
+        public readonly VkDeviceCreateSwapchainDelegate VkCreateSwapchainKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkSwapchainKHRDestroyDelegate vkDestroySwapchainKHR;
+        public readonly VkSwapchainKhrDestroyDelegate VkDestroySwapchainKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkSwapchainKHRGetImagesDelegate vkGetSwapchainImagesKHR;
+        public readonly VkSwapchainKhrGetImagesDelegate VkGetSwapchainImagesKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkSwapchainKHRAcquireNextImageDelegate vkAcquireNextImageKHR;
+        public readonly VkSwapchainKhrAcquireNextImageDelegate VkAcquireNextImageKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkQueuePresentDelegate vkQueuePresentKHR;
+        public readonly VkQueuePresentDelegate VkQueuePresentKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetGroupPresentCapabilitiesDelegate vkGetDeviceGroupPresentCapabilitiesKHR;
+        public readonly VkDeviceGetGroupPresentCapabilitiesDelegate VkGetDeviceGroupPresentCapabilitiesKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetGroupSurfacePresentModesDelegate vkGetDeviceGroupSurfacePresentModesKHR;
+        public readonly VkDeviceGetGroupSurfacePresentModesDelegate VkGetDeviceGroupSurfacePresentModesKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetPresentRectanglesDelegate vkGetPhysicalDevicePresentRectanglesKHR;
+        public readonly VkPhysicalDeviceGetPresentRectanglesDelegate VkGetPhysicalDevicePresentRectanglesKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceAcquireNextImage2Delegate vkAcquireNextImage2KHR;
+        public readonly VkDeviceAcquireNextImage2Delegate VkAcquireNextImage2Khr;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetDisplayPropertiesDelegate vkGetPhysicalDeviceDisplayPropertiesKHR;
+        public readonly VkPhysicalDeviceGetDisplayPropertiesDelegate VkGetPhysicalDeviceDisplayPropertiesKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetDisplayPlanePropertiesDelegate vkGetPhysicalDeviceDisplayPlanePropertiesKHR;
+        public readonly VkPhysicalDeviceGetDisplayPlanePropertiesDelegate VkGetPhysicalDeviceDisplayPlanePropertiesKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetDisplayPlaneSupportedDisplaysDelegate vkGetDisplayPlaneSupportedDisplaysKHR;
+        public readonly VkPhysicalDeviceGetDisplayPlaneSupportedDisplaysDelegate VkGetDisplayPlaneSupportedDisplaysKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetDisplayModePropertiesDelegate vkGetDisplayModePropertiesKHR;
+        public readonly VkPhysicalDeviceGetDisplayModePropertiesDelegate VkGetDisplayModePropertiesKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceCreateDisplayModeDelegate vkCreateDisplayModeKHR;
+        public readonly VkPhysicalDeviceCreateDisplayModeDelegate VkCreateDisplayModeKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkDisplayModeKHRGetDisplayPlaneCapabilitiesDelegate vkGetDisplayPlaneCapabilitiesKHR;
+        public readonly VkDisplayModeKhrGetDisplayPlaneCapabilitiesDelegate VkGetDisplayPlaneCapabilitiesKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceCreateDisplayPlaneSurfaceDelegate vkCreateDisplayPlaneSurfaceKHR;
+        public readonly VkInstanceCreateDisplayPlaneSurfaceDelegate VkCreateDisplayPlaneSurfaceKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateSharedSwapchainsDelegate vkCreateSharedSwapchainsKHR;
+        public readonly VkDeviceCreateSharedSwapchainsDelegate VkCreateSharedSwapchainsKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceCreateXlibSurfaceDelegate vkCreateXlibSurfaceKHR;
+        public readonly VkInstanceCreateXlibSurfaceDelegate VkCreateXlibSurfaceKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetXlibPresentationSupportDelegate vkGetPhysicalDeviceXlibPresentationSupportKHR;
+        public readonly VkPhysicalDeviceGetXlibPresentationSupportDelegate VkGetPhysicalDeviceXlibPresentationSupportKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceCreateXcbSurfaceDelegate vkCreateXcbSurfaceKHR;
+        public readonly VkInstanceCreateXcbSurfaceDelegate VkCreateXcbSurfaceKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetXcbPresentationSupportDelegate vkGetPhysicalDeviceXcbPresentationSupportKHR;
+        public readonly VkPhysicalDeviceGetXcbPresentationSupportDelegate VkGetPhysicalDeviceXcbPresentationSupportKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceCreateWaylandSurfaceDelegate vkCreateWaylandSurfaceKHR;
+        public readonly VkInstanceCreateWaylandSurfaceDelegate VkCreateWaylandSurfaceKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetWaylandPresentationSupportDelegate vkGetPhysicalDeviceWaylandPresentationSupportKHR;
+        public readonly VkPhysicalDeviceGetWaylandPresentationSupportDelegate VkGetPhysicalDeviceWaylandPresentationSupportKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceCreateAndroidSurfaceDelegate vkCreateAndroidSurfaceKHR;
+        public readonly VkInstanceCreateAndroidSurfaceDelegate VkCreateAndroidSurfaceKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceCreateWin32SurfaceDelegate vkCreateWin32SurfaceKHR;
+        public readonly VkInstanceCreateWin32SurfaceDelegate VkCreateWin32SurfaceKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetWin32PresentationSupportDelegate vkGetPhysicalDeviceWin32PresentationSupportKHR;
+        public readonly VkPhysicalDeviceGetWin32PresentationSupportDelegate VkGetPhysicalDeviceWin32PresentationSupportKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceCreateDebugReportCallbackDelegate vkCreateDebugReportCallbackEXT;
+        public readonly VkInstanceCreateDebugReportCallbackDelegate VkCreateDebugReportCallbackExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkDebugReportCallbackEXTDestroyDelegate vkDestroyDebugReportCallbackEXT;
+        public readonly VkDebugReportCallbackExtDestroyDelegate VkDestroyDebugReportCallbackExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceDebugReportMessageDelegate vkDebugReportMessageEXT;
+        public readonly VkInstanceDebugReportMessageDelegate VkDebugReportMessageExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferBindTransformFeedbackBuffersDelegate vkCmdBindTransformFeedbackBuffersEXT;
+        public readonly VkCommandBufferBindTransformFeedbackBuffersDelegate VkCmdBindTransformFeedbackBuffersExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferBeginTransformFeedbackDelegate vkCmdBeginTransformFeedbackEXT;
+        public readonly VkCommandBufferBeginTransformFeedbackDelegate VkCmdBeginTransformFeedbackExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferEndTransformFeedbackDelegate vkCmdEndTransformFeedbackEXT;
+        public readonly VkCommandBufferEndTransformFeedbackDelegate VkCmdEndTransformFeedbackExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferBeginQueryIndexedDelegate vkCmdBeginQueryIndexedEXT;
+        public readonly VkCommandBufferBeginQueryIndexedDelegate VkCmdBeginQueryIndexedExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferEndQueryIndexedDelegate vkCmdEndQueryIndexedEXT;
+        public readonly VkCommandBufferEndQueryIndexedDelegate VkCmdEndQueryIndexedExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferDrawIndirectByteCountDelegate vkCmdDrawIndirectByteCountEXT;
+        public readonly VkCommandBufferDrawIndirectByteCountDelegate VkCmdDrawIndirectByteCountExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetImageViewHandleDelegate vkGetImageViewHandleNVX;
+        public readonly VkDeviceGetImageViewHandleDelegate VkGetImageViewHandleNvx;
 
         /// <summary>
         /// </summary>
-        public readonly VkPipelineGetShaderInfoDelegate vkGetShaderInfoAMD;
+        public readonly VkPipelineGetShaderInfoDelegate VkGetShaderInfoAmd;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceCreateStreamDescriptorSurfaceDelegate vkCreateStreamDescriptorSurfaceGGP;
+        public readonly VkInstanceCreateStreamDescriptorSurfaceDelegate VkCreateStreamDescriptorSurfaceGgp;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetExternalImageFormatPropertiesDelegate vkGetPhysicalDeviceExternalImageFormatPropertiesNV;
+        public readonly VkPhysicalDeviceGetExternalImageFormatPropertiesDelegate VkGetPhysicalDeviceExternalImageFormatPropertiesNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceMemoryGetWin32HandleDelegate vkGetMemoryWin32HandleNV;
+        public readonly VkDeviceMemoryGetWin32HandleDelegate VkGetMemoryWin32HandleNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceCreateViSurfaceDelegate vkCreateViSurfaceNN;
+        public readonly VkInstanceCreateViSurfaceDelegate VkCreateViSurfaceNn;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetMemoryWin32HandleDelegate vkGetMemoryWin32HandleKHR;
+        public readonly VkDeviceGetMemoryWin32HandleDelegate VkGetMemoryWin32HandleKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetMemoryWin32HandlePropertiesDelegate vkGetMemoryWin32HandlePropertiesKHR;
+        public readonly VkDeviceGetMemoryWin32HandlePropertiesDelegate VkGetMemoryWin32HandlePropertiesKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetMemoryFileDescriptorDelegate vkGetMemoryFdKHR;
+        public readonly VkDeviceGetMemoryFileDescriptorDelegate VkGetMemoryFdKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetMemoryFileDescriptorPropertiesDelegate vkGetMemoryFdPropertiesKHR;
+        public readonly VkDeviceGetMemoryFileDescriptorPropertiesDelegate VkGetMemoryFdPropertiesKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceImportSemaphoreWin32HandleDelegate vkImportSemaphoreWin32HandleKHR;
+        public readonly VkDeviceImportSemaphoreWin32HandleDelegate VkImportSemaphoreWin32HandleKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetSemaphoreWin32HandleDelegate vkGetSemaphoreWin32HandleKHR;
+        public readonly VkDeviceGetSemaphoreWin32HandleDelegate VkGetSemaphoreWin32HandleKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceImportSemaphoreFileDescriptorDelegate vkImportSemaphoreFdKHR;
+        public readonly VkDeviceImportSemaphoreFileDescriptorDelegate VkImportSemaphoreFdKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetSemaphoreFileDescriptorDelegate vkGetSemaphoreFdKHR;
+        public readonly VkDeviceGetSemaphoreFileDescriptorDelegate VkGetSemaphoreFdKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferPushDescriptorSetDelegate vkCmdPushDescriptorSetKHR;
+        public readonly VkCommandBufferPushDescriptorSetDelegate VkCmdPushDescriptorSetKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferPushDescriptorSetWithTemplateDelegate vkCmdPushDescriptorSetWithTemplateKHR;
+        public readonly VkCommandBufferPushDescriptorSetWithTemplateDelegate VkCmdPushDescriptorSetWithTemplateKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferBeginConditionalRenderingDelegate vkCmdBeginConditionalRenderingEXT;
+        public readonly VkCommandBufferBeginConditionalRenderingDelegate VkCmdBeginConditionalRenderingExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferEndConditionalRenderingDelegate vkCmdEndConditionalRenderingEXT;
+        public readonly VkCommandBufferEndConditionalRenderingDelegate VkCmdEndConditionalRenderingExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferProcessCommandsDelegate vkCmdProcessCommandsNVX;
+        public readonly VkCommandBufferProcessCommandsDelegate VkCmdProcessCommandsNvx;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferReserveSpaceForCommandsDelegate vkCmdReserveSpaceForCommandsNVX;
+        public readonly VkCommandBufferReserveSpaceForCommandsDelegate VkCmdReserveSpaceForCommandsNvx;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateIndirectCommandsLayoutDelegate vkCreateIndirectCommandsLayoutNVX;
+        public readonly VkDeviceCreateIndirectCommandsLayoutDelegate VkCreateIndirectCommandsLayoutNvx;
 
         /// <summary>
         /// </summary>
-        public readonly VkIndirectCommandsLayoutNVXDestroyDelegate vkDestroyIndirectCommandsLayoutNVX;
+        public readonly VkIndirectCommandsLayoutNvxDestroyDelegate VkDestroyIndirectCommandsLayoutNvx;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateObjectTableDelegate vkCreateObjectTableNVX;
+        public readonly VkDeviceCreateObjectTableDelegate VkCreateObjectTableNvx;
 
         /// <summary>
         /// </summary>
-        public readonly VkObjectTableNVXDestroyDelegate vkDestroyObjectTableNVX;
+        public readonly VkObjectTableNvxDestroyDelegate VkDestroyObjectTableNvx;
 
         /// <summary>
         /// </summary>
-        public readonly VkObjectTableNVXRegisterObjectsDelegate vkRegisterObjectsNVX;
+        public readonly VkObjectTableNvxRegisterObjectsDelegate VkRegisterObjectsNvx;
 
         /// <summary>
         /// </summary>
-        public readonly VkObjectTableNVXUnregisterObjectsDelegate vkUnregisterObjectsNVX;
+        public readonly VkObjectTableNvxUnregisterObjectsDelegate VkUnregisterObjectsNvx;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetGeneratedCommandsPropertiesDelegate vkGetPhysicalDeviceGeneratedCommandsPropertiesNVX;
+        public readonly VkPhysicalDeviceGetGeneratedCommandsPropertiesDelegate VkGetPhysicalDeviceGeneratedCommandsPropertiesNvx;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferSetViewportWScalingDelegate vkCmdSetViewportWScalingNV;
+        public readonly VkCommandBufferSetViewportWScalingDelegate VkCmdSetViewportWScalingNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceReleaseDisplayDelegate vkReleaseDisplayEXT;
+        public readonly VkPhysicalDeviceReleaseDisplayDelegate VkReleaseDisplayExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceAcquireXlibDisplayDelegate vkAcquireXlibDisplayEXT;
+        public readonly VkPhysicalDeviceAcquireXlibDisplayDelegate VkAcquireXlibDisplayExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetRandROutputDisplayDelegate vkGetRandROutputDisplayEXT;
+        public readonly VkPhysicalDeviceGetRandROutputDisplayDelegate VkGetRandROutputDisplayExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetSurfaceCapabilities2Delegate vkGetPhysicalDeviceSurfaceCapabilities2EXT;
+        public readonly VkPhysicalDeviceGetSurfaceCapabilities2Delegate VkGetPhysicalDeviceSurfaceCapabilities2Ext;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceDisplayPowerControlDelegate vkDisplayPowerControlEXT;
+        public readonly VkDeviceDisplayPowerControlDelegate VkDisplayPowerControlExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceRegisterEventDelegate vkRegisterDeviceEventEXT;
+        public readonly VkDeviceRegisterEventDelegate VkRegisterDeviceEventExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceRegisterDisplayEventDelegate vkRegisterDisplayEventEXT;
+        public readonly VkDeviceRegisterDisplayEventDelegate VkRegisterDisplayEventExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkSwapchainKHRGetCounterDelegate vkGetSwapchainCounterEXT;
+        public readonly VkSwapchainKhrGetCounterDelegate VkGetSwapchainCounterExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkSwapchainKHRGetRefreshCycleDurationDelegate vkGetRefreshCycleDurationGOOGLE;
+        public readonly VkSwapchainKhrGetRefreshCycleDurationDelegate VkGetRefreshCycleDurationGoogle;
 
         /// <summary>
         /// </summary>
-        public readonly VkSwapchainKHRGetPastPresentationTimingDelegate vkGetPastPresentationTimingGOOGLE;
+        public readonly VkSwapchainKhrGetPastPresentationTimingDelegate VkGetPastPresentationTimingGoogle;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferSetDiscardRectangleDelegate vkCmdSetDiscardRectangleEXT;
+        public readonly VkCommandBufferSetDiscardRectangleDelegate VkCmdSetDiscardRectangleExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceSetHdrMetadataDelegate vkSetHdrMetadataEXT;
+        public readonly VkDeviceSetHdrMetadataDelegate VkSetHdrMetadataExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkSwapchainKHRGetStatusDelegate vkGetSwapchainStatusKHR;
+        public readonly VkSwapchainKhrGetStatusDelegate VkGetSwapchainStatusKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceImportFenceWin32HandleDelegate vkImportFenceWin32HandleKHR;
+        public readonly VkDeviceImportFenceWin32HandleDelegate VkImportFenceWin32HandleKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetFenceWin32HandleDelegate vkGetFenceWin32HandleKHR;
+        public readonly VkDeviceGetFenceWin32HandleDelegate VkGetFenceWin32HandleKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceImportFenceFileDescriptorDelegate vkImportFenceFdKHR;
+        public readonly VkDeviceImportFenceFileDescriptorDelegate VkImportFenceFdKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetFenceFileDescriptorDelegate vkGetFenceFdKHR;
+        public readonly VkDeviceGetFenceFileDescriptorDelegate VkGetFenceFdKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceEnumerateQueueFamilyPerformanceQueryCountersDelegate vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR;
+        public readonly VkPhysicalDeviceEnumerateQueueFamilyPerformanceQueryCountersDelegate VkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetQueueFamilyPerformanceQueryPassesDelegate vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR;
+        public readonly VkPhysicalDeviceGetQueueFamilyPerformanceQueryPassesDelegate VkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceAcquireProfilingLockDelegate vkAcquireProfilingLockKHR;
+        public readonly VkDeviceAcquireProfilingLockDelegate VkAcquireProfilingLockKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceReleaseProfilingLockDelegate vkReleaseProfilingLockKHR;
+        public readonly VkDeviceReleaseProfilingLockDelegate VkReleaseProfilingLockKhr;
 
         /// <summary>
         /// </summary>
-        public readonly Interop.Khronos.VkPhysicalDeviceGetSurfaceCapabilities2Delegate vkGetPhysicalDeviceSurfaceCapabilities2KHR;
+        public readonly Interop.Khronos.VkPhysicalDeviceGetSurfaceCapabilities2Delegate VkGetPhysicalDeviceSurfaceCapabilities2Khr;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetSurfaceFormats2Delegate vkGetPhysicalDeviceSurfaceFormats2KHR;
+        public readonly VkPhysicalDeviceGetSurfaceFormats2Delegate VkGetPhysicalDeviceSurfaceFormats2Khr;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetDisplayProperties2Delegate vkGetPhysicalDeviceDisplayProperties2KHR;
+        public readonly VkPhysicalDeviceGetDisplayProperties2Delegate VkGetPhysicalDeviceDisplayProperties2Khr;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetDisplayPlaneProperties2Delegate vkGetPhysicalDeviceDisplayPlaneProperties2KHR;
+        public readonly VkPhysicalDeviceGetDisplayPlaneProperties2Delegate VkGetPhysicalDeviceDisplayPlaneProperties2Khr;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetDisplayModeProperties2Delegate vkGetDisplayModeProperties2KHR;
+        public readonly VkPhysicalDeviceGetDisplayModeProperties2Delegate VkGetDisplayModeProperties2Khr;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetDisplayPlaneCapabilities2Delegate vkGetDisplayPlaneCapabilities2KHR;
+        public readonly VkPhysicalDeviceGetDisplayPlaneCapabilities2Delegate VkGetDisplayPlaneCapabilities2Khr;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceCreateIOSSurfaceDelegate vkCreateIOSSurfaceMVK;
+        public readonly VkInstanceCreateIosSurfaceDelegate VkCreateIosSurfaceMvk;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceCreateMacOSSurfaceDelegate vkCreateMacOSSurfaceMVK;
+        public readonly VkInstanceCreateMacOsSurfaceDelegate VkCreateMacOsSurfaceMvk;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceSetDebugUtilsObjectNameDelegate vkSetDebugUtilsObjectNameEXT;
+        public readonly VkDeviceSetDebugUtilsObjectNameDelegate VkSetDebugUtilsObjectNameExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceSetDebugUtilsObjectTagDelegate vkSetDebugUtilsObjectTagEXT;
+        public readonly VkDeviceSetDebugUtilsObjectTagDelegate VkSetDebugUtilsObjectTagExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkQueueBeginDebugUtilsLabelDelegate vkQueueBeginDebugUtilsLabelEXT;
+        public readonly VkQueueBeginDebugUtilsLabelDelegate VkQueueBeginDebugUtilsLabelExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkQueueEndDebugUtilsLabelDelegate vkQueueEndDebugUtilsLabelEXT;
+        public readonly VkQueueEndDebugUtilsLabelDelegate VkQueueEndDebugUtilsLabelExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkQueueInsertDebugUtilsLabelDelegate vkQueueInsertDebugUtilsLabelEXT;
+        public readonly VkQueueInsertDebugUtilsLabelDelegate VkQueueInsertDebugUtilsLabelExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferBeginDebugUtilsLabelDelegate vkCmdBeginDebugUtilsLabelEXT;
+        public readonly VkCommandBufferBeginDebugUtilsLabelDelegate VkCmdBeginDebugUtilsLabelExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferEndDebugUtilsLabelDelegate vkCmdEndDebugUtilsLabelEXT;
+        public readonly VkCommandBufferEndDebugUtilsLabelDelegate VkCmdEndDebugUtilsLabelExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferInsertDebugUtilsLabelDelegate vkCmdInsertDebugUtilsLabelEXT;
+        public readonly VkCommandBufferInsertDebugUtilsLabelDelegate VkCmdInsertDebugUtilsLabelExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceCreateDebugUtilsMessengerDelegate vkCreateDebugUtilsMessengerEXT;
+        public readonly VkInstanceCreateDebugUtilsMessengerDelegate VkCreateDebugUtilsMessengerExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkDebugUtilsMessengerEXTDestroyDelegate vkDestroyDebugUtilsMessengerEXT;
+        public readonly VkDebugUtilsMessengerExtDestroyDelegate VkDestroyDebugUtilsMessengerExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceSubmitDebugUtilsMessageDelegate vkSubmitDebugUtilsMessageEXT;
+        public readonly VkInstanceSubmitDebugUtilsMessageDelegate VkSubmitDebugUtilsMessageExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetAndroidHardwareBufferPropertiesDelegate vkGetAndroidHardwareBufferPropertiesANDROID;
+        public readonly VkDeviceGetAndroidHardwareBufferPropertiesDelegate VkGetAndroidHardwareBufferPropertiesAndroid;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetMemoryAndroidHardwareBufferDelegate vkGetMemoryAndroidHardwareBufferANDROID;
+        public readonly VkDeviceGetMemoryAndroidHardwareBufferDelegate VkGetMemoryAndroidHardwareBufferAndroid;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferSetSampleLocationsDelegate vkCmdSetSampleLocationsEXT;
+        public readonly VkCommandBufferSetSampleLocationsDelegate VkCmdSetSampleLocationsExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetMultisamplePropertiesDelegate vkGetPhysicalDeviceMultisamplePropertiesEXT;
+        public readonly VkPhysicalDeviceGetMultisamplePropertiesDelegate VkGetPhysicalDeviceMultisamplePropertiesExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkImageGetDrmFormatModifierPropertiesDelegate vkGetImageDrmFormatModifierPropertiesEXT;
+        public readonly VkImageGetDrmFormatModifierPropertiesDelegate VkGetImageDrmFormatModifierPropertiesExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateValidationCacheDelegate vkCreateValidationCacheEXT;
+        public readonly VkDeviceCreateValidationCacheDelegate VkCreateValidationCacheExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkValidationCacheEXTDestroyDelegate vkDestroyValidationCacheEXT;
+        public readonly VkValidationCacheExtDestroyDelegate VkDestroyValidationCacheExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkValidationCacheEXTMergeValidationCachesDelegate vkMergeValidationCachesEXT;
+        public readonly VkValidationCacheExtMergeValidationCachesDelegate VkMergeValidationCachesExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkValidationCacheEXTGetDataDelegate vkGetValidationCacheDataEXT;
+        public readonly VkValidationCacheExtGetDataDelegate VkGetValidationCacheDataExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferBindShadingRateImageDelegate vkCmdBindShadingRateImageNV;
+        public readonly VkCommandBufferBindShadingRateImageDelegate VkCmdBindShadingRateImageNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferSetViewportShadingRatePaletteDelegate vkCmdSetViewportShadingRatePaletteNV;
+        public readonly VkCommandBufferSetViewportShadingRatePaletteDelegate VkCmdSetViewportShadingRatePaletteNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferSetCoarseSampleOrderDelegate vkCmdSetCoarseSampleOrderNV;
+        public readonly VkCommandBufferSetCoarseSampleOrderDelegate VkCmdSetCoarseSampleOrderNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateAccelerationStructureDelegate vkCreateAccelerationStructureNV;
+        public readonly VkDeviceCreateAccelerationStructureDelegate VkCreateAccelerationStructureNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkAccelerationStructureNVDestroyDelegate vkDestroyAccelerationStructureNV;
+        public readonly VkAccelerationStructureNvDestroyDelegate VkDestroyAccelerationStructureNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetAccelerationStructureMemoryRequirementsDelegate vkGetAccelerationStructureMemoryRequirementsNV;
+        public readonly VkDeviceGetAccelerationStructureMemoryRequirementsDelegate VkGetAccelerationStructureMemoryRequirementsNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceBindAccelerationStructureMemoryDelegate vkBindAccelerationStructureMemoryNV;
+        public readonly VkDeviceBindAccelerationStructureMemoryDelegate VkBindAccelerationStructureMemoryNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferBuildAccelerationStructureDelegate vkCmdBuildAccelerationStructureNV;
+        public readonly VkCommandBufferBuildAccelerationStructureDelegate VkCmdBuildAccelerationStructureNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferCopyAccelerationStructureDelegate vkCmdCopyAccelerationStructureNV;
+        public readonly VkCommandBufferCopyAccelerationStructureDelegate VkCmdCopyAccelerationStructureNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferTraceRaysDelegate vkCmdTraceRaysNV;
+        public readonly VkCommandBufferTraceRaysDelegate VkCmdTraceRaysNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceCreateRayTracingPipelinesDelegate vkCreateRayTracingPipelinesNV;
+        public readonly VkDeviceCreateRayTracingPipelinesDelegate VkCreateRayTracingPipelinesNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkPipelineGetRayTracingShaderGroupHandlesDelegate vkGetRayTracingShaderGroupHandlesNV;
+        public readonly VkPipelineGetRayTracingShaderGroupHandlesDelegate VkGetRayTracingShaderGroupHandlesNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkAccelerationStructureNVGetHandleDelegate vkGetAccelerationStructureHandleNV;
+        public readonly VkAccelerationStructureNvGetHandleDelegate VkGetAccelerationStructureHandleNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferWriteAccelerationStructuresPropertiesDelegate vkCmdWriteAccelerationStructuresPropertiesNV;
+        public readonly VkCommandBufferWriteAccelerationStructuresPropertiesDelegate VkCmdWriteAccelerationStructuresPropertiesNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkPipelineCompileDeferredDelegate vkCompileDeferredNV;
+        public readonly VkPipelineCompileDeferredDelegate VkCompileDeferredNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetMemoryHostPointerPropertiesDelegate vkGetMemoryHostPointerPropertiesEXT;
+        public readonly VkDeviceGetMemoryHostPointerPropertiesDelegate VkGetMemoryHostPointerPropertiesExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferWriteBufferMarkerDelegate vkCmdWriteBufferMarkerAMD;
+        public readonly VkCommandBufferWriteBufferMarkerDelegate VkCmdWriteBufferMarkerAmd;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetCalibrateableTimeDomainsDelegate vkGetPhysicalDeviceCalibrateableTimeDomainsEXT;
+        public readonly VkPhysicalDeviceGetCalibrateableTimeDomainsDelegate VkGetPhysicalDeviceCalibrateableTimeDomainsExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetCalibratedTimestampsDelegate vkGetCalibratedTimestampsEXT;
+        public readonly VkDeviceGetCalibratedTimestampsDelegate VkGetCalibratedTimestampsExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferDrawMeshTasksDelegate vkCmdDrawMeshTasksNV;
+        public readonly VkCommandBufferDrawMeshTasksDelegate VkCmdDrawMeshTasksNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferDrawMeshTasksIndirectDelegate vkCmdDrawMeshTasksIndirectNV;
+        public readonly VkCommandBufferDrawMeshTasksIndirectDelegate VkCmdDrawMeshTasksIndirectNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferDrawMeshTasksIndirectCountDelegate vkCmdDrawMeshTasksIndirectCountNV;
+        public readonly VkCommandBufferDrawMeshTasksIndirectCountDelegate VkCmdDrawMeshTasksIndirectCountNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferSetExclusiveScissorDelegate vkCmdSetExclusiveScissorNV;
+        public readonly VkCommandBufferSetExclusiveScissorDelegate VkCmdSetExclusiveScissorNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferSetCheckpointDelegate vkCmdSetCheckpointNV;
+        public readonly VkCommandBufferSetCheckpointDelegate VkCmdSetCheckpointNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkQueueGetCheckpointDataDelegate vkGetQueueCheckpointDataNV;
+        public readonly VkQueueGetCheckpointDataDelegate VkGetQueueCheckpointDataNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceInitializePerformanceApiDelegate vkInitializePerformanceApiINTEL;
+        public readonly VkDeviceInitializePerformanceApiDelegate VkInitializePerformanceApiIntel;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceUninitializePerformanceApiDelegate vkUninitializePerformanceApiINTEL;
+        public readonly VkDeviceUninitializePerformanceApiDelegate VkUninitializePerformanceApiIntel;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferSetPerformanceMarkerDelegate vkCmdSetPerformanceMarkerINTEL;
+        public readonly VkCommandBufferSetPerformanceMarkerDelegate VkCmdSetPerformanceMarkerIntel;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferSetPerformanceStreamMarkerDelegate vkCmdSetPerformanceStreamMarkerINTEL;
+        public readonly VkCommandBufferSetPerformanceStreamMarkerDelegate VkCmdSetPerformanceStreamMarkerIntel;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferSetPerformanceOverrideDelegate vkCmdSetPerformanceOverrideINTEL;
+        public readonly VkCommandBufferSetPerformanceOverrideDelegate VkCmdSetPerformanceOverrideIntel;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceAcquirePerformanceConfigurationDelegate vkAcquirePerformanceConfigurationINTEL;
+        public readonly VkDeviceAcquirePerformanceConfigurationDelegate VkAcquirePerformanceConfigurationIntel;
 
         /// <summary>
         /// </summary>
-        public readonly VkPerformanceConfigurationINTELReleaseDelegate vkReleasePerformanceConfigurationINTEL;
+        public readonly VkPerformanceConfigurationIntelReleaseDelegate VkReleasePerformanceConfigurationIntel;
 
         /// <summary>
         /// </summary>
-        public readonly VkQueueSetPerformanceConfigurationDelegate vkQueueSetPerformanceConfigurationINTEL;
+        public readonly VkQueueSetPerformanceConfigurationDelegate VkQueueSetPerformanceConfigurationIntel;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetPerformanceParameterDelegate vkGetPerformanceParameterINTEL;
+        public readonly VkDeviceGetPerformanceParameterDelegate VkGetPerformanceParameterIntel;
 
         /// <summary>
         /// </summary>
-        public readonly VkSwapchainKHRSetLocalDimmingDelegate vkSetLocalDimmingAMD;
+        public readonly VkSwapchainKhrSetLocalDimmingDelegate VkSetLocalDimmingAmd;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceCreateImagePipeSurfaceDelegate vkCreateImagePipeSurfaceFUCHSIA;
+        public readonly VkInstanceCreateImagePipeSurfaceDelegate VkCreateImagePipeSurfaceFuchsia;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceCreateMetalSurfaceDelegate vkCreateMetalSurfaceEXT;
+        public readonly VkInstanceCreateMetalSurfaceDelegate VkCreateMetalSurfaceExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetToolPropertiesDelegate vkGetPhysicalDeviceToolPropertiesEXT;
+        public readonly VkPhysicalDeviceGetToolPropertiesDelegate VkGetPhysicalDeviceToolPropertiesExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetCooperativeMatrixPropertiesDelegate vkGetPhysicalDeviceCooperativeMatrixPropertiesNV;
+        public readonly VkPhysicalDeviceGetCooperativeMatrixPropertiesDelegate VkGetPhysicalDeviceCooperativeMatrixPropertiesNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetSupportedFramebufferMixedSamplesCombinationsDelegate vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV;
+        public readonly VkPhysicalDeviceGetSupportedFramebufferMixedSamplesCombinationsDelegate VkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNv;
 
         /// <summary>
         /// </summary>
-        public readonly VkPhysicalDeviceGetSurfacePresentModes2Delegate vkGetPhysicalDeviceSurfacePresentModes2EXT;
+        public readonly VkPhysicalDeviceGetSurfacePresentModes2Delegate VkGetPhysicalDeviceSurfacePresentModes2Ext;
 
         /// <summary>
         /// </summary>
-        public readonly VkSwapchainKHRAcquireFullScreenExclusiveModeDelegate vkAcquireFullScreenExclusiveModeEXT;
+        public readonly VkSwapchainKhrAcquireFullScreenExclusiveModeDelegate VkAcquireFullScreenExclusiveModeExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkSwapchainKHRReleaseFullScreenExclusiveModeDelegate vkReleaseFullScreenExclusiveModeEXT;
+        public readonly VkSwapchainKhrReleaseFullScreenExclusiveModeDelegate VkReleaseFullScreenExclusiveModeExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetGroupSurfacePresentModes2Delegate vkGetDeviceGroupSurfacePresentModes2EXT;
+        public readonly VkDeviceGetGroupSurfacePresentModes2Delegate VkGetDeviceGroupSurfacePresentModes2Ext;
 
         /// <summary>
         /// </summary>
-        public readonly VkInstanceCreateHeadlessSurfaceDelegate vkCreateHeadlessSurfaceEXT;
+        public readonly VkInstanceCreateHeadlessSurfaceDelegate VkCreateHeadlessSurfaceExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkCommandBufferSetLineStippleDelegate vkCmdSetLineStippleEXT;
+        public readonly VkCommandBufferSetLineStippleDelegate VkCmdSetLineStippleExt;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetPipelineExecutablePropertiesDelegate vkGetPipelineExecutablePropertiesKHR;
+        public readonly VkDeviceGetPipelineExecutablePropertiesDelegate VkGetPipelineExecutablePropertiesKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetPipelineExecutableStatisticsDelegate vkGetPipelineExecutableStatisticsKHR;
+        public readonly VkDeviceGetPipelineExecutableStatisticsDelegate VkGetPipelineExecutableStatisticsKhr;
 
         /// <summary>
         /// </summary>
-        public readonly VkDeviceGetPipelineExecutableInternalRepresentationsDelegate vkGetPipelineExecutableInternalRepresentationsKHR;
+        public readonly VkDeviceGetPipelineExecutableInternalRepresentationsDelegate VkGetPipelineExecutableInternalRepresentationsKhr;
 
         /// <summary>
         /// </summary>
         public CommandCacheStruct(CommandCache cache)
         {
-            vkCreateInstance = cache.GetCommandDelegate<VkInstanceCreateDelegate>("vkCreateInstance", "");
-            vkDestroyInstance = cache.GetCommandDelegate<VkInstanceDestroyDelegate>("vkDestroyInstance", "");
-            vkEnumeratePhysicalDevices = cache.GetCommandDelegate<VkInstanceEnumeratePhysicalDevicesDelegate>("vkEnumeratePhysicalDevices", "");
-            vkGetPhysicalDeviceFeatures = cache.GetCommandDelegate<VkPhysicalDeviceGetFeaturesDelegate>("vkGetPhysicalDeviceFeatures", "");
-            vkGetPhysicalDeviceFormatProperties = cache.GetCommandDelegate<VkPhysicalDeviceGetFormatPropertiesDelegate>("vkGetPhysicalDeviceFormatProperties", "");
-            vkGetPhysicalDeviceImageFormatProperties = cache.GetCommandDelegate<VkPhysicalDeviceGetImageFormatPropertiesDelegate>("vkGetPhysicalDeviceImageFormatProperties", "");
-            vkGetPhysicalDeviceProperties = cache.GetCommandDelegate<VkPhysicalDeviceGetPropertiesDelegate>("vkGetPhysicalDeviceProperties", "");
-            vkGetPhysicalDeviceQueueFamilyProperties = cache.GetCommandDelegate<VkPhysicalDeviceGetQueueFamilyPropertiesDelegate>("vkGetPhysicalDeviceQueueFamilyProperties", "");
-            vkGetPhysicalDeviceMemoryProperties = cache.GetCommandDelegate<VkPhysicalDeviceGetMemoryPropertiesDelegate>("vkGetPhysicalDeviceMemoryProperties", "");
-            vkGetInstanceProcAddr = cache.GetCommandDelegate<VkInstanceGetProcedureAddressDelegate>("vkGetInstanceProcAddr", "");
-            vkGetDeviceProcAddr = cache.GetCommandDelegate<VkDeviceGetProcedureAddressDelegate>("vkGetDeviceProcAddr", "");
-            vkCreateDevice = cache.GetCommandDelegate<VkPhysicalDeviceCreateDeviceDelegate>("vkCreateDevice", "");
-            vkDestroyDevice = cache.GetCommandDelegate<VkDeviceDestroyDelegate>("vkDestroyDevice", "");
-            vkEnumerateInstanceExtensionProperties = cache.GetCommandDelegate<VkInstanceEnumerateExtensionPropertiesDelegate>("vkEnumerateInstanceExtensionProperties", "");
-            vkEnumerateDeviceExtensionProperties = cache.GetCommandDelegate<VkPhysicalDeviceEnumerateDeviceExtensionPropertiesDelegate>("vkEnumerateDeviceExtensionProperties", "");
-            vkEnumerateInstanceLayerProperties = cache.GetCommandDelegate<VkInstanceEnumerateLayerPropertiesDelegate>("vkEnumerateInstanceLayerProperties", "");
-            vkEnumerateDeviceLayerProperties = cache.GetCommandDelegate<VkPhysicalDeviceEnumerateDeviceLayerPropertiesDelegate>("vkEnumerateDeviceLayerProperties", "");
-            vkGetDeviceQueue = cache.GetCommandDelegate<VkDeviceGetQueueDelegate>("vkGetDeviceQueue", "");
-            vkQueueSubmit = cache.GetCommandDelegate<VkQueueSubmitDelegate>("vkQueueSubmit", "");
-            vkQueueWaitIdle = cache.GetCommandDelegate<VkQueueWaitIdleDelegate>("vkQueueWaitIdle", "");
-            vkDeviceWaitIdle = cache.GetCommandDelegate<VkDeviceWaitIdleDelegate>("vkDeviceWaitIdle", "");
-            vkAllocateMemory = cache.GetCommandDelegate<VkDeviceAllocateMemoryDelegate>("vkAllocateMemory", "");
-            vkFreeMemory = cache.GetCommandDelegate<VkDeviceMemoryFreeDelegate>("vkFreeMemory", "");
-            vkMapMemory = cache.GetCommandDelegate<VkDeviceMemoryMapDelegate>("vkMapMemory", "");
-            vkUnmapMemory = cache.GetCommandDelegate<VkDeviceMemoryUnmapDelegate>("vkUnmapMemory", "");
-            vkFlushMappedMemoryRanges = cache.GetCommandDelegate<VkDeviceFlushMappedMemoryRangesDelegate>("vkFlushMappedMemoryRanges", "");
-            vkInvalidateMappedMemoryRanges = cache.GetCommandDelegate<VkDeviceInvalidateMappedMemoryRangesDelegate>("vkInvalidateMappedMemoryRanges", "");
-            vkGetDeviceMemoryCommitment = cache.GetCommandDelegate<VkDeviceMemoryGetCommitmentDelegate>("vkGetDeviceMemoryCommitment", "");
-            vkBindBufferMemory = cache.GetCommandDelegate<VkBufferBindMemoryDelegate>("vkBindBufferMemory", "");
-            vkBindImageMemory = cache.GetCommandDelegate<VkImageBindMemoryDelegate>("vkBindImageMemory", "");
-            vkGetBufferMemoryRequirements = cache.GetCommandDelegate<VkBufferGetMemoryRequirementsDelegate>("vkGetBufferMemoryRequirements", "");
-            vkGetImageMemoryRequirements = cache.GetCommandDelegate<VkImageGetMemoryRequirementsDelegate>("vkGetImageMemoryRequirements", "");
-            vkGetImageSparseMemoryRequirements = cache.GetCommandDelegate<VkImageGetSparseMemoryRequirementsDelegate>("vkGetImageSparseMemoryRequirements", "");
-            vkGetPhysicalDeviceSparseImageFormatProperties = cache.GetCommandDelegate<VkPhysicalDeviceGetSparseImageFormatPropertiesDelegate>("vkGetPhysicalDeviceSparseImageFormatProperties", "");
-            vkQueueBindSparse = cache.GetCommandDelegate<VkQueueBindSparseDelegate>("vkQueueBindSparse", "");
-            vkCreateFence = cache.GetCommandDelegate<VkDeviceCreateFenceDelegate>("vkCreateFence", "");
-            vkDestroyFence = cache.GetCommandDelegate<VkFenceDestroyDelegate>("vkDestroyFence", "");
-            vkResetFences = cache.GetCommandDelegate<VkDeviceResetFencesDelegate>("vkResetFences", "");
-            vkGetFenceStatus = cache.GetCommandDelegate<VkFenceGetStatusDelegate>("vkGetFenceStatus", "");
-            vkWaitForFences = cache.GetCommandDelegate<VkDeviceWaitForFencesDelegate>("vkWaitForFences", "");
-            vkCreateSemaphore = cache.GetCommandDelegate<VkDeviceCreateSemaphoreDelegate>("vkCreateSemaphore", "");
-            vkDestroySemaphore = cache.GetCommandDelegate<VkSemaphoreDestroyDelegate>("vkDestroySemaphore", "");
-            vkCreateEvent = cache.GetCommandDelegate<VkDeviceCreateEventDelegate>("vkCreateEvent", "");
-            vkDestroyEvent = cache.GetCommandDelegate<VkEventDestroyDelegate>("vkDestroyEvent", "");
-            vkGetEventStatus = cache.GetCommandDelegate<VkEventGetStatusDelegate>("vkGetEventStatus", "");
-            vkSetEvent = cache.GetCommandDelegate<VkEventSetDelegate>("vkSetEvent", "");
-            vkResetEvent = cache.GetCommandDelegate<VkEventResetDelegate>("vkResetEvent", "");
-            vkCreateQueryPool = cache.GetCommandDelegate<VkDeviceCreateQueryPoolDelegate>("vkCreateQueryPool", "");
-            vkDestroyQueryPool = cache.GetCommandDelegate<VkQueryPoolDestroyDelegate>("vkDestroyQueryPool", "");
-            vkGetQueryPoolResults = cache.GetCommandDelegate<VkQueryPoolGetResultsDelegate>("vkGetQueryPoolResults", "");
-            vkCreateBuffer = cache.GetCommandDelegate<VkDeviceCreateBufferDelegate>("vkCreateBuffer", "");
-            vkDestroyBuffer = cache.GetCommandDelegate<VkBufferDestroyDelegate>("vkDestroyBuffer", "");
-            vkCreateBufferView = cache.GetCommandDelegate<VkDeviceCreateBufferViewDelegate>("vkCreateBufferView", "");
-            vkDestroyBufferView = cache.GetCommandDelegate<VkBufferViewDestroyDelegate>("vkDestroyBufferView", "");
-            vkCreateImage = cache.GetCommandDelegate<VkDeviceCreateImageDelegate>("vkCreateImage", "");
-            vkDestroyImage = cache.GetCommandDelegate<VkImageDestroyDelegate>("vkDestroyImage", "");
-            vkGetImageSubresourceLayout = cache.GetCommandDelegate<VkImageGetSubresourceLayoutDelegate>("vkGetImageSubresourceLayout", "");
-            vkCreateImageView = cache.GetCommandDelegate<VkDeviceCreateImageViewDelegate>("vkCreateImageView", "");
-            vkDestroyImageView = cache.GetCommandDelegate<VkImageViewDestroyDelegate>("vkDestroyImageView", "");
-            vkCreateShaderModule = cache.GetCommandDelegate<VkDeviceCreateShaderModuleDelegate>("vkCreateShaderModule", "");
-            vkDestroyShaderModule = cache.GetCommandDelegate<VkShaderModuleDestroyDelegate>("vkDestroyShaderModule", "");
-            vkCreatePipelineCache = cache.GetCommandDelegate<VkDeviceCreatePipelineCacheDelegate>("vkCreatePipelineCache", "");
-            vkDestroyPipelineCache = cache.GetCommandDelegate<VkPipelineCacheDestroyDelegate>("vkDestroyPipelineCache", "");
-            vkGetPipelineCacheData = cache.GetCommandDelegate<VkPipelineCacheGetDataDelegate>("vkGetPipelineCacheData", "");
-            vkMergePipelineCaches = cache.GetCommandDelegate<VkPipelineCacheMergePipelineCachesDelegate>("vkMergePipelineCaches", "");
-            vkCreateGraphicsPipelines = cache.GetCommandDelegate<VkDeviceCreateGraphicsPipelinesDelegate>("vkCreateGraphicsPipelines", "");
-            vkCreateComputePipelines = cache.GetCommandDelegate<VkDeviceCreateComputePipelinesDelegate>("vkCreateComputePipelines", "");
-            vkDestroyPipeline = cache.GetCommandDelegate<VkPipelineDestroyDelegate>("vkDestroyPipeline", "");
-            vkCreatePipelineLayout = cache.GetCommandDelegate<VkDeviceCreatePipelineLayoutDelegate>("vkCreatePipelineLayout", "");
-            vkDestroyPipelineLayout = cache.GetCommandDelegate<VkPipelineLayoutDestroyDelegate>("vkDestroyPipelineLayout", "");
-            vkCreateSampler = cache.GetCommandDelegate<VkDeviceCreateSamplerDelegate>("vkCreateSampler", "");
-            vkDestroySampler = cache.GetCommandDelegate<VkSamplerDestroyDelegate>("vkDestroySampler", "");
-            vkCreateDescriptorSetLayout = cache.GetCommandDelegate<VkDeviceCreateDescriptorSetLayoutDelegate>("vkCreateDescriptorSetLayout", "");
-            vkDestroyDescriptorSetLayout = cache.GetCommandDelegate<VkDescriptorSetLayoutDestroyDelegate>("vkDestroyDescriptorSetLayout", "");
-            vkCreateDescriptorPool = cache.GetCommandDelegate<VkDeviceCreateDescriptorPoolDelegate>("vkCreateDescriptorPool", "");
-            vkDestroyDescriptorPool = cache.GetCommandDelegate<VkDescriptorPoolDestroyDelegate>("vkDestroyDescriptorPool", "");
-            vkResetDescriptorPool = cache.GetCommandDelegate<VkDescriptorPoolResetDelegate>("vkResetDescriptorPool", "");
-            vkAllocateDescriptorSets = cache.GetCommandDelegate<VkDeviceAllocateDescriptorSetsDelegate>("vkAllocateDescriptorSets", "");
-            vkFreeDescriptorSets = cache.GetCommandDelegate<VkDescriptorPoolFreeDescriptorSetsDelegate>("vkFreeDescriptorSets", "");
-            vkUpdateDescriptorSets = cache.GetCommandDelegate<VkDeviceUpdateDescriptorSetsDelegate>("vkUpdateDescriptorSets", "");
-            vkCreateFramebuffer = cache.GetCommandDelegate<VkDeviceCreateFramebufferDelegate>("vkCreateFramebuffer", "");
-            vkDestroyFramebuffer = cache.GetCommandDelegate<VkFramebufferDestroyDelegate>("vkDestroyFramebuffer", "");
-            vkCreateRenderPass = cache.GetCommandDelegate<VkDeviceCreateRenderPassDelegate>("vkCreateRenderPass", "");
-            vkDestroyRenderPass = cache.GetCommandDelegate<VkRenderPassDestroyDelegate>("vkDestroyRenderPass", "");
-            vkGetRenderAreaGranularity = cache.GetCommandDelegate<VkRenderPassGetRenderAreaGranularityDelegate>("vkGetRenderAreaGranularity", "");
-            vkCreateCommandPool = cache.GetCommandDelegate<VkDeviceCreateCommandPoolDelegate>("vkCreateCommandPool", "");
-            vkDestroyCommandPool = cache.GetCommandDelegate<VkCommandPoolDestroyDelegate>("vkDestroyCommandPool", "");
-            vkResetCommandPool = cache.GetCommandDelegate<VkCommandPoolResetDelegate>("vkResetCommandPool", "");
-            vkAllocateCommandBuffers = cache.GetCommandDelegate<VkDeviceAllocateCommandBuffersDelegate>("vkAllocateCommandBuffers", "");
-            vkFreeCommandBuffers = cache.GetCommandDelegate<VkCommandPoolFreeCommandBuffersDelegate>("vkFreeCommandBuffers", "");
-            vkBeginCommandBuffer = cache.GetCommandDelegate<VkCommandBufferBeginDelegate>("vkBeginCommandBuffer", "");
-            vkEndCommandBuffer = cache.GetCommandDelegate<VkCommandBufferEndDelegate>("vkEndCommandBuffer", "");
-            vkResetCommandBuffer = cache.GetCommandDelegate<VkCommandBufferResetDelegate>("vkResetCommandBuffer", "");
-            vkCmdBindPipeline = cache.GetCommandDelegate<VkCommandBufferBindPipelineDelegate>("vkCmdBindPipeline", "");
-            vkCmdSetViewport = cache.GetCommandDelegate<VkCommandBufferSetViewportDelegate>("vkCmdSetViewport", "");
-            vkCmdSetScissor = cache.GetCommandDelegate<VkCommandBufferSetScissorDelegate>("vkCmdSetScissor", "");
-            vkCmdSetLineWidth = cache.GetCommandDelegate<VkCommandBufferSetLineWidthDelegate>("vkCmdSetLineWidth", "");
-            vkCmdSetDepthBias = cache.GetCommandDelegate<VkCommandBufferSetDepthBiasDelegate>("vkCmdSetDepthBias", "");
-            vkCmdSetBlendConstants = cache.GetCommandDelegate<VkCommandBufferSetBlendConstantsDelegate>("vkCmdSetBlendConstants", "");
-            vkCmdSetDepthBounds = cache.GetCommandDelegate<VkCommandBufferSetDepthBoundsDelegate>("vkCmdSetDepthBounds", "");
-            vkCmdSetStencilCompareMask = cache.GetCommandDelegate<VkCommandBufferSetStencilCompareMaskDelegate>("vkCmdSetStencilCompareMask", "");
-            vkCmdSetStencilWriteMask = cache.GetCommandDelegate<VkCommandBufferSetStencilWriteMaskDelegate>("vkCmdSetStencilWriteMask", "");
-            vkCmdSetStencilReference = cache.GetCommandDelegate<VkCommandBufferSetStencilReferenceDelegate>("vkCmdSetStencilReference", "");
-            vkCmdBindDescriptorSets = cache.GetCommandDelegate<VkCommandBufferBindDescriptorSetsDelegate>("vkCmdBindDescriptorSets", "");
-            vkCmdBindIndexBuffer = cache.GetCommandDelegate<VkCommandBufferBindIndexBufferDelegate>("vkCmdBindIndexBuffer", "");
-            vkCmdBindVertexBuffers = cache.GetCommandDelegate<VkCommandBufferBindVertexBuffersDelegate>("vkCmdBindVertexBuffers", "");
-            vkCmdDraw = cache.GetCommandDelegate<VkCommandBufferDrawDelegate>("vkCmdDraw", "");
-            vkCmdDrawIndexed = cache.GetCommandDelegate<VkCommandBufferDrawIndexedDelegate>("vkCmdDrawIndexed", "");
-            vkCmdDrawIndirect = cache.GetCommandDelegate<VkCommandBufferDrawIndirectDelegate>("vkCmdDrawIndirect", "");
-            vkCmdDrawIndexedIndirect = cache.GetCommandDelegate<VkCommandBufferDrawIndexedIndirectDelegate>("vkCmdDrawIndexedIndirect", "");
-            vkCmdDispatch = cache.GetCommandDelegate<VkCommandBufferDispatchDelegate>("vkCmdDispatch", "");
-            vkCmdDispatchIndirect = cache.GetCommandDelegate<VkCommandBufferDispatchIndirectDelegate>("vkCmdDispatchIndirect", "");
-            vkCmdCopyBuffer = cache.GetCommandDelegate<VkCommandBufferCopyBufferDelegate>("vkCmdCopyBuffer", "");
-            vkCmdCopyImage = cache.GetCommandDelegate<VkCommandBufferCopyImageDelegate>("vkCmdCopyImage", "");
-            vkCmdBlitImage = cache.GetCommandDelegate<VkCommandBufferBlitImageDelegate>("vkCmdBlitImage", "");
-            vkCmdCopyBufferToImage = cache.GetCommandDelegate<VkCommandBufferCopyBufferToImageDelegate>("vkCmdCopyBufferToImage", "");
-            vkCmdCopyImageToBuffer = cache.GetCommandDelegate<VkCommandBufferCopyImageToBufferDelegate>("vkCmdCopyImageToBuffer", "");
-            vkCmdUpdateBuffer = cache.GetCommandDelegate<VkCommandBufferUpdateBufferDelegate>("vkCmdUpdateBuffer", "");
-            vkCmdFillBuffer = cache.GetCommandDelegate<VkCommandBufferFillBufferDelegate>("vkCmdFillBuffer", "");
-            vkCmdClearColorImage = cache.GetCommandDelegate<VkCommandBufferClearColorImageDelegate>("vkCmdClearColorImage", "");
-            vkCmdClearDepthStencilImage = cache.GetCommandDelegate<VkCommandBufferClearDepthStencilImageDelegate>("vkCmdClearDepthStencilImage", "");
-            vkCmdClearAttachments = cache.GetCommandDelegate<VkCommandBufferClearAttachmentsDelegate>("vkCmdClearAttachments", "");
-            vkCmdResolveImage = cache.GetCommandDelegate<VkCommandBufferResolveImageDelegate>("vkCmdResolveImage", "");
-            vkCmdSetEvent = cache.GetCommandDelegate<VkCommandBufferSetEventDelegate>("vkCmdSetEvent", "");
-            vkCmdResetEvent = cache.GetCommandDelegate<VkCommandBufferResetEventDelegate>("vkCmdResetEvent", "");
-            vkCmdWaitEvents = cache.GetCommandDelegate<VkCommandBufferWaitEventsDelegate>("vkCmdWaitEvents", "");
-            vkCmdPipelineBarrier = cache.GetCommandDelegate<VkCommandBufferPipelineBarrierDelegate>("vkCmdPipelineBarrier", "");
-            vkCmdBeginQuery = cache.GetCommandDelegate<VkCommandBufferBeginQueryDelegate>("vkCmdBeginQuery", "");
-            vkCmdEndQuery = cache.GetCommandDelegate<VkCommandBufferEndQueryDelegate>("vkCmdEndQuery", "");
-            vkCmdResetQueryPool = cache.GetCommandDelegate<VkCommandBufferResetQueryPoolDelegate>("vkCmdResetQueryPool", "");
-            vkCmdWriteTimestamp = cache.GetCommandDelegate<VkCommandBufferWriteTimestampDelegate>("vkCmdWriteTimestamp", "");
-            vkCmdCopyQueryPoolResults = cache.GetCommandDelegate<VkCommandBufferCopyQueryPoolResultsDelegate>("vkCmdCopyQueryPoolResults", "");
-            vkCmdPushConstants = cache.GetCommandDelegate<VkCommandBufferPushConstantsDelegate>("vkCmdPushConstants", "");
-            vkCmdBeginRenderPass = cache.GetCommandDelegate<VkCommandBufferBeginRenderPassDelegate>("vkCmdBeginRenderPass", "");
-            vkCmdNextSubpass = cache.GetCommandDelegate<VkCommandBufferNextSubpassDelegate>("vkCmdNextSubpass", "");
-            vkCmdEndRenderPass = cache.GetCommandDelegate<VkCommandBufferEndRenderPassDelegate>("vkCmdEndRenderPass", "");
-            vkCmdExecuteCommands = cache.GetCommandDelegate<VkCommandBufferExecuteCommandsDelegate>("vkCmdExecuteCommands", "");
-            vkEnumerateInstanceVersion = cache.GetCommandDelegate<VkInstanceEnumerateVersionDelegate>("vkEnumerateInstanceVersion", "");
-            vkBindBufferMemory2 = cache.GetCommandDelegate<VkDeviceBindBufferMemory2Delegate>("vkBindBufferMemory2", "");
-            vkBindImageMemory2 = cache.GetCommandDelegate<VkDeviceBindImageMemory2Delegate>("vkBindImageMemory2", "");
-            vkGetDeviceGroupPeerMemoryFeatures = cache.GetCommandDelegate<VkDeviceGetGroupPeerMemoryFeaturesDelegate>("vkGetDeviceGroupPeerMemoryFeatures", "");
-            vkCmdSetDeviceMask = cache.GetCommandDelegate<VkCommandBufferSetDeviceMaskDelegate>("vkCmdSetDeviceMask", "");
-            vkCmdDispatchBase = cache.GetCommandDelegate<VkCommandBufferDispatchBaseDelegate>("vkCmdDispatchBase", "");
-            vkEnumeratePhysicalDeviceGroups = cache.GetCommandDelegate<VkInstanceEnumeratePhysicalDeviceGroupsDelegate>("vkEnumeratePhysicalDeviceGroups", "");
-            vkGetImageMemoryRequirements2 = cache.GetCommandDelegate<VkDeviceGetImageMemoryRequirements2Delegate>("vkGetImageMemoryRequirements2", "");
-            vkGetBufferMemoryRequirements2 = cache.GetCommandDelegate<VkDeviceGetBufferMemoryRequirements2Delegate>("vkGetBufferMemoryRequirements2", "");
-            vkGetImageSparseMemoryRequirements2 = cache.GetCommandDelegate<VkDeviceGetImageSparseMemoryRequirements2Delegate>("vkGetImageSparseMemoryRequirements2", "");
-            vkGetPhysicalDeviceFeatures2 = cache.GetCommandDelegate<VkPhysicalDeviceGetFeatures2Delegate>("vkGetPhysicalDeviceFeatures2", "");
-            vkGetPhysicalDeviceProperties2 = cache.GetCommandDelegate<VkPhysicalDeviceGetProperties2Delegate>("vkGetPhysicalDeviceProperties2", "");
-            vkGetPhysicalDeviceFormatProperties2 = cache.GetCommandDelegate<VkPhysicalDeviceGetFormatProperties2Delegate>("vkGetPhysicalDeviceFormatProperties2", "");
-            vkGetPhysicalDeviceImageFormatProperties2 = cache.GetCommandDelegate<VkPhysicalDeviceGetImageFormatProperties2Delegate>("vkGetPhysicalDeviceImageFormatProperties2", "");
-            vkGetPhysicalDeviceQueueFamilyProperties2 = cache.GetCommandDelegate<VkPhysicalDeviceGetQueueFamilyProperties2Delegate>("vkGetPhysicalDeviceQueueFamilyProperties2", "");
-            vkGetPhysicalDeviceMemoryProperties2 = cache.GetCommandDelegate<VkPhysicalDeviceGetMemoryProperties2Delegate>("vkGetPhysicalDeviceMemoryProperties2", "");
-            vkGetPhysicalDeviceSparseImageFormatProperties2 = cache.GetCommandDelegate<VkPhysicalDeviceGetSparseImageFormatProperties2Delegate>("vkGetPhysicalDeviceSparseImageFormatProperties2", "");
-            vkTrimCommandPool = cache.GetCommandDelegate<VkCommandPoolTrimDelegate>("vkTrimCommandPool", "");
-            vkGetDeviceQueue2 = cache.GetCommandDelegate<VkDeviceGetQueue2Delegate>("vkGetDeviceQueue2", "");
-            vkCreateSamplerYcbcrConversion = cache.GetCommandDelegate<VkDeviceCreateSamplerYcbcrConversionDelegate>("vkCreateSamplerYcbcrConversion", "");
-            vkDestroySamplerYcbcrConversion = cache.GetCommandDelegate<VkSamplerYcbcrConversionDestroyDelegate>("vkDestroySamplerYcbcrConversion", "");
-            vkCreateDescriptorUpdateTemplate = cache.GetCommandDelegate<VkDeviceCreateDescriptorUpdateTemplateDelegate>("vkCreateDescriptorUpdateTemplate", "");
-            vkDestroyDescriptorUpdateTemplate = cache.GetCommandDelegate<VkDescriptorUpdateTemplateDestroyDelegate>("vkDestroyDescriptorUpdateTemplate", "");
-            vkUpdateDescriptorSetWithTemplate = cache.GetCommandDelegate<VkDeviceUpdateDescriptorSetWithTemplateDelegate>("vkUpdateDescriptorSetWithTemplate", "");
-            vkGetPhysicalDeviceExternalBufferProperties = cache.GetCommandDelegate<VkPhysicalDeviceGetExternalBufferPropertiesDelegate>("vkGetPhysicalDeviceExternalBufferProperties", "");
-            vkGetPhysicalDeviceExternalFenceProperties = cache.GetCommandDelegate<VkPhysicalDeviceGetExternalFencePropertiesDelegate>("vkGetPhysicalDeviceExternalFenceProperties", "");
-            vkGetPhysicalDeviceExternalSemaphoreProperties = cache.GetCommandDelegate<VkPhysicalDeviceGetExternalSemaphorePropertiesDelegate>("vkGetPhysicalDeviceExternalSemaphoreProperties", "");
-            vkGetDescriptorSetLayoutSupport = cache.GetCommandDelegate<VkDeviceGetDescriptorSetLayoutSupportDelegate>("vkGetDescriptorSetLayoutSupport", "");
-            vkCmdDrawIndirectCount = cache.GetCommandDelegate<VkCommandBufferDrawIndirectCountDelegate>("vkCmdDrawIndirectCount", "");
-            vkCmdDrawIndexedIndirectCount = cache.GetCommandDelegate<VkCommandBufferDrawIndexedIndirectCountDelegate>("vkCmdDrawIndexedIndirectCount", "");
-            vkCreateRenderPass2 = cache.GetCommandDelegate<VkDeviceCreateRenderPass2Delegate>("vkCreateRenderPass2", "");
-            vkCmdBeginRenderPass2 = cache.GetCommandDelegate<VkCommandBufferBeginRenderPass2Delegate>("vkCmdBeginRenderPass2", "");
-            vkCmdNextSubpass2 = cache.GetCommandDelegate<VkCommandBufferNextSubpass2Delegate>("vkCmdNextSubpass2", "");
-            vkCmdEndRenderPass2 = cache.GetCommandDelegate<VkCommandBufferEndRenderPass2Delegate>("vkCmdEndRenderPass2", "");
-            vkResetQueryPool = cache.GetCommandDelegate<VkQueryPoolResetDelegate>("vkResetQueryPool", "");
-            vkGetSemaphoreCounterValue = cache.GetCommandDelegate<VkSemaphoreGetCounterValueDelegate>("vkGetSemaphoreCounterValue", "");
-            vkWaitSemaphores = cache.GetCommandDelegate<VkDeviceWaitSemaphoresDelegate>("vkWaitSemaphores", "");
-            vkSignalSemaphore = cache.GetCommandDelegate<VkDeviceSignalSemaphoreDelegate>("vkSignalSemaphore", "");
-            vkGetBufferDeviceAddress = cache.GetCommandDelegate<VkDeviceGetBufferDeviceAddressDelegate>("vkGetBufferDeviceAddress", "");
-            vkGetBufferOpaqueCaptureAddress = cache.GetCommandDelegate<VkDeviceGetBufferOpaqueCaptureAddressDelegate>("vkGetBufferOpaqueCaptureAddress", "");
-            vkGetDeviceMemoryOpaqueCaptureAddress = cache.GetCommandDelegate<VkDeviceGetMemoryOpaqueCaptureAddressDelegate>("vkGetDeviceMemoryOpaqueCaptureAddress", "");
-            vkDestroySurfaceKHR = cache.GetCommandDelegate<VkSurfaceKHRDestroyDelegate>("vkDestroySurfaceKHR", "instance");
-            vkGetPhysicalDeviceSurfaceSupportKHR = cache.GetCommandDelegate<VkPhysicalDeviceGetSurfaceSupportDelegate>("vkGetPhysicalDeviceSurfaceSupportKHR", "instance");
-            vkGetPhysicalDeviceSurfaceCapabilitiesKHR = cache.GetCommandDelegate<VkPhysicalDeviceGetSurfaceCapabilitiesDelegate>("vkGetPhysicalDeviceSurfaceCapabilitiesKHR", "instance");
-            vkGetPhysicalDeviceSurfaceFormatsKHR = cache.GetCommandDelegate<VkPhysicalDeviceGetSurfaceFormatsDelegate>("vkGetPhysicalDeviceSurfaceFormatsKHR", "instance");
-            vkGetPhysicalDeviceSurfacePresentModesKHR = cache.GetCommandDelegate<VkPhysicalDeviceGetSurfacePresentModesDelegate>("vkGetPhysicalDeviceSurfacePresentModesKHR", "instance");
-            vkCreateSwapchainKHR = cache.GetCommandDelegate<VkDeviceCreateSwapchainDelegate>("vkCreateSwapchainKHR", "device");
-            vkDestroySwapchainKHR = cache.GetCommandDelegate<VkSwapchainKHRDestroyDelegate>("vkDestroySwapchainKHR", "device");
-            vkGetSwapchainImagesKHR = cache.GetCommandDelegate<VkSwapchainKHRGetImagesDelegate>("vkGetSwapchainImagesKHR", "device");
-            vkAcquireNextImageKHR = cache.GetCommandDelegate<VkSwapchainKHRAcquireNextImageDelegate>("vkAcquireNextImageKHR", "device");
-            vkQueuePresentKHR = cache.GetCommandDelegate<VkQueuePresentDelegate>("vkQueuePresentKHR", "device");
-            vkGetDeviceGroupPresentCapabilitiesKHR = cache.GetCommandDelegate<VkDeviceGetGroupPresentCapabilitiesDelegate>("vkGetDeviceGroupPresentCapabilitiesKHR", "device");
-            vkGetDeviceGroupSurfacePresentModesKHR = cache.GetCommandDelegate<VkDeviceGetGroupSurfacePresentModesDelegate>("vkGetDeviceGroupSurfacePresentModesKHR", "device");
-            vkGetPhysicalDevicePresentRectanglesKHR = cache.GetCommandDelegate<VkPhysicalDeviceGetPresentRectanglesDelegate>("vkGetPhysicalDevicePresentRectanglesKHR", "device");
-            vkAcquireNextImage2KHR = cache.GetCommandDelegate<VkDeviceAcquireNextImage2Delegate>("vkAcquireNextImage2KHR", "device");
-            vkGetPhysicalDeviceDisplayPropertiesKHR = cache.GetCommandDelegate<VkPhysicalDeviceGetDisplayPropertiesDelegate>("vkGetPhysicalDeviceDisplayPropertiesKHR", "instance");
-            vkGetPhysicalDeviceDisplayPlanePropertiesKHR = cache.GetCommandDelegate<VkPhysicalDeviceGetDisplayPlanePropertiesDelegate>("vkGetPhysicalDeviceDisplayPlanePropertiesKHR", "instance");
-            vkGetDisplayPlaneSupportedDisplaysKHR = cache.GetCommandDelegate<VkPhysicalDeviceGetDisplayPlaneSupportedDisplaysDelegate>("vkGetDisplayPlaneSupportedDisplaysKHR", "instance");
-            vkGetDisplayModePropertiesKHR = cache.GetCommandDelegate<VkPhysicalDeviceGetDisplayModePropertiesDelegate>("vkGetDisplayModePropertiesKHR", "instance");
-            vkCreateDisplayModeKHR = cache.GetCommandDelegate<VkPhysicalDeviceCreateDisplayModeDelegate>("vkCreateDisplayModeKHR", "instance");
-            vkGetDisplayPlaneCapabilitiesKHR = cache.GetCommandDelegate<VkDisplayModeKHRGetDisplayPlaneCapabilitiesDelegate>("vkGetDisplayPlaneCapabilitiesKHR", "instance");
-            vkCreateDisplayPlaneSurfaceKHR = cache.GetCommandDelegate<VkInstanceCreateDisplayPlaneSurfaceDelegate>("vkCreateDisplayPlaneSurfaceKHR", "instance");
-            vkCreateSharedSwapchainsKHR = cache.GetCommandDelegate<VkDeviceCreateSharedSwapchainsDelegate>("vkCreateSharedSwapchainsKHR", "device");
-            vkCreateXlibSurfaceKHR = cache.GetCommandDelegate<VkInstanceCreateXlibSurfaceDelegate>("vkCreateXlibSurfaceKHR", "instance");
-            vkGetPhysicalDeviceXlibPresentationSupportKHR = cache.GetCommandDelegate<VkPhysicalDeviceGetXlibPresentationSupportDelegate>("vkGetPhysicalDeviceXlibPresentationSupportKHR", "instance");
-            vkCreateXcbSurfaceKHR = cache.GetCommandDelegate<VkInstanceCreateXcbSurfaceDelegate>("vkCreateXcbSurfaceKHR", "instance");
-            vkGetPhysicalDeviceXcbPresentationSupportKHR = cache.GetCommandDelegate<VkPhysicalDeviceGetXcbPresentationSupportDelegate>("vkGetPhysicalDeviceXcbPresentationSupportKHR", "instance");
-            vkCreateWaylandSurfaceKHR = cache.GetCommandDelegate<VkInstanceCreateWaylandSurfaceDelegate>("vkCreateWaylandSurfaceKHR", "instance");
-            vkGetPhysicalDeviceWaylandPresentationSupportKHR = cache.GetCommandDelegate<VkPhysicalDeviceGetWaylandPresentationSupportDelegate>("vkGetPhysicalDeviceWaylandPresentationSupportKHR", "instance");
-            vkCreateAndroidSurfaceKHR = cache.GetCommandDelegate<VkInstanceCreateAndroidSurfaceDelegate>("vkCreateAndroidSurfaceKHR", "instance");
-            vkCreateWin32SurfaceKHR = cache.GetCommandDelegate<VkInstanceCreateWin32SurfaceDelegate>("vkCreateWin32SurfaceKHR", "instance");
-            vkGetPhysicalDeviceWin32PresentationSupportKHR = cache.GetCommandDelegate<VkPhysicalDeviceGetWin32PresentationSupportDelegate>("vkGetPhysicalDeviceWin32PresentationSupportKHR", "instance");
-            vkCreateDebugReportCallbackEXT = cache.GetCommandDelegate<VkInstanceCreateDebugReportCallbackDelegate>("vkCreateDebugReportCallbackEXT", "instance");
-            vkDestroyDebugReportCallbackEXT = cache.GetCommandDelegate<VkDebugReportCallbackEXTDestroyDelegate>("vkDestroyDebugReportCallbackEXT", "instance");
-            vkDebugReportMessageEXT = cache.GetCommandDelegate<VkInstanceDebugReportMessageDelegate>("vkDebugReportMessageEXT", "instance");
-            vkCmdBindTransformFeedbackBuffersEXT = cache.GetCommandDelegate<VkCommandBufferBindTransformFeedbackBuffersDelegate>("vkCmdBindTransformFeedbackBuffersEXT", "device");
-            vkCmdBeginTransformFeedbackEXT = cache.GetCommandDelegate<VkCommandBufferBeginTransformFeedbackDelegate>("vkCmdBeginTransformFeedbackEXT", "device");
-            vkCmdEndTransformFeedbackEXT = cache.GetCommandDelegate<VkCommandBufferEndTransformFeedbackDelegate>("vkCmdEndTransformFeedbackEXT", "device");
-            vkCmdBeginQueryIndexedEXT = cache.GetCommandDelegate<VkCommandBufferBeginQueryIndexedDelegate>("vkCmdBeginQueryIndexedEXT", "device");
-            vkCmdEndQueryIndexedEXT = cache.GetCommandDelegate<VkCommandBufferEndQueryIndexedDelegate>("vkCmdEndQueryIndexedEXT", "device");
-            vkCmdDrawIndirectByteCountEXT = cache.GetCommandDelegate<VkCommandBufferDrawIndirectByteCountDelegate>("vkCmdDrawIndirectByteCountEXT", "device");
-            vkGetImageViewHandleNVX = cache.GetCommandDelegate<VkDeviceGetImageViewHandleDelegate>("vkGetImageViewHandleNVX", "device");
-            vkGetShaderInfoAMD = cache.GetCommandDelegate<VkPipelineGetShaderInfoDelegate>("vkGetShaderInfoAMD", "device");
-            vkCreateStreamDescriptorSurfaceGGP = cache.GetCommandDelegate<VkInstanceCreateStreamDescriptorSurfaceDelegate>("vkCreateStreamDescriptorSurfaceGGP", "instance");
-            vkGetPhysicalDeviceExternalImageFormatPropertiesNV = cache.GetCommandDelegate<VkPhysicalDeviceGetExternalImageFormatPropertiesDelegate>("vkGetPhysicalDeviceExternalImageFormatPropertiesNV", "instance");
-            vkGetMemoryWin32HandleNV = cache.GetCommandDelegate<VkDeviceMemoryGetWin32HandleDelegate>("vkGetMemoryWin32HandleNV", "device");
-            vkCreateViSurfaceNN = cache.GetCommandDelegate<VkInstanceCreateViSurfaceDelegate>("vkCreateViSurfaceNN", "instance");
-            vkGetMemoryWin32HandleKHR = cache.GetCommandDelegate<VkDeviceGetMemoryWin32HandleDelegate>("vkGetMemoryWin32HandleKHR", "device");
-            vkGetMemoryWin32HandlePropertiesKHR = cache.GetCommandDelegate<VkDeviceGetMemoryWin32HandlePropertiesDelegate>("vkGetMemoryWin32HandlePropertiesKHR", "device");
-            vkGetMemoryFdKHR = cache.GetCommandDelegate<VkDeviceGetMemoryFileDescriptorDelegate>("vkGetMemoryFdKHR", "device");
-            vkGetMemoryFdPropertiesKHR = cache.GetCommandDelegate<VkDeviceGetMemoryFileDescriptorPropertiesDelegate>("vkGetMemoryFdPropertiesKHR", "device");
-            vkImportSemaphoreWin32HandleKHR = cache.GetCommandDelegate<VkDeviceImportSemaphoreWin32HandleDelegate>("vkImportSemaphoreWin32HandleKHR", "device");
-            vkGetSemaphoreWin32HandleKHR = cache.GetCommandDelegate<VkDeviceGetSemaphoreWin32HandleDelegate>("vkGetSemaphoreWin32HandleKHR", "device");
-            vkImportSemaphoreFdKHR = cache.GetCommandDelegate<VkDeviceImportSemaphoreFileDescriptorDelegate>("vkImportSemaphoreFdKHR", "device");
-            vkGetSemaphoreFdKHR = cache.GetCommandDelegate<VkDeviceGetSemaphoreFileDescriptorDelegate>("vkGetSemaphoreFdKHR", "device");
-            vkCmdPushDescriptorSetKHR = cache.GetCommandDelegate<VkCommandBufferPushDescriptorSetDelegate>("vkCmdPushDescriptorSetKHR", "device");
-            vkCmdPushDescriptorSetWithTemplateKHR = cache.GetCommandDelegate<VkCommandBufferPushDescriptorSetWithTemplateDelegate>("vkCmdPushDescriptorSetWithTemplateKHR", "device");
-            vkCmdBeginConditionalRenderingEXT = cache.GetCommandDelegate<VkCommandBufferBeginConditionalRenderingDelegate>("vkCmdBeginConditionalRenderingEXT", "device");
-            vkCmdEndConditionalRenderingEXT = cache.GetCommandDelegate<VkCommandBufferEndConditionalRenderingDelegate>("vkCmdEndConditionalRenderingEXT", "device");
-            vkCmdProcessCommandsNVX = cache.GetCommandDelegate<VkCommandBufferProcessCommandsDelegate>("vkCmdProcessCommandsNVX", "device");
-            vkCmdReserveSpaceForCommandsNVX = cache.GetCommandDelegate<VkCommandBufferReserveSpaceForCommandsDelegate>("vkCmdReserveSpaceForCommandsNVX", "device");
-            vkCreateIndirectCommandsLayoutNVX = cache.GetCommandDelegate<VkDeviceCreateIndirectCommandsLayoutDelegate>("vkCreateIndirectCommandsLayoutNVX", "device");
-            vkDestroyIndirectCommandsLayoutNVX = cache.GetCommandDelegate<VkIndirectCommandsLayoutNVXDestroyDelegate>("vkDestroyIndirectCommandsLayoutNVX", "device");
-            vkCreateObjectTableNVX = cache.GetCommandDelegate<VkDeviceCreateObjectTableDelegate>("vkCreateObjectTableNVX", "device");
-            vkDestroyObjectTableNVX = cache.GetCommandDelegate<VkObjectTableNVXDestroyDelegate>("vkDestroyObjectTableNVX", "device");
-            vkRegisterObjectsNVX = cache.GetCommandDelegate<VkObjectTableNVXRegisterObjectsDelegate>("vkRegisterObjectsNVX", "device");
-            vkUnregisterObjectsNVX = cache.GetCommandDelegate<VkObjectTableNVXUnregisterObjectsDelegate>("vkUnregisterObjectsNVX", "device");
-            vkGetPhysicalDeviceGeneratedCommandsPropertiesNVX = cache.GetCommandDelegate<VkPhysicalDeviceGetGeneratedCommandsPropertiesDelegate>("vkGetPhysicalDeviceGeneratedCommandsPropertiesNVX", "device");
-            vkCmdSetViewportWScalingNV = cache.GetCommandDelegate<VkCommandBufferSetViewportWScalingDelegate>("vkCmdSetViewportWScalingNV", "device");
-            vkReleaseDisplayEXT = cache.GetCommandDelegate<VkPhysicalDeviceReleaseDisplayDelegate>("vkReleaseDisplayEXT", "instance");
-            vkAcquireXlibDisplayEXT = cache.GetCommandDelegate<VkPhysicalDeviceAcquireXlibDisplayDelegate>("vkAcquireXlibDisplayEXT", "instance");
-            vkGetRandROutputDisplayEXT = cache.GetCommandDelegate<VkPhysicalDeviceGetRandROutputDisplayDelegate>("vkGetRandROutputDisplayEXT", "instance");
-            vkGetPhysicalDeviceSurfaceCapabilities2EXT = cache.GetCommandDelegate<VkPhysicalDeviceGetSurfaceCapabilities2Delegate>("vkGetPhysicalDeviceSurfaceCapabilities2EXT", "instance");
-            vkDisplayPowerControlEXT = cache.GetCommandDelegate<VkDeviceDisplayPowerControlDelegate>("vkDisplayPowerControlEXT", "device");
-            vkRegisterDeviceEventEXT = cache.GetCommandDelegate<VkDeviceRegisterEventDelegate>("vkRegisterDeviceEventEXT", "device");
-            vkRegisterDisplayEventEXT = cache.GetCommandDelegate<VkDeviceRegisterDisplayEventDelegate>("vkRegisterDisplayEventEXT", "device");
-            vkGetSwapchainCounterEXT = cache.GetCommandDelegate<VkSwapchainKHRGetCounterDelegate>("vkGetSwapchainCounterEXT", "device");
-            vkGetRefreshCycleDurationGOOGLE = cache.GetCommandDelegate<VkSwapchainKHRGetRefreshCycleDurationDelegate>("vkGetRefreshCycleDurationGOOGLE", "device");
-            vkGetPastPresentationTimingGOOGLE = cache.GetCommandDelegate<VkSwapchainKHRGetPastPresentationTimingDelegate>("vkGetPastPresentationTimingGOOGLE", "device");
-            vkCmdSetDiscardRectangleEXT = cache.GetCommandDelegate<VkCommandBufferSetDiscardRectangleDelegate>("vkCmdSetDiscardRectangleEXT", "device");
-            vkSetHdrMetadataEXT = cache.GetCommandDelegate<VkDeviceSetHdrMetadataDelegate>("vkSetHdrMetadataEXT", "device");
-            vkGetSwapchainStatusKHR = cache.GetCommandDelegate<VkSwapchainKHRGetStatusDelegate>("vkGetSwapchainStatusKHR", "device");
-            vkImportFenceWin32HandleKHR = cache.GetCommandDelegate<VkDeviceImportFenceWin32HandleDelegate>("vkImportFenceWin32HandleKHR", "device");
-            vkGetFenceWin32HandleKHR = cache.GetCommandDelegate<VkDeviceGetFenceWin32HandleDelegate>("vkGetFenceWin32HandleKHR", "device");
-            vkImportFenceFdKHR = cache.GetCommandDelegate<VkDeviceImportFenceFileDescriptorDelegate>("vkImportFenceFdKHR", "device");
-            vkGetFenceFdKHR = cache.GetCommandDelegate<VkDeviceGetFenceFileDescriptorDelegate>("vkGetFenceFdKHR", "device");
-            vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR = cache.GetCommandDelegate<VkPhysicalDeviceEnumerateQueueFamilyPerformanceQueryCountersDelegate>("vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR", "device");
-            vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR = cache.GetCommandDelegate<VkPhysicalDeviceGetQueueFamilyPerformanceQueryPassesDelegate>("vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR", "device");
-            vkAcquireProfilingLockKHR = cache.GetCommandDelegate<VkDeviceAcquireProfilingLockDelegate>("vkAcquireProfilingLockKHR", "device");
-            vkReleaseProfilingLockKHR = cache.GetCommandDelegate<VkDeviceReleaseProfilingLockDelegate>("vkReleaseProfilingLockKHR", "device");
-            vkGetPhysicalDeviceSurfaceCapabilities2KHR = cache.GetCommandDelegate<Interop.Khronos.VkPhysicalDeviceGetSurfaceCapabilities2Delegate>("vkGetPhysicalDeviceSurfaceCapabilities2KHR", "instance");
-            vkGetPhysicalDeviceSurfaceFormats2KHR = cache.GetCommandDelegate<VkPhysicalDeviceGetSurfaceFormats2Delegate>("vkGetPhysicalDeviceSurfaceFormats2KHR", "instance");
-            vkGetPhysicalDeviceDisplayProperties2KHR = cache.GetCommandDelegate<VkPhysicalDeviceGetDisplayProperties2Delegate>("vkGetPhysicalDeviceDisplayProperties2KHR", "instance");
-            vkGetPhysicalDeviceDisplayPlaneProperties2KHR = cache.GetCommandDelegate<VkPhysicalDeviceGetDisplayPlaneProperties2Delegate>("vkGetPhysicalDeviceDisplayPlaneProperties2KHR", "instance");
-            vkGetDisplayModeProperties2KHR = cache.GetCommandDelegate<VkPhysicalDeviceGetDisplayModeProperties2Delegate>("vkGetDisplayModeProperties2KHR", "instance");
-            vkGetDisplayPlaneCapabilities2KHR = cache.GetCommandDelegate<VkPhysicalDeviceGetDisplayPlaneCapabilities2Delegate>("vkGetDisplayPlaneCapabilities2KHR", "instance");
-            vkCreateIOSSurfaceMVK = cache.GetCommandDelegate<VkInstanceCreateIOSSurfaceDelegate>("vkCreateIOSSurfaceMVK", "instance");
-            vkCreateMacOSSurfaceMVK = cache.GetCommandDelegate<VkInstanceCreateMacOSSurfaceDelegate>("vkCreateMacOSSurfaceMVK", "instance");
-            vkSetDebugUtilsObjectNameEXT = cache.GetCommandDelegate<VkDeviceSetDebugUtilsObjectNameDelegate>("vkSetDebugUtilsObjectNameEXT", "instance");
-            vkSetDebugUtilsObjectTagEXT = cache.GetCommandDelegate<VkDeviceSetDebugUtilsObjectTagDelegate>("vkSetDebugUtilsObjectTagEXT", "instance");
-            vkQueueBeginDebugUtilsLabelEXT = cache.GetCommandDelegate<VkQueueBeginDebugUtilsLabelDelegate>("vkQueueBeginDebugUtilsLabelEXT", "instance");
-            vkQueueEndDebugUtilsLabelEXT = cache.GetCommandDelegate<VkQueueEndDebugUtilsLabelDelegate>("vkQueueEndDebugUtilsLabelEXT", "instance");
-            vkQueueInsertDebugUtilsLabelEXT = cache.GetCommandDelegate<VkQueueInsertDebugUtilsLabelDelegate>("vkQueueInsertDebugUtilsLabelEXT", "instance");
-            vkCmdBeginDebugUtilsLabelEXT = cache.GetCommandDelegate<VkCommandBufferBeginDebugUtilsLabelDelegate>("vkCmdBeginDebugUtilsLabelEXT", "instance");
-            vkCmdEndDebugUtilsLabelEXT = cache.GetCommandDelegate<VkCommandBufferEndDebugUtilsLabelDelegate>("vkCmdEndDebugUtilsLabelEXT", "instance");
-            vkCmdInsertDebugUtilsLabelEXT = cache.GetCommandDelegate<VkCommandBufferInsertDebugUtilsLabelDelegate>("vkCmdInsertDebugUtilsLabelEXT", "instance");
-            vkCreateDebugUtilsMessengerEXT = cache.GetCommandDelegate<VkInstanceCreateDebugUtilsMessengerDelegate>("vkCreateDebugUtilsMessengerEXT", "instance");
-            vkDestroyDebugUtilsMessengerEXT = cache.GetCommandDelegate<VkDebugUtilsMessengerEXTDestroyDelegate>("vkDestroyDebugUtilsMessengerEXT", "instance");
-            vkSubmitDebugUtilsMessageEXT = cache.GetCommandDelegate<VkInstanceSubmitDebugUtilsMessageDelegate>("vkSubmitDebugUtilsMessageEXT", "instance");
-            vkGetAndroidHardwareBufferPropertiesANDROID = cache.GetCommandDelegate<VkDeviceGetAndroidHardwareBufferPropertiesDelegate>("vkGetAndroidHardwareBufferPropertiesANDROID", "device");
-            vkGetMemoryAndroidHardwareBufferANDROID = cache.GetCommandDelegate<VkDeviceGetMemoryAndroidHardwareBufferDelegate>("vkGetMemoryAndroidHardwareBufferANDROID", "device");
-            vkCmdSetSampleLocationsEXT = cache.GetCommandDelegate<VkCommandBufferSetSampleLocationsDelegate>("vkCmdSetSampleLocationsEXT", "device");
-            vkGetPhysicalDeviceMultisamplePropertiesEXT = cache.GetCommandDelegate<VkPhysicalDeviceGetMultisamplePropertiesDelegate>("vkGetPhysicalDeviceMultisamplePropertiesEXT", "device");
-            vkGetImageDrmFormatModifierPropertiesEXT = cache.GetCommandDelegate<VkImageGetDrmFormatModifierPropertiesDelegate>("vkGetImageDrmFormatModifierPropertiesEXT", "device");
-            vkCreateValidationCacheEXT = cache.GetCommandDelegate<VkDeviceCreateValidationCacheDelegate>("vkCreateValidationCacheEXT", "device");
-            vkDestroyValidationCacheEXT = cache.GetCommandDelegate<VkValidationCacheEXTDestroyDelegate>("vkDestroyValidationCacheEXT", "device");
-            vkMergeValidationCachesEXT = cache.GetCommandDelegate<VkValidationCacheEXTMergeValidationCachesDelegate>("vkMergeValidationCachesEXT", "device");
-            vkGetValidationCacheDataEXT = cache.GetCommandDelegate<VkValidationCacheEXTGetDataDelegate>("vkGetValidationCacheDataEXT", "device");
-            vkCmdBindShadingRateImageNV = cache.GetCommandDelegate<VkCommandBufferBindShadingRateImageDelegate>("vkCmdBindShadingRateImageNV", "device");
-            vkCmdSetViewportShadingRatePaletteNV = cache.GetCommandDelegate<VkCommandBufferSetViewportShadingRatePaletteDelegate>("vkCmdSetViewportShadingRatePaletteNV", "device");
-            vkCmdSetCoarseSampleOrderNV = cache.GetCommandDelegate<VkCommandBufferSetCoarseSampleOrderDelegate>("vkCmdSetCoarseSampleOrderNV", "device");
-            vkCreateAccelerationStructureNV = cache.GetCommandDelegate<VkDeviceCreateAccelerationStructureDelegate>("vkCreateAccelerationStructureNV", "device");
-            vkDestroyAccelerationStructureNV = cache.GetCommandDelegate<VkAccelerationStructureNVDestroyDelegate>("vkDestroyAccelerationStructureNV", "device");
-            vkGetAccelerationStructureMemoryRequirementsNV = cache.GetCommandDelegate<VkDeviceGetAccelerationStructureMemoryRequirementsDelegate>("vkGetAccelerationStructureMemoryRequirementsNV", "device");
-            vkBindAccelerationStructureMemoryNV = cache.GetCommandDelegate<VkDeviceBindAccelerationStructureMemoryDelegate>("vkBindAccelerationStructureMemoryNV", "device");
-            vkCmdBuildAccelerationStructureNV = cache.GetCommandDelegate<VkCommandBufferBuildAccelerationStructureDelegate>("vkCmdBuildAccelerationStructureNV", "device");
-            vkCmdCopyAccelerationStructureNV = cache.GetCommandDelegate<VkCommandBufferCopyAccelerationStructureDelegate>("vkCmdCopyAccelerationStructureNV", "device");
-            vkCmdTraceRaysNV = cache.GetCommandDelegate<VkCommandBufferTraceRaysDelegate>("vkCmdTraceRaysNV", "device");
-            vkCreateRayTracingPipelinesNV = cache.GetCommandDelegate<VkDeviceCreateRayTracingPipelinesDelegate>("vkCreateRayTracingPipelinesNV", "device");
-            vkGetRayTracingShaderGroupHandlesNV = cache.GetCommandDelegate<VkPipelineGetRayTracingShaderGroupHandlesDelegate>("vkGetRayTracingShaderGroupHandlesNV", "device");
-            vkGetAccelerationStructureHandleNV = cache.GetCommandDelegate<VkAccelerationStructureNVGetHandleDelegate>("vkGetAccelerationStructureHandleNV", "device");
-            vkCmdWriteAccelerationStructuresPropertiesNV = cache.GetCommandDelegate<VkCommandBufferWriteAccelerationStructuresPropertiesDelegate>("vkCmdWriteAccelerationStructuresPropertiesNV", "device");
-            vkCompileDeferredNV = cache.GetCommandDelegate<VkPipelineCompileDeferredDelegate>("vkCompileDeferredNV", "device");
-            vkGetMemoryHostPointerPropertiesEXT = cache.GetCommandDelegate<VkDeviceGetMemoryHostPointerPropertiesDelegate>("vkGetMemoryHostPointerPropertiesEXT", "device");
-            vkCmdWriteBufferMarkerAMD = cache.GetCommandDelegate<VkCommandBufferWriteBufferMarkerDelegate>("vkCmdWriteBufferMarkerAMD", "device");
-            vkGetPhysicalDeviceCalibrateableTimeDomainsEXT = cache.GetCommandDelegate<VkPhysicalDeviceGetCalibrateableTimeDomainsDelegate>("vkGetPhysicalDeviceCalibrateableTimeDomainsEXT", "device");
-            vkGetCalibratedTimestampsEXT = cache.GetCommandDelegate<VkDeviceGetCalibratedTimestampsDelegate>("vkGetCalibratedTimestampsEXT", "device");
-            vkCmdDrawMeshTasksNV = cache.GetCommandDelegate<VkCommandBufferDrawMeshTasksDelegate>("vkCmdDrawMeshTasksNV", "device");
-            vkCmdDrawMeshTasksIndirectNV = cache.GetCommandDelegate<VkCommandBufferDrawMeshTasksIndirectDelegate>("vkCmdDrawMeshTasksIndirectNV", "device");
-            vkCmdDrawMeshTasksIndirectCountNV = cache.GetCommandDelegate<VkCommandBufferDrawMeshTasksIndirectCountDelegate>("vkCmdDrawMeshTasksIndirectCountNV", "device");
-            vkCmdSetExclusiveScissorNV = cache.GetCommandDelegate<VkCommandBufferSetExclusiveScissorDelegate>("vkCmdSetExclusiveScissorNV", "device");
-            vkCmdSetCheckpointNV = cache.GetCommandDelegate<VkCommandBufferSetCheckpointDelegate>("vkCmdSetCheckpointNV", "device");
-            vkGetQueueCheckpointDataNV = cache.GetCommandDelegate<VkQueueGetCheckpointDataDelegate>("vkGetQueueCheckpointDataNV", "device");
-            vkInitializePerformanceApiINTEL = cache.GetCommandDelegate<VkDeviceInitializePerformanceApiDelegate>("vkInitializePerformanceApiINTEL", "device");
-            vkUninitializePerformanceApiINTEL = cache.GetCommandDelegate<VkDeviceUninitializePerformanceApiDelegate>("vkUninitializePerformanceApiINTEL", "device");
-            vkCmdSetPerformanceMarkerINTEL = cache.GetCommandDelegate<VkCommandBufferSetPerformanceMarkerDelegate>("vkCmdSetPerformanceMarkerINTEL", "device");
-            vkCmdSetPerformanceStreamMarkerINTEL = cache.GetCommandDelegate<VkCommandBufferSetPerformanceStreamMarkerDelegate>("vkCmdSetPerformanceStreamMarkerINTEL", "device");
-            vkCmdSetPerformanceOverrideINTEL = cache.GetCommandDelegate<VkCommandBufferSetPerformanceOverrideDelegate>("vkCmdSetPerformanceOverrideINTEL", "device");
-            vkAcquirePerformanceConfigurationINTEL = cache.GetCommandDelegate<VkDeviceAcquirePerformanceConfigurationDelegate>("vkAcquirePerformanceConfigurationINTEL", "device");
-            vkReleasePerformanceConfigurationINTEL = cache.GetCommandDelegate<VkPerformanceConfigurationINTELReleaseDelegate>("vkReleasePerformanceConfigurationINTEL", "device");
-            vkQueueSetPerformanceConfigurationINTEL = cache.GetCommandDelegate<VkQueueSetPerformanceConfigurationDelegate>("vkQueueSetPerformanceConfigurationINTEL", "device");
-            vkGetPerformanceParameterINTEL = cache.GetCommandDelegate<VkDeviceGetPerformanceParameterDelegate>("vkGetPerformanceParameterINTEL", "device");
-            vkSetLocalDimmingAMD = cache.GetCommandDelegate<VkSwapchainKHRSetLocalDimmingDelegate>("vkSetLocalDimmingAMD", "device");
-            vkCreateImagePipeSurfaceFUCHSIA = cache.GetCommandDelegate<VkInstanceCreateImagePipeSurfaceDelegate>("vkCreateImagePipeSurfaceFUCHSIA", "instance");
-            vkCreateMetalSurfaceEXT = cache.GetCommandDelegate<VkInstanceCreateMetalSurfaceDelegate>("vkCreateMetalSurfaceEXT", "instance");
-            vkGetPhysicalDeviceToolPropertiesEXT = cache.GetCommandDelegate<VkPhysicalDeviceGetToolPropertiesDelegate>("vkGetPhysicalDeviceToolPropertiesEXT", "device");
-            vkGetPhysicalDeviceCooperativeMatrixPropertiesNV = cache.GetCommandDelegate<VkPhysicalDeviceGetCooperativeMatrixPropertiesDelegate>("vkGetPhysicalDeviceCooperativeMatrixPropertiesNV", "device");
-            vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV = cache.GetCommandDelegate<VkPhysicalDeviceGetSupportedFramebufferMixedSamplesCombinationsDelegate>("vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV", "device");
-            vkGetPhysicalDeviceSurfacePresentModes2EXT = cache.GetCommandDelegate<VkPhysicalDeviceGetSurfacePresentModes2Delegate>("vkGetPhysicalDeviceSurfacePresentModes2EXT", "device");
-            vkAcquireFullScreenExclusiveModeEXT = cache.GetCommandDelegate<VkSwapchainKHRAcquireFullScreenExclusiveModeDelegate>("vkAcquireFullScreenExclusiveModeEXT", "device");
-            vkReleaseFullScreenExclusiveModeEXT = cache.GetCommandDelegate<VkSwapchainKHRReleaseFullScreenExclusiveModeDelegate>("vkReleaseFullScreenExclusiveModeEXT", "device");
-            vkGetDeviceGroupSurfacePresentModes2EXT = cache.GetCommandDelegate<VkDeviceGetGroupSurfacePresentModes2Delegate>("vkGetDeviceGroupSurfacePresentModes2EXT", "device");
-            vkCreateHeadlessSurfaceEXT = cache.GetCommandDelegate<VkInstanceCreateHeadlessSurfaceDelegate>("vkCreateHeadlessSurfaceEXT", "instance");
-            vkCmdSetLineStippleEXT = cache.GetCommandDelegate<VkCommandBufferSetLineStippleDelegate>("vkCmdSetLineStippleEXT", "device");
-            vkGetPipelineExecutablePropertiesKHR = cache.GetCommandDelegate<VkDeviceGetPipelineExecutablePropertiesDelegate>("vkGetPipelineExecutablePropertiesKHR", "device");
-            vkGetPipelineExecutableStatisticsKHR = cache.GetCommandDelegate<VkDeviceGetPipelineExecutableStatisticsDelegate>("vkGetPipelineExecutableStatisticsKHR", "device");
-            vkGetPipelineExecutableInternalRepresentationsKHR = cache.GetCommandDelegate<VkDeviceGetPipelineExecutableInternalRepresentationsDelegate>("vkGetPipelineExecutableInternalRepresentationsKHR", "device");
+            VkCreateInstance = cache.GetCommandDelegate<VkInstanceCreateDelegate>("vkCreateInstance", "");
+            VkDestroyInstance = cache.GetCommandDelegate<VkInstanceDestroyDelegate>("vkDestroyInstance", "");
+            VkEnumeratePhysicalDevices = cache.GetCommandDelegate<VkInstanceEnumeratePhysicalDevicesDelegate>("vkEnumeratePhysicalDevices", "");
+            VkGetPhysicalDeviceFeatures = cache.GetCommandDelegate<VkPhysicalDeviceGetFeaturesDelegate>("vkGetPhysicalDeviceFeatures", "");
+            VkGetPhysicalDeviceFormatProperties = cache.GetCommandDelegate<VkPhysicalDeviceGetFormatPropertiesDelegate>("vkGetPhysicalDeviceFormatProperties", "");
+            VkGetPhysicalDeviceImageFormatProperties = cache.GetCommandDelegate<VkPhysicalDeviceGetImageFormatPropertiesDelegate>("vkGetPhysicalDeviceImageFormatProperties", "");
+            VkGetPhysicalDeviceProperties = cache.GetCommandDelegate<VkPhysicalDeviceGetPropertiesDelegate>("vkGetPhysicalDeviceProperties", "");
+            VkGetPhysicalDeviceQueueFamilyProperties = cache.GetCommandDelegate<VkPhysicalDeviceGetQueueFamilyPropertiesDelegate>("vkGetPhysicalDeviceQueueFamilyProperties", "");
+            VkGetPhysicalDeviceMemoryProperties = cache.GetCommandDelegate<VkPhysicalDeviceGetMemoryPropertiesDelegate>("vkGetPhysicalDeviceMemoryProperties", "");
+            VkGetInstanceProcAddr = cache.GetCommandDelegate<VkInstanceGetProcedureAddressDelegate>("vkGetInstanceProcAddr", "");
+            VkGetDeviceProcAddr = cache.GetCommandDelegate<VkDeviceGetProcedureAddressDelegate>("vkGetDeviceProcAddr", "");
+            VkCreateDevice = cache.GetCommandDelegate<VkPhysicalDeviceCreateDeviceDelegate>("vkCreateDevice", "");
+            VkDestroyDevice = cache.GetCommandDelegate<VkDeviceDestroyDelegate>("vkDestroyDevice", "");
+            VkEnumerateInstanceExtensionProperties = cache.GetCommandDelegate<VkInstanceEnumerateExtensionPropertiesDelegate>("vkEnumerateInstanceExtensionProperties", "");
+            VkEnumerateDeviceExtensionProperties = cache.GetCommandDelegate<VkPhysicalDeviceEnumerateDeviceExtensionPropertiesDelegate>("vkEnumerateDeviceExtensionProperties", "");
+            VkEnumerateInstanceLayerProperties = cache.GetCommandDelegate<VkInstanceEnumerateLayerPropertiesDelegate>("vkEnumerateInstanceLayerProperties", "");
+            VkEnumerateDeviceLayerProperties = cache.GetCommandDelegate<VkPhysicalDeviceEnumerateDeviceLayerPropertiesDelegate>("vkEnumerateDeviceLayerProperties", "");
+            VkGetDeviceQueue = cache.GetCommandDelegate<VkDeviceGetQueueDelegate>("vkGetDeviceQueue", "");
+            VkQueueSubmit = cache.GetCommandDelegate<VkQueueSubmitDelegate>("vkQueueSubmit", "");
+            VkQueueWaitIdle = cache.GetCommandDelegate<VkQueueWaitIdleDelegate>("vkQueueWaitIdle", "");
+            VkDeviceWaitIdle = cache.GetCommandDelegate<VkDeviceWaitIdleDelegate>("vkDeviceWaitIdle", "");
+            VkAllocateMemory = cache.GetCommandDelegate<VkDeviceAllocateMemoryDelegate>("vkAllocateMemory", "");
+            VkFreeMemory = cache.GetCommandDelegate<VkDeviceMemoryFreeDelegate>("vkFreeMemory", "");
+            VkMapMemory = cache.GetCommandDelegate<VkDeviceMemoryMapDelegate>("vkMapMemory", "");
+            VkUnmapMemory = cache.GetCommandDelegate<VkDeviceMemoryUnmapDelegate>("vkUnmapMemory", "");
+            VkFlushMappedMemoryRanges = cache.GetCommandDelegate<VkDeviceFlushMappedMemoryRangesDelegate>("vkFlushMappedMemoryRanges", "");
+            VkInvalidateMappedMemoryRanges = cache.GetCommandDelegate<VkDeviceInvalidateMappedMemoryRangesDelegate>("vkInvalidateMappedMemoryRanges", "");
+            VkGetDeviceMemoryCommitment = cache.GetCommandDelegate<VkDeviceMemoryGetCommitmentDelegate>("vkGetDeviceMemoryCommitment", "");
+            VkBindBufferMemory = cache.GetCommandDelegate<VkBufferBindMemoryDelegate>("vkBindBufferMemory", "");
+            VkBindImageMemory = cache.GetCommandDelegate<VkImageBindMemoryDelegate>("vkBindImageMemory", "");
+            VkGetBufferMemoryRequirements = cache.GetCommandDelegate<VkBufferGetMemoryRequirementsDelegate>("vkGetBufferMemoryRequirements", "");
+            VkGetImageMemoryRequirements = cache.GetCommandDelegate<VkImageGetMemoryRequirementsDelegate>("vkGetImageMemoryRequirements", "");
+            VkGetImageSparseMemoryRequirements = cache.GetCommandDelegate<VkImageGetSparseMemoryRequirementsDelegate>("vkGetImageSparseMemoryRequirements", "");
+            VkGetPhysicalDeviceSparseImageFormatProperties = cache.GetCommandDelegate<VkPhysicalDeviceGetSparseImageFormatPropertiesDelegate>("vkGetPhysicalDeviceSparseImageFormatProperties", "");
+            VkQueueBindSparse = cache.GetCommandDelegate<VkQueueBindSparseDelegate>("vkQueueBindSparse", "");
+            VkCreateFence = cache.GetCommandDelegate<VkDeviceCreateFenceDelegate>("vkCreateFence", "");
+            VkDestroyFence = cache.GetCommandDelegate<VkFenceDestroyDelegate>("vkDestroyFence", "");
+            VkResetFences = cache.GetCommandDelegate<VkDeviceResetFencesDelegate>("vkResetFences", "");
+            VkGetFenceStatus = cache.GetCommandDelegate<VkFenceGetStatusDelegate>("vkGetFenceStatus", "");
+            VkWaitForFences = cache.GetCommandDelegate<VkDeviceWaitForFencesDelegate>("vkWaitForFences", "");
+            VkCreateSemaphore = cache.GetCommandDelegate<VkDeviceCreateSemaphoreDelegate>("vkCreateSemaphore", "");
+            VkDestroySemaphore = cache.GetCommandDelegate<VkSemaphoreDestroyDelegate>("vkDestroySemaphore", "");
+            VkCreateEvent = cache.GetCommandDelegate<VkDeviceCreateEventDelegate>("vkCreateEvent", "");
+            VkDestroyEvent = cache.GetCommandDelegate<VkEventDestroyDelegate>("vkDestroyEvent", "");
+            VkGetEventStatus = cache.GetCommandDelegate<VkEventGetStatusDelegate>("vkGetEventStatus", "");
+            VkSetEvent = cache.GetCommandDelegate<VkEventSetDelegate>("vkSetEvent", "");
+            VkResetEvent = cache.GetCommandDelegate<VkEventResetDelegate>("vkResetEvent", "");
+            VkCreateQueryPool = cache.GetCommandDelegate<VkDeviceCreateQueryPoolDelegate>("vkCreateQueryPool", "");
+            VkDestroyQueryPool = cache.GetCommandDelegate<VkQueryPoolDestroyDelegate>("vkDestroyQueryPool", "");
+            VkGetQueryPoolResults = cache.GetCommandDelegate<VkQueryPoolGetResultsDelegate>("vkGetQueryPoolResults", "");
+            VkCreateBuffer = cache.GetCommandDelegate<VkDeviceCreateBufferDelegate>("vkCreateBuffer", "");
+            VkDestroyBuffer = cache.GetCommandDelegate<VkBufferDestroyDelegate>("vkDestroyBuffer", "");
+            VkCreateBufferView = cache.GetCommandDelegate<VkDeviceCreateBufferViewDelegate>("vkCreateBufferView", "");
+            VkDestroyBufferView = cache.GetCommandDelegate<VkBufferViewDestroyDelegate>("vkDestroyBufferView", "");
+            VkCreateImage = cache.GetCommandDelegate<VkDeviceCreateImageDelegate>("vkCreateImage", "");
+            VkDestroyImage = cache.GetCommandDelegate<VkImageDestroyDelegate>("vkDestroyImage", "");
+            VkGetImageSubresourceLayout = cache.GetCommandDelegate<VkImageGetSubresourceLayoutDelegate>("vkGetImageSubresourceLayout", "");
+            VkCreateImageView = cache.GetCommandDelegate<VkDeviceCreateImageViewDelegate>("vkCreateImageView", "");
+            VkDestroyImageView = cache.GetCommandDelegate<VkImageViewDestroyDelegate>("vkDestroyImageView", "");
+            VkCreateShaderModule = cache.GetCommandDelegate<VkDeviceCreateShaderModuleDelegate>("vkCreateShaderModule", "");
+            VkDestroyShaderModule = cache.GetCommandDelegate<VkShaderModuleDestroyDelegate>("vkDestroyShaderModule", "");
+            VkCreatePipelineCache = cache.GetCommandDelegate<VkDeviceCreatePipelineCacheDelegate>("vkCreatePipelineCache", "");
+            VkDestroyPipelineCache = cache.GetCommandDelegate<VkPipelineCacheDestroyDelegate>("vkDestroyPipelineCache", "");
+            VkGetPipelineCacheData = cache.GetCommandDelegate<VkPipelineCacheGetDataDelegate>("vkGetPipelineCacheData", "");
+            VkMergePipelineCaches = cache.GetCommandDelegate<VkPipelineCacheMergePipelineCachesDelegate>("vkMergePipelineCaches", "");
+            VkCreateGraphicsPipelines = cache.GetCommandDelegate<VkDeviceCreateGraphicsPipelinesDelegate>("vkCreateGraphicsPipelines", "");
+            VkCreateComputePipelines = cache.GetCommandDelegate<VkDeviceCreateComputePipelinesDelegate>("vkCreateComputePipelines", "");
+            VkDestroyPipeline = cache.GetCommandDelegate<VkPipelineDestroyDelegate>("vkDestroyPipeline", "");
+            VkCreatePipelineLayout = cache.GetCommandDelegate<VkDeviceCreatePipelineLayoutDelegate>("vkCreatePipelineLayout", "");
+            VkDestroyPipelineLayout = cache.GetCommandDelegate<VkPipelineLayoutDestroyDelegate>("vkDestroyPipelineLayout", "");
+            VkCreateSampler = cache.GetCommandDelegate<VkDeviceCreateSamplerDelegate>("vkCreateSampler", "");
+            VkDestroySampler = cache.GetCommandDelegate<VkSamplerDestroyDelegate>("vkDestroySampler", "");
+            VkCreateDescriptorSetLayout = cache.GetCommandDelegate<VkDeviceCreateDescriptorSetLayoutDelegate>("vkCreateDescriptorSetLayout", "");
+            VkDestroyDescriptorSetLayout = cache.GetCommandDelegate<VkDescriptorSetLayoutDestroyDelegate>("vkDestroyDescriptorSetLayout", "");
+            VkCreateDescriptorPool = cache.GetCommandDelegate<VkDeviceCreateDescriptorPoolDelegate>("vkCreateDescriptorPool", "");
+            VkDestroyDescriptorPool = cache.GetCommandDelegate<VkDescriptorPoolDestroyDelegate>("vkDestroyDescriptorPool", "");
+            VkResetDescriptorPool = cache.GetCommandDelegate<VkDescriptorPoolResetDelegate>("vkResetDescriptorPool", "");
+            VkAllocateDescriptorSets = cache.GetCommandDelegate<VkDeviceAllocateDescriptorSetsDelegate>("vkAllocateDescriptorSets", "");
+            VkFreeDescriptorSets = cache.GetCommandDelegate<VkDescriptorPoolFreeDescriptorSetsDelegate>("vkFreeDescriptorSets", "");
+            VkUpdateDescriptorSets = cache.GetCommandDelegate<VkDeviceUpdateDescriptorSetsDelegate>("vkUpdateDescriptorSets", "");
+            VkCreateFramebuffer = cache.GetCommandDelegate<VkDeviceCreateFramebufferDelegate>("vkCreateFramebuffer", "");
+            VkDestroyFramebuffer = cache.GetCommandDelegate<VkFramebufferDestroyDelegate>("vkDestroyFramebuffer", "");
+            VkCreateRenderPass = cache.GetCommandDelegate<VkDeviceCreateRenderPassDelegate>("vkCreateRenderPass", "");
+            VkDestroyRenderPass = cache.GetCommandDelegate<VkRenderPassDestroyDelegate>("vkDestroyRenderPass", "");
+            VkGetRenderAreaGranularity = cache.GetCommandDelegate<VkRenderPassGetRenderAreaGranularityDelegate>("vkGetRenderAreaGranularity", "");
+            VkCreateCommandPool = cache.GetCommandDelegate<VkDeviceCreateCommandPoolDelegate>("vkCreateCommandPool", "");
+            VkDestroyCommandPool = cache.GetCommandDelegate<VkCommandPoolDestroyDelegate>("vkDestroyCommandPool", "");
+            VkResetCommandPool = cache.GetCommandDelegate<VkCommandPoolResetDelegate>("vkResetCommandPool", "");
+            VkAllocateCommandBuffers = cache.GetCommandDelegate<VkDeviceAllocateCommandBuffersDelegate>("vkAllocateCommandBuffers", "");
+            VkFreeCommandBuffers = cache.GetCommandDelegate<VkCommandPoolFreeCommandBuffersDelegate>("vkFreeCommandBuffers", "");
+            VkBeginCommandBuffer = cache.GetCommandDelegate<VkCommandBufferBeginDelegate>("vkBeginCommandBuffer", "");
+            VkEndCommandBuffer = cache.GetCommandDelegate<VkCommandBufferEndDelegate>("vkEndCommandBuffer", "");
+            VkResetCommandBuffer = cache.GetCommandDelegate<VkCommandBufferResetDelegate>("vkResetCommandBuffer", "");
+            VkCmdBindPipeline = cache.GetCommandDelegate<VkCommandBufferBindPipelineDelegate>("vkCmdBindPipeline", "");
+            VkCmdSetViewport = cache.GetCommandDelegate<VkCommandBufferSetViewportDelegate>("vkCmdSetViewport", "");
+            VkCmdSetScissor = cache.GetCommandDelegate<VkCommandBufferSetScissorDelegate>("vkCmdSetScissor", "");
+            VkCmdSetLineWidth = cache.GetCommandDelegate<VkCommandBufferSetLineWidthDelegate>("vkCmdSetLineWidth", "");
+            VkCmdSetDepthBias = cache.GetCommandDelegate<VkCommandBufferSetDepthBiasDelegate>("vkCmdSetDepthBias", "");
+            VkCmdSetBlendConstants = cache.GetCommandDelegate<VkCommandBufferSetBlendConstantsDelegate>("vkCmdSetBlendConstants", "");
+            VkCmdSetDepthBounds = cache.GetCommandDelegate<VkCommandBufferSetDepthBoundsDelegate>("vkCmdSetDepthBounds", "");
+            VkCmdSetStencilCompareMask = cache.GetCommandDelegate<VkCommandBufferSetStencilCompareMaskDelegate>("vkCmdSetStencilCompareMask", "");
+            VkCmdSetStencilWriteMask = cache.GetCommandDelegate<VkCommandBufferSetStencilWriteMaskDelegate>("vkCmdSetStencilWriteMask", "");
+            VkCmdSetStencilReference = cache.GetCommandDelegate<VkCommandBufferSetStencilReferenceDelegate>("vkCmdSetStencilReference", "");
+            VkCmdBindDescriptorSets = cache.GetCommandDelegate<VkCommandBufferBindDescriptorSetsDelegate>("vkCmdBindDescriptorSets", "");
+            VkCmdBindIndexBuffer = cache.GetCommandDelegate<VkCommandBufferBindIndexBufferDelegate>("vkCmdBindIndexBuffer", "");
+            VkCmdBindVertexBuffers = cache.GetCommandDelegate<VkCommandBufferBindVertexBuffersDelegate>("vkCmdBindVertexBuffers", "");
+            VkCmdDraw = cache.GetCommandDelegate<VkCommandBufferDrawDelegate>("vkCmdDraw", "");
+            VkCmdDrawIndexed = cache.GetCommandDelegate<VkCommandBufferDrawIndexedDelegate>("vkCmdDrawIndexed", "");
+            VkCmdDrawIndirect = cache.GetCommandDelegate<VkCommandBufferDrawIndirectDelegate>("vkCmdDrawIndirect", "");
+            VkCmdDrawIndexedIndirect = cache.GetCommandDelegate<VkCommandBufferDrawIndexedIndirectDelegate>("vkCmdDrawIndexedIndirect", "");
+            VkCmdDispatch = cache.GetCommandDelegate<VkCommandBufferDispatchDelegate>("vkCmdDispatch", "");
+            VkCmdDispatchIndirect = cache.GetCommandDelegate<VkCommandBufferDispatchIndirectDelegate>("vkCmdDispatchIndirect", "");
+            VkCmdCopyBuffer = cache.GetCommandDelegate<VkCommandBufferCopyBufferDelegate>("vkCmdCopyBuffer", "");
+            VkCmdCopyImage = cache.GetCommandDelegate<VkCommandBufferCopyImageDelegate>("vkCmdCopyImage", "");
+            VkCmdBlitImage = cache.GetCommandDelegate<VkCommandBufferBlitImageDelegate>("vkCmdBlitImage", "");
+            VkCmdCopyBufferToImage = cache.GetCommandDelegate<VkCommandBufferCopyBufferToImageDelegate>("vkCmdCopyBufferToImage", "");
+            VkCmdCopyImageToBuffer = cache.GetCommandDelegate<VkCommandBufferCopyImageToBufferDelegate>("vkCmdCopyImageToBuffer", "");
+            VkCmdUpdateBuffer = cache.GetCommandDelegate<VkCommandBufferUpdateBufferDelegate>("vkCmdUpdateBuffer", "");
+            VkCmdFillBuffer = cache.GetCommandDelegate<VkCommandBufferFillBufferDelegate>("vkCmdFillBuffer", "");
+            VkCmdClearColorImage = cache.GetCommandDelegate<VkCommandBufferClearColorImageDelegate>("vkCmdClearColorImage", "");
+            VkCmdClearDepthStencilImage = cache.GetCommandDelegate<VkCommandBufferClearDepthStencilImageDelegate>("vkCmdClearDepthStencilImage", "");
+            VkCmdClearAttachments = cache.GetCommandDelegate<VkCommandBufferClearAttachmentsDelegate>("vkCmdClearAttachments", "");
+            VkCmdResolveImage = cache.GetCommandDelegate<VkCommandBufferResolveImageDelegate>("vkCmdResolveImage", "");
+            VkCmdSetEvent = cache.GetCommandDelegate<VkCommandBufferSetEventDelegate>("vkCmdSetEvent", "");
+            VkCmdResetEvent = cache.GetCommandDelegate<VkCommandBufferResetEventDelegate>("vkCmdResetEvent", "");
+            VkCmdWaitEvents = cache.GetCommandDelegate<VkCommandBufferWaitEventsDelegate>("vkCmdWaitEvents", "");
+            VkCmdPipelineBarrier = cache.GetCommandDelegate<VkCommandBufferPipelineBarrierDelegate>("vkCmdPipelineBarrier", "");
+            VkCmdBeginQuery = cache.GetCommandDelegate<VkCommandBufferBeginQueryDelegate>("vkCmdBeginQuery", "");
+            VkCmdEndQuery = cache.GetCommandDelegate<VkCommandBufferEndQueryDelegate>("vkCmdEndQuery", "");
+            VkCmdResetQueryPool = cache.GetCommandDelegate<VkCommandBufferResetQueryPoolDelegate>("vkCmdResetQueryPool", "");
+            VkCmdWriteTimestamp = cache.GetCommandDelegate<VkCommandBufferWriteTimestampDelegate>("vkCmdWriteTimestamp", "");
+            VkCmdCopyQueryPoolResults = cache.GetCommandDelegate<VkCommandBufferCopyQueryPoolResultsDelegate>("vkCmdCopyQueryPoolResults", "");
+            VkCmdPushConstants = cache.GetCommandDelegate<VkCommandBufferPushConstantsDelegate>("vkCmdPushConstants", "");
+            VkCmdBeginRenderPass = cache.GetCommandDelegate<VkCommandBufferBeginRenderPassDelegate>("vkCmdBeginRenderPass", "");
+            VkCmdNextSubpass = cache.GetCommandDelegate<VkCommandBufferNextSubpassDelegate>("vkCmdNextSubpass", "");
+            VkCmdEndRenderPass = cache.GetCommandDelegate<VkCommandBufferEndRenderPassDelegate>("vkCmdEndRenderPass", "");
+            VkCmdExecuteCommands = cache.GetCommandDelegate<VkCommandBufferExecuteCommandsDelegate>("vkCmdExecuteCommands", "");
+            VkEnumerateInstanceVersion = cache.GetCommandDelegate<VkInstanceEnumerateVersionDelegate>("vkEnumerateInstanceVersion", "");
+            VkBindBufferMemory2 = cache.GetCommandDelegate<VkDeviceBindBufferMemory2Delegate>("vkBindBufferMemory2", "");
+            VkBindImageMemory2 = cache.GetCommandDelegate<VkDeviceBindImageMemory2Delegate>("vkBindImageMemory2", "");
+            VkGetDeviceGroupPeerMemoryFeatures = cache.GetCommandDelegate<VkDeviceGetGroupPeerMemoryFeaturesDelegate>("vkGetDeviceGroupPeerMemoryFeatures", "");
+            VkCmdSetDeviceMask = cache.GetCommandDelegate<VkCommandBufferSetDeviceMaskDelegate>("vkCmdSetDeviceMask", "");
+            VkCmdDispatchBase = cache.GetCommandDelegate<VkCommandBufferDispatchBaseDelegate>("vkCmdDispatchBase", "");
+            VkEnumeratePhysicalDeviceGroups = cache.GetCommandDelegate<VkInstanceEnumeratePhysicalDeviceGroupsDelegate>("vkEnumeratePhysicalDeviceGroups", "");
+            VkGetImageMemoryRequirements2 = cache.GetCommandDelegate<VkDeviceGetImageMemoryRequirements2Delegate>("vkGetImageMemoryRequirements2", "");
+            VkGetBufferMemoryRequirements2 = cache.GetCommandDelegate<VkDeviceGetBufferMemoryRequirements2Delegate>("vkGetBufferMemoryRequirements2", "");
+            VkGetImageSparseMemoryRequirements2 = cache.GetCommandDelegate<VkDeviceGetImageSparseMemoryRequirements2Delegate>("vkGetImageSparseMemoryRequirements2", "");
+            VkGetPhysicalDeviceFeatures2 = cache.GetCommandDelegate<VkPhysicalDeviceGetFeatures2Delegate>("vkGetPhysicalDeviceFeatures2", "");
+            VkGetPhysicalDeviceProperties2 = cache.GetCommandDelegate<VkPhysicalDeviceGetProperties2Delegate>("vkGetPhysicalDeviceProperties2", "");
+            VkGetPhysicalDeviceFormatProperties2 = cache.GetCommandDelegate<VkPhysicalDeviceGetFormatProperties2Delegate>("vkGetPhysicalDeviceFormatProperties2", "");
+            VkGetPhysicalDeviceImageFormatProperties2 = cache.GetCommandDelegate<VkPhysicalDeviceGetImageFormatProperties2Delegate>("vkGetPhysicalDeviceImageFormatProperties2", "");
+            VkGetPhysicalDeviceQueueFamilyProperties2 = cache.GetCommandDelegate<VkPhysicalDeviceGetQueueFamilyProperties2Delegate>("vkGetPhysicalDeviceQueueFamilyProperties2", "");
+            VkGetPhysicalDeviceMemoryProperties2 = cache.GetCommandDelegate<VkPhysicalDeviceGetMemoryProperties2Delegate>("vkGetPhysicalDeviceMemoryProperties2", "");
+            VkGetPhysicalDeviceSparseImageFormatProperties2 = cache.GetCommandDelegate<VkPhysicalDeviceGetSparseImageFormatProperties2Delegate>("vkGetPhysicalDeviceSparseImageFormatProperties2", "");
+            VkTrimCommandPool = cache.GetCommandDelegate<VkCommandPoolTrimDelegate>("vkTrimCommandPool", "");
+            VkGetDeviceQueue2 = cache.GetCommandDelegate<VkDeviceGetQueue2Delegate>("vkGetDeviceQueue2", "");
+            VkCreateSamplerYcbcrConversion = cache.GetCommandDelegate<VkDeviceCreateSamplerYcbcrConversionDelegate>("vkCreateSamplerYcbcrConversion", "");
+            VkDestroySamplerYcbcrConversion = cache.GetCommandDelegate<VkSamplerYcbcrConversionDestroyDelegate>("vkDestroySamplerYcbcrConversion", "");
+            VkCreateDescriptorUpdateTemplate = cache.GetCommandDelegate<VkDeviceCreateDescriptorUpdateTemplateDelegate>("vkCreateDescriptorUpdateTemplate", "");
+            VkDestroyDescriptorUpdateTemplate = cache.GetCommandDelegate<VkDescriptorUpdateTemplateDestroyDelegate>("vkDestroyDescriptorUpdateTemplate", "");
+            VkUpdateDescriptorSetWithTemplate = cache.GetCommandDelegate<VkDeviceUpdateDescriptorSetWithTemplateDelegate>("vkUpdateDescriptorSetWithTemplate", "");
+            VkGetPhysicalDeviceExternalBufferProperties = cache.GetCommandDelegate<VkPhysicalDeviceGetExternalBufferPropertiesDelegate>("vkGetPhysicalDeviceExternalBufferProperties", "");
+            VkGetPhysicalDeviceExternalFenceProperties = cache.GetCommandDelegate<VkPhysicalDeviceGetExternalFencePropertiesDelegate>("vkGetPhysicalDeviceExternalFenceProperties", "");
+            VkGetPhysicalDeviceExternalSemaphoreProperties = cache.GetCommandDelegate<VkPhysicalDeviceGetExternalSemaphorePropertiesDelegate>("vkGetPhysicalDeviceExternalSemaphoreProperties", "");
+            VkGetDescriptorSetLayoutSupport = cache.GetCommandDelegate<VkDeviceGetDescriptorSetLayoutSupportDelegate>("vkGetDescriptorSetLayoutSupport", "");
+            VkCmdDrawIndirectCount = cache.GetCommandDelegate<VkCommandBufferDrawIndirectCountDelegate>("vkCmdDrawIndirectCount", "");
+            VkCmdDrawIndexedIndirectCount = cache.GetCommandDelegate<VkCommandBufferDrawIndexedIndirectCountDelegate>("vkCmdDrawIndexedIndirectCount", "");
+            VkCreateRenderPass2 = cache.GetCommandDelegate<VkDeviceCreateRenderPass2Delegate>("vkCreateRenderPass2", "");
+            VkCmdBeginRenderPass2 = cache.GetCommandDelegate<VkCommandBufferBeginRenderPass2Delegate>("vkCmdBeginRenderPass2", "");
+            VkCmdNextSubpass2 = cache.GetCommandDelegate<VkCommandBufferNextSubpass2Delegate>("vkCmdNextSubpass2", "");
+            VkCmdEndRenderPass2 = cache.GetCommandDelegate<VkCommandBufferEndRenderPass2Delegate>("vkCmdEndRenderPass2", "");
+            VkResetQueryPool = cache.GetCommandDelegate<VkQueryPoolResetDelegate>("vkResetQueryPool", "");
+            VkGetSemaphoreCounterValue = cache.GetCommandDelegate<VkSemaphoreGetCounterValueDelegate>("vkGetSemaphoreCounterValue", "");
+            VkWaitSemaphores = cache.GetCommandDelegate<VkDeviceWaitSemaphoresDelegate>("vkWaitSemaphores", "");
+            VkSignalSemaphore = cache.GetCommandDelegate<VkDeviceSignalSemaphoreDelegate>("vkSignalSemaphore", "");
+            VkGetBufferDeviceAddress = cache.GetCommandDelegate<VkDeviceGetBufferDeviceAddressDelegate>("vkGetBufferDeviceAddress", "");
+            VkGetBufferOpaqueCaptureAddress = cache.GetCommandDelegate<VkDeviceGetBufferOpaqueCaptureAddressDelegate>("vkGetBufferOpaqueCaptureAddress", "");
+            VkGetDeviceMemoryOpaqueCaptureAddress = cache.GetCommandDelegate<VkDeviceGetMemoryOpaqueCaptureAddressDelegate>("vkGetDeviceMemoryOpaqueCaptureAddress", "");
+            VkDestroySurfaceKhr = cache.GetCommandDelegate<VkSurfaceKhrDestroyDelegate>("vkDestroySurfaceKHR", "instance");
+            VkGetPhysicalDeviceSurfaceSupportKhr = cache.GetCommandDelegate<VkPhysicalDeviceGetSurfaceSupportDelegate>("vkGetPhysicalDeviceSurfaceSupportKHR", "instance");
+            VkGetPhysicalDeviceSurfaceCapabilitiesKhr = cache.GetCommandDelegate<VkPhysicalDeviceGetSurfaceCapabilitiesDelegate>("vkGetPhysicalDeviceSurfaceCapabilitiesKHR", "instance");
+            VkGetPhysicalDeviceSurfaceFormatsKhr = cache.GetCommandDelegate<VkPhysicalDeviceGetSurfaceFormatsDelegate>("vkGetPhysicalDeviceSurfaceFormatsKHR", "instance");
+            VkGetPhysicalDeviceSurfacePresentModesKhr = cache.GetCommandDelegate<VkPhysicalDeviceGetSurfacePresentModesDelegate>("vkGetPhysicalDeviceSurfacePresentModesKHR", "instance");
+            VkCreateSwapchainKhr = cache.GetCommandDelegate<VkDeviceCreateSwapchainDelegate>("vkCreateSwapchainKHR", "device");
+            VkDestroySwapchainKhr = cache.GetCommandDelegate<VkSwapchainKhrDestroyDelegate>("vkDestroySwapchainKHR", "device");
+            VkGetSwapchainImagesKhr = cache.GetCommandDelegate<VkSwapchainKhrGetImagesDelegate>("vkGetSwapchainImagesKHR", "device");
+            VkAcquireNextImageKhr = cache.GetCommandDelegate<VkSwapchainKhrAcquireNextImageDelegate>("vkAcquireNextImageKHR", "device");
+            VkQueuePresentKhr = cache.GetCommandDelegate<VkQueuePresentDelegate>("vkQueuePresentKHR", "device");
+            VkGetDeviceGroupPresentCapabilitiesKhr = cache.GetCommandDelegate<VkDeviceGetGroupPresentCapabilitiesDelegate>("vkGetDeviceGroupPresentCapabilitiesKHR", "device");
+            VkGetDeviceGroupSurfacePresentModesKhr = cache.GetCommandDelegate<VkDeviceGetGroupSurfacePresentModesDelegate>("vkGetDeviceGroupSurfacePresentModesKHR", "device");
+            VkGetPhysicalDevicePresentRectanglesKhr = cache.GetCommandDelegate<VkPhysicalDeviceGetPresentRectanglesDelegate>("vkGetPhysicalDevicePresentRectanglesKHR", "device");
+            VkAcquireNextImage2Khr = cache.GetCommandDelegate<VkDeviceAcquireNextImage2Delegate>("vkAcquireNextImage2KHR", "device");
+            VkGetPhysicalDeviceDisplayPropertiesKhr = cache.GetCommandDelegate<VkPhysicalDeviceGetDisplayPropertiesDelegate>("vkGetPhysicalDeviceDisplayPropertiesKHR", "instance");
+            VkGetPhysicalDeviceDisplayPlanePropertiesKhr = cache.GetCommandDelegate<VkPhysicalDeviceGetDisplayPlanePropertiesDelegate>("vkGetPhysicalDeviceDisplayPlanePropertiesKHR", "instance");
+            VkGetDisplayPlaneSupportedDisplaysKhr = cache.GetCommandDelegate<VkPhysicalDeviceGetDisplayPlaneSupportedDisplaysDelegate>("vkGetDisplayPlaneSupportedDisplaysKHR", "instance");
+            VkGetDisplayModePropertiesKhr = cache.GetCommandDelegate<VkPhysicalDeviceGetDisplayModePropertiesDelegate>("vkGetDisplayModePropertiesKHR", "instance");
+            VkCreateDisplayModeKhr = cache.GetCommandDelegate<VkPhysicalDeviceCreateDisplayModeDelegate>("vkCreateDisplayModeKHR", "instance");
+            VkGetDisplayPlaneCapabilitiesKhr = cache.GetCommandDelegate<VkDisplayModeKhrGetDisplayPlaneCapabilitiesDelegate>("vkGetDisplayPlaneCapabilitiesKHR", "instance");
+            VkCreateDisplayPlaneSurfaceKhr = cache.GetCommandDelegate<VkInstanceCreateDisplayPlaneSurfaceDelegate>("vkCreateDisplayPlaneSurfaceKHR", "instance");
+            VkCreateSharedSwapchainsKhr = cache.GetCommandDelegate<VkDeviceCreateSharedSwapchainsDelegate>("vkCreateSharedSwapchainsKHR", "device");
+            VkCreateXlibSurfaceKhr = cache.GetCommandDelegate<VkInstanceCreateXlibSurfaceDelegate>("vkCreateXlibSurfaceKHR", "instance");
+            VkGetPhysicalDeviceXlibPresentationSupportKhr = cache.GetCommandDelegate<VkPhysicalDeviceGetXlibPresentationSupportDelegate>("vkGetPhysicalDeviceXlibPresentationSupportKHR", "instance");
+            VkCreateXcbSurfaceKhr = cache.GetCommandDelegate<VkInstanceCreateXcbSurfaceDelegate>("vkCreateXcbSurfaceKHR", "instance");
+            VkGetPhysicalDeviceXcbPresentationSupportKhr = cache.GetCommandDelegate<VkPhysicalDeviceGetXcbPresentationSupportDelegate>("vkGetPhysicalDeviceXcbPresentationSupportKHR", "instance");
+            VkCreateWaylandSurfaceKhr = cache.GetCommandDelegate<VkInstanceCreateWaylandSurfaceDelegate>("vkCreateWaylandSurfaceKHR", "instance");
+            VkGetPhysicalDeviceWaylandPresentationSupportKhr = cache.GetCommandDelegate<VkPhysicalDeviceGetWaylandPresentationSupportDelegate>("vkGetPhysicalDeviceWaylandPresentationSupportKHR", "instance");
+            VkCreateAndroidSurfaceKhr = cache.GetCommandDelegate<VkInstanceCreateAndroidSurfaceDelegate>("vkCreateAndroidSurfaceKHR", "instance");
+            VkCreateWin32SurfaceKhr = cache.GetCommandDelegate<VkInstanceCreateWin32SurfaceDelegate>("vkCreateWin32SurfaceKHR", "instance");
+            VkGetPhysicalDeviceWin32PresentationSupportKhr = cache.GetCommandDelegate<VkPhysicalDeviceGetWin32PresentationSupportDelegate>("vkGetPhysicalDeviceWin32PresentationSupportKHR", "instance");
+            VkCreateDebugReportCallbackExt = cache.GetCommandDelegate<VkInstanceCreateDebugReportCallbackDelegate>("vkCreateDebugReportCallbackEXT", "instance");
+            VkDestroyDebugReportCallbackExt = cache.GetCommandDelegate<VkDebugReportCallbackExtDestroyDelegate>("vkDestroyDebugReportCallbackEXT", "instance");
+            VkDebugReportMessageExt = cache.GetCommandDelegate<VkInstanceDebugReportMessageDelegate>("vkDebugReportMessageEXT", "instance");
+            VkCmdBindTransformFeedbackBuffersExt = cache.GetCommandDelegate<VkCommandBufferBindTransformFeedbackBuffersDelegate>("vkCmdBindTransformFeedbackBuffersEXT", "device");
+            VkCmdBeginTransformFeedbackExt = cache.GetCommandDelegate<VkCommandBufferBeginTransformFeedbackDelegate>("vkCmdBeginTransformFeedbackEXT", "device");
+            VkCmdEndTransformFeedbackExt = cache.GetCommandDelegate<VkCommandBufferEndTransformFeedbackDelegate>("vkCmdEndTransformFeedbackEXT", "device");
+            VkCmdBeginQueryIndexedExt = cache.GetCommandDelegate<VkCommandBufferBeginQueryIndexedDelegate>("vkCmdBeginQueryIndexedEXT", "device");
+            VkCmdEndQueryIndexedExt = cache.GetCommandDelegate<VkCommandBufferEndQueryIndexedDelegate>("vkCmdEndQueryIndexedEXT", "device");
+            VkCmdDrawIndirectByteCountExt = cache.GetCommandDelegate<VkCommandBufferDrawIndirectByteCountDelegate>("vkCmdDrawIndirectByteCountEXT", "device");
+            VkGetImageViewHandleNvx = cache.GetCommandDelegate<VkDeviceGetImageViewHandleDelegate>("vkGetImageViewHandleNVX", "device");
+            VkGetShaderInfoAmd = cache.GetCommandDelegate<VkPipelineGetShaderInfoDelegate>("vkGetShaderInfoAMD", "device");
+            VkCreateStreamDescriptorSurfaceGgp = cache.GetCommandDelegate<VkInstanceCreateStreamDescriptorSurfaceDelegate>("vkCreateStreamDescriptorSurfaceGGP", "instance");
+            VkGetPhysicalDeviceExternalImageFormatPropertiesNv = cache.GetCommandDelegate<VkPhysicalDeviceGetExternalImageFormatPropertiesDelegate>("vkGetPhysicalDeviceExternalImageFormatPropertiesNV", "instance");
+            VkGetMemoryWin32HandleNv = cache.GetCommandDelegate<VkDeviceMemoryGetWin32HandleDelegate>("vkGetMemoryWin32HandleNV", "device");
+            VkCreateViSurfaceNn = cache.GetCommandDelegate<VkInstanceCreateViSurfaceDelegate>("vkCreateViSurfaceNN", "instance");
+            VkGetMemoryWin32HandleKhr = cache.GetCommandDelegate<VkDeviceGetMemoryWin32HandleDelegate>("vkGetMemoryWin32HandleKHR", "device");
+            VkGetMemoryWin32HandlePropertiesKhr = cache.GetCommandDelegate<VkDeviceGetMemoryWin32HandlePropertiesDelegate>("vkGetMemoryWin32HandlePropertiesKHR", "device");
+            VkGetMemoryFdKhr = cache.GetCommandDelegate<VkDeviceGetMemoryFileDescriptorDelegate>("vkGetMemoryFdKHR", "device");
+            VkGetMemoryFdPropertiesKhr = cache.GetCommandDelegate<VkDeviceGetMemoryFileDescriptorPropertiesDelegate>("vkGetMemoryFdPropertiesKHR", "device");
+            VkImportSemaphoreWin32HandleKhr = cache.GetCommandDelegate<VkDeviceImportSemaphoreWin32HandleDelegate>("vkImportSemaphoreWin32HandleKHR", "device");
+            VkGetSemaphoreWin32HandleKhr = cache.GetCommandDelegate<VkDeviceGetSemaphoreWin32HandleDelegate>("vkGetSemaphoreWin32HandleKHR", "device");
+            VkImportSemaphoreFdKhr = cache.GetCommandDelegate<VkDeviceImportSemaphoreFileDescriptorDelegate>("vkImportSemaphoreFdKHR", "device");
+            VkGetSemaphoreFdKhr = cache.GetCommandDelegate<VkDeviceGetSemaphoreFileDescriptorDelegate>("vkGetSemaphoreFdKHR", "device");
+            VkCmdPushDescriptorSetKhr = cache.GetCommandDelegate<VkCommandBufferPushDescriptorSetDelegate>("vkCmdPushDescriptorSetKHR", "device");
+            VkCmdPushDescriptorSetWithTemplateKhr = cache.GetCommandDelegate<VkCommandBufferPushDescriptorSetWithTemplateDelegate>("vkCmdPushDescriptorSetWithTemplateKHR", "device");
+            VkCmdBeginConditionalRenderingExt = cache.GetCommandDelegate<VkCommandBufferBeginConditionalRenderingDelegate>("vkCmdBeginConditionalRenderingEXT", "device");
+            VkCmdEndConditionalRenderingExt = cache.GetCommandDelegate<VkCommandBufferEndConditionalRenderingDelegate>("vkCmdEndConditionalRenderingEXT", "device");
+            VkCmdProcessCommandsNvx = cache.GetCommandDelegate<VkCommandBufferProcessCommandsDelegate>("vkCmdProcessCommandsNVX", "device");
+            VkCmdReserveSpaceForCommandsNvx = cache.GetCommandDelegate<VkCommandBufferReserveSpaceForCommandsDelegate>("vkCmdReserveSpaceForCommandsNVX", "device");
+            VkCreateIndirectCommandsLayoutNvx = cache.GetCommandDelegate<VkDeviceCreateIndirectCommandsLayoutDelegate>("vkCreateIndirectCommandsLayoutNVX", "device");
+            VkDestroyIndirectCommandsLayoutNvx = cache.GetCommandDelegate<VkIndirectCommandsLayoutNvxDestroyDelegate>("vkDestroyIndirectCommandsLayoutNVX", "device");
+            VkCreateObjectTableNvx = cache.GetCommandDelegate<VkDeviceCreateObjectTableDelegate>("vkCreateObjectTableNVX", "device");
+            VkDestroyObjectTableNvx = cache.GetCommandDelegate<VkObjectTableNvxDestroyDelegate>("vkDestroyObjectTableNVX", "device");
+            VkRegisterObjectsNvx = cache.GetCommandDelegate<VkObjectTableNvxRegisterObjectsDelegate>("vkRegisterObjectsNVX", "device");
+            VkUnregisterObjectsNvx = cache.GetCommandDelegate<VkObjectTableNvxUnregisterObjectsDelegate>("vkUnregisterObjectsNVX", "device");
+            VkGetPhysicalDeviceGeneratedCommandsPropertiesNvx = cache.GetCommandDelegate<VkPhysicalDeviceGetGeneratedCommandsPropertiesDelegate>("vkGetPhysicalDeviceGeneratedCommandsPropertiesNVX", "device");
+            VkCmdSetViewportWScalingNv = cache.GetCommandDelegate<VkCommandBufferSetViewportWScalingDelegate>("vkCmdSetViewportWScalingNV", "device");
+            VkReleaseDisplayExt = cache.GetCommandDelegate<VkPhysicalDeviceReleaseDisplayDelegate>("vkReleaseDisplayEXT", "instance");
+            VkAcquireXlibDisplayExt = cache.GetCommandDelegate<VkPhysicalDeviceAcquireXlibDisplayDelegate>("vkAcquireXlibDisplayEXT", "instance");
+            VkGetRandROutputDisplayExt = cache.GetCommandDelegate<VkPhysicalDeviceGetRandROutputDisplayDelegate>("vkGetRandROutputDisplayEXT", "instance");
+            VkGetPhysicalDeviceSurfaceCapabilities2Ext = cache.GetCommandDelegate<VkPhysicalDeviceGetSurfaceCapabilities2Delegate>("vkGetPhysicalDeviceSurfaceCapabilities2EXT", "instance");
+            VkDisplayPowerControlExt = cache.GetCommandDelegate<VkDeviceDisplayPowerControlDelegate>("vkDisplayPowerControlEXT", "device");
+            VkRegisterDeviceEventExt = cache.GetCommandDelegate<VkDeviceRegisterEventDelegate>("vkRegisterDeviceEventEXT", "device");
+            VkRegisterDisplayEventExt = cache.GetCommandDelegate<VkDeviceRegisterDisplayEventDelegate>("vkRegisterDisplayEventEXT", "device");
+            VkGetSwapchainCounterExt = cache.GetCommandDelegate<VkSwapchainKhrGetCounterDelegate>("vkGetSwapchainCounterEXT", "device");
+            VkGetRefreshCycleDurationGoogle = cache.GetCommandDelegate<VkSwapchainKhrGetRefreshCycleDurationDelegate>("vkGetRefreshCycleDurationGOOGLE", "device");
+            VkGetPastPresentationTimingGoogle = cache.GetCommandDelegate<VkSwapchainKhrGetPastPresentationTimingDelegate>("vkGetPastPresentationTimingGOOGLE", "device");
+            VkCmdSetDiscardRectangleExt = cache.GetCommandDelegate<VkCommandBufferSetDiscardRectangleDelegate>("vkCmdSetDiscardRectangleEXT", "device");
+            VkSetHdrMetadataExt = cache.GetCommandDelegate<VkDeviceSetHdrMetadataDelegate>("vkSetHdrMetadataEXT", "device");
+            VkGetSwapchainStatusKhr = cache.GetCommandDelegate<VkSwapchainKhrGetStatusDelegate>("vkGetSwapchainStatusKHR", "device");
+            VkImportFenceWin32HandleKhr = cache.GetCommandDelegate<VkDeviceImportFenceWin32HandleDelegate>("vkImportFenceWin32HandleKHR", "device");
+            VkGetFenceWin32HandleKhr = cache.GetCommandDelegate<VkDeviceGetFenceWin32HandleDelegate>("vkGetFenceWin32HandleKHR", "device");
+            VkImportFenceFdKhr = cache.GetCommandDelegate<VkDeviceImportFenceFileDescriptorDelegate>("vkImportFenceFdKHR", "device");
+            VkGetFenceFdKhr = cache.GetCommandDelegate<VkDeviceGetFenceFileDescriptorDelegate>("vkGetFenceFdKHR", "device");
+            VkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKhr = cache.GetCommandDelegate<VkPhysicalDeviceEnumerateQueueFamilyPerformanceQueryCountersDelegate>("vkEnumeratePhysicalDeviceQueueFamilyPerformanceQueryCountersKHR", "device");
+            VkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKhr = cache.GetCommandDelegate<VkPhysicalDeviceGetQueueFamilyPerformanceQueryPassesDelegate>("vkGetPhysicalDeviceQueueFamilyPerformanceQueryPassesKHR", "device");
+            VkAcquireProfilingLockKhr = cache.GetCommandDelegate<VkDeviceAcquireProfilingLockDelegate>("vkAcquireProfilingLockKHR", "device");
+            VkReleaseProfilingLockKhr = cache.GetCommandDelegate<VkDeviceReleaseProfilingLockDelegate>("vkReleaseProfilingLockKHR", "device");
+            VkGetPhysicalDeviceSurfaceCapabilities2Khr = cache.GetCommandDelegate<Interop.Khronos.VkPhysicalDeviceGetSurfaceCapabilities2Delegate>("vkGetPhysicalDeviceSurfaceCapabilities2KHR", "instance");
+            VkGetPhysicalDeviceSurfaceFormats2Khr = cache.GetCommandDelegate<VkPhysicalDeviceGetSurfaceFormats2Delegate>("vkGetPhysicalDeviceSurfaceFormats2KHR", "instance");
+            VkGetPhysicalDeviceDisplayProperties2Khr = cache.GetCommandDelegate<VkPhysicalDeviceGetDisplayProperties2Delegate>("vkGetPhysicalDeviceDisplayProperties2KHR", "instance");
+            VkGetPhysicalDeviceDisplayPlaneProperties2Khr = cache.GetCommandDelegate<VkPhysicalDeviceGetDisplayPlaneProperties2Delegate>("vkGetPhysicalDeviceDisplayPlaneProperties2KHR", "instance");
+            VkGetDisplayModeProperties2Khr = cache.GetCommandDelegate<VkPhysicalDeviceGetDisplayModeProperties2Delegate>("vkGetDisplayModeProperties2KHR", "instance");
+            VkGetDisplayPlaneCapabilities2Khr = cache.GetCommandDelegate<VkPhysicalDeviceGetDisplayPlaneCapabilities2Delegate>("vkGetDisplayPlaneCapabilities2KHR", "instance");
+            VkCreateIosSurfaceMvk = cache.GetCommandDelegate<VkInstanceCreateIosSurfaceDelegate>("vkCreateIOSSurfaceMVK", "instance");
+            VkCreateMacOsSurfaceMvk = cache.GetCommandDelegate<VkInstanceCreateMacOsSurfaceDelegate>("vkCreateMacOSSurfaceMVK", "instance");
+            VkSetDebugUtilsObjectNameExt = cache.GetCommandDelegate<VkDeviceSetDebugUtilsObjectNameDelegate>("vkSetDebugUtilsObjectNameEXT", "instance");
+            VkSetDebugUtilsObjectTagExt = cache.GetCommandDelegate<VkDeviceSetDebugUtilsObjectTagDelegate>("vkSetDebugUtilsObjectTagEXT", "instance");
+            VkQueueBeginDebugUtilsLabelExt = cache.GetCommandDelegate<VkQueueBeginDebugUtilsLabelDelegate>("vkQueueBeginDebugUtilsLabelEXT", "instance");
+            VkQueueEndDebugUtilsLabelExt = cache.GetCommandDelegate<VkQueueEndDebugUtilsLabelDelegate>("vkQueueEndDebugUtilsLabelEXT", "instance");
+            VkQueueInsertDebugUtilsLabelExt = cache.GetCommandDelegate<VkQueueInsertDebugUtilsLabelDelegate>("vkQueueInsertDebugUtilsLabelEXT", "instance");
+            VkCmdBeginDebugUtilsLabelExt = cache.GetCommandDelegate<VkCommandBufferBeginDebugUtilsLabelDelegate>("vkCmdBeginDebugUtilsLabelEXT", "instance");
+            VkCmdEndDebugUtilsLabelExt = cache.GetCommandDelegate<VkCommandBufferEndDebugUtilsLabelDelegate>("vkCmdEndDebugUtilsLabelEXT", "instance");
+            VkCmdInsertDebugUtilsLabelExt = cache.GetCommandDelegate<VkCommandBufferInsertDebugUtilsLabelDelegate>("vkCmdInsertDebugUtilsLabelEXT", "instance");
+            VkCreateDebugUtilsMessengerExt = cache.GetCommandDelegate<VkInstanceCreateDebugUtilsMessengerDelegate>("vkCreateDebugUtilsMessengerEXT", "instance");
+            VkDestroyDebugUtilsMessengerExt = cache.GetCommandDelegate<VkDebugUtilsMessengerExtDestroyDelegate>("vkDestroyDebugUtilsMessengerEXT", "instance");
+            VkSubmitDebugUtilsMessageExt = cache.GetCommandDelegate<VkInstanceSubmitDebugUtilsMessageDelegate>("vkSubmitDebugUtilsMessageEXT", "instance");
+            VkGetAndroidHardwareBufferPropertiesAndroid = cache.GetCommandDelegate<VkDeviceGetAndroidHardwareBufferPropertiesDelegate>("vkGetAndroidHardwareBufferPropertiesANDROID", "device");
+            VkGetMemoryAndroidHardwareBufferAndroid = cache.GetCommandDelegate<VkDeviceGetMemoryAndroidHardwareBufferDelegate>("vkGetMemoryAndroidHardwareBufferANDROID", "device");
+            VkCmdSetSampleLocationsExt = cache.GetCommandDelegate<VkCommandBufferSetSampleLocationsDelegate>("vkCmdSetSampleLocationsEXT", "device");
+            VkGetPhysicalDeviceMultisamplePropertiesExt = cache.GetCommandDelegate<VkPhysicalDeviceGetMultisamplePropertiesDelegate>("vkGetPhysicalDeviceMultisamplePropertiesEXT", "device");
+            VkGetImageDrmFormatModifierPropertiesExt = cache.GetCommandDelegate<VkImageGetDrmFormatModifierPropertiesDelegate>("vkGetImageDrmFormatModifierPropertiesEXT", "device");
+            VkCreateValidationCacheExt = cache.GetCommandDelegate<VkDeviceCreateValidationCacheDelegate>("vkCreateValidationCacheEXT", "device");
+            VkDestroyValidationCacheExt = cache.GetCommandDelegate<VkValidationCacheExtDestroyDelegate>("vkDestroyValidationCacheEXT", "device");
+            VkMergeValidationCachesExt = cache.GetCommandDelegate<VkValidationCacheExtMergeValidationCachesDelegate>("vkMergeValidationCachesEXT", "device");
+            VkGetValidationCacheDataExt = cache.GetCommandDelegate<VkValidationCacheExtGetDataDelegate>("vkGetValidationCacheDataEXT", "device");
+            VkCmdBindShadingRateImageNv = cache.GetCommandDelegate<VkCommandBufferBindShadingRateImageDelegate>("vkCmdBindShadingRateImageNV", "device");
+            VkCmdSetViewportShadingRatePaletteNv = cache.GetCommandDelegate<VkCommandBufferSetViewportShadingRatePaletteDelegate>("vkCmdSetViewportShadingRatePaletteNV", "device");
+            VkCmdSetCoarseSampleOrderNv = cache.GetCommandDelegate<VkCommandBufferSetCoarseSampleOrderDelegate>("vkCmdSetCoarseSampleOrderNV", "device");
+            VkCreateAccelerationStructureNv = cache.GetCommandDelegate<VkDeviceCreateAccelerationStructureDelegate>("vkCreateAccelerationStructureNV", "device");
+            VkDestroyAccelerationStructureNv = cache.GetCommandDelegate<VkAccelerationStructureNvDestroyDelegate>("vkDestroyAccelerationStructureNV", "device");
+            VkGetAccelerationStructureMemoryRequirementsNv = cache.GetCommandDelegate<VkDeviceGetAccelerationStructureMemoryRequirementsDelegate>("vkGetAccelerationStructureMemoryRequirementsNV", "device");
+            VkBindAccelerationStructureMemoryNv = cache.GetCommandDelegate<VkDeviceBindAccelerationStructureMemoryDelegate>("vkBindAccelerationStructureMemoryNV", "device");
+            VkCmdBuildAccelerationStructureNv = cache.GetCommandDelegate<VkCommandBufferBuildAccelerationStructureDelegate>("vkCmdBuildAccelerationStructureNV", "device");
+            VkCmdCopyAccelerationStructureNv = cache.GetCommandDelegate<VkCommandBufferCopyAccelerationStructureDelegate>("vkCmdCopyAccelerationStructureNV", "device");
+            VkCmdTraceRaysNv = cache.GetCommandDelegate<VkCommandBufferTraceRaysDelegate>("vkCmdTraceRaysNV", "device");
+            VkCreateRayTracingPipelinesNv = cache.GetCommandDelegate<VkDeviceCreateRayTracingPipelinesDelegate>("vkCreateRayTracingPipelinesNV", "device");
+            VkGetRayTracingShaderGroupHandlesNv = cache.GetCommandDelegate<VkPipelineGetRayTracingShaderGroupHandlesDelegate>("vkGetRayTracingShaderGroupHandlesNV", "device");
+            VkGetAccelerationStructureHandleNv = cache.GetCommandDelegate<VkAccelerationStructureNvGetHandleDelegate>("vkGetAccelerationStructureHandleNV", "device");
+            VkCmdWriteAccelerationStructuresPropertiesNv = cache.GetCommandDelegate<VkCommandBufferWriteAccelerationStructuresPropertiesDelegate>("vkCmdWriteAccelerationStructuresPropertiesNV", "device");
+            VkCompileDeferredNv = cache.GetCommandDelegate<VkPipelineCompileDeferredDelegate>("vkCompileDeferredNV", "device");
+            VkGetMemoryHostPointerPropertiesExt = cache.GetCommandDelegate<VkDeviceGetMemoryHostPointerPropertiesDelegate>("vkGetMemoryHostPointerPropertiesEXT", "device");
+            VkCmdWriteBufferMarkerAmd = cache.GetCommandDelegate<VkCommandBufferWriteBufferMarkerDelegate>("vkCmdWriteBufferMarkerAMD", "device");
+            VkGetPhysicalDeviceCalibrateableTimeDomainsExt = cache.GetCommandDelegate<VkPhysicalDeviceGetCalibrateableTimeDomainsDelegate>("vkGetPhysicalDeviceCalibrateableTimeDomainsEXT", "device");
+            VkGetCalibratedTimestampsExt = cache.GetCommandDelegate<VkDeviceGetCalibratedTimestampsDelegate>("vkGetCalibratedTimestampsEXT", "device");
+            VkCmdDrawMeshTasksNv = cache.GetCommandDelegate<VkCommandBufferDrawMeshTasksDelegate>("vkCmdDrawMeshTasksNV", "device");
+            VkCmdDrawMeshTasksIndirectNv = cache.GetCommandDelegate<VkCommandBufferDrawMeshTasksIndirectDelegate>("vkCmdDrawMeshTasksIndirectNV", "device");
+            VkCmdDrawMeshTasksIndirectCountNv = cache.GetCommandDelegate<VkCommandBufferDrawMeshTasksIndirectCountDelegate>("vkCmdDrawMeshTasksIndirectCountNV", "device");
+            VkCmdSetExclusiveScissorNv = cache.GetCommandDelegate<VkCommandBufferSetExclusiveScissorDelegate>("vkCmdSetExclusiveScissorNV", "device");
+            VkCmdSetCheckpointNv = cache.GetCommandDelegate<VkCommandBufferSetCheckpointDelegate>("vkCmdSetCheckpointNV", "device");
+            VkGetQueueCheckpointDataNv = cache.GetCommandDelegate<VkQueueGetCheckpointDataDelegate>("vkGetQueueCheckpointDataNV", "device");
+            VkInitializePerformanceApiIntel = cache.GetCommandDelegate<VkDeviceInitializePerformanceApiDelegate>("vkInitializePerformanceApiINTEL", "device");
+            VkUninitializePerformanceApiIntel = cache.GetCommandDelegate<VkDeviceUninitializePerformanceApiDelegate>("vkUninitializePerformanceApiINTEL", "device");
+            VkCmdSetPerformanceMarkerIntel = cache.GetCommandDelegate<VkCommandBufferSetPerformanceMarkerDelegate>("vkCmdSetPerformanceMarkerINTEL", "device");
+            VkCmdSetPerformanceStreamMarkerIntel = cache.GetCommandDelegate<VkCommandBufferSetPerformanceStreamMarkerDelegate>("vkCmdSetPerformanceStreamMarkerINTEL", "device");
+            VkCmdSetPerformanceOverrideIntel = cache.GetCommandDelegate<VkCommandBufferSetPerformanceOverrideDelegate>("vkCmdSetPerformanceOverrideINTEL", "device");
+            VkAcquirePerformanceConfigurationIntel = cache.GetCommandDelegate<VkDeviceAcquirePerformanceConfigurationDelegate>("vkAcquirePerformanceConfigurationINTEL", "device");
+            VkReleasePerformanceConfigurationIntel = cache.GetCommandDelegate<VkPerformanceConfigurationIntelReleaseDelegate>("vkReleasePerformanceConfigurationINTEL", "device");
+            VkQueueSetPerformanceConfigurationIntel = cache.GetCommandDelegate<VkQueueSetPerformanceConfigurationDelegate>("vkQueueSetPerformanceConfigurationINTEL", "device");
+            VkGetPerformanceParameterIntel = cache.GetCommandDelegate<VkDeviceGetPerformanceParameterDelegate>("vkGetPerformanceParameterINTEL", "device");
+            VkSetLocalDimmingAmd = cache.GetCommandDelegate<VkSwapchainKhrSetLocalDimmingDelegate>("vkSetLocalDimmingAMD", "device");
+            VkCreateImagePipeSurfaceFuchsia = cache.GetCommandDelegate<VkInstanceCreateImagePipeSurfaceDelegate>("vkCreateImagePipeSurfaceFUCHSIA", "instance");
+            VkCreateMetalSurfaceExt = cache.GetCommandDelegate<VkInstanceCreateMetalSurfaceDelegate>("vkCreateMetalSurfaceEXT", "instance");
+            VkGetPhysicalDeviceToolPropertiesExt = cache.GetCommandDelegate<VkPhysicalDeviceGetToolPropertiesDelegate>("vkGetPhysicalDeviceToolPropertiesEXT", "device");
+            VkGetPhysicalDeviceCooperativeMatrixPropertiesNv = cache.GetCommandDelegate<VkPhysicalDeviceGetCooperativeMatrixPropertiesDelegate>("vkGetPhysicalDeviceCooperativeMatrixPropertiesNV", "device");
+            VkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNv = cache.GetCommandDelegate<VkPhysicalDeviceGetSupportedFramebufferMixedSamplesCombinationsDelegate>("vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV", "device");
+            VkGetPhysicalDeviceSurfacePresentModes2Ext = cache.GetCommandDelegate<VkPhysicalDeviceGetSurfacePresentModes2Delegate>("vkGetPhysicalDeviceSurfacePresentModes2EXT", "device");
+            VkAcquireFullScreenExclusiveModeExt = cache.GetCommandDelegate<VkSwapchainKhrAcquireFullScreenExclusiveModeDelegate>("vkAcquireFullScreenExclusiveModeEXT", "device");
+            VkReleaseFullScreenExclusiveModeExt = cache.GetCommandDelegate<VkSwapchainKhrReleaseFullScreenExclusiveModeDelegate>("vkReleaseFullScreenExclusiveModeEXT", "device");
+            VkGetDeviceGroupSurfacePresentModes2Ext = cache.GetCommandDelegate<VkDeviceGetGroupSurfacePresentModes2Delegate>("vkGetDeviceGroupSurfacePresentModes2EXT", "device");
+            VkCreateHeadlessSurfaceExt = cache.GetCommandDelegate<VkInstanceCreateHeadlessSurfaceDelegate>("vkCreateHeadlessSurfaceEXT", "instance");
+            VkCmdSetLineStippleExt = cache.GetCommandDelegate<VkCommandBufferSetLineStippleDelegate>("vkCmdSetLineStippleEXT", "device");
+            VkGetPipelineExecutablePropertiesKhr = cache.GetCommandDelegate<VkDeviceGetPipelineExecutablePropertiesDelegate>("vkGetPipelineExecutablePropertiesKHR", "device");
+            VkGetPipelineExecutableStatisticsKhr = cache.GetCommandDelegate<VkDeviceGetPipelineExecutableStatisticsDelegate>("vkGetPipelineExecutableStatisticsKHR", "device");
+            VkGetPipelineExecutableInternalRepresentationsKhr = cache.GetCommandDelegate<VkDeviceGetPipelineExecutableInternalRepresentationsDelegate>("vkGetPipelineExecutableInternalRepresentationsKHR", "device");
         }
     }
 }

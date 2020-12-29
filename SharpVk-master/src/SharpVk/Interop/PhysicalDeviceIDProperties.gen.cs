@@ -29,7 +29,7 @@ namespace SharpVk.Interop
     /// <summary>
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public unsafe struct PhysicalDeviceIDProperties
+    public unsafe struct PhysicalDeviceIdProperties
     {
         /// <summary>
         ///     The type of this structure.

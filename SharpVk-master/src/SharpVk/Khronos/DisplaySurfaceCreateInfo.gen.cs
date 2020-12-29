@@ -118,7 +118,7 @@ namespace SharpVk.Khronos
                 pointer->Flags = Flags.Value;
             else
                 pointer->Flags = default;
-            pointer->DisplayMode = DisplayMode?.handle ?? default(Interop.Khronos.DisplayMode);
+            pointer->DisplayMode = DisplayMode?.Handle ?? default(Interop.Khronos.DisplayMode);
             pointer->PlaneIndex = PlaneIndex;
             pointer->PlaneStackIndex = PlaneStackIndex;
             pointer->Transform = Transform;

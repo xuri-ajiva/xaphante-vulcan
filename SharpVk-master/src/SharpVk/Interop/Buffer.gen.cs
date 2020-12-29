@@ -32,13 +32,13 @@ namespace SharpVk.Interop
     /// </summary>
     public struct Buffer
     {
-        internal ulong handle;
+        internal ulong Handle;
 
         /// <summary>
         /// </summary>
         public Buffer(ulong handle)
         {
-            this.handle = handle;
+            this.Handle = handle;
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace SharpVk.Interop
         /// </summary>
         public ulong ToUInt64()
         {
-            return handle;
+            return Handle;
         }
     }
 }

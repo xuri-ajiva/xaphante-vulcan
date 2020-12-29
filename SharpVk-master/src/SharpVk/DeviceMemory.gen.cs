@@ -32,22 +32,22 @@ namespace SharpVk
     /// </summary>
     public class DeviceMemory
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.DeviceMemory handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.DeviceMemory Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal DeviceMemory(Device parent, Interop.DeviceMemory handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.DeviceMemory RawHandle => handle;
+        public Interop.DeviceMemory RawHandle => Handle;
 
         /// <summary>
         ///     Free GPU memory.
@@ -70,8 +70,8 @@ namespace SharpVk
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkFreeMemory;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkFreeMemory;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {
@@ -99,8 +99,8 @@ namespace SharpVk
                     marshalledFlags = flags.Value;
                 else
                     marshalledFlags = default;
-                var commandDelegate = commandCache.Cache.vkMapMemory;
-                var methodResult = commandDelegate(parent.handle, handle, offset, size, marshalledFlags, &marshalledData);
+                var commandDelegate = CommandCache.Cache.VkMapMemory;
+                var methodResult = commandDelegate(Parent.Handle, Handle, offset, size, marshalledFlags, &marshalledData);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = new(marshalledData);
                 return result;
@@ -118,8 +118,8 @@ namespace SharpVk
         {
             try
             {
-                var commandDelegate = commandCache.Cache.vkUnmapMemory;
-                commandDelegate(parent.handle, handle);
+                var commandDelegate = CommandCache.Cache.VkUnmapMemory;
+                commandDelegate(Parent.Handle, Handle);
             }
             finally
             {
@@ -136,8 +136,8 @@ namespace SharpVk
             {
                 var result = default(ulong);
                 var marshalledCommittedMemoryInBytes = default(ulong);
-                var commandDelegate = commandCache.Cache.vkGetDeviceMemoryCommitment;
-                commandDelegate(parent.handle, handle, &marshalledCommittedMemoryInBytes);
+                var commandDelegate = CommandCache.Cache.VkGetDeviceMemoryCommitment;
+                commandDelegate(Parent.Handle, Handle, &marshalledCommittedMemoryInBytes);
                 result = marshalledCommittedMemoryInBytes;
                 return result;
             }

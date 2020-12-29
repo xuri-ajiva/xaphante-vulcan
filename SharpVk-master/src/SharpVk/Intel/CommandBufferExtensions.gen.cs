@@ -45,11 +45,11 @@ namespace SharpVk.Intel
             {
                 var commandCache = default(CommandCache);
                 var marshalledMarkerInfo = default(Interop.Intel.PerformanceMarkerInfo*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledMarkerInfo = (Interop.Intel.PerformanceMarkerInfo*)HeapUtil.Allocate<Interop.Intel.PerformanceMarkerInfo>();
                 markerInfo.MarshalTo(marshalledMarkerInfo);
-                var commandDelegate = commandCache.Cache.vkCmdSetPerformanceMarkerINTEL;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledMarkerInfo);
+                var commandDelegate = commandCache.Cache.VkCmdSetPerformanceMarkerIntel;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledMarkerInfo);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally
@@ -71,11 +71,11 @@ namespace SharpVk.Intel
             {
                 var commandCache = default(CommandCache);
                 var marshalledMarkerInfo = default(Interop.Intel.PerformanceStreamMarkerInfo*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledMarkerInfo = (Interop.Intel.PerformanceStreamMarkerInfo*)HeapUtil.Allocate<Interop.Intel.PerformanceStreamMarkerInfo>();
                 markerInfo.MarshalTo(marshalledMarkerInfo);
-                var commandDelegate = commandCache.Cache.vkCmdSetPerformanceStreamMarkerINTEL;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledMarkerInfo);
+                var commandDelegate = commandCache.Cache.VkCmdSetPerformanceStreamMarkerIntel;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledMarkerInfo);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally
@@ -97,11 +97,11 @@ namespace SharpVk.Intel
             {
                 var commandCache = default(CommandCache);
                 var marshalledOverrideInfo = default(Interop.Intel.PerformanceOverrideInfo*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledOverrideInfo = (Interop.Intel.PerformanceOverrideInfo*)HeapUtil.Allocate<Interop.Intel.PerformanceOverrideInfo>();
                 overrideInfo.MarshalTo(marshalledOverrideInfo);
-                var commandDelegate = commandCache.Cache.vkCmdSetPerformanceOverrideINTEL;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledOverrideInfo);
+                var commandDelegate = commandCache.Cache.VkCmdSetPerformanceOverrideIntel;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledOverrideInfo);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally

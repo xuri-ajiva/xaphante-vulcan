@@ -29,11 +29,11 @@ namespace SharpVk.NVidia
     /// <summary>
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public struct PhysicalDeviceShaderSMBuiltinsProperties
+    public struct PhysicalDeviceShaderSmBuiltinsProperties
     {
         /// <summary>
         /// </summary>
-        public uint ShaderSMCount
+        public uint ShaderSmCount
         {
             get;
             set;
@@ -41,7 +41,7 @@ namespace SharpVk.NVidia
 
         /// <summary>
         /// </summary>
-        public uint ShaderWarpsPerSM
+        public uint ShaderWarpsPerSm
         {
             get;
             set;
@@ -51,11 +51,11 @@ namespace SharpVk.NVidia
         /// </summary>
         /// <param name="pointer">
         /// </param>
-        internal static unsafe PhysicalDeviceShaderSMBuiltinsProperties MarshalFrom(Interop.NVidia.PhysicalDeviceShaderSMBuiltinsProperties* pointer)
+        internal static unsafe PhysicalDeviceShaderSmBuiltinsProperties MarshalFrom(Interop.NVidia.PhysicalDeviceShaderSmBuiltinsProperties* pointer)
         {
-            var result = default(PhysicalDeviceShaderSMBuiltinsProperties);
-            result.ShaderSMCount = pointer->ShaderSMCount;
-            result.ShaderWarpsPerSM = pointer->ShaderWarpsPerSM;
+            var result = default(PhysicalDeviceShaderSmBuiltinsProperties);
+            result.ShaderSmCount = pointer->ShaderSMCount;
+            result.ShaderWarpsPerSm = pointer->ShaderWarpsPerSM;
             return result;
         }
     }

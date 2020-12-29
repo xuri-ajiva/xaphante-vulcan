@@ -6,21 +6,21 @@ namespace SharpVk.Emit
         : IDisposable
     {
         private readonly bool hasBraces;
-        protected readonly IndentedTextWriter writer;
+        protected readonly IndentedTextWriter Writer;
 
         public BlockBuilder(IndentedTextWriter writer, bool hasBraces = true)
         {
             this.hasBraces = hasBraces;
 
-            this.writer = writer;
-            if (this.hasBraces) this.writer.WriteLine("{");
-            this.writer.IncreaseIndent();
+            this.Writer = writer;
+            if (this.hasBraces) this.Writer.WriteLine("{");
+            this.Writer.IncreaseIndent();
         }
 
         public void Dispose()
         {
-            writer.DecreaseIndent();
-            if (hasBraces) writer.WriteLine("}");
+            Writer.DecreaseIndent();
+            if (hasBraces) Writer.WriteLine("}");
         }
     }
 }

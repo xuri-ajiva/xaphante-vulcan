@@ -34,7 +34,7 @@ namespace SharpVk.Spirv
 
         /// <summary>
         /// </summary>
-        public static readonly OperandKind FPFastMathMode = new();
+        public static readonly OperandKind FpFastMathMode = new();
 
         /// <summary>
         /// </summary>
@@ -110,7 +110,7 @@ namespace SharpVk.Spirv
 
         /// <summary>
         /// </summary>
-        public static readonly OperandKind FPRoundingMode = new();
+        public static readonly OperandKind FpRoundingMode = new();
 
         /// <summary>
         /// </summary>

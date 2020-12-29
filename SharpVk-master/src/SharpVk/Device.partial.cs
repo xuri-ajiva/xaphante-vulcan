@@ -38,15 +38,15 @@ namespace SharpVk
             {
                 SType = StructureType.WriteDescriptorSet,
                 BufferInfo = marshalledInfos,
-                DestinationSet = destinationSet.handle,
+                DestinationSet = destinationSet.Handle,
                 DestinationBinding = destinationBinding,
                 DestinationArrayElement = destinationArrayElement,
                 DescriptorCount = (uint)bufferInfosLength,
                 DescriptorType = descriptorType
             };
 
-            var commandDelegate = commandCache.GetCommandDelegate<VkDeviceUpdateDescriptorSetsDelegate>("vkUpdateDescriptorSets", "");
-            commandDelegate(handle, 1, &info, 0, null);
+            var commandDelegate = CommandCache.GetCommandDelegate<VkDeviceUpdateDescriptorSetsDelegate>("vkUpdateDescriptorSets", "");
+            commandDelegate(Handle, 1, &info, 0, null);
         }
 
         /// <summary>
@@ -83,15 +83,15 @@ namespace SharpVk
             {
                 SType = StructureType.WriteDescriptorSet,
                 ImageInfo = marshalledInfos,
-                DestinationSet = destinationSet.handle,
+                DestinationSet = destinationSet.Handle,
                 DestinationBinding = destinationBinding,
                 DestinationArrayElement = destinationArrayElement,
                 DescriptorCount = (uint)bufferInfosLength,
                 DescriptorType = descriptorType
             };
 
-            var commandDelegate = commandCache.GetCommandDelegate<VkDeviceUpdateDescriptorSetsDelegate>("vkUpdateDescriptorSets", "");
-            commandDelegate(handle, 1, &info, 0, null);
+            var commandDelegate = CommandCache.GetCommandDelegate<VkDeviceUpdateDescriptorSetsDelegate>("vkUpdateDescriptorSets", "");
+            commandDelegate(Handle, 1, &info, 0, null);
         }
 
         /// <summary>
@@ -122,21 +122,21 @@ namespace SharpVk
             var bufferInfosLength = texelBufferViews?.Length ?? 0;
             var marshalledViews = (Interop.BufferView*)HeapUtil.Allocate<Interop.BufferView>(bufferInfosLength);
 
-            for (var index = 0; index < bufferInfosLength; index++) marshalledViews[index] = texelBufferViews.Value[index].handle;
+            for (var index = 0; index < bufferInfosLength; index++) marshalledViews[index] = texelBufferViews.Value[index].Handle;
 
             var info = new Interop.WriteDescriptorSet
             {
                 SType = StructureType.WriteDescriptorSet,
                 TexelBufferView = marshalledViews,
-                DestinationSet = destinationSet.handle,
+                DestinationSet = destinationSet.Handle,
                 DestinationBinding = destinationBinding,
                 DestinationArrayElement = destinationArrayElement,
                 DescriptorCount = (uint)bufferInfosLength,
                 DescriptorType = descriptorType
             };
 
-            var commandDelegate = commandCache.GetCommandDelegate<VkDeviceUpdateDescriptorSetsDelegate>("vkUpdateDescriptorSets", "");
-            commandDelegate(handle, 1, &info, 0, null);
+            var commandDelegate = CommandCache.GetCommandDelegate<VkDeviceUpdateDescriptorSetsDelegate>("vkUpdateDescriptorSets", "");
+            commandDelegate(Handle, 1, &info, 0, null);
         }
     }
 }

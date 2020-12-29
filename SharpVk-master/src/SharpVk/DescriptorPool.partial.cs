@@ -9,7 +9,7 @@
         /// </param>
         public DescriptorSet AllocateDescriptorSet(DescriptorSetLayout setLayout)
         {
-            return parent.AllocateDescriptorSet(this, setLayout);
+            return Parent.AllocateDescriptorSet(this, setLayout);
         }
 
         /// <summary>
@@ -19,7 +19,7 @@
         /// </param>
         public DescriptorSet[] AllocateDescriptorSets(ArrayProxy<DescriptorSetLayout> setLayouts)
         {
-            return parent.AllocateDescriptorSets(this, setLayouts);
+            return Parent.AllocateDescriptorSets(this, setLayouts);
         }
     }
 }

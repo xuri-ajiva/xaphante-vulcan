@@ -26,5 +26,5 @@ namespace SharpVk.Interop.NVidia
 {
     /// <summary>
     /// </summary>
-    public unsafe delegate void VkAccelerationStructureNVDestroyDelegate(Device device, AccelerationStructure accelerationStructure, AllocationCallbacks* allocator);
+    public unsafe delegate void VkAccelerationStructureNvDestroyDelegate(Device device, AccelerationStructure accelerationStructure, AllocationCallbacks* allocator);
 }

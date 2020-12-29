@@ -29,5 +29,5 @@ namespace SharpVk.Interop.Google
 {
     /// <summary>
     /// </summary>
-    public unsafe delegate Result VkSwapchainKHRGetPastPresentationTimingDelegate(Device device, Swapchain swapchain, uint* presentationTimingCount, PastPresentationTiming* presentationTimings);
+    public unsafe delegate Result VkSwapchainKhrGetPastPresentationTimingDelegate(Device device, Swapchain swapchain, uint* presentationTimingCount, PastPresentationTiming* presentationTimings);
 }

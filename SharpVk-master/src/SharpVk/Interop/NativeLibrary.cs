@@ -26,9 +26,9 @@ namespace SharpVk.Interop
             }
             else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
             {
-                library = LibDlOSX.dlopen("libvulkan.dylib.1", LibDlOSX.RtldNow);
+                library = LibDlOsx.dlopen("libvulkan.dylib.1", LibDlOsx.RtldNow);
 
-                if (library == IntPtr.Zero) library = LibDlOSX.dlopen("libvulkan.dylib", LibDlOSX.RtldNow);
+                if (library == IntPtr.Zero) library = LibDlOsx.dlopen("libvulkan.dylib", LibDlOsx.RtldNow);
             }
             else
             {
@@ -52,7 +52,7 @@ namespace SharpVk.Interop
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
                 return LibDl.dlsym(library, name);
             if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-                return LibDlOSX.dlsym(library, name);
+                return LibDlOsx.dlsym(library, name);
             throw new NotSupportedException($"{RuntimeInformation.OSDescription} is not a supported platform for SharpVK.");
         }
 
@@ -76,7 +76,7 @@ namespace SharpVk.Interop
             public static extern IntPtr dlsym(IntPtr handle, string name);
         }
 
-        private static class LibDlOSX
+        private static class LibDlOsx
         {
             public const int RtldNow = 2;
 

@@ -29,7 +29,7 @@ namespace SharpVk.MoltenVk
     /// <summary>
     /// </summary>
     [Flags]
-    public enum IOSSurfaceCreateFlags
+    public enum IosSurfaceCreateFlags
     {
         /// <summary>
         /// </summary>

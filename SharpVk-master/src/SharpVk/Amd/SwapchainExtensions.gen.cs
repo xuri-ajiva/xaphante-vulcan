@@ -43,9 +43,9 @@ namespace SharpVk.Amd
             try
             {
                 var commandCache = default(CommandCache);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkSetLocalDimmingAMD;
-                commandDelegate(extendedHandle.parent.handle, extendedHandle.handle, localDimmingEnable);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkSetLocalDimmingAmd;
+                commandDelegate(extendedHandle.Parent.Handle, extendedHandle.Handle, localDimmingEnable);
             }
             finally
             {

@@ -34,20 +34,20 @@ namespace SharpVk
     public partial class Instance
         : IProcLookup, IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.Instance handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.Instance Handle;
 
         internal Instance(CommandCache commandCache, Interop.Instance handle)
         {
-            this.handle = handle;
-            this.commandCache = new(this, "instance", commandCache);
-            this.commandCache.Initialise();
+            this.Handle = handle;
+            this.CommandCache = new(this, "instance", commandCache);
+            this.CommandCache.Initialise();
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.Instance RawHandle => handle;
+        public Interop.Instance RawHandle => Handle;
 
         /// <summary>
         ///     Destroys the handles and releases any unmanaged resources
@@ -68,8 +68,8 @@ namespace SharpVk
             try
             {
                 var result = default(IntPtr);
-                var commandDelegate = commandCache.Cache.vkGetInstanceProcAddr;
-                result = commandDelegate(handle, HeapUtil.MarshalTo(name));
+                var commandDelegate = CommandCache.Cache.VkGetInstanceProcAddr;
+                result = commandDelegate(Handle, HeapUtil.MarshalTo(name));
                 return result;
             }
             finally
@@ -187,7 +187,7 @@ namespace SharpVk
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkCreateInstance;
+                var commandDelegate = commandCache.Cache.VkCreateInstance;
                 var methodResult = commandDelegate(marshalledCreateInfo, marshalledAllocator, &marshalledInstance);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = new(commandCache, marshalledInstance);
@@ -220,8 +220,8 @@ namespace SharpVk
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroyInstance;
-                commandDelegate(handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroyInstance;
+                commandDelegate(Handle, marshalledAllocator);
             }
             finally
             {
@@ -239,11 +239,11 @@ namespace SharpVk
                 var result = default(PhysicalDevice[]);
                 var marshalledPhysicalDeviceCount = default(uint);
                 var marshalledPhysicalDevices = default(Interop.PhysicalDevice*);
-                var commandDelegate = commandCache.Cache.vkEnumeratePhysicalDevices;
-                var methodResult = commandDelegate(handle, &marshalledPhysicalDeviceCount, marshalledPhysicalDevices);
+                var commandDelegate = CommandCache.Cache.VkEnumeratePhysicalDevices;
+                var methodResult = commandDelegate(Handle, &marshalledPhysicalDeviceCount, marshalledPhysicalDevices);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 marshalledPhysicalDevices = (Interop.PhysicalDevice*)HeapUtil.Allocate<Interop.PhysicalDevice>(marshalledPhysicalDeviceCount);
-                commandDelegate(handle, &marshalledPhysicalDeviceCount, marshalledPhysicalDevices);
+                commandDelegate(Handle, &marshalledPhysicalDeviceCount, marshalledPhysicalDevices);
                 if (marshalledPhysicalDevices != null)
                 {
                     var fieldPointer = new PhysicalDevice[marshalledPhysicalDeviceCount];
@@ -276,7 +276,7 @@ namespace SharpVk
                 var result = default(ExtensionProperties[]);
                 var marshalledPropertyCount = default(uint);
                 var marshalledProperties = default(Interop.ExtensionProperties*);
-                var commandDelegate = commandCache.Cache.vkEnumerateInstanceExtensionProperties;
+                var commandDelegate = commandCache.Cache.VkEnumerateInstanceExtensionProperties;
                 var methodResult = commandDelegate(HeapUtil.MarshalTo(layerName), &marshalledPropertyCount, marshalledProperties);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 marshalledProperties = (Interop.ExtensionProperties*)HeapUtil.Allocate<Interop.ExtensionProperties>(marshalledPropertyCount);
@@ -311,7 +311,7 @@ namespace SharpVk
                 var result = default(LayerProperties[]);
                 var marshalledPropertyCount = default(uint);
                 var marshalledProperties = default(Interop.LayerProperties*);
-                var commandDelegate = commandCache.Cache.vkEnumerateInstanceLayerProperties;
+                var commandDelegate = commandCache.Cache.VkEnumerateInstanceLayerProperties;
                 var methodResult = commandDelegate(&marshalledPropertyCount, marshalledProperties);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 marshalledProperties = (Interop.LayerProperties*)HeapUtil.Allocate<Interop.LayerProperties>(marshalledPropertyCount);
@@ -344,7 +344,7 @@ namespace SharpVk
             {
                 var result = default(Version);
                 var marshalledApiVersion = default(uint);
-                var commandDelegate = commandCache.Cache.vkEnumerateInstanceVersion;
+                var commandDelegate = commandCache.Cache.VkEnumerateInstanceVersion;
                 var methodResult = commandDelegate(&marshalledApiVersion);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = marshalledApiVersion;
@@ -365,11 +365,11 @@ namespace SharpVk
                 var result = default(PhysicalDeviceGroupProperties[]);
                 var marshalledPhysicalDeviceGroupCount = default(uint);
                 var marshalledPhysicalDeviceGroupProperties = default(Interop.PhysicalDeviceGroupProperties*);
-                var commandDelegate = commandCache.Cache.vkEnumeratePhysicalDeviceGroups;
-                var methodResult = commandDelegate(handle, &marshalledPhysicalDeviceGroupCount, marshalledPhysicalDeviceGroupProperties);
+                var commandDelegate = CommandCache.Cache.VkEnumeratePhysicalDeviceGroups;
+                var methodResult = commandDelegate(Handle, &marshalledPhysicalDeviceGroupCount, marshalledPhysicalDeviceGroupProperties);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 marshalledPhysicalDeviceGroupProperties = (Interop.PhysicalDeviceGroupProperties*)HeapUtil.Allocate<Interop.PhysicalDeviceGroupProperties>(marshalledPhysicalDeviceGroupCount);
-                commandDelegate(handle, &marshalledPhysicalDeviceGroupCount, marshalledPhysicalDeviceGroupProperties);
+                commandDelegate(Handle, &marshalledPhysicalDeviceGroupCount, marshalledPhysicalDeviceGroupProperties);
                 if (marshalledPhysicalDeviceGroupProperties != null)
                 {
                     var fieldPointer = new PhysicalDeviceGroupProperties[marshalledPhysicalDeviceGroupCount];

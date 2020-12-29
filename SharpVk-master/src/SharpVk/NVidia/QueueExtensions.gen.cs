@@ -43,11 +43,11 @@ namespace SharpVk.NVidia
                 var marshalledCheckpointDataCount = default(uint);
                 var commandCache = default(CommandCache);
                 var marshalledCheckpointData = default(Interop.NVidia.CheckpointData*);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkGetQueueCheckpointDataNV;
-                commandDelegate(extendedHandle.handle, &marshalledCheckpointDataCount, marshalledCheckpointData);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkGetQueueCheckpointDataNv;
+                commandDelegate(extendedHandle.Handle, &marshalledCheckpointDataCount, marshalledCheckpointData);
                 marshalledCheckpointData = (Interop.NVidia.CheckpointData*)HeapUtil.Allocate<Interop.NVidia.CheckpointData>(marshalledCheckpointDataCount);
-                commandDelegate(extendedHandle.handle, &marshalledCheckpointDataCount, marshalledCheckpointData);
+                commandDelegate(extendedHandle.Handle, &marshalledCheckpointDataCount, marshalledCheckpointData);
                 if (marshalledCheckpointData != null)
                 {
                     var fieldPointer = new CheckpointData[marshalledCheckpointDataCount];

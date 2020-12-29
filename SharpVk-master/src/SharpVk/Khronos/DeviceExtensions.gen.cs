@@ -101,7 +101,7 @@ namespace SharpVk.Khronos
                 var result = default(Swapchain);
                 var commandCache = default(CommandCache);
                 var marshalledCreateInfo = default(Interop.Khronos.SwapchainCreateInfo*);
-                var vkSwapchainCreateInfoKHRNextPointer = default(void*);
+                var vkSwapchainCreateInfoKhrNextPointer = default(void*);
                 var marshalledAllocator = default(Interop.AllocationCallbacks*);
                 var marshalledSwapchain = default(Interop.Khronos.Swapchain);
                 if (swapchainCounterCreateInfoExt != null)
@@ -109,58 +109,58 @@ namespace SharpVk.Khronos
                     var extensionPointer = default(Interop.Multivendor.SwapchainCounterCreateInfo*);
                     extensionPointer = (Interop.Multivendor.SwapchainCounterCreateInfo*)HeapUtil.Allocate<Interop.Multivendor.SwapchainCounterCreateInfo>();
                     swapchainCounterCreateInfoExt.Value.MarshalTo(extensionPointer);
-                    extensionPointer->Next = vkSwapchainCreateInfoKHRNextPointer;
-                    vkSwapchainCreateInfoKHRNextPointer = extensionPointer;
+                    extensionPointer->Next = vkSwapchainCreateInfoKhrNextPointer;
+                    vkSwapchainCreateInfoKhrNextPointer = extensionPointer;
                 }
                 if (deviceGroupSwapchainCreateInfoKhr != null)
                 {
                     var extensionPointer = default(Interop.Khronos.DeviceGroupSwapchainCreateInfo*);
                     extensionPointer = (Interop.Khronos.DeviceGroupSwapchainCreateInfo*)HeapUtil.Allocate<Interop.Khronos.DeviceGroupSwapchainCreateInfo>();
                     deviceGroupSwapchainCreateInfoKhr.Value.MarshalTo(extensionPointer);
-                    extensionPointer->Next = vkSwapchainCreateInfoKHRNextPointer;
-                    vkSwapchainCreateInfoKHRNextPointer = extensionPointer;
+                    extensionPointer->Next = vkSwapchainCreateInfoKhrNextPointer;
+                    vkSwapchainCreateInfoKhrNextPointer = extensionPointer;
                 }
                 if (swapchainDisplayNativeHdrCreateInfoAmd != null)
                 {
                     var extensionPointer = default(Interop.Amd.SwapchainDisplayNativeHdrCreateInfo*);
                     extensionPointer = (Interop.Amd.SwapchainDisplayNativeHdrCreateInfo*)HeapUtil.Allocate<Interop.Amd.SwapchainDisplayNativeHdrCreateInfo>();
                     swapchainDisplayNativeHdrCreateInfoAmd.Value.MarshalTo(extensionPointer);
-                    extensionPointer->Next = vkSwapchainCreateInfoKHRNextPointer;
-                    vkSwapchainCreateInfoKHRNextPointer = extensionPointer;
+                    extensionPointer->Next = vkSwapchainCreateInfoKhrNextPointer;
+                    vkSwapchainCreateInfoKhrNextPointer = extensionPointer;
                 }
                 if (imageFormatListCreateInfo != null)
                 {
                     var extensionPointer = default(Interop.ImageFormatListCreateInfo*);
                     extensionPointer = (Interop.ImageFormatListCreateInfo*)HeapUtil.Allocate<Interop.ImageFormatListCreateInfo>();
                     imageFormatListCreateInfo.Value.MarshalTo(extensionPointer);
-                    extensionPointer->Next = vkSwapchainCreateInfoKHRNextPointer;
-                    vkSwapchainCreateInfoKHRNextPointer = extensionPointer;
+                    extensionPointer->Next = vkSwapchainCreateInfoKhrNextPointer;
+                    vkSwapchainCreateInfoKhrNextPointer = extensionPointer;
                 }
                 if (surfaceFullScreenExclusiveInfoExt != null)
                 {
                     var extensionPointer = default(Interop.Multivendor.SurfaceFullScreenExclusiveInfo*);
                     extensionPointer = (Interop.Multivendor.SurfaceFullScreenExclusiveInfo*)HeapUtil.Allocate<Interop.Multivendor.SurfaceFullScreenExclusiveInfo>();
                     surfaceFullScreenExclusiveInfoExt.Value.MarshalTo(extensionPointer);
-                    extensionPointer->Next = vkSwapchainCreateInfoKHRNextPointer;
-                    vkSwapchainCreateInfoKHRNextPointer = extensionPointer;
+                    extensionPointer->Next = vkSwapchainCreateInfoKhrNextPointer;
+                    vkSwapchainCreateInfoKhrNextPointer = extensionPointer;
                 }
                 if (surfaceFullScreenExclusiveWin32InfoExt != null)
                 {
                     var extensionPointer = default(Interop.Multivendor.SurfaceFullScreenExclusiveWin32Info*);
                     extensionPointer = (Interop.Multivendor.SurfaceFullScreenExclusiveWin32Info*)HeapUtil.Allocate<Interop.Multivendor.SurfaceFullScreenExclusiveWin32Info>();
                     surfaceFullScreenExclusiveWin32InfoExt.Value.MarshalTo(extensionPointer);
-                    extensionPointer->Next = vkSwapchainCreateInfoKHRNextPointer;
-                    vkSwapchainCreateInfoKHRNextPointer = extensionPointer;
+                    extensionPointer->Next = vkSwapchainCreateInfoKhrNextPointer;
+                    vkSwapchainCreateInfoKhrNextPointer = extensionPointer;
                 }
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledCreateInfo = (Interop.Khronos.SwapchainCreateInfo*)HeapUtil.Allocate<Interop.Khronos.SwapchainCreateInfo>();
                 marshalledCreateInfo->SType = StructureType.SwapchainCreateInfo;
-                marshalledCreateInfo->Next = vkSwapchainCreateInfoKHRNextPointer;
+                marshalledCreateInfo->Next = vkSwapchainCreateInfoKhrNextPointer;
                 if (flags != null)
                     marshalledCreateInfo->Flags = flags.Value;
                 else
                     marshalledCreateInfo->Flags = default;
-                marshalledCreateInfo->Surface = surface?.handle ?? default(Interop.Khronos.Surface);
+                marshalledCreateInfo->Surface = surface?.Handle ?? default(Interop.Khronos.Surface);
                 marshalledCreateInfo->MinImageCount = minImageCount;
                 marshalledCreateInfo->ImageFormat = imageFormat;
                 marshalledCreateInfo->ImageColorSpace = imageColorSpace;
@@ -191,7 +191,7 @@ namespace SharpVk.Khronos
                 marshalledCreateInfo->CompositeAlpha = compositeAlpha;
                 marshalledCreateInfo->PresentMode = presentMode;
                 marshalledCreateInfo->Clipped = clipped;
-                marshalledCreateInfo->OldSwapchain = oldSwapchain?.handle ?? default(Interop.Khronos.Swapchain);
+                marshalledCreateInfo->OldSwapchain = oldSwapchain?.Handle ?? default(Interop.Khronos.Swapchain);
                 if (allocator != null)
                 {
                     marshalledAllocator = (Interop.AllocationCallbacks*)HeapUtil.Allocate<Interop.AllocationCallbacks>();
@@ -201,8 +201,8 @@ namespace SharpVk.Khronos
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkCreateSwapchainKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledCreateInfo, marshalledAllocator, &marshalledSwapchain);
+                var commandDelegate = commandCache.Cache.VkCreateSwapchainKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledCreateInfo, marshalledAllocator, &marshalledSwapchain);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = new(extendedHandle, marshalledSwapchain);
                 return result;
@@ -225,9 +225,9 @@ namespace SharpVk.Khronos
                 var result = default(DeviceGroupPresentCapabilities);
                 var commandCache = default(CommandCache);
                 var marshalledDeviceGroupPresentCapabilities = default(Interop.Khronos.DeviceGroupPresentCapabilities);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkGetDeviceGroupPresentCapabilitiesKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, &marshalledDeviceGroupPresentCapabilities);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkGetDeviceGroupPresentCapabilitiesKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, &marshalledDeviceGroupPresentCapabilities);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = DeviceGroupPresentCapabilities.MarshalFrom(&marshalledDeviceGroupPresentCapabilities);
                 return result;
@@ -252,9 +252,9 @@ namespace SharpVk.Khronos
                 var result = default(DeviceGroupPresentModeFlags);
                 var commandCache = default(CommandCache);
                 var marshalledModes = default(DeviceGroupPresentModeFlags);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkGetDeviceGroupSurfacePresentModesKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, surface?.handle ?? default(Interop.Khronos.Surface), &marshalledModes);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkGetDeviceGroupSurfacePresentModesKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, surface?.Handle ?? default(Interop.Khronos.Surface), &marshalledModes);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = marshalledModes;
                 return result;
@@ -281,11 +281,11 @@ namespace SharpVk.Khronos
                 var commandCache = default(CommandCache);
                 var marshalledAcquireInfo = default(Interop.Khronos.AcquireNextImageInfo*);
                 var marshalledImageIndex = default(uint);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledAcquireInfo = (Interop.Khronos.AcquireNextImageInfo*)HeapUtil.Allocate<Interop.Khronos.AcquireNextImageInfo>();
                 acquireInfo.MarshalTo(marshalledAcquireInfo);
-                var commandDelegate = commandCache.Cache.vkAcquireNextImage2KHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledAcquireInfo, &marshalledImageIndex);
+                var commandDelegate = commandCache.Cache.VkAcquireNextImage2Khr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledAcquireInfo, &marshalledImageIndex);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = marshalledImageIndex;
                 return result;
@@ -318,7 +318,7 @@ namespace SharpVk.Khronos
                 var marshalledCreateInfos = default(Interop.Khronos.SwapchainCreateInfo*);
                 var marshalledAllocator = default(Interop.AllocationCallbacks*);
                 var marshalledSwapchains = default(Interop.Khronos.Swapchain*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledSwapchainCount = HeapUtil.GetLength(createInfos);
                 if (createInfos.IsNull())
                 {
@@ -348,8 +348,8 @@ namespace SharpVk.Khronos
                     marshalledAllocator = default;
                 }
                 marshalledSwapchains = (Interop.Khronos.Swapchain*)HeapUtil.Allocate<Interop.Khronos.Swapchain>(marshalledSwapchainCount);
-                var commandDelegate = commandCache.Cache.vkCreateSharedSwapchainsKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledSwapchainCount, marshalledCreateInfos, marshalledAllocator, marshalledSwapchains);
+                var commandDelegate = commandCache.Cache.VkCreateSharedSwapchainsKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledSwapchainCount, marshalledCreateInfos, marshalledAllocator, marshalledSwapchains);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 if (marshalledSwapchains != null)
                 {
@@ -438,7 +438,7 @@ namespace SharpVk.Khronos
                 var commandCache = default(CommandCache);
                 var marshalledSwapchainCount = default(uint);
                 var marshalledCreateInfos = default(Interop.Khronos.SwapchainCreateInfo*);
-                var vkSwapchainCreateInfoKHRNextPointer = default(void*);
+                var vkSwapchainCreateInfoKhrNextPointer = default(void*);
                 var marshalledAllocator = default(Interop.AllocationCallbacks*);
                 var marshalledSwapchains = default(Interop.Khronos.Swapchain*);
                 if (swapchainCounterCreateInfoExt != null)
@@ -446,59 +446,59 @@ namespace SharpVk.Khronos
                     var extensionPointer = default(Interop.Multivendor.SwapchainCounterCreateInfo*);
                     extensionPointer = (Interop.Multivendor.SwapchainCounterCreateInfo*)HeapUtil.Allocate<Interop.Multivendor.SwapchainCounterCreateInfo>();
                     swapchainCounterCreateInfoExt.Value.MarshalTo(extensionPointer);
-                    extensionPointer->Next = vkSwapchainCreateInfoKHRNextPointer;
-                    vkSwapchainCreateInfoKHRNextPointer = extensionPointer;
+                    extensionPointer->Next = vkSwapchainCreateInfoKhrNextPointer;
+                    vkSwapchainCreateInfoKhrNextPointer = extensionPointer;
                 }
                 if (deviceGroupSwapchainCreateInfoKhr != null)
                 {
                     var extensionPointer = default(Interop.Khronos.DeviceGroupSwapchainCreateInfo*);
                     extensionPointer = (Interop.Khronos.DeviceGroupSwapchainCreateInfo*)HeapUtil.Allocate<Interop.Khronos.DeviceGroupSwapchainCreateInfo>();
                     deviceGroupSwapchainCreateInfoKhr.Value.MarshalTo(extensionPointer);
-                    extensionPointer->Next = vkSwapchainCreateInfoKHRNextPointer;
-                    vkSwapchainCreateInfoKHRNextPointer = extensionPointer;
+                    extensionPointer->Next = vkSwapchainCreateInfoKhrNextPointer;
+                    vkSwapchainCreateInfoKhrNextPointer = extensionPointer;
                 }
                 if (swapchainDisplayNativeHdrCreateInfoAmd != null)
                 {
                     var extensionPointer = default(Interop.Amd.SwapchainDisplayNativeHdrCreateInfo*);
                     extensionPointer = (Interop.Amd.SwapchainDisplayNativeHdrCreateInfo*)HeapUtil.Allocate<Interop.Amd.SwapchainDisplayNativeHdrCreateInfo>();
                     swapchainDisplayNativeHdrCreateInfoAmd.Value.MarshalTo(extensionPointer);
-                    extensionPointer->Next = vkSwapchainCreateInfoKHRNextPointer;
-                    vkSwapchainCreateInfoKHRNextPointer = extensionPointer;
+                    extensionPointer->Next = vkSwapchainCreateInfoKhrNextPointer;
+                    vkSwapchainCreateInfoKhrNextPointer = extensionPointer;
                 }
                 if (imageFormatListCreateInfo != null)
                 {
                     var extensionPointer = default(Interop.ImageFormatListCreateInfo*);
                     extensionPointer = (Interop.ImageFormatListCreateInfo*)HeapUtil.Allocate<Interop.ImageFormatListCreateInfo>();
                     imageFormatListCreateInfo.Value.MarshalTo(extensionPointer);
-                    extensionPointer->Next = vkSwapchainCreateInfoKHRNextPointer;
-                    vkSwapchainCreateInfoKHRNextPointer = extensionPointer;
+                    extensionPointer->Next = vkSwapchainCreateInfoKhrNextPointer;
+                    vkSwapchainCreateInfoKhrNextPointer = extensionPointer;
                 }
                 if (surfaceFullScreenExclusiveInfoExt != null)
                 {
                     var extensionPointer = default(Interop.Multivendor.SurfaceFullScreenExclusiveInfo*);
                     extensionPointer = (Interop.Multivendor.SurfaceFullScreenExclusiveInfo*)HeapUtil.Allocate<Interop.Multivendor.SurfaceFullScreenExclusiveInfo>();
                     surfaceFullScreenExclusiveInfoExt.Value.MarshalTo(extensionPointer);
-                    extensionPointer->Next = vkSwapchainCreateInfoKHRNextPointer;
-                    vkSwapchainCreateInfoKHRNextPointer = extensionPointer;
+                    extensionPointer->Next = vkSwapchainCreateInfoKhrNextPointer;
+                    vkSwapchainCreateInfoKhrNextPointer = extensionPointer;
                 }
                 if (surfaceFullScreenExclusiveWin32InfoExt != null)
                 {
                     var extensionPointer = default(Interop.Multivendor.SurfaceFullScreenExclusiveWin32Info*);
                     extensionPointer = (Interop.Multivendor.SurfaceFullScreenExclusiveWin32Info*)HeapUtil.Allocate<Interop.Multivendor.SurfaceFullScreenExclusiveWin32Info>();
                     surfaceFullScreenExclusiveWin32InfoExt.Value.MarshalTo(extensionPointer);
-                    extensionPointer->Next = vkSwapchainCreateInfoKHRNextPointer;
-                    vkSwapchainCreateInfoKHRNextPointer = extensionPointer;
+                    extensionPointer->Next = vkSwapchainCreateInfoKhrNextPointer;
+                    vkSwapchainCreateInfoKhrNextPointer = extensionPointer;
                 }
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledSwapchainCount = 1;
                 marshalledCreateInfos = (Interop.Khronos.SwapchainCreateInfo*)HeapUtil.Allocate<Interop.Khronos.SwapchainCreateInfo>();
                 marshalledCreateInfos->SType = StructureType.SwapchainCreateInfo;
-                marshalledCreateInfos->Next = vkSwapchainCreateInfoKHRNextPointer;
+                marshalledCreateInfos->Next = vkSwapchainCreateInfoKhrNextPointer;
                 if (flags != null)
                     marshalledCreateInfos->Flags = flags.Value;
                 else
                     marshalledCreateInfos->Flags = default;
-                marshalledCreateInfos->Surface = surface?.handle ?? default(Interop.Khronos.Surface);
+                marshalledCreateInfos->Surface = surface?.Handle ?? default(Interop.Khronos.Surface);
                 marshalledCreateInfos->MinImageCount = minImageCount;
                 marshalledCreateInfos->ImageFormat = imageFormat;
                 marshalledCreateInfos->ImageColorSpace = imageColorSpace;
@@ -529,7 +529,7 @@ namespace SharpVk.Khronos
                 marshalledCreateInfos->CompositeAlpha = compositeAlpha;
                 marshalledCreateInfos->PresentMode = presentMode;
                 marshalledCreateInfos->Clipped = clipped;
-                marshalledCreateInfos->OldSwapchain = oldSwapchain?.handle ?? default(Interop.Khronos.Swapchain);
+                marshalledCreateInfos->OldSwapchain = oldSwapchain?.Handle ?? default(Interop.Khronos.Swapchain);
                 if (allocator != null)
                 {
                     marshalledAllocator = (Interop.AllocationCallbacks*)HeapUtil.Allocate<Interop.AllocationCallbacks>();
@@ -540,8 +540,8 @@ namespace SharpVk.Khronos
                     marshalledAllocator = default;
                 }
                 marshalledSwapchains = (Interop.Khronos.Swapchain*)HeapUtil.Allocate<Interop.Khronos.Swapchain>(1);
-                var commandDelegate = commandCache.Cache.vkCreateSharedSwapchainsKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledSwapchainCount, marshalledCreateInfos, marshalledAllocator, marshalledSwapchains);
+                var commandDelegate = commandCache.Cache.VkCreateSharedSwapchainsKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledSwapchainCount, marshalledCreateInfos, marshalledAllocator, marshalledSwapchains);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = new(extendedHandle, *marshalledSwapchains);
                 return result;
@@ -567,11 +567,11 @@ namespace SharpVk.Khronos
                 var commandCache = default(CommandCache);
                 var marshalledGetWin32HandleInfo = default(Interop.Khronos.MemoryGetWin32HandleInfo*);
                 var marshalledHandle = default(IntPtr);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledGetWin32HandleInfo = (Interop.Khronos.MemoryGetWin32HandleInfo*)HeapUtil.Allocate<Interop.Khronos.MemoryGetWin32HandleInfo>();
                 getWin32HandleInfo.MarshalTo(marshalledGetWin32HandleInfo);
-                var commandDelegate = commandCache.Cache.vkGetMemoryWin32HandleKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledGetWin32HandleInfo, &marshalledHandle);
+                var commandDelegate = commandCache.Cache.VkGetMemoryWin32HandleKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledGetWin32HandleInfo, &marshalledHandle);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = marshalledHandle;
                 return result;
@@ -598,9 +598,9 @@ namespace SharpVk.Khronos
                 var result = default(MemoryWin32HandleProperties);
                 var commandCache = default(CommandCache);
                 var marshalledMemoryWin32HandleProperties = default(Interop.Khronos.MemoryWin32HandleProperties);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkGetMemoryWin32HandlePropertiesKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, handleType, handle, &marshalledMemoryWin32HandleProperties);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkGetMemoryWin32HandlePropertiesKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, handleType, handle, &marshalledMemoryWin32HandleProperties);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = MemoryWin32HandleProperties.MarshalFrom(&marshalledMemoryWin32HandleProperties);
                 return result;
@@ -626,11 +626,11 @@ namespace SharpVk.Khronos
                 var commandCache = default(CommandCache);
                 var marshalledGetFileDescriptorInfo = default(Interop.Khronos.MemoryGetFileDescriptorInfo*);
                 var marshalledFileDescriptor = default(int);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledGetFileDescriptorInfo = (Interop.Khronos.MemoryGetFileDescriptorInfo*)HeapUtil.Allocate<Interop.Khronos.MemoryGetFileDescriptorInfo>();
                 getFileDescriptorInfo.MarshalTo(marshalledGetFileDescriptorInfo);
-                var commandDelegate = commandCache.Cache.vkGetMemoryFdKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledGetFileDescriptorInfo, &marshalledFileDescriptor);
+                var commandDelegate = commandCache.Cache.VkGetMemoryFdKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledGetFileDescriptorInfo, &marshalledFileDescriptor);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = marshalledFileDescriptor;
                 return result;
@@ -657,9 +657,9 @@ namespace SharpVk.Khronos
                 var result = default(MemoryFileDescriptorProperties);
                 var commandCache = default(CommandCache);
                 var marshalledMemoryFileDescriptorProperties = default(Interop.Khronos.MemoryFileDescriptorProperties);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkGetMemoryFdPropertiesKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, handleType, fileDescriptor, &marshalledMemoryFileDescriptorProperties);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkGetMemoryFdPropertiesKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, handleType, fileDescriptor, &marshalledMemoryFileDescriptorProperties);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = MemoryFileDescriptorProperties.MarshalFrom(&marshalledMemoryFileDescriptorProperties);
                 return result;
@@ -683,11 +683,11 @@ namespace SharpVk.Khronos
             {
                 var commandCache = default(CommandCache);
                 var marshalledImportSemaphoreWin32HandleInfo = default(Interop.Khronos.ImportSemaphoreWin32HandleInfo*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledImportSemaphoreWin32HandleInfo = (Interop.Khronos.ImportSemaphoreWin32HandleInfo*)HeapUtil.Allocate<Interop.Khronos.ImportSemaphoreWin32HandleInfo>();
                 importSemaphoreWin32HandleInfo.MarshalTo(marshalledImportSemaphoreWin32HandleInfo);
-                var commandDelegate = commandCache.Cache.vkImportSemaphoreWin32HandleKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledImportSemaphoreWin32HandleInfo);
+                var commandDelegate = commandCache.Cache.VkImportSemaphoreWin32HandleKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledImportSemaphoreWin32HandleInfo);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally
@@ -711,11 +711,11 @@ namespace SharpVk.Khronos
                 var commandCache = default(CommandCache);
                 var marshalledGetWin32HandleInfo = default(Interop.Khronos.SemaphoreGetWin32HandleInfo*);
                 var marshalledHandle = default(IntPtr);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledGetWin32HandleInfo = (Interop.Khronos.SemaphoreGetWin32HandleInfo*)HeapUtil.Allocate<Interop.Khronos.SemaphoreGetWin32HandleInfo>();
                 getWin32HandleInfo.MarshalTo(marshalledGetWin32HandleInfo);
-                var commandDelegate = commandCache.Cache.vkGetSemaphoreWin32HandleKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledGetWin32HandleInfo, &marshalledHandle);
+                var commandDelegate = commandCache.Cache.VkGetSemaphoreWin32HandleKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledGetWin32HandleInfo, &marshalledHandle);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = marshalledHandle;
                 return result;
@@ -739,11 +739,11 @@ namespace SharpVk.Khronos
             {
                 var commandCache = default(CommandCache);
                 var marshalledImportSemaphoreFileDescriptorInfo = default(Interop.Khronos.ImportSemaphoreFileDescriptorInfo*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledImportSemaphoreFileDescriptorInfo = (Interop.Khronos.ImportSemaphoreFileDescriptorInfo*)HeapUtil.Allocate<Interop.Khronos.ImportSemaphoreFileDescriptorInfo>();
                 importSemaphoreFileDescriptorInfo.MarshalTo(marshalledImportSemaphoreFileDescriptorInfo);
-                var commandDelegate = commandCache.Cache.vkImportSemaphoreFdKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledImportSemaphoreFileDescriptorInfo);
+                var commandDelegate = commandCache.Cache.VkImportSemaphoreFdKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledImportSemaphoreFileDescriptorInfo);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally
@@ -767,11 +767,11 @@ namespace SharpVk.Khronos
                 var commandCache = default(CommandCache);
                 var marshalledGetFileDescriptorInfo = default(Interop.Khronos.SemaphoreGetFileDescriptorInfo*);
                 var marshalledFileDescriptor = default(int);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledGetFileDescriptorInfo = (Interop.Khronos.SemaphoreGetFileDescriptorInfo*)HeapUtil.Allocate<Interop.Khronos.SemaphoreGetFileDescriptorInfo>();
                 getFileDescriptorInfo.MarshalTo(marshalledGetFileDescriptorInfo);
-                var commandDelegate = commandCache.Cache.vkGetSemaphoreFdKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledGetFileDescriptorInfo, &marshalledFileDescriptor);
+                var commandDelegate = commandCache.Cache.VkGetSemaphoreFdKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledGetFileDescriptorInfo, &marshalledFileDescriptor);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = marshalledFileDescriptor;
                 return result;
@@ -795,11 +795,11 @@ namespace SharpVk.Khronos
             {
                 var commandCache = default(CommandCache);
                 var marshalledImportFenceWin32HandleInfo = default(Interop.Khronos.ImportFenceWin32HandleInfo*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledImportFenceWin32HandleInfo = (Interop.Khronos.ImportFenceWin32HandleInfo*)HeapUtil.Allocate<Interop.Khronos.ImportFenceWin32HandleInfo>();
                 importFenceWin32HandleInfo.MarshalTo(marshalledImportFenceWin32HandleInfo);
-                var commandDelegate = commandCache.Cache.vkImportFenceWin32HandleKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledImportFenceWin32HandleInfo);
+                var commandDelegate = commandCache.Cache.VkImportFenceWin32HandleKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledImportFenceWin32HandleInfo);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally
@@ -823,11 +823,11 @@ namespace SharpVk.Khronos
                 var commandCache = default(CommandCache);
                 var marshalledGetWin32HandleInfo = default(Interop.Khronos.FenceGetWin32HandleInfo*);
                 var marshalledHandle = default(IntPtr);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledGetWin32HandleInfo = (Interop.Khronos.FenceGetWin32HandleInfo*)HeapUtil.Allocate<Interop.Khronos.FenceGetWin32HandleInfo>();
                 getWin32HandleInfo.MarshalTo(marshalledGetWin32HandleInfo);
-                var commandDelegate = commandCache.Cache.vkGetFenceWin32HandleKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledGetWin32HandleInfo, &marshalledHandle);
+                var commandDelegate = commandCache.Cache.VkGetFenceWin32HandleKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledGetWin32HandleInfo, &marshalledHandle);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = marshalledHandle;
                 return result;
@@ -851,11 +851,11 @@ namespace SharpVk.Khronos
             {
                 var commandCache = default(CommandCache);
                 var marshalledImportFenceFileDescriptorInfo = default(Interop.Khronos.ImportFenceFileDescriptorInfo*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledImportFenceFileDescriptorInfo = (Interop.Khronos.ImportFenceFileDescriptorInfo*)HeapUtil.Allocate<Interop.Khronos.ImportFenceFileDescriptorInfo>();
                 importFenceFileDescriptorInfo.MarshalTo(marshalledImportFenceFileDescriptorInfo);
-                var commandDelegate = commandCache.Cache.vkImportFenceFdKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledImportFenceFileDescriptorInfo);
+                var commandDelegate = commandCache.Cache.VkImportFenceFdKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledImportFenceFileDescriptorInfo);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally
@@ -879,11 +879,11 @@ namespace SharpVk.Khronos
                 var commandCache = default(CommandCache);
                 var marshalledGetFileDescriptorInfo = default(Interop.Khronos.FenceGetFileDescriptorInfo*);
                 var marshalledFileDescriptor = default(int);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledGetFileDescriptorInfo = (Interop.Khronos.FenceGetFileDescriptorInfo*)HeapUtil.Allocate<Interop.Khronos.FenceGetFileDescriptorInfo>();
                 getFileDescriptorInfo.MarshalTo(marshalledGetFileDescriptorInfo);
-                var commandDelegate = commandCache.Cache.vkGetFenceFdKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledGetFileDescriptorInfo, &marshalledFileDescriptor);
+                var commandDelegate = commandCache.Cache.VkGetFenceFdKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledGetFileDescriptorInfo, &marshalledFileDescriptor);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = marshalledFileDescriptor;
                 return result;
@@ -907,11 +907,11 @@ namespace SharpVk.Khronos
             {
                 var commandCache = default(CommandCache);
                 var marshalledInfo = default(Interop.Khronos.AcquireProfilingLockInfo*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledInfo = (Interop.Khronos.AcquireProfilingLockInfo*)HeapUtil.Allocate<Interop.Khronos.AcquireProfilingLockInfo>();
                 info.MarshalTo(marshalledInfo);
-                var commandDelegate = commandCache.Cache.vkAcquireProfilingLockKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledInfo);
+                var commandDelegate = commandCache.Cache.VkAcquireProfilingLockKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledInfo);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally
@@ -930,9 +930,9 @@ namespace SharpVk.Khronos
             try
             {
                 var commandCache = default(CommandCache);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkReleaseProfilingLockKHR;
-                commandDelegate(extendedHandle.handle);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkReleaseProfilingLockKhr;
+                commandDelegate(extendedHandle.Handle);
             }
             finally
             {
@@ -956,14 +956,14 @@ namespace SharpVk.Khronos
                 var commandCache = default(CommandCache);
                 var marshalledPipelineInfo = default(Interop.Khronos.PipelineInfo*);
                 var marshalledProperties = default(Interop.Khronos.PipelineExecutableProperties*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledPipelineInfo = (Interop.Khronos.PipelineInfo*)HeapUtil.Allocate<Interop.Khronos.PipelineInfo>();
                 pipelineInfo.MarshalTo(marshalledPipelineInfo);
-                var commandDelegate = commandCache.Cache.vkGetPipelineExecutablePropertiesKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledPipelineInfo, &marshalledExecutableCount, marshalledProperties);
+                var commandDelegate = commandCache.Cache.VkGetPipelineExecutablePropertiesKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledPipelineInfo, &marshalledExecutableCount, marshalledProperties);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 marshalledProperties = (Interop.Khronos.PipelineExecutableProperties*)HeapUtil.Allocate<Interop.Khronos.PipelineExecutableProperties>(marshalledExecutableCount);
-                commandDelegate(extendedHandle.handle, marshalledPipelineInfo, &marshalledExecutableCount, marshalledProperties);
+                commandDelegate(extendedHandle.Handle, marshalledPipelineInfo, &marshalledExecutableCount, marshalledProperties);
                 if (marshalledProperties != null)
                 {
                     var fieldPointer = new PipelineExecutableProperties[marshalledExecutableCount];
@@ -998,14 +998,14 @@ namespace SharpVk.Khronos
                 var commandCache = default(CommandCache);
                 var marshalledExecutableInfo = default(Interop.Khronos.PipelineExecutableInfo*);
                 var marshalledStatistics = default(Interop.Khronos.PipelineExecutableStatistic*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledExecutableInfo = (Interop.Khronos.PipelineExecutableInfo*)HeapUtil.Allocate<Interop.Khronos.PipelineExecutableInfo>();
                 executableInfo.MarshalTo(marshalledExecutableInfo);
-                var commandDelegate = commandCache.Cache.vkGetPipelineExecutableStatisticsKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledExecutableInfo, &marshalledStatisticCount, marshalledStatistics);
+                var commandDelegate = commandCache.Cache.VkGetPipelineExecutableStatisticsKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledExecutableInfo, &marshalledStatisticCount, marshalledStatistics);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 marshalledStatistics = (Interop.Khronos.PipelineExecutableStatistic*)HeapUtil.Allocate<Interop.Khronos.PipelineExecutableStatistic>(marshalledStatisticCount);
-                commandDelegate(extendedHandle.handle, marshalledExecutableInfo, &marshalledStatisticCount, marshalledStatistics);
+                commandDelegate(extendedHandle.Handle, marshalledExecutableInfo, &marshalledStatisticCount, marshalledStatistics);
                 if (marshalledStatistics != null)
                 {
                     var fieldPointer = new PipelineExecutableStatistic[marshalledStatisticCount];
@@ -1040,14 +1040,14 @@ namespace SharpVk.Khronos
                 var commandCache = default(CommandCache);
                 var marshalledExecutableInfo = default(Interop.Khronos.PipelineExecutableInfo*);
                 var marshalledInternalRepresentations = default(Interop.Khronos.PipelineExecutableInternalRepresentation*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledExecutableInfo = (Interop.Khronos.PipelineExecutableInfo*)HeapUtil.Allocate<Interop.Khronos.PipelineExecutableInfo>();
                 executableInfo.MarshalTo(marshalledExecutableInfo);
-                var commandDelegate = commandCache.Cache.vkGetPipelineExecutableInternalRepresentationsKHR;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledExecutableInfo, &marshalledInternalRepresentationCount, marshalledInternalRepresentations);
+                var commandDelegate = commandCache.Cache.VkGetPipelineExecutableInternalRepresentationsKhr;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledExecutableInfo, &marshalledInternalRepresentationCount, marshalledInternalRepresentations);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 marshalledInternalRepresentations = (Interop.Khronos.PipelineExecutableInternalRepresentation*)HeapUtil.Allocate<Interop.Khronos.PipelineExecutableInternalRepresentation>(marshalledInternalRepresentationCount);
-                commandDelegate(extendedHandle.handle, marshalledExecutableInfo, &marshalledInternalRepresentationCount, marshalledInternalRepresentations);
+                commandDelegate(extendedHandle.Handle, marshalledExecutableInfo, &marshalledInternalRepresentationCount, marshalledInternalRepresentations);
                 if (marshalledInternalRepresentations != null)
                 {
                     var fieldPointer = new PipelineExecutableInternalRepresentation[marshalledInternalRepresentationCount];

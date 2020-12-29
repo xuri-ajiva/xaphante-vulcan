@@ -29,7 +29,7 @@ namespace SharpVk.NVidia
     /// <summary>
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public struct GeometryAABB
+    public struct GeometryAabb
     {
         /// <summary>
         /// </summary>
@@ -41,7 +41,7 @@ namespace SharpVk.NVidia
 
         /// <summary>
         /// </summary>
-        public uint NumAABBs
+        public uint NumAabBs
         {
             get;
             set;
@@ -67,12 +67,12 @@ namespace SharpVk.NVidia
         /// </summary>
         /// <param name="pointer">
         /// </param>
-        internal unsafe void MarshalTo(Interop.NVidia.GeometryAABB* pointer)
+        internal unsafe void MarshalTo(Interop.NVidia.GeometryAabb* pointer)
         {
             pointer->SType = StructureType.GeometryAabb;
             pointer->Next = null;
-            pointer->AabbData = AabbData?.handle ?? default(Interop.Buffer);
-            pointer->NumAABBs = NumAABBs;
+            pointer->AabbData = AabbData?.Handle ?? default(Interop.Buffer);
+            pointer->NumAABBs = NumAabBs;
             pointer->Stride = Stride;
             pointer->Offset = Offset;
         }
@@ -81,11 +81,11 @@ namespace SharpVk.NVidia
         /// </summary>
         /// <param name="pointer">
         /// </param>
-        internal static unsafe GeometryAABB MarshalFrom(Interop.NVidia.GeometryAABB* pointer)
+        internal static unsafe GeometryAabb MarshalFrom(Interop.NVidia.GeometryAabb* pointer)
         {
-            var result = default(GeometryAABB);
+            var result = default(GeometryAabb);
             result.AabbData = new(default, pointer->AabbData);
-            result.NumAABBs = pointer->NumAABBs;
+            result.NumAabBs = pointer->NumAABBs;
             result.Stride = pointer->Stride;
             result.Offset = pointer->Offset;
             return result;

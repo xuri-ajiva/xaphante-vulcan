@@ -238,7 +238,7 @@ namespace SharpVk
 
         /// <summary>
         /// </summary>
-        PhysicalDevice16bitStorageFeaturesVersion = 1000083000,
+        PhysicalDevice16BitStorageFeaturesVersion = 1000083000,
 
         /// <summary>
         /// </summary>
@@ -534,7 +534,7 @@ namespace SharpVk
 
         /// <summary>
         /// </summary>
-        PhysicalDevice8bitStorageFeaturesVersion = 1000177000,
+        PhysicalDevice8BitStorageFeaturesVersion = 1000177000,
 
         /// <summary>
         /// </summary>

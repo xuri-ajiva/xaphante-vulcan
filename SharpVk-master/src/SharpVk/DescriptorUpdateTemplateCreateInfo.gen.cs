@@ -112,9 +112,9 @@ namespace SharpVk
                 pointer->DescriptorUpdateEntries = null;
             }
             pointer->TemplateType = TemplateType;
-            pointer->DescriptorSetLayout = DescriptorSetLayout?.handle ?? default(Interop.DescriptorSetLayout);
+            pointer->DescriptorSetLayout = DescriptorSetLayout?.Handle ?? default(Interop.DescriptorSetLayout);
             pointer->PipelineBindPoint = PipelineBindPoint;
-            pointer->PipelineLayout = PipelineLayout?.handle ?? default(Interop.PipelineLayout);
+            pointer->PipelineLayout = PipelineLayout?.Handle ?? default(Interop.PipelineLayout);
             pointer->Set = Set;
         }
     }

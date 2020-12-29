@@ -297,10 +297,10 @@ namespace SharpVk
             {
                 pointer->DynamicState = default;
             }
-            pointer->Layout = Layout?.handle ?? default(Interop.PipelineLayout);
-            pointer->RenderPass = RenderPass?.handle ?? default(Interop.RenderPass);
+            pointer->Layout = Layout?.Handle ?? default(Interop.PipelineLayout);
+            pointer->RenderPass = RenderPass?.Handle ?? default(Interop.RenderPass);
             pointer->Subpass = Subpass;
-            pointer->BasePipelineHandle = BasePipelineHandle?.handle ?? default(Interop.Pipeline);
+            pointer->BasePipelineHandle = BasePipelineHandle?.Handle ?? default(Interop.Pipeline);
             pointer->BasePipelineIndex = BasePipelineIndex;
         }
     }

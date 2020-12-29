@@ -63,8 +63,8 @@ namespace SharpVk
         {
             pointer->SType = StructureType.BindImageMemoryInfoVersion;
             pointer->Next = null;
-            pointer->Image = Image?.handle ?? default(Interop.Image);
-            pointer->Memory = Memory?.handle ?? default(Interop.DeviceMemory);
+            pointer->Image = Image?.Handle ?? default(Interop.Image);
+            pointer->Memory = Memory?.Handle ?? default(Interop.DeviceMemory);
             pointer->MemoryOffset = MemoryOffset;
         }
     }

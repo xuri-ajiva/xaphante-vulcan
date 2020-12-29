@@ -63,7 +63,7 @@ namespace SharpVk.NVidia.Experimental
         {
             pointer->Type = Type;
             pointer->Flags = Flags;
-            pointer->Pipeline = Pipeline?.handle ?? default(Interop.Pipeline);
+            pointer->Pipeline = Pipeline?.Handle ?? default(Interop.Pipeline);
         }
 
         /// <summary>

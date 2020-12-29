@@ -33,22 +33,22 @@ namespace SharpVk
     public class Pipeline
         : IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.Pipeline handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.Pipeline Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal Pipeline(Device parent, Interop.Pipeline handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.Pipeline RawHandle => handle;
+        public Interop.Pipeline RawHandle => Handle;
 
         /// <summary>
         ///     Destroys the handles and releases any unmanaged resources
@@ -80,8 +80,8 @@ namespace SharpVk
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroyPipeline;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroyPipeline;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {

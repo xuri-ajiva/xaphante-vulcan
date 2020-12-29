@@ -91,7 +91,7 @@ namespace SharpVk.Khronos
             if (WaitSemaphores != null)
             {
                 var fieldPointer = (Interop.Semaphore*)HeapUtil.AllocateAndClear<Interop.Semaphore>(WaitSemaphores.Length).ToPointer();
-                for (var index = 0; index < (uint)WaitSemaphores.Length; index++) fieldPointer[index] = WaitSemaphores[index]?.handle ?? default(Interop.Semaphore);
+                for (var index = 0; index < (uint)WaitSemaphores.Length; index++) fieldPointer[index] = WaitSemaphores[index]?.Handle ?? default(Interop.Semaphore);
                 pointer->WaitSemaphores = fieldPointer;
             }
             else
@@ -102,7 +102,7 @@ namespace SharpVk.Khronos
             if (Swapchains != null)
             {
                 var fieldPointer = (Interop.Khronos.Swapchain*)HeapUtil.AllocateAndClear<Interop.Khronos.Swapchain>(Swapchains.Length).ToPointer();
-                for (var index = 0; index < (uint)Swapchains.Length; index++) fieldPointer[index] = Swapchains[index]?.handle ?? default(Interop.Khronos.Swapchain);
+                for (var index = 0; index < (uint)Swapchains.Length; index++) fieldPointer[index] = Swapchains[index]?.Handle ?? default(Interop.Khronos.Swapchain);
                 pointer->Swapchains = fieldPointer;
             }
             else

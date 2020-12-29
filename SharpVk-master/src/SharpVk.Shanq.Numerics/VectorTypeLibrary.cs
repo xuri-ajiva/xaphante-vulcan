@@ -7,7 +7,7 @@ namespace SharpVk.Shanq.Numerics
     public class VectorTypeLibrary
         : IVectorTypeLibrary
     {
-        private static readonly Dictionary<Type, Format> vectorFormats = new Dictionary<Type, Format>
+        private static readonly Dictionary<Type, Format> VectorFormats = new Dictionary<Type, Format>
         {
             [typeof(float)] = Format.R32SFloat,
             [typeof(Vector2)] = Format.R32G32SFloat,
@@ -96,7 +96,7 @@ namespace SharpVk.Shanq.Numerics
 
         public Format GetVectorFormat(Type type)
         {
-            if (vectorFormats.TryGetValue(type, out var result))
+            if (VectorFormats.TryGetValue(type, out var result))
                 return result;
             throw new NotSupportedException();
         }

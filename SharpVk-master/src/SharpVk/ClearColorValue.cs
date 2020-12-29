@@ -43,39 +43,39 @@ namespace SharpVk
         /// </summary>
         public ClearColorValue(float r, float g, float b, float a)
         {
-            element_0 = r;
-            element_1 = g;
-            element_2 = b;
-            element_3 = a;
+            element0 = r;
+            element1 = g;
+            element2 = b;
+            element3 = a;
         }
 
         /// <summary>
         /// </summary>
         public ClearColorValue(int r, int g, int b, int a)
         {
-            element_0 = r;
-            element_1 = g;
-            element_2 = b;
-            element_3 = a;
+            element0 = r;
+            element1 = g;
+            element2 = b;
+            element3 = a;
         }
 
         /// <summary>
         /// </summary>
         public ClearColorValue(uint r, uint g, uint b, uint a)
         {
-            element_0 = r;
-            element_1 = g;
-            element_2 = b;
-            element_3 = a;
+            element0 = r;
+            element1 = g;
+            element2 = b;
+            element3 = a;
         }
 
-        private ColorElement element_0;
+        private ColorElement element0;
 
-        private ColorElement element_1;
+        private ColorElement element1;
 
-        private ColorElement element_2;
+        private ColorElement element2;
 
-        private ColorElement element_3;
+        private ColorElement element3;
 
         /// <summary>
         /// </summary>

@@ -44,19 +44,19 @@ namespace SharpVk.Interop.Multivendor
 
         /// <summary>
         /// </summary>
-        public XYColor DisplayPrimaryRed;
+        public XyColor DisplayPrimaryRed;
 
         /// <summary>
         /// </summary>
-        public XYColor DisplayPrimaryGreen;
+        public XyColor DisplayPrimaryGreen;
 
         /// <summary>
         /// </summary>
-        public XYColor DisplayPrimaryBlue;
+        public XyColor DisplayPrimaryBlue;
 
         /// <summary>
         /// </summary>
-        public XYColor WhitePoint;
+        public XyColor WhitePoint;
 
         /// <summary>
         /// </summary>

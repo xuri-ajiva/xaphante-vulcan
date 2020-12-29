@@ -12,10 +12,10 @@ namespace SharpVk.Emit
 
         public void EmitCase(Action<ExpressionBuilder> value, Action<CodeBlockBuilder> caseBlock)
         {
-            writer.Write("case ");
-            value(new ExpressionBuilder(writer.GetSubWriter()));
-            writer.WriteLine(":");
-            using (var caseBuilder = new CodeBlockBuilder(writer.GetSubWriter(), false))
+            Writer.Write("case ");
+            value(new ExpressionBuilder(Writer.GetSubWriter()));
+            Writer.WriteLine(":");
+            using (var caseBuilder = new CodeBlockBuilder(Writer.GetSubWriter(), false))
             {
                 caseBlock(caseBuilder);
             }

@@ -56,7 +56,7 @@ namespace SharpVk.NVidia
             pointer->SType = StructureType.AccelerationStructureMemoryRequirementsInfo;
             pointer->Next = null;
             pointer->Type = Type;
-            pointer->AccelerationStructure = AccelerationStructure?.handle ?? default(Interop.NVidia.AccelerationStructure);
+            pointer->AccelerationStructure = AccelerationStructure?.Handle ?? default(Interop.NVidia.AccelerationStructure);
         }
     }
 }

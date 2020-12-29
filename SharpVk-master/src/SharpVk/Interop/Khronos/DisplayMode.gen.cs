@@ -28,13 +28,13 @@ namespace SharpVk.Interop.Khronos
     /// </summary>
     public struct DisplayMode
     {
-        internal ulong handle;
+        internal ulong Handle;
 
         /// <summary>
         /// </summary>
         public DisplayMode(ulong handle)
         {
-            this.handle = handle;
+            this.Handle = handle;
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace SharpVk.Interop.Khronos
         /// </summary>
         public ulong ToUInt64()
         {
-            return handle;
+            return Handle;
         }
     }
 }

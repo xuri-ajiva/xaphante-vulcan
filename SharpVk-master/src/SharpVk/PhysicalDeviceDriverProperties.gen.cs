@@ -34,7 +34,7 @@ namespace SharpVk
     {
         /// <summary>
         /// </summary>
-        public DriverId DriverID
+        public DriverId DriverId
         {
             get;
             set;
@@ -71,7 +71,7 @@ namespace SharpVk
         internal static unsafe PhysicalDeviceDriverProperties MarshalFrom(Interop.PhysicalDeviceDriverProperties* pointer)
         {
             var result = default(PhysicalDeviceDriverProperties);
-            result.DriverID = pointer->DriverID;
+            result.DriverId = pointer->DriverID;
             result.DriverName = HeapUtil.MarshalStringFrom(pointer->DriverName, Constants.MaxDriverNameSize, true);
             result.DriverInfo = HeapUtil.MarshalStringFrom(pointer->DriverInfo, Constants.MaxDriverInfoSize, true);
             result.ConformanceVersion = pointer->ConformanceVersion;

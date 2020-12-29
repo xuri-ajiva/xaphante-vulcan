@@ -37,9 +37,9 @@ namespace SharpVk.Google
 
         /// <summary>
         /// </summary>
-        public PresentTime(uint presentID, ulong desiredPresentTime)
+        public PresentTime(uint presentId, ulong desiredPresentTime)
         {
-            PresentID = presentID;
+            PresentID = presentId;
             DesiredPresentTime = desiredPresentTime;
         }
 

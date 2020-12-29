@@ -8905,9 +8905,9 @@ namespace SharpVk.Spirv
 
         /// <summary>
         /// </summary>
-        public static readonly OpCode OpBuildNDRange = new()
+        public static readonly OpCode OpBuildNdRange = new()
         {
-            Op = Op.OpBuildNDRange,
+            Op = Op.OpBuildNdRange,
             Operands = new[]
             {
                 new Operand
@@ -9862,9 +9862,9 @@ namespace SharpVk.Spirv
 
         /// <summary>
         /// </summary>
-        public static readonly OpCode OpSubgroupBallotKHR = new()
+        public static readonly OpCode OpSubgroupBallotKhr = new()
         {
-            Op = Op.OpSubgroupBallotKHR,
+            Op = Op.OpSubgroupBallotKhr,
             Operands = new[]
             {
                 new Operand
@@ -9890,9 +9890,9 @@ namespace SharpVk.Spirv
 
         /// <summary>
         /// </summary>
-        public static readonly OpCode OpSubgroupFirstInvocationKHR = new()
+        public static readonly OpCode OpSubgroupFirstInvocationKhr = new()
         {
-            Op = Op.OpSubgroupFirstInvocationKHR,
+            Op = Op.OpSubgroupFirstInvocationKhr,
             Operands = new[]
             {
                 new Operand

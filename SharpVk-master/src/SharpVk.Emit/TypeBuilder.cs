@@ -33,17 +33,17 @@ namespace SharpVk.Emit
 
             if (attributes != null)
                 foreach (var attributeName in attributes)
-                    writer.WriteLine($"[{attributeName}]");
+                    Writer.WriteLine($"[{attributeName}]");
 
             var fixedLengthSuffix = fixedLength.HasValue ? $"[{fixedLength.Value}]" : "";
 
-            writer.Write($"{accessModifier.Emit()} {RenderMemberModifiers(methodModifers)}{type} {name}{fixedLengthSuffix}");
+            Writer.Write($"{accessModifier.Emit()} {RenderMemberModifiers(methodModifers)}{type} {name}{fixedLengthSuffix}");
             if (initialiser != null)
             {
-                writer.Write(" = ");
-                initialiser(new ExpressionBuilder(writer.GetSubWriter()));
+                Writer.Write(" = ");
+                initialiser(new ExpressionBuilder(Writer.GetSubWriter()));
             }
-            writer.WriteLine("; ");
+            Writer.WriteLine("; ");
         }
 
         public void EmitConstructor(Action<CodeBlockBuilder> methodBody,
@@ -61,24 +61,24 @@ namespace SharpVk.Emit
 
             if (attributes != null)
                 foreach (var attributeName in attributes)
-                    writer.WriteLine($"[{attributeName}]");
+                    Writer.WriteLine($"[{attributeName}]");
 
             var parameterList = parameters != null
                 ? ParameterBuilder.Apply(parameters)
                 : "";
 
-            writer.WriteLine($"{accessModifier.Emit()} {RenderMemberModifiers(methodModifers)}{name}({parameterList})");
+            Writer.WriteLine($"{accessModifier.Emit()} {RenderMemberModifiers(methodModifers)}{name}({parameterList})");
 
             if (baseArguments != null)
             {
-                writer.IncreaseIndent();
-                writer.Write(": base(");
-                ExpressionBuilder.EmitArguments(writer, baseArguments);
-                writer.WriteLine(")");
-                writer.DecreaseIndent();
+                Writer.IncreaseIndent();
+                Writer.Write(": base(");
+                ExpressionBuilder.EmitArguments(Writer, baseArguments);
+                Writer.WriteLine(")");
+                Writer.DecreaseIndent();
             }
 
-            using (var bodyEmitter = new CodeBlockBuilder(writer.GetSubWriter()))
+            using (var bodyEmitter = new CodeBlockBuilder(Writer.GetSubWriter()))
             {
                 methodBody(bodyEmitter);
             }
@@ -100,23 +100,23 @@ namespace SharpVk.Emit
 
             if (attributes != null)
                 foreach (var attributeName in attributes)
-                    writer.WriteLine($"[{attributeName}]");
+                    Writer.WriteLine($"[{attributeName}]");
 
             var parameterList = parameters != null
                 ? ParameterBuilder.Apply(parameters)
                 : "";
 
-            writer.Write($"{accessModifier.Emit()} {RenderMemberModifiers(methodModifers)}{returnType} {name}({parameterList})");
+            Writer.Write($"{accessModifier.Emit()} {RenderMemberModifiers(methodModifers)}{returnType} {name}({parameterList})");
 
             if (methodBody == null)
             {
-                writer.WriteLine(";");
+                Writer.WriteLine(";");
             }
             else
             {
-                writer.WriteLine();
+                Writer.WriteLine();
 
-                using (var bodyEmitter = new CodeBlockBuilder(writer.GetSubWriter()))
+                using (var bodyEmitter = new CodeBlockBuilder(Writer.GetSubWriter()))
                 {
                     methodBody(bodyEmitter);
                 }
@@ -136,24 +136,24 @@ namespace SharpVk.Emit
 
             EmitMemberComments(accessModifier, summary, docs);
 
-            writer.WriteLine($"{accessModifier.Emit()} {RenderMemberModifiers(methodModifers)}{type} {name}");
-            writer.WriteLine("{");
-            writer.IncreaseIndent();
+            Writer.WriteLine($"{accessModifier.Emit()} {RenderMemberModifiers(methodModifers)}{type} {name}");
+            Writer.WriteLine("{");
+            Writer.IncreaseIndent();
 
             if (getter != null)
             {
-                if (getter.HasValue && getter.Value != accessModifier) writer.Write(getter.Value.Emit() + " ");
-                writer.WriteLine("get;");
+                if (getter.HasValue && getter.Value != accessModifier) Writer.Write(getter.Value.Emit() + " ");
+                Writer.WriteLine("get;");
             }
 
             if (setter != null)
             {
-                if (setter.HasValue && setter.Value != accessModifier) writer.Write(setter.Value.Emit() + " ");
-                writer.WriteLine("set;");
+                if (setter.HasValue && setter.Value != accessModifier) Writer.Write(setter.Value.Emit() + " ");
+                Writer.WriteLine("set;");
             }
 
-            writer.DecreaseIndent();
-            writer.WriteLine("}");
+            Writer.DecreaseIndent();
+            Writer.WriteLine("}");
         }
 
         public void EmitProperty(string type,
@@ -169,14 +169,14 @@ namespace SharpVk.Emit
 
             EmitMemberComments(accessModifier, summary, docs);
 
-            writer.WriteLine($"{accessModifier.Emit()} {RenderMemberModifiers(methodModifers)}{type} {name}");
-            writer.WriteLine("{");
-            writer.IncreaseIndent();
+            Writer.WriteLine($"{accessModifier.Emit()} {RenderMemberModifiers(methodModifers)}{type} {name}");
+            Writer.WriteLine("{");
+            Writer.IncreaseIndent();
 
             if (getter != null)
             {
-                writer.WriteLine("get");
-                using (var getBuilder = new CodeBlockBuilder(writer))
+                Writer.WriteLine("get");
+                using (var getBuilder = new CodeBlockBuilder(Writer))
                 {
                     getter(getBuilder);
                 }
@@ -184,15 +184,15 @@ namespace SharpVk.Emit
 
             if (setter != null)
             {
-                writer.WriteLine("set");
-                using (var setBuilder = new CodeBlockBuilder(writer))
+                Writer.WriteLine("set");
+                using (var setBuilder = new CodeBlockBuilder(Writer))
                 {
                     setter(setBuilder);
                 }
             }
 
-            writer.DecreaseIndent();
-            writer.WriteLine("}");
+            Writer.DecreaseIndent();
+            Writer.WriteLine("}");
         }
 
         public void EmitProperty(string type,
@@ -207,16 +207,16 @@ namespace SharpVk.Emit
 
             EmitMemberComments(accessModifier, summary, docs);
 
-            writer.Write($"{accessModifier.Emit()} {RenderMemberModifiers(methodModifers)}{type} {name} => ");
-            getter(new ExpressionBuilder(writer.GetSubWriter()));
-            writer.WriteLine(";");
+            Writer.Write($"{accessModifier.Emit()} {RenderMemberModifiers(methodModifers)}{type} {name} => ");
+            getter(new ExpressionBuilder(Writer.GetSubWriter()));
+            Writer.WriteLine(";");
         }
 
         private void EmitMemberComments(AccessModifier accessModifier, IEnumerable<string> summary, Action<DocBuilder> docs)
         {
             if (accessModifier == AccessModifier.Public || summary != null || docs != null)
             {
-                var docBuilder = new DocBuilder(writer.GetSubWriter(), summary);
+                var docBuilder = new DocBuilder(Writer.GetSubWriter(), summary);
 
                 docs?.Invoke(docBuilder);
             }
@@ -236,7 +236,7 @@ namespace SharpVk.Emit
         private void EmitMemberSpacing()
         {
             if (hasFirstMember)
-                writer.WriteLine();
+                Writer.WriteLine();
             else
                 hasFirstMember = true;
         }

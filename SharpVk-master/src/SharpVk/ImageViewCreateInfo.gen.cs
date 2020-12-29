@@ -101,7 +101,7 @@ namespace SharpVk
                 pointer->Flags = Flags.Value;
             else
                 pointer->Flags = default;
-            pointer->Image = Image?.handle ?? default(Interop.Image);
+            pointer->Image = Image?.Handle ?? default(Interop.Image);
             pointer->ViewType = ViewType;
             pointer->Format = Format;
             pointer->Components = Components;

@@ -72,8 +72,8 @@ namespace SharpVk.NVidia
         {
             pointer->SType = StructureType.BindAccelerationStructureMemoryInfo;
             pointer->Next = null;
-            pointer->AccelerationStructure = AccelerationStructure?.handle ?? default(Interop.NVidia.AccelerationStructure);
-            pointer->Memory = Memory?.handle ?? default(Interop.DeviceMemory);
+            pointer->AccelerationStructure = AccelerationStructure?.Handle ?? default(Interop.NVidia.AccelerationStructure);
+            pointer->Memory = Memory?.Handle ?? default(Interop.DeviceMemory);
             pointer->MemoryOffset = MemoryOffset;
             pointer->DeviceIndexCount = HeapUtil.GetLength(DeviceIndices);
             if (DeviceIndices != null)

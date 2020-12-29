@@ -90,7 +90,7 @@ namespace SharpVk
             else
                 pointer->Flags = default;
             pointer->Stage = Stage;
-            pointer->Module = Module?.handle ?? default(Interop.ShaderModule);
+            pointer->Module = Module?.Handle ?? default(Interop.ShaderModule);
             pointer->Name = HeapUtil.MarshalTo(Name);
             if (SpecializationInfo != null)
             {

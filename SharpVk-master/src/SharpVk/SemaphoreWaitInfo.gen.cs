@@ -72,7 +72,7 @@ namespace SharpVk
             if (Semaphores != null)
             {
                 var fieldPointer = (Interop.Semaphore*)HeapUtil.AllocateAndClear<Interop.Semaphore>(Semaphores.Length).ToPointer();
-                for (var index = 0; index < (uint)Semaphores.Length; index++) fieldPointer[index] = Semaphores[index]?.handle ?? default(Interop.Semaphore);
+                for (var index = 0; index < (uint)Semaphores.Length; index++) fieldPointer[index] = Semaphores[index]?.Handle ?? default(Interop.Semaphore);
                 pointer->Semaphores = fieldPointer;
             }
             else

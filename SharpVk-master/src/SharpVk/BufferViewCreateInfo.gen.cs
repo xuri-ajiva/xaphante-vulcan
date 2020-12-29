@@ -95,7 +95,7 @@ namespace SharpVk
                 pointer->Flags = Flags.Value;
             else
                 pointer->Flags = default;
-            pointer->Buffer = Buffer?.handle ?? default(Interop.Buffer);
+            pointer->Buffer = Buffer?.Handle ?? default(Interop.Buffer);
             pointer->Format = Format;
             pointer->Offset = Offset;
             pointer->Range = Range;

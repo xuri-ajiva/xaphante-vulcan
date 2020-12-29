@@ -139,8 +139,8 @@ namespace SharpVk.NVidia.Experimental
         {
             pointer->SType = StructureType.CommandProcessCommandsInfo;
             pointer->Next = null;
-            pointer->ObjectTable = ObjectTable?.handle ?? default(Interop.NVidia.Experimental.ObjectTable);
-            pointer->IndirectCommandsLayout = IndirectCommandsLayout?.handle ?? default(Interop.NVidia.Experimental.IndirectCommandsLayout);
+            pointer->ObjectTable = ObjectTable?.Handle ?? default(Interop.NVidia.Experimental.ObjectTable);
+            pointer->IndirectCommandsLayout = IndirectCommandsLayout?.Handle ?? default(Interop.NVidia.Experimental.IndirectCommandsLayout);
             pointer->IndirectCommandsTokenCount = HeapUtil.GetLength(IndirectCommandsTokens);
             if (IndirectCommandsTokens != null)
             {
@@ -153,13 +153,13 @@ namespace SharpVk.NVidia.Experimental
                 pointer->IndirectCommandsTokens = null;
             }
             pointer->MaxSequencesCount = MaxSequencesCount;
-            pointer->TargetCommandBuffer = TargetCommandBuffer?.handle ?? default(Interop.CommandBuffer);
-            pointer->SequencesCountBuffer = SequencesCountBuffer?.handle ?? default(Interop.Buffer);
+            pointer->TargetCommandBuffer = TargetCommandBuffer?.Handle ?? default(Interop.CommandBuffer);
+            pointer->SequencesCountBuffer = SequencesCountBuffer?.Handle ?? default(Interop.Buffer);
             if (SequencesCountOffset != null)
                 pointer->SequencesCountOffset = SequencesCountOffset.Value;
             else
                 pointer->SequencesCountOffset = default;
-            pointer->SequencesIndexBuffer = SequencesIndexBuffer?.handle ?? default(Interop.Buffer);
+            pointer->SequencesIndexBuffer = SequencesIndexBuffer?.Handle ?? default(Interop.Buffer);
             if (SequencesIndexOffset != null)
                 pointer->SequencesIndexOffset = SequencesIndexOffset.Value;
             else

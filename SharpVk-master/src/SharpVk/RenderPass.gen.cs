@@ -33,22 +33,22 @@ namespace SharpVk
     public class RenderPass
         : IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.RenderPass handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.RenderPass Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal RenderPass(Device parent, Interop.RenderPass handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.RenderPass RawHandle => handle;
+        public Interop.RenderPass RawHandle => Handle;
 
         /// <summary>
         ///     Destroys the handles and releases any unmanaged resources
@@ -80,8 +80,8 @@ namespace SharpVk
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroyRenderPass;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroyRenderPass;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {
@@ -98,8 +98,8 @@ namespace SharpVk
             {
                 var result = default(Extent2D);
                 var marshalledGranularity = default(Extent2D);
-                var commandDelegate = commandCache.Cache.vkGetRenderAreaGranularity;
-                commandDelegate(parent.handle, handle, &marshalledGranularity);
+                var commandDelegate = CommandCache.Cache.VkGetRenderAreaGranularity;
+                commandDelegate(Parent.Handle, Handle, &marshalledGranularity);
                 result = marshalledGranularity;
                 return result;
             }

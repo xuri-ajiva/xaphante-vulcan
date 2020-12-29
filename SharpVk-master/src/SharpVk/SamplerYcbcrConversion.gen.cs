@@ -28,21 +28,21 @@ namespace SharpVk
     /// </summary>
     public class SamplerYcbcrConversion
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.SamplerYcbcrConversion handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.SamplerYcbcrConversion Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal SamplerYcbcrConversion(Device parent, Interop.SamplerYcbcrConversion handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.SamplerYcbcrConversion RawHandle => handle;
+        public Interop.SamplerYcbcrConversion RawHandle => Handle;
     }
 }

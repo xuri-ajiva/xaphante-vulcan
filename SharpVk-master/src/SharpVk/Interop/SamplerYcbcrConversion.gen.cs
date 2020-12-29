@@ -28,13 +28,13 @@ namespace SharpVk.Interop
     /// </summary>
     public struct SamplerYcbcrConversion
     {
-        internal ulong handle;
+        internal ulong Handle;
 
         /// <summary>
         /// </summary>
         public SamplerYcbcrConversion(ulong handle)
         {
-            this.handle = handle;
+            this.Handle = handle;
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace SharpVk.Interop
         /// </summary>
         public ulong ToUInt64()
         {
-            return handle;
+            return Handle;
         }
     }
 }

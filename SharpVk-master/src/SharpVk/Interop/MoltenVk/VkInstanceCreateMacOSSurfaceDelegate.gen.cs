@@ -28,5 +28,5 @@ namespace SharpVk.Interop.MoltenVk
 {
     /// <summary>
     /// </summary>
-    public unsafe delegate Result VkInstanceCreateMacOSSurfaceDelegate(Instance instance, MacOSSurfaceCreateInfo* createInfo, AllocationCallbacks* allocator, Surface* surface);
+    public unsafe delegate Result VkInstanceCreateMacOsSurfaceDelegate(Instance instance, MacOsSurfaceCreateInfo* createInfo, AllocationCallbacks* allocator, Surface* surface);
 }

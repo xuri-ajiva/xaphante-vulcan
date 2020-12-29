@@ -12,7 +12,7 @@ namespace SharpVk.Shanq
 {
     internal class ShanqExpressionVisitor
     {
-        private static readonly Dictionary<Type, (Op TypeOp, int[] Operands)> primitiveTypeMapping = new Dictionary<Type, (Op, int[])>
+        private static readonly Dictionary<Type, (Op TypeOp, int[] Operands)> PrimitiveTypeMapping = new Dictionary<Type, (Op, int[])>
         {
             [typeof(long)] = (Op.OpTypeInt, new[]
             {
@@ -526,7 +526,7 @@ namespace SharpVk.Shanq
 
                 return new SpirvStatement(Op.OpTypeStruct, fieldTypeIds);
             }
-            if (primitiveTypeMapping.TryGetValue(value, out var mapping)) return new SpirvStatement(mapping.TypeOp, mapping.Operands.Cast<object>().ToArray());
+            if (PrimitiveTypeMapping.TryGetValue(value, out var mapping)) return new SpirvStatement(mapping.TypeOp, mapping.Operands.Cast<object>().ToArray());
             if (value.IsValueType)
             {
                 var fieldTypeIds = value.GetFieldsByOffset().Select(x => (object)Visit(Expression.Constant(x.FieldType))).ToArray();

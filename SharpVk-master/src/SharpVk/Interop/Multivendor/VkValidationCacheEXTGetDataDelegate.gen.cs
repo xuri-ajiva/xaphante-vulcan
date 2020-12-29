@@ -26,5 +26,5 @@ namespace SharpVk.Interop.Multivendor
 {
     /// <summary>
     /// </summary>
-    public unsafe delegate Result VkValidationCacheEXTGetDataDelegate(Device device, ValidationCache validationCache, HostSize* dataSize, void* data);
+    public unsafe delegate Result VkValidationCacheExtGetDataDelegate(Device device, ValidationCache validationCache, HostSize* dataSize, void* data);
 }

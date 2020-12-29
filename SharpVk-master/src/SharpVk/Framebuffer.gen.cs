@@ -33,22 +33,22 @@ namespace SharpVk
     public class Framebuffer
         : IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.Framebuffer handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.Framebuffer Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal Framebuffer(Device parent, Interop.Framebuffer handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.Framebuffer RawHandle => handle;
+        public Interop.Framebuffer RawHandle => Handle;
 
         /// <summary>
         ///     Destroys the handles and releases any unmanaged resources
@@ -80,8 +80,8 @@ namespace SharpVk
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroyFramebuffer;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroyFramebuffer;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {

@@ -33,7 +33,7 @@ namespace SharpVk.Shanq
 
             file.AddHeaderStatement(Op.OpCapability, Capability.Shader);
             file.AddHeaderStatement(file.GetNextResultId(), Op.OpExtInstImport, "GLSL.std.450");
-            file.AddHeaderStatement(Op.OpMemoryModel, AddressingModel.Logical, MemoryModel.GLSL450);
+            file.AddHeaderStatement(Op.OpMemoryModel, AddressingModel.Logical, MemoryModel.Glsl450);
 
             var expressionVisitor = new ShanqExpressionVisitor(file, vectorLibrary);
 

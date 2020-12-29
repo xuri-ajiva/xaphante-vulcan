@@ -33,22 +33,22 @@ namespace SharpVk
     public partial class DescriptorPool
         : IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.DescriptorPool handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.DescriptorPool Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal DescriptorPool(Device parent, Interop.DescriptorPool handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.DescriptorPool RawHandle => handle;
+        public Interop.DescriptorPool RawHandle => Handle;
 
         /// <summary>
         ///     Destroys the handles and releases any unmanaged resources
@@ -80,8 +80,8 @@ namespace SharpVk
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroyDescriptorPool;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroyDescriptorPool;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {
@@ -103,8 +103,8 @@ namespace SharpVk
                     marshalledFlags = flags.Value;
                 else
                     marshalledFlags = default;
-                var commandDelegate = commandCache.Cache.vkResetDescriptorPool;
-                var methodResult = commandDelegate(parent.handle, handle, marshalledFlags);
+                var commandDelegate = CommandCache.Cache.VkResetDescriptorPool;
+                var methodResult = commandDelegate(Parent.Handle, Handle, marshalledFlags);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally
@@ -132,17 +132,17 @@ namespace SharpVk
                     if (descriptorSets.Value.Contents == ProxyContents.Single)
                     {
                         marshalledDescriptorSets = (Interop.DescriptorSet*)HeapUtil.Allocate<Interop.DescriptorSet>();
-                        *marshalledDescriptorSets = descriptorSets.Value.GetSingleValue()?.handle ?? default(Interop.DescriptorSet);
+                        *marshalledDescriptorSets = descriptorSets.Value.GetSingleValue()?.Handle ?? default(Interop.DescriptorSet);
                     }
                     else
                     {
                         var fieldPointer = (Interop.DescriptorSet*)HeapUtil.AllocateAndClear<Interop.DescriptorSet>(HeapUtil.GetLength(descriptorSets.Value)).ToPointer();
-                        for (var index = 0; index < HeapUtil.GetLength(descriptorSets.Value); index++) fieldPointer[index] = descriptorSets.Value[index]?.handle ?? default(Interop.DescriptorSet);
+                        for (var index = 0; index < HeapUtil.GetLength(descriptorSets.Value); index++) fieldPointer[index] = descriptorSets.Value[index]?.Handle ?? default(Interop.DescriptorSet);
                         marshalledDescriptorSets = fieldPointer;
                     }
                 }
-                var commandDelegate = commandCache.Cache.vkFreeDescriptorSets;
-                var methodResult = commandDelegate(parent.handle, handle, HeapUtil.GetLength(descriptorSets), marshalledDescriptorSets);
+                var commandDelegate = CommandCache.Cache.VkFreeDescriptorSets;
+                var methodResult = commandDelegate(Parent.Handle, Handle, HeapUtil.GetLength(descriptorSets), marshalledDescriptorSets);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally

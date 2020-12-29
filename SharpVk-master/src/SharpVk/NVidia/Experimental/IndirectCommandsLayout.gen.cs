@@ -33,22 +33,22 @@ namespace SharpVk.NVidia.Experimental
     public class IndirectCommandsLayout
         : IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.NVidia.Experimental.IndirectCommandsLayout handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.NVidia.Experimental.IndirectCommandsLayout Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal IndirectCommandsLayout(Device parent, Interop.NVidia.Experimental.IndirectCommandsLayout handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.NVidia.Experimental.IndirectCommandsLayout RawHandle => handle;
+        public Interop.NVidia.Experimental.IndirectCommandsLayout RawHandle => Handle;
 
         /// <summary>
         ///     Destroys the handles and releases any unmanaged resources
@@ -80,8 +80,8 @@ namespace SharpVk.NVidia.Experimental
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroyIndirectCommandsLayoutNVX;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroyIndirectCommandsLayoutNvx;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {

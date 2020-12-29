@@ -52,13 +52,13 @@ namespace SharpVk.Ggp
                 var result = default(Surface);
                 var commandCache = default(CommandCache);
                 var marshalledCreateInfo = default(Interop.Ggp.StreamDescriptorSurfaceCreateInfo*);
-                var vkStreamDescriptorSurfaceCreateInfoGGPNextPointer = default(void*);
+                var vkStreamDescriptorSurfaceCreateInfoGgpNextPointer = default(void*);
                 var marshalledAllocator = default(Interop.AllocationCallbacks*);
                 var marshalledSurface = default(Interop.Khronos.Surface);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledCreateInfo = (Interop.Ggp.StreamDescriptorSurfaceCreateInfo*)HeapUtil.Allocate<Interop.Ggp.StreamDescriptorSurfaceCreateInfo>();
                 marshalledCreateInfo->SType = StructureType.StreamDescriptorSurfaceCreateInfo;
-                marshalledCreateInfo->Next = vkStreamDescriptorSurfaceCreateInfoGGPNextPointer;
+                marshalledCreateInfo->Next = vkStreamDescriptorSurfaceCreateInfoGgpNextPointer;
                 if (flags != null)
                     marshalledCreateInfo->Flags = flags.Value;
                 else
@@ -73,8 +73,8 @@ namespace SharpVk.Ggp
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkCreateStreamDescriptorSurfaceGGP;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledCreateInfo, marshalledAllocator, &marshalledSurface);
+                var commandDelegate = commandCache.Cache.VkCreateStreamDescriptorSurfaceGgp;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledCreateInfo, marshalledAllocator, &marshalledSurface);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = new(extendedHandle, marshalledSurface);
                 return result;

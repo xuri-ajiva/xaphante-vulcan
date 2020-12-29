@@ -30,7 +30,7 @@ namespace SharpVk.Interop.MoltenVk
     /// <summary>
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public unsafe struct MacOSSurfaceCreateInfo
+    public unsafe struct MacOsSurfaceCreateInfo
     {
         /// <summary>
         ///     The type of this structure.
@@ -45,7 +45,7 @@ namespace SharpVk.Interop.MoltenVk
         /// <summary>
         ///     Reserved for future use.
         /// </summary>
-        public MacOSSurfaceCreateFlags Flags;
+        public MacOsSurfaceCreateFlags Flags;
 
         /// <summary>
         ///     A reference to a NSView object which will display this surface.

@@ -34,7 +34,7 @@ namespace SharpVk
     {
         /// <summary>
         /// </summary>
-        public DriverId DriverID
+        public DriverId DriverId
         {
             get;
             set;
@@ -154,7 +154,7 @@ namespace SharpVk
 
         /// <summary>
         /// </summary>
-        public bool ShaderRoundingModeRTEFloat16
+        public bool ShaderRoundingModeRteFloat16
         {
             get;
             set;
@@ -162,7 +162,7 @@ namespace SharpVk
 
         /// <summary>
         /// </summary>
-        public bool ShaderRoundingModeRTEFloat32
+        public bool ShaderRoundingModeRteFloat32
         {
             get;
             set;
@@ -170,7 +170,7 @@ namespace SharpVk
 
         /// <summary>
         /// </summary>
-        public bool ShaderRoundingModeRTEFloat64
+        public bool ShaderRoundingModeRteFloat64
         {
             get;
             set;
@@ -178,7 +178,7 @@ namespace SharpVk
 
         /// <summary>
         /// </summary>
-        public bool ShaderRoundingModeRTZFloat16
+        public bool ShaderRoundingModeRtzFloat16
         {
             get;
             set;
@@ -186,7 +186,7 @@ namespace SharpVk
 
         /// <summary>
         /// </summary>
-        public bool ShaderRoundingModeRTZFloat32
+        public bool ShaderRoundingModeRtzFloat32
         {
             get;
             set;
@@ -194,7 +194,7 @@ namespace SharpVk
 
         /// <summary>
         /// </summary>
-        public bool ShaderRoundingModeRTZFloat64
+        public bool ShaderRoundingModeRtzFloat64
         {
             get;
             set;
@@ -456,7 +456,7 @@ namespace SharpVk
         {
             pointer->SType = StructureType.PhysicalDeviceVulkan12Properties;
             pointer->Next = null;
-            pointer->DriverID = DriverID;
+            pointer->DriverID = DriverId;
             pointer->ConformanceVersion = ConformanceVersion;
             pointer->DenormBehaviorIndependence = DenormBehaviorIndependence;
             pointer->RoundingModeIndependence = RoundingModeIndependence;
@@ -469,12 +469,12 @@ namespace SharpVk
             pointer->ShaderDenormFlushToZeroFloat16 = ShaderDenormFlushToZeroFloat16;
             pointer->ShaderDenormFlushToZeroFloat32 = ShaderDenormFlushToZeroFloat32;
             pointer->ShaderDenormFlushToZeroFloat64 = ShaderDenormFlushToZeroFloat64;
-            pointer->ShaderRoundingModeRTEFloat16 = ShaderRoundingModeRTEFloat16;
-            pointer->ShaderRoundingModeRTEFloat32 = ShaderRoundingModeRTEFloat32;
-            pointer->ShaderRoundingModeRTEFloat64 = ShaderRoundingModeRTEFloat64;
-            pointer->ShaderRoundingModeRTZFloat16 = ShaderRoundingModeRTZFloat16;
-            pointer->ShaderRoundingModeRTZFloat32 = ShaderRoundingModeRTZFloat32;
-            pointer->ShaderRoundingModeRTZFloat64 = ShaderRoundingModeRTZFloat64;
+            pointer->ShaderRoundingModeRTEFloat16 = ShaderRoundingModeRteFloat16;
+            pointer->ShaderRoundingModeRTEFloat32 = ShaderRoundingModeRteFloat32;
+            pointer->ShaderRoundingModeRTEFloat64 = ShaderRoundingModeRteFloat64;
+            pointer->ShaderRoundingModeRTZFloat16 = ShaderRoundingModeRtzFloat16;
+            pointer->ShaderRoundingModeRTZFloat32 = ShaderRoundingModeRtzFloat32;
+            pointer->ShaderRoundingModeRTZFloat64 = ShaderRoundingModeRtzFloat64;
             pointer->MaxUpdateAfterBindDescriptorsInAllPools = MaxUpdateAfterBindDescriptorsInAllPools;
             pointer->ShaderUniformBufferArrayNonUniformIndexingNative = ShaderUniformBufferArrayNonUniformIndexingNative;
             pointer->ShaderSampledImageArrayNonUniformIndexingNative = ShaderSampledImageArrayNonUniformIndexingNative;
@@ -518,7 +518,7 @@ namespace SharpVk
         internal static unsafe PhysicalDeviceVulkan12Properties MarshalFrom(Interop.PhysicalDeviceVulkan12Properties* pointer)
         {
             var result = default(PhysicalDeviceVulkan12Properties);
-            result.DriverID = pointer->DriverID;
+            result.DriverId = pointer->DriverID;
             result.DriverName = HeapUtil.MarshalStringFrom(pointer->DriverName, Constants.MaxDriverNameSize, true);
             result.DriverInfo = HeapUtil.MarshalStringFrom(pointer->DriverInfo, Constants.MaxDriverInfoSize, true);
             result.ConformanceVersion = pointer->ConformanceVersion;
@@ -533,12 +533,12 @@ namespace SharpVk
             result.ShaderDenormFlushToZeroFloat16 = pointer->ShaderDenormFlushToZeroFloat16;
             result.ShaderDenormFlushToZeroFloat32 = pointer->ShaderDenormFlushToZeroFloat32;
             result.ShaderDenormFlushToZeroFloat64 = pointer->ShaderDenormFlushToZeroFloat64;
-            result.ShaderRoundingModeRTEFloat16 = pointer->ShaderRoundingModeRTEFloat16;
-            result.ShaderRoundingModeRTEFloat32 = pointer->ShaderRoundingModeRTEFloat32;
-            result.ShaderRoundingModeRTEFloat64 = pointer->ShaderRoundingModeRTEFloat64;
-            result.ShaderRoundingModeRTZFloat16 = pointer->ShaderRoundingModeRTZFloat16;
-            result.ShaderRoundingModeRTZFloat32 = pointer->ShaderRoundingModeRTZFloat32;
-            result.ShaderRoundingModeRTZFloat64 = pointer->ShaderRoundingModeRTZFloat64;
+            result.ShaderRoundingModeRteFloat16 = pointer->ShaderRoundingModeRTEFloat16;
+            result.ShaderRoundingModeRteFloat32 = pointer->ShaderRoundingModeRTEFloat32;
+            result.ShaderRoundingModeRteFloat64 = pointer->ShaderRoundingModeRTEFloat64;
+            result.ShaderRoundingModeRtzFloat16 = pointer->ShaderRoundingModeRTZFloat16;
+            result.ShaderRoundingModeRtzFloat32 = pointer->ShaderRoundingModeRTZFloat32;
+            result.ShaderRoundingModeRtzFloat64 = pointer->ShaderRoundingModeRTZFloat64;
             result.MaxUpdateAfterBindDescriptorsInAllPools = pointer->MaxUpdateAfterBindDescriptorsInAllPools;
             result.ShaderUniformBufferArrayNonUniformIndexingNative = pointer->ShaderUniformBufferArrayNonUniformIndexingNative;
             result.ShaderSampledImageArrayNonUniformIndexingNative = pointer->ShaderSampledImageArrayNonUniformIndexingNative;

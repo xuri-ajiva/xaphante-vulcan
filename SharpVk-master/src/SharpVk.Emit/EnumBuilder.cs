@@ -20,21 +20,21 @@ namespace SharpVk.Emit
             IEnumerable<string> attributes = null)
         {
             if (hasFirstMember)
-                writer.WriteLine();
+                Writer.WriteLine();
             else
                 hasFirstMember = true;
 
-            var docBuilder = new DocBuilder(writer.GetSubWriter(), summary);
+            var docBuilder = new DocBuilder(Writer.GetSubWriter(), summary);
 
             docs?.Invoke(docBuilder);
 
-            writer.Write($"{name}");
+            Writer.Write($"{name}");
             if (initialiser != null)
             {
-                writer.Write(" = ");
-                initialiser(new ExpressionBuilder(writer.GetSubWriter()));
+                Writer.Write(" = ");
+                initialiser(new ExpressionBuilder(Writer.GetSubWriter()));
             }
-            writer.WriteLine(", ");
+            Writer.WriteLine(", ");
         }
     }
 }

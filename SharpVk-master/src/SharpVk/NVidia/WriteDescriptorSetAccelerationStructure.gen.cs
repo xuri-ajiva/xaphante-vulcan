@@ -52,7 +52,7 @@ namespace SharpVk.NVidia
             if (AccelerationStructures != null)
             {
                 var fieldPointer = (Interop.NVidia.AccelerationStructure*)HeapUtil.AllocateAndClear<Interop.NVidia.AccelerationStructure>(AccelerationStructures.Length).ToPointer();
-                for (var index = 0; index < (uint)AccelerationStructures.Length; index++) fieldPointer[index] = AccelerationStructures[index]?.handle ?? default(Interop.NVidia.AccelerationStructure);
+                for (var index = 0; index < (uint)AccelerationStructures.Length; index++) fieldPointer[index] = AccelerationStructures[index]?.Handle ?? default(Interop.NVidia.AccelerationStructure);
                 pointer->AccelerationStructures = fieldPointer;
             }
             else

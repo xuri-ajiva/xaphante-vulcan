@@ -30,22 +30,22 @@ namespace SharpVk.Khronos
     /// </summary>
     public class DisplayMode
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.Khronos.DisplayMode handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.Khronos.DisplayMode Handle;
 
-        internal readonly PhysicalDevice parent;
+        internal readonly PhysicalDevice Parent;
 
         internal DisplayMode(PhysicalDevice parent, Interop.Khronos.DisplayMode handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.Khronos.DisplayMode RawHandle => handle;
+        public Interop.Khronos.DisplayMode RawHandle => Handle;
 
         /// <summary>
         ///     Query capabilities of a mode and plane combination.
@@ -58,8 +58,8 @@ namespace SharpVk.Khronos
             {
                 var result = default(DisplayPlaneCapabilities);
                 var marshalledCapabilities = default(DisplayPlaneCapabilities);
-                var commandDelegate = commandCache.Cache.vkGetDisplayPlaneCapabilitiesKHR;
-                var methodResult = commandDelegate(parent.handle, handle, planeIndex, &marshalledCapabilities);
+                var commandDelegate = CommandCache.Cache.VkGetDisplayPlaneCapabilitiesKhr;
+                var methodResult = commandDelegate(Parent.Handle, Handle, planeIndex, &marshalledCapabilities);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = marshalledCapabilities;
                 return result;

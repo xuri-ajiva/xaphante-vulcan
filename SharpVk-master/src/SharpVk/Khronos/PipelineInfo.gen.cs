@@ -47,7 +47,7 @@ namespace SharpVk.Khronos
         {
             pointer->SType = StructureType.PipelineInfo;
             pointer->Next = null;
-            pointer->Pipeline = Pipeline?.handle ?? default(Interop.Pipeline);
+            pointer->Pipeline = Pipeline?.Handle ?? default(Interop.Pipeline);
         }
     }
 }

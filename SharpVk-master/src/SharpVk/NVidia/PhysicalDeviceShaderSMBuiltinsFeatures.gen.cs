@@ -29,11 +29,11 @@ namespace SharpVk.NVidia
     /// <summary>
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public struct PhysicalDeviceShaderSMBuiltinsFeatures
+    public struct PhysicalDeviceShaderSmBuiltinsFeatures
     {
         /// <summary>
         /// </summary>
-        public bool ShaderSMBuiltins
+        public bool ShaderSmBuiltins
         {
             get;
             set;
@@ -43,21 +43,21 @@ namespace SharpVk.NVidia
         /// </summary>
         /// <param name="pointer">
         /// </param>
-        internal unsafe void MarshalTo(Interop.NVidia.PhysicalDeviceShaderSMBuiltinsFeatures* pointer)
+        internal unsafe void MarshalTo(Interop.NVidia.PhysicalDeviceShaderSmBuiltinsFeatures* pointer)
         {
             pointer->SType = StructureType.PhysicalDeviceShaderSmBuiltinsFeatures;
             pointer->Next = null;
-            pointer->ShaderSMBuiltins = ShaderSMBuiltins;
+            pointer->ShaderSMBuiltins = ShaderSmBuiltins;
         }
 
         /// <summary>
         /// </summary>
         /// <param name="pointer">
         /// </param>
-        internal static unsafe PhysicalDeviceShaderSMBuiltinsFeatures MarshalFrom(Interop.NVidia.PhysicalDeviceShaderSMBuiltinsFeatures* pointer)
+        internal static unsafe PhysicalDeviceShaderSmBuiltinsFeatures MarshalFrom(Interop.NVidia.PhysicalDeviceShaderSmBuiltinsFeatures* pointer)
         {
-            var result = default(PhysicalDeviceShaderSMBuiltinsFeatures);
-            result.ShaderSMBuiltins = pointer->ShaderSMBuiltins;
+            var result = default(PhysicalDeviceShaderSmBuiltinsFeatures);
+            result.ShaderSmBuiltins = pointer->ShaderSMBuiltins;
             return result;
         }
     }

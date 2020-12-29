@@ -63,8 +63,8 @@ namespace SharpVk
         {
             pointer->SType = StructureType.BindBufferMemoryInfoVersion;
             pointer->Next = null;
-            pointer->Buffer = Buffer?.handle ?? default(Interop.Buffer);
-            pointer->Memory = Memory?.handle ?? default(Interop.DeviceMemory);
+            pointer->Buffer = Buffer?.Handle ?? default(Interop.Buffer);
+            pointer->Memory = Memory?.Handle ?? default(Interop.DeviceMemory);
             pointer->MemoryOffset = MemoryOffset;
         }
     }

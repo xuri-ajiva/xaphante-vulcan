@@ -41,7 +41,7 @@ namespace SharpVk.NVidia
 
         /// <summary>
         /// </summary>
-        public GeometryAABB Aabbs
+        public GeometryAabb Aabbs
         {
             get;
             set;
@@ -65,7 +65,7 @@ namespace SharpVk.NVidia
         {
             var result = default(GeometryData);
             result.Triangles = GeometryTriangles.MarshalFrom(&pointer->Triangles);
-            result.Aabbs = GeometryAABB.MarshalFrom(&pointer->Aabbs);
+            result.Aabbs = GeometryAabb.MarshalFrom(&pointer->Aabbs);
             return result;
         }
     }

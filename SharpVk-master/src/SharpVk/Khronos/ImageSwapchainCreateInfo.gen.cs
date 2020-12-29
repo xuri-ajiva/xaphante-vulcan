@@ -47,7 +47,7 @@ namespace SharpVk.Khronos
         {
             pointer->SType = StructureType.ImageSwapchainCreateInfo;
             pointer->Next = null;
-            pointer->Swapchain = Swapchain?.handle ?? default(Interop.Khronos.Swapchain);
+            pointer->Swapchain = Swapchain?.Handle ?? default(Interop.Khronos.Swapchain);
         }
     }
 }

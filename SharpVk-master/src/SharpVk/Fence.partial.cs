@@ -14,7 +14,7 @@
         /// </param>
         public bool Wait(ulong timeout)
         {
-            return parent.WaitForFences(this, true, timeout) == Result.Success;
+            return Parent.WaitForFences(this, true, timeout) == Result.Success;
         }
 
         /// <summary>
@@ -22,7 +22,7 @@
         /// </summary>
         public void Reset()
         {
-            parent.ResetFences(this);
+            Parent.ResetFences(this);
         }
     }
 }

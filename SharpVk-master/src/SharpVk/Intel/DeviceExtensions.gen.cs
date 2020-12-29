@@ -45,11 +45,11 @@ namespace SharpVk.Intel
             {
                 var commandCache = default(CommandCache);
                 var marshalledInitializeInfo = default(Interop.Intel.InitializePerformanceApiInfo*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledInitializeInfo = (Interop.Intel.InitializePerformanceApiInfo*)HeapUtil.Allocate<Interop.Intel.InitializePerformanceApiInfo>();
                 initializeInfo.MarshalTo(marshalledInitializeInfo);
-                var commandDelegate = commandCache.Cache.vkInitializePerformanceApiINTEL;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledInitializeInfo);
+                var commandDelegate = commandCache.Cache.VkInitializePerformanceApiIntel;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledInitializeInfo);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally
@@ -68,9 +68,9 @@ namespace SharpVk.Intel
             try
             {
                 var commandCache = default(CommandCache);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkUninitializePerformanceApiINTEL;
-                commandDelegate(extendedHandle.handle);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkUninitializePerformanceApiIntel;
+                commandDelegate(extendedHandle.Handle);
             }
             finally
             {
@@ -95,15 +95,15 @@ namespace SharpVk.Intel
                 var result = default(PerformanceConfiguration);
                 var commandCache = default(CommandCache);
                 var marshalledAcquireInfo = default(Interop.Intel.PerformanceConfigurationAcquireInfo*);
-                var vkPerformanceConfigurationAcquireInfoINTELNextPointer = default(void*);
+                var vkPerformanceConfigurationAcquireInfoIntelNextPointer = default(void*);
                 var marshalledConfiguration = default(Interop.Intel.PerformanceConfiguration);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledAcquireInfo = (Interop.Intel.PerformanceConfigurationAcquireInfo*)HeapUtil.Allocate<Interop.Intel.PerformanceConfigurationAcquireInfo>();
                 marshalledAcquireInfo->SType = StructureType.PerformanceConfigurationAcquireInfo;
-                marshalledAcquireInfo->Next = vkPerformanceConfigurationAcquireInfoINTELNextPointer;
+                marshalledAcquireInfo->Next = vkPerformanceConfigurationAcquireInfoIntelNextPointer;
                 marshalledAcquireInfo->Type = type;
-                var commandDelegate = commandCache.Cache.vkAcquirePerformanceConfigurationINTEL;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledAcquireInfo, &marshalledConfiguration);
+                var commandDelegate = commandCache.Cache.VkAcquirePerformanceConfigurationIntel;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledAcquireInfo, &marshalledConfiguration);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = new(extendedHandle, marshalledConfiguration);
                 return result;
@@ -130,9 +130,9 @@ namespace SharpVk.Intel
                 var result = default(PerformanceValue);
                 var commandCache = default(CommandCache);
                 var marshalledValue = default(Interop.Intel.PerformanceValue);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkGetPerformanceParameterINTEL;
-                var methodResult = commandDelegate(extendedHandle.handle, parameter, &marshalledValue);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkGetPerformanceParameterIntel;
+                var methodResult = commandDelegate(extendedHandle.Handle, parameter, &marshalledValue);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = PerformanceValue.MarshalFrom(&marshalledValue);
                 return result;

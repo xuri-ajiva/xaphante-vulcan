@@ -165,7 +165,7 @@ namespace SharpVk
         ///     the DenormFlushToZero execution mode can be used for 16-bit
         ///     floating-point types.
         /// </summary>
-        public bool ShaderRoundingModeRTEFloat16
+        public bool ShaderRoundingModeRteFloat16
         {
             get;
             set;
@@ -177,7 +177,7 @@ namespace SharpVk
         ///     the DenormFlushToZero execution mode can be used for 32-bit
         ///     floating-point types.
         /// </summary>
-        public bool ShaderRoundingModeRTEFloat32
+        public bool ShaderRoundingModeRteFloat32
         {
             get;
             set;
@@ -189,7 +189,7 @@ namespace SharpVk
         ///     the DenormFlushToZero execution mode can be used for 164-bit
         ///     floating-point types.
         /// </summary>
-        public bool ShaderRoundingModeRTEFloat64
+        public bool ShaderRoundingModeRteFloat64
         {
             get;
             set;
@@ -202,7 +202,7 @@ namespace SharpVk
         ///     the RoundingModeRTE execution mode can be used for 16-bit
         ///     floating-point types.
         /// </summary>
-        public bool ShaderRoundingModeRTZFloat16
+        public bool ShaderRoundingModeRtzFloat16
         {
             get;
             set;
@@ -215,7 +215,7 @@ namespace SharpVk
         ///     the RoundingModeRTE execution mode can be used for 32-bit
         ///     floating-point types.
         /// </summary>
-        public bool ShaderRoundingModeRTZFloat32
+        public bool ShaderRoundingModeRtzFloat32
         {
             get;
             set;
@@ -228,7 +228,7 @@ namespace SharpVk
         ///     the RoundingModeRTE execution mode can be used for 64-bit
         ///     floating-point types.
         /// </summary>
-        public bool ShaderRoundingModeRTZFloat64
+        public bool ShaderRoundingModeRtzFloat64
         {
             get;
             set;
@@ -252,12 +252,12 @@ namespace SharpVk
             result.ShaderDenormFlushToZeroFloat16 = pointer->ShaderDenormFlushToZeroFloat16;
             result.ShaderDenormFlushToZeroFloat32 = pointer->ShaderDenormFlushToZeroFloat32;
             result.ShaderDenormFlushToZeroFloat64 = pointer->ShaderDenormFlushToZeroFloat64;
-            result.ShaderRoundingModeRTEFloat16 = pointer->ShaderRoundingModeRTEFloat16;
-            result.ShaderRoundingModeRTEFloat32 = pointer->ShaderRoundingModeRTEFloat32;
-            result.ShaderRoundingModeRTEFloat64 = pointer->ShaderRoundingModeRTEFloat64;
-            result.ShaderRoundingModeRTZFloat16 = pointer->ShaderRoundingModeRTZFloat16;
-            result.ShaderRoundingModeRTZFloat32 = pointer->ShaderRoundingModeRTZFloat32;
-            result.ShaderRoundingModeRTZFloat64 = pointer->ShaderRoundingModeRTZFloat64;
+            result.ShaderRoundingModeRteFloat16 = pointer->ShaderRoundingModeRTEFloat16;
+            result.ShaderRoundingModeRteFloat32 = pointer->ShaderRoundingModeRTEFloat32;
+            result.ShaderRoundingModeRteFloat64 = pointer->ShaderRoundingModeRTEFloat64;
+            result.ShaderRoundingModeRtzFloat16 = pointer->ShaderRoundingModeRTZFloat16;
+            result.ShaderRoundingModeRtzFloat32 = pointer->ShaderRoundingModeRTZFloat32;
+            result.ShaderRoundingModeRtzFloat64 = pointer->ShaderRoundingModeRTZFloat64;
             return result;
         }
     }

@@ -28,13 +28,13 @@ namespace SharpVk.Interop.Multivendor
     /// </summary>
     public struct ValidationCache
     {
-        internal ulong handle;
+        internal ulong Handle;
 
         /// <summary>
         /// </summary>
         public ValidationCache(ulong handle)
         {
-            this.handle = handle;
+            this.Handle = handle;
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace SharpVk.Interop.Multivendor
         /// </summary>
         public ulong ToUInt64()
         {
-            return handle;
+            return Handle;
         }
     }
 }

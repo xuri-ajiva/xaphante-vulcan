@@ -1,7 +1,7 @@
 ﻿namespace SharpVk.Shanq
 {
-    public abstract class Sampler2d<T, V>
+    public abstract class Sampler2d<T, TV>
     {
-        public abstract T Sample(V coords);
+        public abstract T Sample(TV coords);
     }
 }

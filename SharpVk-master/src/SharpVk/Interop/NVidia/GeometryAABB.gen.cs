@@ -29,7 +29,7 @@ namespace SharpVk.Interop.NVidia
     /// <summary>
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public unsafe struct GeometryAABB
+    public unsafe struct GeometryAabb
     {
         /// <summary>
         ///     The type of this structure.

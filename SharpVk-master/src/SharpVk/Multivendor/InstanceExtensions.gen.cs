@@ -59,13 +59,13 @@ namespace SharpVk.Multivendor
                 var result = default(DebugReportCallback);
                 var commandCache = default(CommandCache);
                 var marshalledCreateInfo = default(Interop.Multivendor.DebugReportCallbackCreateInfo*);
-                var vkDebugReportCallbackCreateInfoEXTNextPointer = default(void*);
+                var vkDebugReportCallbackCreateInfoExtNextPointer = default(void*);
                 var marshalledAllocator = default(Interop.AllocationCallbacks*);
                 var marshalledCallback = default(Interop.Multivendor.DebugReportCallback);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledCreateInfo = (Interop.Multivendor.DebugReportCallbackCreateInfo*)HeapUtil.Allocate<Interop.Multivendor.DebugReportCallbackCreateInfo>();
                 marshalledCreateInfo->SType = StructureType.DebugReportCallbackCreateInfo;
-                marshalledCreateInfo->Next = vkDebugReportCallbackCreateInfoEXTNextPointer;
+                marshalledCreateInfo->Next = vkDebugReportCallbackCreateInfoExtNextPointer;
                 if (flags != null)
                     marshalledCreateInfo->Flags = flags.Value;
                 else
@@ -84,8 +84,8 @@ namespace SharpVk.Multivendor
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkCreateDebugReportCallbackEXT;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledCreateInfo, marshalledAllocator, &marshalledCallback);
+                var commandDelegate = commandCache.Cache.VkCreateDebugReportCallbackExt;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledCreateInfo, marshalledAllocator, &marshalledCallback);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = new(extendedHandle, marshalledCallback);
                 return result;
@@ -120,9 +120,9 @@ namespace SharpVk.Multivendor
             try
             {
                 var commandCache = default(CommandCache);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkDebugReportMessageEXT;
-                commandDelegate(extendedHandle.handle, flags, objectType, @object, location, messageCode, HeapUtil.MarshalTo(layerPrefix), HeapUtil.MarshalTo(message));
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkDebugReportMessageExt;
+                commandDelegate(extendedHandle.Handle, flags, objectType, @object, location, messageCode, HeapUtil.MarshalTo(layerPrefix), HeapUtil.MarshalTo(message));
             }
             finally
             {
@@ -154,13 +154,13 @@ namespace SharpVk.Multivendor
                 var result = default(DebugUtilsMessenger);
                 var commandCache = default(CommandCache);
                 var marshalledCreateInfo = default(Interop.Multivendor.DebugUtilsMessengerCreateInfo*);
-                var vkDebugUtilsMessengerCreateInfoEXTNextPointer = default(void*);
+                var vkDebugUtilsMessengerCreateInfoExtNextPointer = default(void*);
                 var marshalledAllocator = default(Interop.AllocationCallbacks*);
                 var marshalledMessenger = default(Interop.Multivendor.DebugUtilsMessenger);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledCreateInfo = (Interop.Multivendor.DebugUtilsMessengerCreateInfo*)HeapUtil.Allocate<Interop.Multivendor.DebugUtilsMessengerCreateInfo>();
                 marshalledCreateInfo->SType = StructureType.DebugUtilsMessengerCreateInfo;
-                marshalledCreateInfo->Next = vkDebugUtilsMessengerCreateInfoEXTNextPointer;
+                marshalledCreateInfo->Next = vkDebugUtilsMessengerCreateInfoExtNextPointer;
                 if (flags != null)
                     marshalledCreateInfo->Flags = flags.Value;
                 else
@@ -181,8 +181,8 @@ namespace SharpVk.Multivendor
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkCreateDebugUtilsMessengerEXT;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledCreateInfo, marshalledAllocator, &marshalledMessenger);
+                var commandDelegate = commandCache.Cache.VkCreateDebugUtilsMessengerExt;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledCreateInfo, marshalledAllocator, &marshalledMessenger);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = new(extendedHandle, marshalledMessenger);
                 return result;
@@ -210,11 +210,11 @@ namespace SharpVk.Multivendor
             {
                 var commandCache = default(CommandCache);
                 var marshalledCallbackData = default(Interop.Multivendor.DebugUtilsMessengerCallbackData*);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledCallbackData = (Interop.Multivendor.DebugUtilsMessengerCallbackData*)HeapUtil.Allocate<Interop.Multivendor.DebugUtilsMessengerCallbackData>();
                 callbackData.MarshalTo(marshalledCallbackData);
-                var commandDelegate = commandCache.Cache.vkSubmitDebugUtilsMessageEXT;
-                commandDelegate(extendedHandle.handle, messageSeverity, messageTypes, marshalledCallbackData);
+                var commandDelegate = commandCache.Cache.VkSubmitDebugUtilsMessageExt;
+                commandDelegate(extendedHandle.Handle, messageSeverity, messageTypes, marshalledCallbackData);
             }
             finally
             {
@@ -245,13 +245,13 @@ namespace SharpVk.Multivendor
                 var result = default(Surface);
                 var commandCache = default(CommandCache);
                 var marshalledCreateInfo = default(Interop.Multivendor.MetalSurfaceCreateInfo*);
-                var vkMetalSurfaceCreateInfoEXTNextPointer = default(void*);
+                var vkMetalSurfaceCreateInfoExtNextPointer = default(void*);
                 var marshalledAllocator = default(Interop.AllocationCallbacks*);
                 var marshalledSurface = default(Interop.Khronos.Surface);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledCreateInfo = (Interop.Multivendor.MetalSurfaceCreateInfo*)HeapUtil.Allocate<Interop.Multivendor.MetalSurfaceCreateInfo>();
                 marshalledCreateInfo->SType = StructureType.MetalSurfaceCreateInfo;
-                marshalledCreateInfo->Next = vkMetalSurfaceCreateInfoEXTNextPointer;
+                marshalledCreateInfo->Next = vkMetalSurfaceCreateInfoExtNextPointer;
                 if (flags != null)
                     marshalledCreateInfo->Flags = flags.Value;
                 else
@@ -267,8 +267,8 @@ namespace SharpVk.Multivendor
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkCreateMetalSurfaceEXT;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledCreateInfo, marshalledAllocator, &marshalledSurface);
+                var commandDelegate = commandCache.Cache.VkCreateMetalSurfaceExt;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledCreateInfo, marshalledAllocator, &marshalledSurface);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = new(extendedHandle, marshalledSurface);
                 return result;
@@ -299,13 +299,13 @@ namespace SharpVk.Multivendor
                 var result = default(Surface);
                 var commandCache = default(CommandCache);
                 var marshalledCreateInfo = default(Interop.Multivendor.HeadlessSurfaceCreateInfo*);
-                var vkHeadlessSurfaceCreateInfoEXTNextPointer = default(void*);
+                var vkHeadlessSurfaceCreateInfoExtNextPointer = default(void*);
                 var marshalledAllocator = default(Interop.AllocationCallbacks*);
                 var marshalledSurface = default(Interop.Khronos.Surface);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledCreateInfo = (Interop.Multivendor.HeadlessSurfaceCreateInfo*)HeapUtil.Allocate<Interop.Multivendor.HeadlessSurfaceCreateInfo>();
                 marshalledCreateInfo->SType = StructureType.HeadlessSurfaceCreateInfo;
-                marshalledCreateInfo->Next = vkHeadlessSurfaceCreateInfoEXTNextPointer;
+                marshalledCreateInfo->Next = vkHeadlessSurfaceCreateInfoExtNextPointer;
                 if (flags != null)
                     marshalledCreateInfo->Flags = flags.Value;
                 else
@@ -319,8 +319,8 @@ namespace SharpVk.Multivendor
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkCreateHeadlessSurfaceEXT;
-                var methodResult = commandDelegate(extendedHandle.handle, marshalledCreateInfo, marshalledAllocator, &marshalledSurface);
+                var commandDelegate = commandCache.Cache.VkCreateHeadlessSurfaceExt;
+                var methodResult = commandDelegate(extendedHandle.Handle, marshalledCreateInfo, marshalledAllocator, &marshalledSurface);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = new(extendedHandle, marshalledSurface);
                 return result;

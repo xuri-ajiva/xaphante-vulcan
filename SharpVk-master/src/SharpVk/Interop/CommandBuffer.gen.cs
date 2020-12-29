@@ -31,13 +31,13 @@ namespace SharpVk.Interop
     /// </summary>
     public struct CommandBuffer
     {
-        internal UIntPtr handle;
+        internal UIntPtr Handle;
 
         /// <summary>
         /// </summary>
         public CommandBuffer(UIntPtr handle)
         {
-            this.handle = handle;
+            this.Handle = handle;
         }
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace SharpVk.Interop
         /// </summary>
         public ulong ToUInt64()
         {
-            return handle.ToUInt64();
+            return Handle.ToUInt64();
         }
     }
 }

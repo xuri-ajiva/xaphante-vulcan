@@ -28,5 +28,5 @@ namespace SharpVk.Interop.Multivendor
 {
     /// <summary>
     /// </summary>
-    public delegate Result VkSwapchainKHRReleaseFullScreenExclusiveModeDelegate(Device device, Swapchain swapchain);
+    public delegate Result VkSwapchainKhrReleaseFullScreenExclusiveModeDelegate(Device device, Swapchain swapchain);
 }

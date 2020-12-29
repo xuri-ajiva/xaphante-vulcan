@@ -33,22 +33,22 @@ namespace SharpVk
     public class Semaphore
         : IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.Semaphore handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.Semaphore Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal Semaphore(Device parent, Interop.Semaphore handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.Semaphore RawHandle => handle;
+        public Interop.Semaphore RawHandle => Handle;
 
         /// <summary>
         ///     Destroys the handles and releases any unmanaged resources
@@ -80,8 +80,8 @@ namespace SharpVk
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroySemaphore;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroySemaphore;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {
@@ -97,8 +97,8 @@ namespace SharpVk
             {
                 var result = default(ulong);
                 var marshalledValue = default(ulong);
-                var commandDelegate = commandCache.Cache.vkGetSemaphoreCounterValue;
-                var methodResult = commandDelegate(parent.handle, handle, &marshalledValue);
+                var commandDelegate = CommandCache.Cache.VkGetSemaphoreCounterValue;
+                var methodResult = commandDelegate(Parent.Handle, Handle, &marshalledValue);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = marshalledValue;
                 return result;

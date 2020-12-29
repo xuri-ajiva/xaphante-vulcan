@@ -31,12 +31,12 @@ namespace SharpVk.MoltenVk
     ///     Structure specifying parameters of a newly created iOS surface object.
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public struct IOSSurfaceCreateInfo
+    public struct IosSurfaceCreateInfo
     {
         /// <summary>
         ///     Reserved for future use.
         /// </summary>
-        public IOSSurfaceCreateFlags? Flags
+        public IosSurfaceCreateFlags? Flags
         {
             get;
             set;
@@ -57,7 +57,7 @@ namespace SharpVk.MoltenVk
         /// </summary>
         /// <param name="pointer">
         /// </param>
-        internal unsafe void MarshalTo(Interop.MoltenVk.IOSSurfaceCreateInfo* pointer)
+        internal unsafe void MarshalTo(Interop.MoltenVk.IosSurfaceCreateInfo* pointer)
         {
             pointer->SType = StructureType.IosSurfaceCreateInfo;
             pointer->Next = null;

@@ -29,7 +29,7 @@ namespace SharpVk.Interop.Amd
     /// <summary>
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public unsafe struct TextureLODGatherFormatProperties
+    public unsafe struct TextureLodGatherFormatProperties
     {
         /// <summary>
         ///     The type of this structure.

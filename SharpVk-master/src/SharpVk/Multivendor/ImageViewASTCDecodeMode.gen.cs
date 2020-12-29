@@ -29,7 +29,7 @@ namespace SharpVk.Multivendor
     /// <summary>
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public struct ImageViewASTCDecodeMode
+    public struct ImageViewAstcDecodeMode
     {
         /// <summary>
         /// </summary>
@@ -43,7 +43,7 @@ namespace SharpVk.Multivendor
         /// </summary>
         /// <param name="pointer">
         /// </param>
-        internal unsafe void MarshalTo(Interop.Multivendor.ImageViewASTCDecodeMode* pointer)
+        internal unsafe void MarshalTo(Interop.Multivendor.ImageViewAstcDecodeMode* pointer)
         {
             pointer->SType = StructureType.ImageViewAstcDecodeMode;
             pointer->Next = null;
@@ -54,9 +54,9 @@ namespace SharpVk.Multivendor
         /// </summary>
         /// <param name="pointer">
         /// </param>
-        internal static unsafe ImageViewASTCDecodeMode MarshalFrom(Interop.Multivendor.ImageViewASTCDecodeMode* pointer)
+        internal static unsafe ImageViewAstcDecodeMode MarshalFrom(Interop.Multivendor.ImageViewAstcDecodeMode* pointer)
         {
-            var result = default(ImageViewASTCDecodeMode);
+            var result = default(ImageViewAstcDecodeMode);
             result.DecodeMode = pointer->DecodeMode;
             return result;
         }

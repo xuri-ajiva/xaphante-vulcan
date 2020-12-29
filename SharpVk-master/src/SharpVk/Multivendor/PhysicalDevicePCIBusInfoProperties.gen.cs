@@ -30,7 +30,7 @@ namespace SharpVk.Multivendor
     ///     The PCI bus information of a physical device
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public struct PhysicalDevicePCIBusInfoProperties
+    public struct PhysicalDevicePciBusInfoProperties
     {
         /// <summary>
         ///     The PCI bus domain
@@ -72,9 +72,9 @@ namespace SharpVk.Multivendor
         /// </summary>
         /// <param name="pointer">
         /// </param>
-        internal static unsafe PhysicalDevicePCIBusInfoProperties MarshalFrom(Interop.Multivendor.PhysicalDevicePCIBusInfoProperties* pointer)
+        internal static unsafe PhysicalDevicePciBusInfoProperties MarshalFrom(Interop.Multivendor.PhysicalDevicePciBusInfoProperties* pointer)
         {
-            var result = default(PhysicalDevicePCIBusInfoProperties);
+            var result = default(PhysicalDevicePciBusInfoProperties);
             result.PciDomain = pointer->PciDomain;
             result.PciBus = pointer->PciBus;
             result.PciDevice = pointer->PciDevice;

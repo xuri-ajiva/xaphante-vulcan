@@ -8,7 +8,7 @@ namespace SharpVk.Glfw
     /// </summary>
     public class Monitor
     {
-        internal readonly MonitorHandle handle;
+        internal readonly MonitorHandle Handle;
 
         /// <summary>
         ///     Creates a new instance of Monitor from a given monitor handle.
@@ -18,7 +18,7 @@ namespace SharpVk.Glfw
         /// </param>
         public Monitor(MonitorHandle handle)
         {
-            this.handle = handle;
+            this.Handle = handle;
         }
 
         /// <summary>
@@ -26,7 +26,7 @@ namespace SharpVk.Glfw
         ///     reflects the make and model of the monitor and is not guaranteed
         ///     to be unique among the connected monitors.
         /// </summary>
-        public string Name => Glfw3.GetMonitorName(handle).Value;
+        public string Name => Glfw3.GetMonitorName(Handle).Value;
 
         /// <summary>
         ///     Gets the size, in millimetres, of the display area of the monitor.
@@ -35,7 +35,7 @@ namespace SharpVk.Glfw
         {
             get
             {
-                Glfw3.GetMonitorPhysicalSize(handle, out var width, out var height);
+                Glfw3.GetMonitorPhysicalSize(Handle, out var width, out var height);
 
                 return (width, height);
             }
@@ -49,7 +49,7 @@ namespace SharpVk.Glfw
         {
             get
             {
-                Glfw3.GetMonitorPos(handle, out var x, out var y);
+                Glfw3.GetMonitorPos(Handle, out var x, out var y);
 
                 return (x, y);
             }
@@ -60,7 +60,7 @@ namespace SharpVk.Glfw
         ///     created a full screen window for that monitor, the return value
         ///     will depend on whether that window is iconified.
         /// </summary>
-        public VideoMode CurrentVideoMode => Glfw3.GetVideoMode(handle).Value;
+        public VideoMode CurrentVideoMode => Glfw3.GetVideoMode(Handle).Value;
 
         /// <summary>
         ///     Returns an array of all video modes supported by the specified
@@ -77,7 +77,7 @@ namespace SharpVk.Glfw
             {
                 ErrorUtility.Bind();
 
-                var result = Glfw3.GetVideoModes(handle);
+                var result = Glfw3.GetVideoModes(Handle);
 
                 ErrorUtility.ThrowOnError();
 
@@ -99,7 +99,7 @@ namespace SharpVk.Glfw
         /// </param>
         public void SetGamma(float gamma)
         {
-            Glfw3.SetGamma(handle, gamma);
+            Glfw3.SetGamma(Handle, gamma);
         }
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace SharpVk.Glfw
         /// </returns>
         public Window CreateFullscreenWindow(int width, int height, string title, Dictionary<WindowAttribute, int> windowHints = null)
         {
-            return new Window(width, height, title, handle, windowHints);
+            return new Window(width, height, title, Handle, windowHints);
         }
 
         /// <summary>

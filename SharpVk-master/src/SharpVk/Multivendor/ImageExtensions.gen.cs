@@ -42,9 +42,9 @@ namespace SharpVk.Multivendor
                 var result = default(ImageDrmFormatModifierProperties);
                 var commandCache = default(CommandCache);
                 var marshalledProperties = default(Interop.Multivendor.ImageDrmFormatModifierProperties);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkGetImageDrmFormatModifierPropertiesEXT;
-                var methodResult = commandDelegate(extendedHandle.parent.handle, extendedHandle.handle, &marshalledProperties);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkGetImageDrmFormatModifierPropertiesExt;
+                var methodResult = commandDelegate(extendedHandle.Parent.Handle, extendedHandle.Handle, &marshalledProperties);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = ImageDrmFormatModifierProperties.MarshalFrom(&marshalledProperties);
                 return result;

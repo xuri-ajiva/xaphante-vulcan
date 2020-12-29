@@ -119,7 +119,7 @@ namespace SharpVk
             pointer->NewLayout = NewLayout;
             pointer->SourceQueueFamilyIndex = SourceQueueFamilyIndex;
             pointer->DestinationQueueFamilyIndex = DestinationQueueFamilyIndex;
-            pointer->Image = Image?.handle ?? default(Interop.Image);
+            pointer->Image = Image?.Handle ?? default(Interop.Image);
             pointer->SubresourceRange = SubresourceRange;
         }
 

@@ -33,22 +33,22 @@ namespace SharpVk
     public class PipelineCache
         : IDisposable
     {
-        internal readonly CommandCache commandCache;
-        internal readonly Interop.PipelineCache handle;
+        internal readonly CommandCache CommandCache;
+        internal readonly Interop.PipelineCache Handle;
 
-        internal readonly Device parent;
+        internal readonly Device Parent;
 
         internal PipelineCache(Device parent, Interop.PipelineCache handle)
         {
-            this.handle = handle;
-            this.parent = parent;
-            commandCache = parent.commandCache;
+            this.Handle = handle;
+            this.Parent = parent;
+            CommandCache = parent.CommandCache;
         }
 
         /// <summary>
         ///     The raw handle for this instance.
         /// </summary>
-        public Interop.PipelineCache RawHandle => handle;
+        public Interop.PipelineCache RawHandle => Handle;
 
         /// <summary>
         ///     Destroys the handles and releases any unmanaged resources
@@ -80,8 +80,8 @@ namespace SharpVk
                 {
                     marshalledAllocator = default;
                 }
-                var commandDelegate = commandCache.Cache.vkDestroyPipelineCache;
-                commandDelegate(parent.handle, handle, marshalledAllocator);
+                var commandDelegate = CommandCache.Cache.VkDestroyPipelineCache;
+                commandDelegate(Parent.Handle, Handle, marshalledAllocator);
             }
             finally
             {
@@ -99,11 +99,11 @@ namespace SharpVk
                 var result = default(byte[]);
                 var marshalledDataSize = default(HostSize);
                 var marshalledData = default(byte*);
-                var commandDelegate = commandCache.Cache.vkGetPipelineCacheData;
-                var methodResult = commandDelegate(parent.handle, handle, &marshalledDataSize, marshalledData);
+                var commandDelegate = CommandCache.Cache.VkGetPipelineCacheData;
+                var methodResult = commandDelegate(Parent.Handle, Handle, &marshalledDataSize, marshalledData);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 marshalledData = (byte*)HeapUtil.Allocate<byte>((uint)marshalledDataSize);
-                commandDelegate(parent.handle, handle, &marshalledDataSize, marshalledData);
+                commandDelegate(Parent.Handle, Handle, &marshalledDataSize, marshalledData);
                 if (marshalledData != null)
                 {
                     var fieldPointer = new byte[(uint)marshalledDataSize];
@@ -141,17 +141,17 @@ namespace SharpVk
                     if (sourceCaches.Value.Contents == ProxyContents.Single)
                     {
                         marshalledSourceCaches = (Interop.PipelineCache*)HeapUtil.Allocate<Interop.PipelineCache>();
-                        *marshalledSourceCaches = sourceCaches.Value.GetSingleValue()?.handle ?? default(Interop.PipelineCache);
+                        *marshalledSourceCaches = sourceCaches.Value.GetSingleValue()?.Handle ?? default(Interop.PipelineCache);
                     }
                     else
                     {
                         var fieldPointer = (Interop.PipelineCache*)HeapUtil.AllocateAndClear<Interop.PipelineCache>(HeapUtil.GetLength(sourceCaches.Value)).ToPointer();
-                        for (var index = 0; index < HeapUtil.GetLength(sourceCaches.Value); index++) fieldPointer[index] = sourceCaches.Value[index]?.handle ?? default(Interop.PipelineCache);
+                        for (var index = 0; index < HeapUtil.GetLength(sourceCaches.Value); index++) fieldPointer[index] = sourceCaches.Value[index]?.Handle ?? default(Interop.PipelineCache);
                         marshalledSourceCaches = fieldPointer;
                     }
                 }
-                var commandDelegate = commandCache.Cache.vkMergePipelineCaches;
-                var methodResult = commandDelegate(parent.handle, handle, HeapUtil.GetLength(sourceCaches), marshalledSourceCaches);
+                var commandDelegate = CommandCache.Cache.VkMergePipelineCaches;
+                var methodResult = commandDelegate(Parent.Handle, Handle, HeapUtil.GetLength(sourceCaches), marshalledSourceCaches);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally

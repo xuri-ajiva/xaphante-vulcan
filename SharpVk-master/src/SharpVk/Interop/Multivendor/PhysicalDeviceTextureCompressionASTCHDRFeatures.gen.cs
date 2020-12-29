@@ -29,7 +29,7 @@ namespace SharpVk.Interop.Multivendor
     /// <summary>
     /// </summary>
     [StructLayout(LayoutKind.Sequential)]
-    public unsafe struct PhysicalDeviceTextureCompressionASTCHDRFeatures
+    public unsafe struct PhysicalDeviceTextureCompressionAstchdrFeatures
     {
         /// <summary>
         /// </summary>

@@ -34,19 +34,19 @@ namespace SharpVk.Spirv
 
         /// <summary>
         /// </summary>
-        ESSL = 1,
+        Essl = 1,
 
         /// <summary>
         /// </summary>
-        GLSL = 2,
+        Glsl = 2,
 
         /// <summary>
         /// </summary>
-        OpenCL_C = 3,
+        OpenClC = 3,
 
         /// <summary>
         /// </summary>
-        OpenCL_CPP = 4
+        OpenClCpp = 4
     }
 
     /// <summary>
@@ -75,7 +75,7 @@ namespace SharpVk.Spirv
 
         /// <summary>
         /// </summary>
-        GLCompute = 5,
+        GlCompute = 5,
 
         /// <summary>
         /// </summary>
@@ -109,11 +109,11 @@ namespace SharpVk.Spirv
 
         /// <summary>
         /// </summary>
-        GLSL450 = 1,
+        Glsl450 = 1,
 
         /// <summary>
         /// </summary>
-        OpenCL = 2
+        OpenCl = 2
     }
 
     /// <summary>
@@ -395,15 +395,15 @@ namespace SharpVk.Spirv
 
         /// <summary>
         /// </summary>
-        Rgba32f = 1,
+        Rgba32F = 1,
 
         /// <summary>
         /// </summary>
-        Rgba16f = 2,
+        Rgba16F = 2,
 
         /// <summary>
         /// </summary>
-        R32f = 3,
+        R32F = 3,
 
         /// <summary>
         /// </summary>
@@ -415,19 +415,19 @@ namespace SharpVk.Spirv
 
         /// <summary>
         /// </summary>
-        Rg32f = 6,
+        Rg32F = 6,
 
         /// <summary>
         /// </summary>
-        Rg16f = 7,
+        Rg16F = 7,
 
         /// <summary>
         /// </summary>
-        R11fG11fB10f = 8,
+        R11FG11FB10F = 8,
 
         /// <summary>
         /// </summary>
-        R16f = 9,
+        R16F = 9,
 
         /// <summary>
         /// </summary>
@@ -475,79 +475,79 @@ namespace SharpVk.Spirv
 
         /// <summary>
         /// </summary>
-        Rgba32i = 21,
+        Rgba32I = 21,
 
         /// <summary>
         /// </summary>
-        Rgba16i = 22,
+        Rgba16I = 22,
 
         /// <summary>
         /// </summary>
-        Rgba8i = 23,
+        Rgba8I = 23,
 
         /// <summary>
         /// </summary>
-        R32i = 24,
+        R32I = 24,
 
         /// <summary>
         /// </summary>
-        Rg32i = 25,
+        Rg32I = 25,
 
         /// <summary>
         /// </summary>
-        Rg16i = 26,
+        Rg16I = 26,
 
         /// <summary>
         /// </summary>
-        Rg8i = 27,
+        Rg8I = 27,
 
         /// <summary>
         /// </summary>
-        R16i = 28,
+        R16I = 28,
 
         /// <summary>
         /// </summary>
-        R8i = 29,
+        R8I = 29,
 
         /// <summary>
         /// </summary>
-        Rgba32ui = 30,
+        Rgba32Ui = 30,
 
         /// <summary>
         /// </summary>
-        Rgba16ui = 31,
+        Rgba16Ui = 31,
 
         /// <summary>
         /// </summary>
-        Rgba8ui = 32,
+        Rgba8Ui = 32,
 
         /// <summary>
         /// </summary>
-        R32ui = 33,
+        R32Ui = 33,
 
         /// <summary>
         /// </summary>
-        Rgb10a2ui = 34,
+        Rgb10A2Ui = 34,
 
         /// <summary>
         /// </summary>
-        Rg32ui = 35,
+        Rg32Ui = 35,
 
         /// <summary>
         /// </summary>
-        Rg16ui = 36,
+        Rg16Ui = 36,
 
         /// <summary>
         /// </summary>
-        Rg8ui = 37,
+        Rg8Ui = 37,
 
         /// <summary>
         /// </summary>
-        R16ui = 38,
+        R16Ui = 38,
 
         /// <summary>
         /// </summary>
-        R8ui = 39
+        R8Ui = 39
     }
 
     /// <summary>
@@ -564,27 +564,27 @@ namespace SharpVk.Spirv
 
         /// <summary>
         /// </summary>
-        RG = 2,
+        Rg = 2,
 
         /// <summary>
         /// </summary>
-        RA = 3,
+        Ra = 3,
 
         /// <summary>
         /// </summary>
-        RGB = 4,
+        Rgb = 4,
 
         /// <summary>
         /// </summary>
-        RGBA = 5,
+        Rgba = 5,
 
         /// <summary>
         /// </summary>
-        BGRA = 6,
+        Bgra = 6,
 
         /// <summary>
         /// </summary>
-        ARGB = 7,
+        Argb = 7,
 
         /// <summary>
         /// </summary>
@@ -604,7 +604,7 @@ namespace SharpVk.Spirv
 
         /// <summary>
         /// </summary>
-        RGBx = 12,
+        RgBx = 12,
 
         /// <summary>
         /// </summary>
@@ -616,23 +616,23 @@ namespace SharpVk.Spirv
 
         /// <summary>
         /// </summary>
-        sRGB = 15,
+        SRgb = 15,
 
         /// <summary>
         /// </summary>
-        sRGBx = 16,
+        SRgBx = 16,
 
         /// <summary>
         /// </summary>
-        sRGBA = 17,
+        SRgba = 17,
 
         /// <summary>
         /// </summary>
-        sBGRA = 18,
+        SBgra = 18,
 
         /// <summary>
         /// </summary>
-        ABGR = 19
+        Abgr = 19
     }
 
     /// <summary>
@@ -705,7 +705,7 @@ namespace SharpVk.Spirv
 
         /// <summary>
         /// </summary>
-        UnormInt101010_2 = 16
+        UnormInt1010102 = 16
     }
 
     /// <summary>
@@ -751,7 +751,7 @@ namespace SharpVk.Spirv
 
     /// <summary>
     /// </summary>
-    public enum FPFastMathMode
+    public enum FpFastMathMode
     {
         /// <summary>
         /// </summary>
@@ -767,7 +767,7 @@ namespace SharpVk.Spirv
 
         /// <summary>
         /// </summary>
-        NSZ = 1 << 2,
+        Nsz = 1 << 2,
 
         /// <summary>
         /// </summary>
@@ -780,23 +780,23 @@ namespace SharpVk.Spirv
 
     /// <summary>
     /// </summary>
-    public enum FPRoundingMode
+    public enum FpRoundingMode
     {
         /// <summary>
         /// </summary>
-        RTE = 0,
+        Rte = 0,
 
         /// <summary>
         /// </summary>
-        RTZ = 1,
+        Rtz = 1,
 
         /// <summary>
         /// </summary>
-        RTP = 2,
+        Rtp = 2,
 
         /// <summary>
         /// </summary>
-        RTN = 3
+        Rtn = 3
     }
 
     /// <summary>
@@ -904,11 +904,11 @@ namespace SharpVk.Spirv
 
         /// <summary>
         /// </summary>
-        GLSLShared = 8,
+        GlslShared = 8,
 
         /// <summary>
         /// </summary>
-        GLSLPacked = 9,
+        GlslPacked = 9,
 
         /// <summary>
         /// </summary>
@@ -1020,11 +1020,11 @@ namespace SharpVk.Spirv
 
         /// <summary>
         /// </summary>
-        FPRoundingMode = 39,
+        FpRoundingMode = 39,
 
         /// <summary>
         /// </summary>
-        FPFastMathMode = 40,
+        FpFastMathMode = 40,
 
         /// <summary>
         /// </summary>
@@ -1217,23 +1217,23 @@ namespace SharpVk.Spirv
 
         /// <summary>
         /// </summary>
-        SubgroupEqMaskKHR = 4416,
+        SubgroupEqMaskKhr = 4416,
 
         /// <summary>
         /// </summary>
-        SubgroupGeMaskKHR = 4417,
+        SubgroupGeMaskKhr = 4417,
 
         /// <summary>
         /// </summary>
-        SubgroupGtMaskKHR = 4418,
+        SubgroupGtMaskKhr = 4418,
 
         /// <summary>
         /// </summary>
-        SubgroupLeMaskKHR = 4419,
+        SubgroupLeMaskKhr = 4419,
 
         /// <summary>
         /// </summary>
-        SubgroupLtMaskKHR = 4420,
+        SubgroupLtMaskKhr = 4420,
 
         /// <summary>
         /// </summary>
@@ -1647,7 +1647,7 @@ namespace SharpVk.Spirv
 
         /// <summary>
         /// </summary>
-        ImageMSArray = 48,
+        ImageMsArray = 48,
 
         /// <summary>
         /// </summary>
@@ -1699,7 +1699,7 @@ namespace SharpVk.Spirv
 
         /// <summary>
         /// </summary>
-        SubgroupBallotKHR = 4423,
+        SubgroupBallotKhr = 4423,
 
         /// <summary>
         /// </summary>
@@ -2820,7 +2820,7 @@ namespace SharpVk.Spirv
 
         /// <summary>
         /// </summary>
-        OpBuildNDRange = 304,
+        OpBuildNdRange = 304,
 
         /// <summary>
         /// </summary>
@@ -2928,10 +2928,10 @@ namespace SharpVk.Spirv
 
         /// <summary>
         /// </summary>
-        OpSubgroupBallotKHR = 4421,
+        OpSubgroupBallotKhr = 4421,
 
         /// <summary>
         /// </summary>
-        OpSubgroupFirstInvocationKHR = 4422
+        OpSubgroupFirstInvocationKhr = 4422
     }
 }

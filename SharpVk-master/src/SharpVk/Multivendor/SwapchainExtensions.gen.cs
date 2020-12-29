@@ -46,9 +46,9 @@ namespace SharpVk.Multivendor
                 var result = default(ulong);
                 var commandCache = default(CommandCache);
                 var marshalledCounterValue = default(ulong);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkGetSwapchainCounterEXT;
-                var methodResult = commandDelegate(extendedHandle.parent.handle, extendedHandle.handle, counter, &marshalledCounterValue);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkGetSwapchainCounterExt;
+                var methodResult = commandDelegate(extendedHandle.Parent.Handle, extendedHandle.Handle, counter, &marshalledCounterValue);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
                 result = marshalledCounterValue;
                 return result;
@@ -70,9 +70,9 @@ namespace SharpVk.Multivendor
             try
             {
                 var commandCache = default(CommandCache);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkAcquireFullScreenExclusiveModeEXT;
-                var methodResult = commandDelegate(extendedHandle.parent.handle, extendedHandle.handle);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkAcquireFullScreenExclusiveModeExt;
+                var methodResult = commandDelegate(extendedHandle.Parent.Handle, extendedHandle.Handle);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally
@@ -91,9 +91,9 @@ namespace SharpVk.Multivendor
             try
             {
                 var commandCache = default(CommandCache);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkReleaseFullScreenExclusiveModeEXT;
-                var methodResult = commandDelegate(extendedHandle.parent.handle, extendedHandle.handle);
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkReleaseFullScreenExclusiveModeExt;
+                var methodResult = commandDelegate(extendedHandle.Parent.Handle, extendedHandle.Handle);
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally

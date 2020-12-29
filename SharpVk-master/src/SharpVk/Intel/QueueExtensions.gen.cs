@@ -42,9 +42,9 @@ namespace SharpVk.Intel
             try
             {
                 var commandCache = default(CommandCache);
-                commandCache = extendedHandle.commandCache;
-                var commandDelegate = commandCache.Cache.vkQueueSetPerformanceConfigurationINTEL;
-                var methodResult = commandDelegate(extendedHandle.handle, configuration?.handle ?? default(Interop.Intel.PerformanceConfiguration));
+                commandCache = extendedHandle.CommandCache;
+                var commandDelegate = commandCache.Cache.VkQueueSetPerformanceConfigurationIntel;
+                var methodResult = commandDelegate(extendedHandle.Handle, configuration?.Handle ?? default(Interop.Intel.PerformanceConfiguration));
                 if (SharpVkException.IsError(methodResult)) throw SharpVkException.Create(methodResult);
             }
             finally

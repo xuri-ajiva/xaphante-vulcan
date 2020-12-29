@@ -47,11 +47,11 @@ namespace SharpVk.NVidia.Experimental
                 var commandCache = default(CommandCache);
                 var marshalledFeatures = default(Interop.NVidia.Experimental.DeviceGeneratedCommandsFeatures*);
                 var marshalledLimits = default(Interop.NVidia.Experimental.DeviceGeneratedCommandsLimits);
-                commandCache = extendedHandle.commandCache;
+                commandCache = extendedHandle.CommandCache;
                 marshalledFeatures = (Interop.NVidia.Experimental.DeviceGeneratedCommandsFeatures*)HeapUtil.Allocate<Interop.NVidia.Experimental.DeviceGeneratedCommandsFeatures>();
                 features.MarshalTo(marshalledFeatures);
-                var commandDelegate = commandCache.Cache.vkGetPhysicalDeviceGeneratedCommandsPropertiesNVX;
-                commandDelegate(extendedHandle.handle, marshalledFeatures, &marshalledLimits);
+                var commandDelegate = commandCache.Cache.VkGetPhysicalDeviceGeneratedCommandsPropertiesNvx;
+                commandDelegate(extendedHandle.Handle, marshalledFeatures, &marshalledLimits);
                 result = DeviceGeneratedCommandsLimits.MarshalFrom(&marshalledLimits);
                 return result;
             }

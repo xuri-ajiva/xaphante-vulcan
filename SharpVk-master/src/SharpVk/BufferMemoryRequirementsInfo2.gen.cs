@@ -47,7 +47,7 @@ namespace SharpVk
         {
             pointer->SType = StructureType.BufferMemoryRequirementsInfo2Version;
             pointer->Next = null;
-            pointer->Buffer = Buffer?.handle ?? default(Interop.Buffer);
+            pointer->Buffer = Buffer?.Handle ?? default(Interop.Buffer);
         }
 
         /// <summary>
