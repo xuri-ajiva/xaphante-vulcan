@@ -102,43 +102,5 @@ namespace vulcan_01
 
             presentQueue.Present(renderFinishedSemaphore, swapChain, nextImage, new Result[1]);
         }
-
-        private void RecreateSwapChain(WindowHandle window, int width, int height)
-        {
-            device.WaitIdle();
-
-            commandPool.FreeCommandBuffers(commandBuffers);
-
-            foreach (var frameBuffer in frameBuffers)
-            {
-                frameBuffer.Dispose();
-            }
-            frameBuffers = null;
-
-            pipeline.Dispose();
-            pipeline = null;
-
-            pipelineLayout.Dispose();
-            pipelineLayout = null;
-
-            foreach (var imageView in swapChainImageViews)
-            {
-                imageView.Dispose();
-            }
-            swapChainImageViews = null;
-
-            renderPass.Dispose();
-            renderPass = null;
-
-            swapChain.Dispose();
-            swapChain = null;
-
-            CreateSwapChain();
-            CreateImageViews();
-            CreateRenderPass();
-            CreateGraphicsPipeline();
-            CreateFrameBuffers();
-            CreateCommandBuffers(indices);
-        }
     }
 }

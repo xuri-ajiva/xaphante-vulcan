@@ -37,7 +37,6 @@
       <ProjectReference Include="..\SharpVk-master\src\SharpVk.Shanq.Numerics\SharpVk.Shanq.Numerics.csproj" />
       <ProjectReference Include="..\SharpVk-master\src\SharpVk.Shanq\SharpVk.Shanq.csproj" />
       <ProjectReference Include="..\SharpVk-master\src\SharpVk\SharpVk.csproj" />
-      <ProjectReference Include="..\WinFormsApp1\WinFormsApp1.csproj" />
     </ItemGroup>
 
     <!--    <ItemGroup>
