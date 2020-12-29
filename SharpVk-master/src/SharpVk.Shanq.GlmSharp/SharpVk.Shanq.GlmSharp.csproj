@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Version>0.0.0</Version>
+    <Authors>FacticiusVir</Authors>
+    <Company>FacticiusVir</Company>
+    <Description>GlmSharp type mappings for SharpVk Shanq</Description>
+    <PackageTags>Vulkan SPIR-V Spirv SharpVK Shanq 3D</PackageTags>
+    <Copyright>Copyright 2020 Andrew Armstrong/FacticiusVir</Copyright>
+    <PackageLicenseUrl>https://github.com/FacticiusVir/SharpVk/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/FacticiusVir/SharpVk</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/FacticiusVir/SharpVk/master/images/SharpVk.png</PackageIconUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>bin\Debug\netstandard2.1\</OutputPath>
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>bin\Release\netstandard2.1\</OutputPath>
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GlmSharp" Version="0.9.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SharpVk\SharpVk.csproj" />
+    <ProjectReference Include="..\SharpVk.Shanq\SharpVk.Shanq.csproj" />
+  </ItemGroup>
+
+</Project>
