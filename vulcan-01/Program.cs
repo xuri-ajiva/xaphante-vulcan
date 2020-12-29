@@ -1,10 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-using SharpVk;
-using SharpVk.Glfw;
-using SharpVk.Khronos;
-
-namespace vulcan_01
+﻿namespace vulcan_01
 {
     internal partial class Program
     {

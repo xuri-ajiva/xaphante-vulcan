@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Threading.Tasks.Dataflow;
-using GlmSharp;
 using SharpVk;
-using SharpVk.Glfw;
 using SharpVk.Khronos;
 using SharpVk.Multivendor;
 using SharpVk.Shanq;
 using SharpVk.Shanq.GlmSharp;
-using Buffer = SharpVk.Buffer;
 
 namespace vulcan_01
 {
@@ -34,7 +28,7 @@ namespace vulcan_01
 
             instance = Instance.Create(
                 enabledLayers.ToArray(),
-                Glfw3.GetRequiredInstanceExtensions().Append(ExtExtensions.DebugReport).ToArray(),
+                GetRequiredInstanceExtensions().Append(ExtExtensions.DebugReport).ToArray(),
                 applicationInfo: new ApplicationInfo
                 {
                     ApplicationName = "Hello Triangle",
@@ -53,10 +47,6 @@ namespace vulcan_01
 
         #region cpy
 
-        private void CreateSurface()
-        {
-            surface = instance.CreateGlfw3Surface(window);
-        }
 
         private void PickPhysicalDevice()
         {

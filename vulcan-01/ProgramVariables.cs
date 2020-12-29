@@ -11,7 +11,6 @@ using SharpVk.Khronos;
 using SharpVk.Multivendor;
 using SharpVk.Shanq;
 using SharpVk.Spirv;
-using Buffer = SharpVk.Buffer;
 
 namespace vulcan_01
 {
@@ -22,7 +21,6 @@ namespace vulcan_01
         private const int SurfaceWidth = 800;
         private const int SurfaceHeight = 600;
         private static readonly DebugReportCallbackDelegate DebugReportDelegate = DebugReport;
-        private WindowHandle window;
         private Instance instance;
         private Surface surface;
         private PhysicalDevice physicalDevice;
@@ -218,12 +216,10 @@ namespace vulcan_01
             instance.Dispose();
             instance = null;
 
-            Glfw3.DestroyWindow(window);
-
-            Glfw3.Terminate();
+            CloseWindow();
         }
 
-        private void RecreateSwapChain(WindowHandle window, int width, int height)
+        private void RecreateSwapChain()
         {
             device.WaitIdle();
 
