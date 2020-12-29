@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks.Dataflow;
 using GlmSharp;
 using SharpVk;
 using SharpVk.Glfw;
@@ -10,6 +11,7 @@ using SharpVk.Khronos;
 using SharpVk.Multivendor;
 using SharpVk.Shanq;
 using SharpVk.Shanq.GlmSharp;
+using Buffer = SharpVk.Buffer;
 
 namespace vulcan_01
 {
@@ -50,9 +52,10 @@ namespace vulcan_01
         }
 
         #region cpy
+
         private void CreateSurface()
         {
-          surface = instance.CreateGlfw3Surface(window);
+            surface = instance.CreateGlfw3Surface(window);
         }
 
         private void PickPhysicalDevice()
@@ -323,57 +326,7 @@ namespace vulcan_01
             commandPool = device.CreateCommandPool(queueFamilies.GraphicsFamily.Value);
         }
 
-        private void CreateVertexBuffers(Vertex[] vertices)
-        {
-            var vertexSize = Unsafe.SizeOf<Vertex>();
-
-            var bufferSize = (uint)(vertexSize * vertices.Length);
-
-            CreateBuffer(bufferSize, BufferUsageFlags.TransferSource, MemoryPropertyFlags.HostVisible | MemoryPropertyFlags.HostCoherent, out var stagingBuffer, out var stagingBufferMemory);
-
-            var memoryBuffer = stagingBufferMemory.Map(0, bufferSize, MemoryMapFlags.None);
-
-            for (var index = 0; index < vertices.Length; index++)
-            {
-                Marshal.StructureToPtr(vertices[index], memoryBuffer + (vertexSize * index), false);
-            }
-
-            stagingBufferMemory.Unmap();
-
-            CreateBuffer(bufferSize, BufferUsageFlags.TransferDestination | BufferUsageFlags.VertexBuffer, MemoryPropertyFlags.DeviceLocal, out vertexBuffer, out vertexBufferMemory);
-
-            CopyBuffer(stagingBuffer, vertexBuffer, bufferSize);
-
-            stagingBuffer.Dispose();
-            stagingBufferMemory.Free();
-        }
-
-        private void CreateIndexBuffer(ushort[] indices)
-        {
-            var indexSize = Unsafe.SizeOf<ushort>();
-
-            ulong bufferSize = (uint)(indexSize * indices.Length);
-
-            CreateBuffer(bufferSize, BufferUsageFlags.TransferSource, MemoryPropertyFlags.HostVisible | MemoryPropertyFlags.HostCoherent, out var stagingBuffer, out var stagingBufferMemory);
-
-            var memoryBuffer = stagingBufferMemory.Map(0, bufferSize, MemoryMapFlags.None);
-
-            for (var index = 0; index < indices.Length; index++)
-            {
-                Marshal.StructureToPtr(indices[index], memoryBuffer + (indexSize * index), false);
-            }
-
-            stagingBufferMemory.Unmap();
-
-            CreateBuffer(bufferSize, BufferUsageFlags.TransferDestination | BufferUsageFlags.IndexBuffer, MemoryPropertyFlags.DeviceLocal, out indexBuffer, out indexBufferMemory);
-
-            CopyBuffer(stagingBuffer, indexBuffer, bufferSize);
-
-            stagingBuffer.Dispose();
-            stagingBufferMemory.Free();
-        }
-
-        private void CreateCommandBuffers(ushort[] indices)
+        private void CreateCommandBuffers()
         {
             commandPool.Reset(CommandPoolResetFlags.ReleaseResources);
 
@@ -388,16 +341,15 @@ namespace vulcan_01
                 commandBuffer.BeginRenderPass(renderPass,
                     frameBuffers[index],
                     new(new(), swapChainExtent),
-                    new ClearValue[1],
+                    new ClearValue[]
+                    {
+                        new ClearColorValue(.1f, .1f, .1f, 1)
+                    },
                     SubpassContents.Inline);
 
                 commandBuffer.BindPipeline(PipelineBindPoint.Graphics, pipeline);
 
-                commandBuffer.BindVertexBuffers(0, vertexBuffer, 0);
-
-                commandBuffer.BindIndexBuffer(indexBuffer, 0, IndexType.Uint16);
-
-                commandBuffer.DrawIndexed((uint)indices.Length, 1, 0, 0, 0);
+                bufferManager.BindAllAndDraw(commandBuffer);
 
                 commandBuffer.EndRenderPass();
 
@@ -411,7 +363,11 @@ namespace vulcan_01
             renderFinishedSemaphore = device.CreateSemaphore();
         }
 
-        
     #endregion
+
+        private void CreateBufferManager()
+        {
+            bufferManager = new(device, physicalDevice, transferQueue, transientCommandPool);
+        }
     }
 }
