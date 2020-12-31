@@ -37,20 +37,9 @@ namespace vulcan_01
             }
         }
 
-        public (Buffer vertexBuffer, DeviceMemory vertexBufferMemory) CreateVertexBuffers(Vertex[] vertices)
+        public (Buffer vertexBuffer, DeviceMemory vertexBufferMemory) CreateVertexBuffers(Vertex[] val)
         {
-            var vertexSize = Unsafe.SizeOf<Vertex>();
-
-            var bufferSize = (uint)(vertexSize * vertices.Length);
-
-            CreateBuffer(bufferSize, BufferUsageFlags.TransferSource, MemoryPropertyFlags.HostVisible | MemoryPropertyFlags.HostCoherent, out var stagingBuffer, out var stagingBufferMemory);
-
-            var memoryBuffer = stagingBufferMemory.Map(0, bufferSize, MemoryMapFlags.None);
-
-            for (var index = 0; index < vertices.Length; index++)
-            {
-                Marshal.StructureToPtr(vertices[index], memoryBuffer + (vertexSize * index), false);
-            }
+            var bufferSize = CreateCopyBuffer(ref val, out var stagingBuffer, out var stagingBufferMemory);
 
             stagingBufferMemory.Unmap();
 
@@ -64,22 +53,9 @@ namespace vulcan_01
             return (vertexBuffer, vertexBufferMemory);
         }
 
-        public (Buffer indexBuffers, DeviceMemory indexBufferMemory) CreateIndexBuffer(ushort[] indices)
+        public (Buffer indexBuffers, DeviceMemory indexBufferMemory) CreateIndexBuffer(ushort[] val)
         {
-            var indexSize = Unsafe.SizeOf<ushort>();
-
-            ulong bufferSize = (uint)(indexSize * indices.Length);
-
-            CreateBuffer(bufferSize, BufferUsageFlags.TransferSource, MemoryPropertyFlags.HostVisible | MemoryPropertyFlags.HostCoherent, out var stagingBuffer, out var stagingBufferMemory);
-
-            var memoryBuffer = stagingBufferMemory.Map(0, bufferSize, MemoryMapFlags.None);
-
-            for (var index = 0; index < indices.Length; index++)
-            {
-                Marshal.StructureToPtr(indices[index], memoryBuffer + (indexSize * index), false);
-            }
-
-            stagingBufferMemory.Unmap();
+            var bufferSize = CreateCopyBuffer(ref val, out var stagingBuffer, out var stagingBufferMemory);
 
             CreateBuffer(bufferSize, BufferUsageFlags.TransferDestination | BufferUsageFlags.IndexBuffer, MemoryPropertyFlags.DeviceLocal, out var indexBuffers, out var indexBufferMemory);
 
@@ -89,6 +65,24 @@ namespace vulcan_01
             stagingBufferMemory.Free();
 
             return (indexBuffers, indexBufferMemory);
+        }
+
+        public uint CreateCopyBuffer<T>(ref T[] value, out Buffer stagingBuffer, out DeviceMemory stagingBufferMemory)
+        {
+            var size = Unsafe.SizeOf<T>();
+            var bufferSize = (uint)(size * value.Length);
+
+            CreateBuffer(bufferSize, BufferUsageFlags.TransferSource, MemoryPropertyFlags.HostVisible | MemoryPropertyFlags.HostCoherent, out stagingBuffer, out stagingBufferMemory);
+
+            var memoryBuffer = stagingBufferMemory.Map(0, bufferSize, MemoryMapFlags.None);
+
+            for (var index = 0; index < value.Length; index++)
+            {
+                Marshal.StructureToPtr(value[index], memoryBuffer + (size * index), false);
+            }
+
+            stagingBufferMemory.Unmap();
+            return bufferSize;
         }
 
         public void CreateBuffer(ulong size, BufferUsageFlags usage, MemoryPropertyFlags properties, out Buffer buffer, out DeviceMemory bufferMemory)

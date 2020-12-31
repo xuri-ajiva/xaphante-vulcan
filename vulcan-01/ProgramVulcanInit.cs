@@ -47,7 +47,6 @@ namespace vulcan_01
 
         #region cpy
 
-
         private void PickPhysicalDevice()
         {
             var availableDevices = instance.EnumeratePhysicalDevices();

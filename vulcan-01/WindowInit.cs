@@ -1,6 +1,7 @@
 ﻿#define WIN_32
 
 using System.Collections.Generic;
+using System.Drawing;
 #if WIN_32
 
 using System;
@@ -35,9 +36,11 @@ namespace vulcan_01
             window = new()
             {
                 Text = "Vulkan",
-                ClientSize = new(SurfaceWidth, SurfaceHeight)
+                ClientSize = new(SurfaceWidth, SurfaceHeight),
+                MinimumSize = new(SurfaceWidth / 2, SurfaceHeight / 2),
+                MaximumSize = new(SurfaceWidth * 2, SurfaceHeight * 2),
             };
-
+                                             
             window.ClientSizeChanged += (x, y) => RecreateSwapChain();
         }
 
@@ -47,6 +50,7 @@ namespace vulcan_01
             
             while (!window.IsDisposed)
             {
+                UpdateApplication();
                 DrawFrame();
 
                 Application.DoEvents();
