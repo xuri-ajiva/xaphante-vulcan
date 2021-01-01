@@ -11,62 +11,70 @@ namespace vulcan_01
 
     internal class BufferManager : IDisposable
     {
-        private Device device;
-        private PhysicalDevice physicalDevice;
-        private Queue transferQueue;
-        private CommandPool transientCommandPool;
+        public Buffer UniformStagingBuffer;
+        public Buffer UniformBuffer;
+        public DeviceMemory UniformStagingBufferMemory;
+        public DeviceMemory UniformBufferMemory;
+        public Program Program { get; private set; }
+        private Device Device => Program.device;
+        private PhysicalDevice PhysicalDevice => Program.physicalDevice;
+        private Queue TransferQueue => Program.transferQueue;
+        private CommandPool TransientCommandPool => Program.transientCommandPool;
 
         public object BufferLock { get; } = new();
         public List<BufferPack> Buffers { get; } = new();
 
-        public BufferManager(Device device, PhysicalDevice physicalDevice, Queue transferQueue, CommandPool transientCommandPool)
+        public BufferManager(Program program)
         {
-            this.device = device;
-            this.physicalDevice = physicalDevice;
-            this.transferQueue = transferQueue;
-            this.transientCommandPool = transientCommandPool;
+            Program = program;
         }
 
         public void AddBuffer(Vertex[] vertices, ushort[] indices)
         {
             lock (BufferLock)
             {
-                var (vertexBuffer, vertexBufferMemory) = CreateVertexBuffers(vertices);
-                var (indexBuffers, indexBufferMemory) = CreateIndexBuffer(indices);
-                Buffers.Add(new(vertexBuffer, vertexBufferMemory, (uint)vertices.Length, indexBuffers, indexBufferMemory, (uint)indices.Length));
+                CreateVertexBuffers(vertices, out var vertexBuffer, out var vertexBufferMemory);
+                CreateIndexBuffer(indices, out var indexBuffer, out var indexBufferMemory);
+                Buffers.Add(new(vertexBuffer, vertexBufferMemory, (uint)vertices.Length, indexBuffer, indexBufferMemory, (uint)indices.Length));
             }
         }
 
-        public (Buffer vertexBuffer, DeviceMemory vertexBufferMemory) CreateVertexBuffers(Vertex[] val)
+        public void CreateUniformBuffer()
+        {
+            uint bufferSize = (uint)Unsafe.SizeOf<UniformBufferObject>();
+
+            CreateBuffer(bufferSize, BufferUsageFlags.TransferSource, MemoryPropertyFlags.HostVisible | MemoryPropertyFlags.HostCoherent, out UniformStagingBuffer, out UniformStagingBufferMemory);
+            CreateBuffer(bufferSize, BufferUsageFlags.TransferDestination | BufferUsageFlags.UniformBuffer, MemoryPropertyFlags.DeviceLocal, out UniformBuffer, out UniformBufferMemory);
+        }
+
+        public void CreateVertexBuffers(Vertex[] val, out Buffer vertexBuffer, out DeviceMemory vertexBufferMemory)
         {
             var bufferSize = CreateCopyBuffer(ref val, out var stagingBuffer, out var stagingBufferMemory);
 
             stagingBufferMemory.Unmap();
 
-            CreateBuffer(bufferSize, BufferUsageFlags.TransferDestination | BufferUsageFlags.VertexBuffer, MemoryPropertyFlags.DeviceLocal, out var vertexBuffer, out var vertexBufferMemory);
+            CreateBuffer(bufferSize, BufferUsageFlags.TransferDestination | BufferUsageFlags.VertexBuffer, MemoryPropertyFlags.DeviceLocal, out vertexBuffer, out vertexBufferMemory);
 
             CopyBuffer(stagingBuffer, vertexBuffer, bufferSize);
 
             stagingBuffer.Dispose();
             stagingBufferMemory.Free();
-
-            return (vertexBuffer, vertexBufferMemory);
         }
 
-        public (Buffer indexBuffers, DeviceMemory indexBufferMemory) CreateIndexBuffer(ushort[] val)
+        public void CreateIndexBuffer(ushort[] val, out Buffer indexBuffers, out DeviceMemory indexBufferMemory)
         {
             var bufferSize = CreateCopyBuffer(ref val, out var stagingBuffer, out var stagingBufferMemory);
 
-            CreateBuffer(bufferSize, BufferUsageFlags.TransferDestination | BufferUsageFlags.IndexBuffer, MemoryPropertyFlags.DeviceLocal, out var indexBuffers, out var indexBufferMemory);
+            CreateBuffer(bufferSize, BufferUsageFlags.TransferDestination | BufferUsageFlags.IndexBuffer, MemoryPropertyFlags.DeviceLocal, out indexBuffers, out indexBufferMemory);
 
             CopyBuffer(stagingBuffer, indexBuffers, bufferSize);
 
             stagingBuffer.Dispose();
             stagingBufferMemory.Free();
-
-            return (indexBuffers, indexBufferMemory);
         }
 
+        
+        
         public uint CreateCopyBuffer<T>(ref T[] value, out Buffer stagingBuffer, out DeviceMemory stagingBufferMemory)
         {
             var size = Unsafe.SizeOf<T>();
@@ -87,18 +95,18 @@ namespace vulcan_01
 
         public void CreateBuffer(ulong size, BufferUsageFlags usage, MemoryPropertyFlags properties, out Buffer buffer, out DeviceMemory bufferMemory)
         {
-            buffer = device.CreateBuffer(size, usage, SharingMode.Exclusive, null);
+            buffer = Device.CreateBuffer(size, usage, SharingMode.Exclusive, null);
 
             var memRequirements = buffer.GetMemoryRequirements();
 
-            bufferMemory = device.AllocateMemory(memRequirements.Size, FindMemoryType(memRequirements.MemoryTypeBits, properties));
+            bufferMemory = Device.AllocateMemory(memRequirements.Size, FindMemoryType(memRequirements.MemoryTypeBits, properties));
 
             buffer.BindMemory(bufferMemory, 0);
         }
 
         public void CopyBuffer(Buffer sourceBuffer, Buffer destinationBuffer, ulong size)
         {
-            var transferBuffers = device.AllocateCommandBuffers(transientCommandPool, CommandBufferLevel.Primary, 1);
+            var transferBuffers = Device.AllocateCommandBuffers(TransientCommandPool, CommandBufferLevel.Primary, 1);
 
             transferBuffers[0].Begin(CommandBufferUsageFlags.OneTimeSubmit);
 
@@ -109,18 +117,18 @@ namespace vulcan_01
 
             transferBuffers[0].End();
 
-            transferQueue.Submit(new SubmitInfo
+            TransferQueue.Submit(new SubmitInfo
             {
                 CommandBuffers = transferBuffers
             }, null);
-            transferQueue.WaitIdle();
+            TransferQueue.WaitIdle();
 
-            transientCommandPool.FreeCommandBuffers(transferBuffers);
+            TransientCommandPool.FreeCommandBuffers(transferBuffers);
         }
 
         private uint FindMemoryType(uint typeFilter, MemoryPropertyFlags flags)
         {
-            var memoryProperties = physicalDevice.GetMemoryProperties();
+            var memoryProperties = PhysicalDevice.GetMemoryProperties();
 
             for (var i = 0; i < memoryProperties.MemoryTypes.Length; i++)
             {
@@ -136,10 +144,22 @@ namespace vulcan_01
 
         private void ReleaseUnmanagedResources()
         {
-            device = null;
-            physicalDevice = null;
-            transferQueue = null;
-            transientCommandPool = null;
+            Program = null;
+            lock (BufferLock)
+            {
+                foreach (var (vertexBuffer, vertexBufferMemory, _, indexBuffer, indexBufferMemory, _) in Buffers)
+                {
+                    indexBuffer.Dispose();
+                    vertexBuffer.Dispose();
+                    indexBufferMemory.Free();
+                    vertexBufferMemory.Free();
+                }
+                
+                UniformBuffer.Dispose();
+                UniformStagingBuffer.Dispose();
+                UniformBufferMemory.Free();
+                UniformStagingBufferMemory.Free();
+            }
         }
 
         public void Dispose()
@@ -160,8 +180,11 @@ namespace vulcan_01
                 foreach (var (vertexBuffer, _, _, indexBuffer, _, indicesLength) in Buffers)
                 {
                     commandBuffer.BindVertexBuffers(0, vertexBuffer, 0);
-
                     commandBuffer.BindIndexBuffer(indexBuffer, 0, IndexType.Uint16);
+                    
+                    
+                    commandBuffer.BindDescriptorSets(PipelineBindPoint.Graphics, Program.pipelineLayout, 0, Program.descriptorSet, null);
+                    
                     commandBuffer.DrawIndexed(indicesLength, 1, 0, 0, 0);
                 }
             }
