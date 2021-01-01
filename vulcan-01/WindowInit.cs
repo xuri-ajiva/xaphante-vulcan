@@ -1,12 +1,13 @@
 ﻿#define WIN_32
 
 using System.Collections.Generic;
-using System.Drawing;
+using System.Diagnostics;
 #if WIN_32
 
 using System;
 using System.Windows.Forms;
 using SharpVk.Khronos;
+using System.Drawing;
 
 #else
 
@@ -48,9 +49,12 @@ namespace vulcan_01
         {
             window.Show();
             
+            initialTimestamp = Stopwatch.GetTimestamp();
+            
             while (!window.IsDisposed)
             {
-                UpdateApplication();
+                //UpdateApplication();
+                UpdateUniformBuffer();
                 DrawFrame();
 
                 Application.DoEvents();
@@ -87,6 +91,9 @@ namespace vulcan_01
 
         private void MainLoop()
         {
+
+            this.initialTimestamp = Stopwatch.GetTimestamp();
+
             while (!Glfw3.WindowShouldClose(window))
             {
                 DrawFrame();

@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
-using GlmSharp;
 using SharpVk;
 using SharpVk.Glfw;
 using SharpVk.Khronos;
 using SharpVk.Multivendor;
-using SharpVk.Shanq;
-using SharpVk.Spirv;
 
 namespace vulcan_01
 {
@@ -23,21 +18,21 @@ namespace vulcan_01
         private static readonly DebugReportCallbackDelegate DebugReportDelegate = DebugReport;
         private Instance instance;
         private Surface surface;
-        private PhysicalDevice physicalDevice;
-        private Device device;
+        internal PhysicalDevice physicalDevice;
+        internal Device device;
         private Queue graphicsQueue;
         private Queue presentQueue;
-        private Queue transferQueue;
+        internal Queue transferQueue;
         private Swapchain swapChain;
-        private Image[] swapChainImages;
+        internal Image[] swapChainImages;
         private ImageView[] swapChainImageViews;
         private RenderPass renderPass;
-        private PipelineLayout pipelineLayout;
+        public PipelineLayout pipelineLayout;
         private Pipeline pipeline;
         private ShaderModule fragShader;
         private ShaderModule vertShader;
         private Framebuffer[] frameBuffers;
-        private CommandPool transientCommandPool;
+        internal CommandPool transientCommandPool;
         private CommandPool commandPool;
         private CommandBuffer[] commandBuffers;
         private Semaphore imageAvailableSemaphore;
@@ -48,8 +43,10 @@ namespace vulcan_01
 
         private BufferManager bufferManager;
 
-        private DeviceMemory indexBufferMemory;
-        private DeviceMemory vertexBufferMemory;
+        private long initialTimestamp;
+        public DescriptorSet descriptorSet;
+        private DescriptorPool descriptorPool;
+        private DescriptorSetLayout descriptorSetLayout;
 
         #endregion
         #region cpy
@@ -180,11 +177,17 @@ namespace vulcan_01
             imageAvailableSemaphore.Dispose();
             imageAvailableSemaphore = null;
 
+            descriptorPool.Dispose();
+            descriptorPool = null;
+            descriptorSet = null;
+
+            CleanupSwapChain();
+
+            bufferManager.Dispose();
+
             commandPool.Dispose();
             commandPool = null;
-
-            foreach (var frameBuffer in frameBuffers) frameBuffer.Dispose();
-            frameBuffers = null;
+            commandBuffers = null;
 
             fragShader.Dispose();
             fragShader = null;
@@ -192,20 +195,8 @@ namespace vulcan_01
             vertShader.Dispose();
             vertShader = null;
 
-            pipeline.Dispose();
-            pipeline = null;
-
-            pipelineLayout.Dispose();
-            pipelineLayout = null;
-
-            foreach (var imageView in swapChainImageViews) imageView.Dispose();
-            swapChainImageViews = null;
-
-            renderPass.Dispose();
-            renderPass = null;
-
-            swapChain.Dispose();
-            swapChain = null;
+            descriptorSetLayout.Dispose();
+            descriptorSetLayout = null;
 
             device.Dispose();
             device = null;
@@ -219,16 +210,11 @@ namespace vulcan_01
             CloseWindow();
         }
 
-        private void RecreateSwapChain()
+        private void CleanupSwapChain()
         {
-            device.WaitIdle();
-
-            commandPool.FreeCommandBuffers(commandBuffers);
-
-            foreach (var frameBuffer in frameBuffers)
-            {
-                frameBuffer.Dispose();
-            }
+            if (frameBuffers != null)
+                foreach (var frameBuffer in frameBuffers)
+                    frameBuffer.Dispose();
             frameBuffers = null;
 
             pipeline.Dispose();
@@ -236,11 +222,9 @@ namespace vulcan_01
 
             pipelineLayout.Dispose();
             pipelineLayout = null;
-
-            foreach (var imageView in swapChainImageViews)
-            {
-                imageView.Dispose();
-            }
+            if (swapChainImageViews != null)
+                foreach (var imageView in swapChainImageViews)
+                    imageView.Dispose();
             swapChainImageViews = null;
 
             renderPass.Dispose();
@@ -248,13 +232,21 @@ namespace vulcan_01
 
             swapChain.Dispose();
             swapChain = null;
+        }
 
-            CreateSwapChain();
-            CreateImageViews();
-            CreateRenderPass();
-            CreateGraphicsPipeline();
-            CreateFrameBuffers();
-            CreateCommandBuffers();
+        private void RecreateSwapChain()
+        {
+            device.WaitIdle();
+            CleanupSwapChain();
+            commandPool.FreeCommandBuffers(commandBuffers);
+
+            this.CreateSwapChain();
+            this.CreateImageViews();
+            this.CreateRenderPass();
+            this.CreateGraphicsPipeline();
+            this.CreateFrameBuffers();
+            //bufferManager.ReCreateUniformBuffers();
+            this.CreateCommandBuffers();
         }
     }
 

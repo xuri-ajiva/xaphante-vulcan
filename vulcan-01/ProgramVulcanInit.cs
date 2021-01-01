@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using GlmSharp;
 using SharpVk;
 using SharpVk.Khronos;
 using SharpVk.Multivendor;
@@ -31,10 +33,10 @@ namespace vulcan_01
                 GetRequiredInstanceExtensions().Append(ExtExtensions.DebugReport).ToArray(),
                 applicationInfo: new ApplicationInfo
                 {
-                    ApplicationName = "Hello Triangle",
-                    ApplicationVersion = new(1, 0, 0),
-                    EngineName = "SharpVk",
-                    EngineVersion = new(0, 4, 1),
+                    ApplicationName = "vc-01",
+                    ApplicationVersion = new(0, 1, 0),
+                    EngineName = "xaphante",
+                    EngineVersion = new(0, 0, 1),
                     ApiVersion = new(1, 0, 0)
                 });
 
@@ -149,7 +151,10 @@ namespace vulcan_01
                 },
                 new SubpassDescription
                 {
-                    DepthStencilAttachment = new(Constants.AttachmentUnused, ImageLayout.Undefined),
+                    DepthStencilAttachment = new AttachmentReference
+                    {
+                        Attachment = Constants.AttachmentUnused
+                    },
                     PipelineBindPoint = PipelineBindPoint.Graphics,
                     ColorAttachments = new[]
                     {
@@ -181,22 +186,32 @@ namespace vulcan_01
 
         private void CreateShaderModules()
         {
-            vertShader = ShanqShader.CreateVertexModule(device,
-                VectorTypeLibrary.Instance,
-                shanq => from input in shanq.GetInput<Vertex>()
-                    select new VertexOutput
-                    {
-                        Colour = input.Colour,
-                        Position = new(input.Position, 0, 1)
-                    });
+            ShaderModule CreateShader(string path)
+            {
+                var shaderData = LoadShaderData(path, out var codeSize);
 
-            fragShader = ShanqShader.CreateFragmentModule(device,
-                VectorTypeLibrary.Instance,
-                shanq => from input in shanq.GetInput<FragmentInput>()
-                    select new FragmentOutput
-                    {
-                        Colour = new(input.Colour, 1)
-                    });
+                return device.CreateShaderModule(codeSize, shaderData);
+            }
+
+            vertShader = CreateShader(@".\Shaders\vert.spv");
+
+            fragShader = CreateShader(@".\Shaders\frag.spv");
+            /*
+vertShader = device.CreateVertexModule(shanq => from input in shanq.GetInput<Vertex>()
+from ubo in shanq.GetBinding<UniformBufferObject>(0)
+let transform = ubo.Proj * ubo.View * ubo.Model
+select new VertexOutput
+{
+Position = transform * new vec4(input.Position, 0, 1),
+Colour = input.Colour
+});
+
+fragShader = device.CreateFragmentModule(shanq => from input in shanq.GetInput<FragmentInput>()
+let colour = new vec4(input.Colour, 1)
+select new FragmentOutput
+{
+Colour = colour
+});         */
         }
 
         private void CreateGraphicsPipeline()
@@ -204,7 +219,7 @@ namespace vulcan_01
             var bindingDescription = Vertex.GetBindingDescription();
             var attributeDescriptions = Vertex.GetAttributeDescriptions();
 
-            pipelineLayout = device.CreatePipelineLayout(null, null);
+            pipelineLayout = device.CreatePipelineLayout(descriptorSetLayout, null);
 
             pipeline = device.CreateGraphicsPipelines(null, new[]
             {
@@ -230,11 +245,23 @@ namespace vulcan_01
                     {
                         Viewports = new[]
                         {
-                            new Viewport(0f, 0f, swapChainExtent.Width, swapChainExtent.Height, 0f, 1f)
+                            new Viewport
+                            {
+                                X = 0f,
+                                Y = 0f,
+                                Width = swapChainExtent.Width,
+                                Height = swapChainExtent.Height,
+                                MaxDepth = 1,
+                                MinDepth = 0
+                            }
                         },
                         Scissors = new[]
                         {
-                            new Rect2D(new(), swapChainExtent)
+                            new Rect2D
+                            {
+                                Offset = new Offset2D(),
+                                Extent = swapChainExtent
+                            }
                         }
                     },
                     RasterizationState = new()
@@ -244,7 +271,7 @@ namespace vulcan_01
                         PolygonMode = PolygonMode.Fill,
                         LineWidth = 1,
                         CullMode = CullModeFlags.Back,
-                        FrontFace = FrontFace.Clockwise,
+                        FrontFace = FrontFace.CounterClockwise,
                         DepthBiasEnable = false
                     },
                     MultisampleState = new()
@@ -290,7 +317,7 @@ namespace vulcan_01
                             Module = fragShader,
                             Name = "main"
                         }
-                    }
+                    },
                 }
             }).Single();
         }
@@ -356,7 +383,61 @@ namespace vulcan_01
 
         private void CreateBufferManager()
         {
-            bufferManager = new(device, physicalDevice, transferQueue, transientCommandPool);
+            bufferManager = new(this);
+        }
+
+        private void CreateDescriptorSetLayout()
+        {
+            descriptorSetLayout = device.CreateDescriptorSetLayout(
+                new DescriptorSetLayoutBinding
+                {
+                    Binding = 0,
+                    DescriptorType = DescriptorType.UniformBuffer,
+                    StageFlags = ShaderStageFlags.Vertex | ShaderStageFlags.Fragment,
+                    DescriptorCount = 1
+                });
+        }
+
+        private void CreateDescriptorPool()
+        {
+            descriptorPool = device.CreateDescriptorPool(
+                1,
+                new DescriptorPoolSize
+                {
+                    DescriptorCount = 1,
+                    Type = DescriptorType.UniformBuffer
+                });
+        }
+
+        private void CreateDescriptorSet()
+        {
+            descriptorSet = device.AllocateDescriptorSets(descriptorPool, descriptorSetLayout).Single();
+
+            device.UpdateDescriptorSets(
+                new WriteDescriptorSet
+                {
+                    BufferInfo = new[]
+                    {
+                        new DescriptorBufferInfo
+                        {
+                            Buffer = bufferManager.UniformBuffer,
+                            Offset = 0,
+                            Range = (ulong)Unsafe.SizeOf<UniformBufferObject>()
+                        }
+                    },
+                    DescriptorCount = 1,
+                    DestinationSet = descriptorSet,
+                    DestinationBinding = 0,
+                    DestinationArrayElement = 0,
+                    DescriptorType = DescriptorType.UniformBuffer
+                }, null);
+        }
+
+        private void CreateDevice()
+        {
+           
+            PickPhysicalDevice();
+            CreateLogicalDevice();
         }
     }
 }
