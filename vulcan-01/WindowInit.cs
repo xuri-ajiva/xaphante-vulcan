@@ -2,15 +2,13 @@
 
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading.Tasks;
 #if WIN_32
-
 using System;
 using System.Windows.Forms;
 using SharpVk.Khronos;
-using System.Drawing;
 
 #else
-
 using SharpVk.Glfw;
 
 #endif
@@ -26,10 +24,13 @@ namespace vulcan_01
         {
             surface = instance.CreateWin32Surface(IntPtr.Zero, window.Handle);
         }
-        
+
         private IEnumerable<string> GetRequiredInstanceExtensions()
         {
-           return new[]{ "VK_KHR_surface", "VK_KHR_win32_surface"};
+            return new[]
+            {
+                "VK_KHR_surface", "VK_KHR_win32_surface"
+            };
         }
 
         private void InitWindow()

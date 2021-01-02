@@ -7,13 +7,13 @@ namespace vulcan_01
 {
     internal struct Vertex
     {
-        public Vertex(vec2 position, vec3 colour)
+        public Vertex(vec3 position, vec3 colour)
         {
             Position = position;
             Colour = colour;
         }
 
-        [Location(0)] public vec2 Position;
+        [Location(0)] public vec3 Position;
 
         [Location(1)] public vec3 Colour;
 
@@ -35,7 +35,7 @@ namespace vulcan_01
                 {
                     Binding = 0,
                     Location = 0,
-                    Format = Format.R32G32SFloat,
+                    Format = Format.R32G32B32SFloat,
                     Offset = (uint)Marshal.OffsetOf<Vertex>("Position")
                 },
                 new VertexInputAttributeDescription

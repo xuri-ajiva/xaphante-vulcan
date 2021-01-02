@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using SharpVk;
 using Buffer = SharpVk.Buffer;
 
@@ -41,7 +42,7 @@ namespace vulcan_01
 
         public void CreateUniformBuffer()
         {
-            uint bufferSize = (uint)Unsafe.SizeOf<UniformBufferObject>();
+            var bufferSize = (uint)Unsafe.SizeOf<UniformBufferObject>();
 
             CreateBuffer(bufferSize, BufferUsageFlags.TransferSource, MemoryPropertyFlags.HostVisible | MemoryPropertyFlags.HostCoherent, out UniformStagingBuffer, out UniformStagingBufferMemory);
             CreateBuffer(bufferSize, BufferUsageFlags.TransferDestination | BufferUsageFlags.UniformBuffer, MemoryPropertyFlags.DeviceLocal, out UniformBuffer, out UniformBufferMemory);
@@ -73,8 +74,6 @@ namespace vulcan_01
             stagingBufferMemory.Free();
         }
 
-        
-        
         public uint CreateCopyBuffer<T>(ref T[] value, out Buffer stagingBuffer, out DeviceMemory stagingBufferMemory)
         {
             var size = Unsafe.SizeOf<T>();
@@ -154,7 +153,7 @@ namespace vulcan_01
                     indexBufferMemory.Free();
                     vertexBufferMemory.Free();
                 }
-                
+
                 UniformBuffer.Dispose();
                 UniformStagingBuffer.Dispose();
                 UniformBufferMemory.Free();
@@ -181,10 +180,9 @@ namespace vulcan_01
                 {
                     commandBuffer.BindVertexBuffers(0, vertexBuffer, 0);
                     commandBuffer.BindIndexBuffer(indexBuffer, 0, IndexType.Uint16);
-                    
-                    
+
                     commandBuffer.BindDescriptorSets(PipelineBindPoint.Graphics, Program.pipelineLayout, 0, Program.descriptorSet, null);
-                    
+
                     commandBuffer.DrawIndexed(indicesLength, 1, 0, 0, 0);
                 }
             }

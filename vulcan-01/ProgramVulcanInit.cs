@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using GlmSharp;
 using SharpVk;
 using SharpVk.Khronos;
@@ -22,7 +23,8 @@ namespace vulcan_01
 
             void AddAvailableLayer(string layerName)
             {
-                if (Instance.EnumerateLayerProperties().Any(x => x.LayerName == layerName)) enabledLayers.Add(layerName);
+                if (Instance.EnumerateLayerProperties().Any(x => x.LayerName == layerName))
+                    enabledLayers.Add(layerName);
             }
 
             AddAvailableLayer("VK_LAYER_LUNARG_standard_validation");
@@ -42,9 +44,11 @@ namespace vulcan_01
 
             instance.CreateDebugReportCallback(DebugReportDelegate, DebugReportFlags.Error | DebugReportFlags.Warning | DebugReportFlags.Information);
 
-            foreach (var extension in Instance.EnumerateExtensionProperties()) Console.WriteLine($"Extension available: {extension.ExtensionName}");
+            foreach (var extension in Instance.EnumerateExtensionProperties())
+                Console.WriteLine($"Extension available: {extension.ExtensionName}");
 
-            foreach (var layer in Instance.EnumerateLayerProperties()) Console.WriteLine($"Layer available: {layer.LayerName}, {layer.Description}");
+            foreach (var layer in Instance.EnumerateLayerProperties())
+                Console.WriteLine($"Layer available: {layer.LayerName}, {layer.Description}");
         }
 
         #region cpy
@@ -193,25 +197,25 @@ namespace vulcan_01
                 return device.CreateShaderModule(codeSize, shaderData);
             }
 
-            vertShader = CreateShader(@".\Shaders\vert.spv");
+            //vertShader = CreateShader(@".\Shaders\vert.spv");
+            //
+            //fragShader = CreateShader(@".\Shaders\frag.spv");
 
-            fragShader = CreateShader(@".\Shaders\frag.spv");
-            /*
-vertShader = device.CreateVertexModule(shanq => from input in shanq.GetInput<Vertex>()
-from ubo in shanq.GetBinding<UniformBufferObject>(0)
-let transform = ubo.Proj * ubo.View * ubo.Model
-select new VertexOutput
-{
-Position = transform * new vec4(input.Position, 0, 1),
-Colour = input.Colour
-});
+            vertShader = device.CreateVertexModule(shank => from input in shank.GetInput<Vertex>()
+                from ubo in shank.GetBinding<UniformBufferObject>(0)
+                let transform = ubo.Proj * ubo.View * ubo.Model
+                select new VertexOutput
+                {
+                    Position = transform * new vec4(input.Position, 1),
+                    Colour = input.Colour
+                });
 
-fragShader = device.CreateFragmentModule(shanq => from input in shanq.GetInput<FragmentInput>()
-let colour = new vec4(input.Colour, 1)
-select new FragmentOutput
-{
-Colour = colour
-});         */
+            fragShader = device.CreateFragmentModule(shank => from input in shank.GetInput<FragmentInput>()
+                let colour = new vec4(input.Colour, 1)
+                select new FragmentOutput
+                {
+                    Colour = colour
+                });
         }
 
         private void CreateGraphicsPipeline()
@@ -252,7 +256,7 @@ Colour = colour
                                 Width = swapChainExtent.Width,
                                 Height = swapChainExtent.Height,
                                 MaxDepth = 1,
-                                MinDepth = 0
+                                MinDepth = 0,
                             }
                         },
                         Scissors = new[]
@@ -435,9 +439,46 @@ Colour = colour
 
         private void CreateDevice()
         {
-           
             PickPhysicalDevice();
             CreateLogicalDevice();
+        }
+
+        private void CreateDepthResources()
+        { 
+            var depthFormat = FindDepthFormat();
+            //todo
+        }
+        
+        private Format FindDepthFormat()
+        {
+            return FindSupportedFormat(new[]
+                {
+                    Format.D32SFloat, Format.D32SFloatS8UInt, Format.D24UNormS8UInt
+                },
+                ImageTiling.Optimal,
+                FormatFeatureFlags.DepthStencilAttachment
+                //VK_FORMAT_FEATURE_DEPTH_STENCIL_ATTACHMENT_BIT
+            );
+        }
+
+        private Format FindSupportedFormat(IEnumerable<Format> candidates, ImageTiling tiling, FormatFeatureFlags features)
+        {
+            foreach (var format in candidates)
+            {
+                var props = physicalDevice.GetFormatProperties(format);
+
+                switch (tiling)
+                {
+                    case ImageTiling.Linear when (props.LinearTilingFeatures & features) == features:
+                        return format;
+                    case ImageTiling.Optimal when (props.OptimalTilingFeatures & features) == features:
+                        return format;
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(tiling), tiling, "failed to find supported format!");
+                }
+            }
+
+            throw new ArgumentOutOfRangeException(nameof(candidates), candidates, "failed to find supported format!");
         }
     }
 }

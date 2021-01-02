@@ -21,64 +21,64 @@ namespace vulcan_01
             var pg = new Program();
             var r = new Random();
             var fun = new Thread(() =>
-             {
-                 Thread.Sleep(2000);
-                 var i = 0;
-                 while (true)
-                 {
-                     i++;
- 
-                     Thread.Sleep(1000);
-                     var i1 = i;
-                     //pg.applicationQueue.Enqueue(delegate
-                     //{
-                     //pg.RecreateSwapChain();
-                     var bi = pg.bufferManager.Buffers[0];
- 
-                     {
-                         var size = pg.indices.Length;
-                         var ne = new ushort[pg.indices.Length];
-                         for (int j = 0; j < ne.Length; j++)
-                         {
-                             ne[j] = (ushort)r.Next(0, pg.vertices.Length);
-                         }
- 
-                         var bs = pg.bufferManager.CreateCopyBuffer(ref ne, out var sb, out var sm);
- 
-                         pg.bufferManager.CopyBuffer(sb, bi.IndexBuffer, bs);
- 
-                         sb.Dispose();
-                         sm.Free();
- 
-                         bi.IndexBufferMemory.Unmap();
-                     }
-                     {
-                         float SingXv(float def)
-                         {
-                             var si = MathF.Abs(MathF.Sin(i1 / 100f + def * (MathF.PI / 2)));
-                             return si;
-                         }
- 
-                         Vertex[] vn = new Vertex[pg.vertices.Length];
-                         for (int j = 0; j < vn.Length; j++)
-                         {
-                             vn[j] = new Vertex(new((float)(r.NextDouble() * 2 - 1), (float)(r.NextDouble() * 2 - 1f)), new((float)(r.NextDouble()), (float)(r.NextDouble()), (float)(r.NextDouble())));
-                         }
- 
-                         var bs = pg.bufferManager.CreateCopyBuffer(ref vn, out var sb, out var sm);
- 
-                         pg.bufferManager.CopyBuffer(sb, bi.VertexBuffer, bs);
- 
-                         sb.Dispose();
-                         sm.Free();
- 
-                         bi.IndexBufferMemory.Unmap();
-                     }
-                     //});
-                     pg.applicationQueue.Enqueue(()=> pg.RecreateSwapChain());
-                 }
-             });
-             fun.Start(); 
+            {
+                Thread.Sleep(2000);
+                var i = 0;
+                while (true)
+                {
+                    i++;
+
+                    Thread.Sleep(1000);
+                    var i1 = i;
+                    //pg.applicationQueue.Enqueue(delegate
+                    //{
+                    //pg.RecreateSwapChain();
+                    var bi = pg.bufferManager.Buffers[0];
+
+                    {
+                        var size = pg.indices.Length;
+                        var ne = new ushort[pg.indices.Length];
+                        for (int j = 0; j < ne.Length; j++)
+                        {
+                            ne[j] = (ushort)r.Next(0, pg.vertices.Length);
+                        }
+
+                        var bs = pg.bufferManager.CreateCopyBuffer(ref ne, out var sb, out var sm);
+
+                        pg.bufferManager.CopyBuffer(sb, bi.IndexBuffer, bs);
+
+                        sb.Dispose();
+                        sm.Free();
+
+                        bi.IndexBufferMemory.Unmap();
+                    }
+                    {
+                        float SingXv(float def)
+                        {
+                            var si = MathF.Abs(MathF.Sin(i1 / 100f + def * (MathF.PI / 2)));
+                            return si;
+                        }
+
+                        Vertex[] vn = new Vertex[pg.vertices.Length];
+                        for (int j = 0; j < vn.Length; j++)
+                        {
+                            vn[j] = new Vertex(new((float)(r.NextDouble() * 2 - 1), (float)(r.NextDouble() * 2 - 1), (float)(r.NextDouble() * 2 - 1)), new((float)(r.NextDouble()), (float)(r.NextDouble()), (float)(r.NextDouble())));
+                        }
+
+                        var bs = pg.bufferManager.CreateCopyBuffer(ref vn, out var sb, out var sm);
+
+                        pg.bufferManager.CopyBuffer(sb, bi.VertexBuffer, bs);
+
+                        sb.Dispose();
+                        sm.Free();
+
+                        bi.IndexBufferMemory.Unmap();
+                    }
+                    //});
+                    pg.applicationQueue.Enqueue(async () => pg.RecreateSwapChain());
+                }
+            });
+            fun.Start();
 
             pg.Run();
             Environment.Exit(0);
@@ -105,6 +105,7 @@ namespace vulcan_01
             CreateGraphicsPipeline();
             CreateFrameBuffers();
             CreateCommandPools();
+            CreateDepthResources();
             CreateBufferManager();
             bufferManager.AddBuffer(vertices, indices);
             bufferManager.CreateUniformBuffer();
@@ -149,8 +150,8 @@ namespace vulcan_01
 
             var ubo = new UniformBufferObject
             {
-                Model = mat4.Rotate((float)Math.Sin(totalTime) * (float)Math.PI, vec3.UnitZ),
-                View = mat4.LookAt(new(1), vec3.Zero, vec3.UnitZ),
+                Model =/*mat4.Translate(0,-1,0) **/ mat4.Rotate((float)Math.Sin(totalTime) * (float)Math.PI, vec3.UnitZ),
+                View = mat4.LookAt(new(2), vec3.Zero, vec3.UnitZ),
                 Proj = mat4.Perspective((float)Math.PI / 4f, swapChainExtent.Width / (float)swapChainExtent.Height, 0.1f, 10)
             };
 
