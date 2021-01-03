@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using GlmSharp;
 using SharpVk;
 using SharpVk.Khronos;
 using SharpVk.Multivendor;
-using SharpVk.Shanq;
 using SharpVk.Shanq.GlmSharp;
+using Buffer = SharpVk.Buffer;
+using Image = SharpVk.Image;
 
 namespace vulcan_01
 {
@@ -124,41 +127,41 @@ namespace vulcan_01
         private void CreateImageViews()
         {
             swapChainImageViews = swapChainImages
-                .Select(image => device.CreateImageView(image,
-                    ImageViewType.ImageView2d,
-                    swapChainFormat,
-                    ComponentMapping.Identity,
-                    new()
-                    {
-                        AspectMask = ImageAspectFlags.Color,
-                        BaseMipLevel = 0,
-                        LevelCount = 1,
-                        BaseArrayLayer = 0,
-                        LayerCount = 1
-                    }))
+                .Select(image => CreateImageView(image, swapChainFormat, ImageAspectFlags.Color))
                 .ToArray();
         }
 
         private void CreateRenderPass()
         {
             renderPass = device.CreateRenderPass(
-                new AttachmentDescription
+                new AttachmentDescription[]
                 {
-                    Format = swapChainFormat,
-                    Samples = SampleCountFlags.SampleCount1,
-                    LoadOp = AttachmentLoadOp.Clear,
-                    StoreOp = AttachmentStoreOp.Store,
-                    StencilLoadOp = AttachmentLoadOp.DontCare,
-                    StencilStoreOp = AttachmentStoreOp.DontCare,
-                    InitialLayout = ImageLayout.Undefined,
-                    FinalLayout = ImageLayout.PresentSource
+                    new()
+                    {
+                        Format = swapChainFormat,
+                        Samples = SampleCountFlags.SampleCount1,
+                        LoadOp = AttachmentLoadOp.Clear,
+                        StoreOp = AttachmentStoreOp.Store,
+                        StencilLoadOp = AttachmentLoadOp.DontCare,
+                        StencilStoreOp = AttachmentStoreOp.DontCare,
+                        InitialLayout = ImageLayout.Undefined,
+                        FinalLayout = ImageLayout.PresentSource
+                    },
+                    new()
+                    {
+                        Format = FindDepthFormat(),
+                        Samples = SampleCountFlags.SampleCount1,
+                        LoadOp = AttachmentLoadOp.Clear,
+                        StoreOp = AttachmentStoreOp.DontCare,
+                        StencilLoadOp = AttachmentLoadOp.DontCare,
+                        StencilStoreOp = AttachmentStoreOp.DontCare,
+                        InitialLayout = ImageLayout.Undefined,
+                        FinalLayout = ImageLayout.DepthStencilAttachmentOptimal
+                    }
                 },
                 new SubpassDescription
                 {
-                    DepthStencilAttachment = new AttachmentReference
-                    {
-                        Attachment = Constants.AttachmentUnused
-                    },
+                    DepthStencilAttachment = new(1, ImageLayout.DepthStencilAttachmentOptimal),
                     PipelineBindPoint = PipelineBindPoint.Graphics,
                     ColorAttachments = new[]
                     {
@@ -173,18 +176,18 @@ namespace vulcan_01
                         DestinationSubpass = 0,
                         SourceStageMask = PipelineStageFlags.BottomOfPipe,
                         SourceAccessMask = AccessFlags.MemoryRead,
-                        DestinationStageMask = PipelineStageFlags.ColorAttachmentOutput,
-                        DestinationAccessMask = AccessFlags.ColorAttachmentRead | AccessFlags.ColorAttachmentWrite
+                        DestinationStageMask = PipelineStageFlags.ColorAttachmentOutput | PipelineStageFlags.EarlyFragmentTests,
+                        DestinationAccessMask = AccessFlags.ColorAttachmentRead | AccessFlags.ColorAttachmentWrite | AccessFlags.DepthStencilAttachmentRead
                     },
                     new SubpassDependency
                     {
                         SourceSubpass = 0,
                         DestinationSubpass = Constants.SubpassExternal,
-                        SourceStageMask = PipelineStageFlags.ColorAttachmentOutput,
-                        SourceAccessMask = AccessFlags.ColorAttachmentRead | AccessFlags.ColorAttachmentWrite,
+                        SourceStageMask = PipelineStageFlags.ColorAttachmentOutput | PipelineStageFlags.EarlyFragmentTests,
+                        SourceAccessMask = AccessFlags.ColorAttachmentRead | AccessFlags.ColorAttachmentWrite | AccessFlags.DepthStencilAttachmentRead,
                         DestinationStageMask = PipelineStageFlags.BottomOfPipe,
                         DestinationAccessMask = AccessFlags.MemoryRead
-                    }
+                    },
                 });
         }
 
@@ -197,25 +200,26 @@ namespace vulcan_01
                 return device.CreateShaderModule(codeSize, shaderData);
             }
 
-            //vertShader = CreateShader(@".\Shaders\vert.spv");
-            //
-            //fragShader = CreateShader(@".\Shaders\frag.spv");
+            vertShader = CreateShader(@".\Shaders\vert.spv");
 
-            vertShader = device.CreateVertexModule(shank => from input in shank.GetInput<Vertex>()
-                from ubo in shank.GetBinding<UniformBufferObject>(0)
-                let transform = ubo.Proj * ubo.View * ubo.Model
-                select new VertexOutput
-                {
-                    Position = transform * new vec4(input.Position, 1),
-                    Colour = input.Colour
-                });
-
-            fragShader = device.CreateFragmentModule(shank => from input in shank.GetInput<FragmentInput>()
-                let colour = new vec4(input.Colour, 1)
-                select new FragmentOutput
-                {
-                    Colour = colour
-                });
+            fragShader = CreateShader(@".\Shaders\frag.spv");
+            /*        
+              vertShader = device.CreateVertexModule(shank => from input in shank.GetInput<Vertex>()
+                  from ubo in shank.GetBinding<UniformBufferObject>(0)
+                  let transform = ubo.Proj * ubo.View * ubo.Model
+                  select new VertexOutput
+                  {
+                      Position = transform * new vec4(input.Position, 1),
+                      Colour = input.Colour
+                  });
+  
+              fragShader = device.CreateFragmentModule(shank => from input in shank.GetInput<FragmentInput>()
+                  from sampler in shank.GetSampler2d<vec4,vec2>(1,1) 
+                  let colour = sampler.Sample(input.Position.xy)//new vec4(input.Color,1)
+                  select new FragmentOutput
+                  {
+                      Colour = colour
+                  });*/
         }
 
         private void CreateGraphicsPipeline()
@@ -322,6 +326,18 @@ namespace vulcan_01
                             Name = "main"
                         }
                     },
+                    DepthStencilState = new()
+                    {
+                        DepthTestEnable = true,
+                        DepthWriteEnable = true,
+                        DepthCompareOp = CompareOp.Less,
+                        DepthBoundsTestEnable = false,
+                        MinDepthBounds = 0,
+                        MaxDepthBounds = 1,
+                        StencilTestEnable = false,
+                        Back = new(),
+                        Flags = new(),
+                    }
                 }
             }).Single();
         }
@@ -329,7 +345,10 @@ namespace vulcan_01
         private void CreateFrameBuffers()
         {
             Framebuffer Create(ImageView imageView) => device.CreateFramebuffer(renderPass,
-                imageView,
+                new[]
+                {
+                    imageView, depthImageView
+                },
                 swapChainExtent.Width,
                 swapChainExtent.Height,
                 1);
@@ -363,7 +382,7 @@ namespace vulcan_01
                     new(new(), swapChainExtent),
                     new ClearValue[]
                     {
-                        new ClearColorValue(.1f, .1f, .1f, 1)
+                        new ClearColorValue(.1f, .1f, .1f, 1), new ClearDepthStencilValue(1, 0)
                     },
                     SubpassContents.Inline);
 
@@ -393,12 +412,22 @@ namespace vulcan_01
         private void CreateDescriptorSetLayout()
         {
             descriptorSetLayout = device.CreateDescriptorSetLayout(
-                new DescriptorSetLayoutBinding
+                new DescriptorSetLayoutBinding[]
                 {
-                    Binding = 0,
-                    DescriptorType = DescriptorType.UniformBuffer,
-                    StageFlags = ShaderStageFlags.Vertex | ShaderStageFlags.Fragment,
-                    DescriptorCount = 1
+                    new()
+                    {
+                        Binding = 0,
+                        DescriptorType = DescriptorType.UniformBuffer,
+                        StageFlags = ShaderStageFlags.Vertex,
+                        DescriptorCount = 1
+                    },
+                    new()
+                    {
+                        Binding = 1,
+                        DescriptorCount = 1,
+                        DescriptorType = DescriptorType.CombinedImageSampler,
+                        StageFlags = ShaderStageFlags.Fragment,
+                    }
                 });
         }
 
@@ -406,10 +435,18 @@ namespace vulcan_01
         {
             descriptorPool = device.CreateDescriptorPool(
                 1,
-                new DescriptorPoolSize
+                new DescriptorPoolSize[]
                 {
-                    DescriptorCount = 1,
-                    Type = DescriptorType.UniformBuffer
+                    new()
+                    {
+                        DescriptorCount = 1,
+                        Type = DescriptorType.UniformBuffer
+                    },
+                    new()
+                    {
+                        DescriptorCount = 1,
+                        Type = DescriptorType.CombinedImageSampler
+                    }
                 });
         }
 
@@ -418,22 +455,42 @@ namespace vulcan_01
             descriptorSet = device.AllocateDescriptorSets(descriptorPool, descriptorSetLayout).Single();
 
             device.UpdateDescriptorSets(
-                new WriteDescriptorSet
+                new WriteDescriptorSet[]
                 {
-                    BufferInfo = new[]
+                    new()
                     {
-                        new DescriptorBufferInfo
+                        BufferInfo = new[]
                         {
-                            Buffer = bufferManager.UniformBuffer,
-                            Offset = 0,
-                            Range = (ulong)Unsafe.SizeOf<UniformBufferObject>()
-                        }
+                            new DescriptorBufferInfo
+                            {
+                                Buffer = bufferManager.UniformBuffer,
+                                Offset = 0,
+                                Range = (ulong)Unsafe.SizeOf<UniformBufferObject>()
+                            }
+                        },
+                        DescriptorCount = 1,
+                        DestinationSet = descriptorSet,
+                        DestinationBinding = 0,
+                        DestinationArrayElement = 0,
+                        DescriptorType = DescriptorType.UniformBuffer
                     },
-                    DescriptorCount = 1,
-                    DestinationSet = descriptorSet,
-                    DestinationBinding = 0,
-                    DestinationArrayElement = 0,
-                    DescriptorType = DescriptorType.UniformBuffer
+                    new()
+                    {
+                        ImageInfo = new[]
+                        {
+                            new DescriptorImageInfo
+                            {
+                                Sampler = textureSampler,
+                                ImageView = textureImageView,
+                                ImageLayout = ImageLayout.ShaderReadOnlyOptimal
+                            }
+                        },
+                        DescriptorCount = 1,
+                        DestinationSet = descriptorSet,
+                        DestinationBinding = 1,
+                        DestinationArrayElement = 0,
+                        DescriptorType = DescriptorType.CombinedImageSampler,
+                    }
                 }, null);
         }
 
@@ -444,11 +501,15 @@ namespace vulcan_01
         }
 
         private void CreateDepthResources()
-        { 
+        {
             var depthFormat = FindDepthFormat();
-            //todo
+
+            CreateImage(swapChainExtent.Width, swapChainExtent.Height, depthFormat, ImageTiling.Optimal, ImageUsageFlags.DepthStencilAttachment, MemoryPropertyFlags.DeviceLocal, out depthImage, out depthImageMemory);
+            depthImageView = CreateImageView(depthImage, depthFormat, ImageAspectFlags.Depth);
+
+            TransitionImageLayout(depthImage, depthFormat, ImageLayout.Undefined, ImageLayout.DepthStencilAttachmentOptimal);
         }
-        
+
         private Format FindDepthFormat()
         {
             return FindSupportedFormat(new[]
