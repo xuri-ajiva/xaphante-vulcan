@@ -42,7 +42,7 @@ namespace vulcan_01
                     ApiVersion = new(1, 0, 0)
                 });
 
-            instance.CreateDebugReportCallback(DebugReportDelegate, DebugReportFlags.Error | DebugReportFlags.Warning | DebugReportFlags.Information);
+            instance.CreateDebugReportCallback(DebugReportDelegate, DebugReportFlags.Error | DebugReportFlags.Warning | DebugReportFlags.Information | DebugReportFlags.PerformanceWarning);
 
             foreach (var extension in Instance.EnumerateExtensionProperties())
                 Console.WriteLine($"Extension available: {extension.ExtensionName}");
@@ -95,7 +95,7 @@ namespace vulcan_01
 
             var queueFamilies = FindQueueFamilies(physicalDevice);
 
-            var indices = queueFamilies.Indices.ToArray();
+            var queueFamilyIndices = queueFamilies.Indices.ToArray();
 
             var extent = ChooseSwapExtent(swapChainSupport.Capabilities);
 
@@ -106,10 +106,10 @@ namespace vulcan_01
                 extent,
                 1,
                 ImageUsageFlags.ColorAttachment,
-                indices.Length == 1
+                queueFamilyIndices.Length == 1
                     ? SharingMode.Exclusive
                     : SharingMode.Concurrent,
-                indices,
+                queueFamilyIndices,
                 swapChainSupport.Capabilities.CurrentTransform,
                 CompositeAlphaFlags.Opaque,
                 ChooseSwapPresentMode(swapChainSupport.PresentModes),
