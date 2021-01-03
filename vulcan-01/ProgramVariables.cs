@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using SharpVk;
-using SharpVk.Glfw;
 using SharpVk.Khronos;
 using SharpVk.Multivendor;
 
@@ -16,27 +15,27 @@ namespace vulcan_01
         private const int SurfaceWidth = 800;
         private const int SurfaceHeight = 600;
         private static readonly DebugReportCallbackDelegate DebugReportDelegate = DebugReport;
-        private Instance instance;
-        private Surface surface;
+        private Instance? instance;
+        private Surface? surface;
         internal PhysicalDevice physicalDevice;
-        internal Device device;
+        internal Device? device;
         private Queue graphicsQueue;
         private Queue presentQueue;
         internal Queue transferQueue;
-        private Swapchain swapChain;
+        private Swapchain? swapChain;
         internal Image[] swapChainImages;
-        private ImageView[] swapChainImageViews;
-        private RenderPass renderPass;
-        public PipelineLayout pipelineLayout;
-        private Pipeline pipeline;
-        private ShaderModule fragShader;
-        private ShaderModule vertShader;
-        private Framebuffer[] frameBuffers;
+        private ImageView[]? swapChainImageViews;
+        private RenderPass? renderPass;
+        public PipelineLayout? pipelineLayout;
+        private Pipeline? pipeline;
+        private ShaderModule? fragShader;
+        private ShaderModule? vertShader;
+        private Framebuffer[]? frameBuffers;
         internal CommandPool transientCommandPool;
-        private CommandPool commandPool;
-        private CommandBuffer[] commandBuffers;
-        private Semaphore imageAvailableSemaphore;
-        private Semaphore renderFinishedSemaphore;
+        private CommandPool? commandPool;
+        private CommandBuffer[]? commandBuffers;
+        private Semaphore? imageAvailableSemaphore;
+        private Semaphore? renderFinishedSemaphore;
 
         private Format swapChainFormat;
         private Extent2D swapChainExtent;
@@ -44,9 +43,14 @@ namespace vulcan_01
         private BufferManager bufferManager;
 
         private long initialTimestamp;
-        public DescriptorSet descriptorSet;
-        private DescriptorPool descriptorPool;
-        private DescriptorSetLayout descriptorSetLayout;
+        public DescriptorSet? descriptorSet;
+        private DescriptorPool? descriptorPool;
+        private DescriptorSetLayout? descriptorSetLayout;
+        private ImageView textureImageView;
+        private Sampler textureSampler;
+        private ImageView depthImageView;
+        private DeviceMemory depthImageMemory;
+        private Image depthImage;
 
         #endregion
         #region cpy
@@ -79,10 +83,7 @@ namespace vulcan_01
                 }
             }
 
-            if (!indices.TransferFamily.HasValue)
-            {
-                indices.TransferFamily = indices.GraphicsFamily;
-            }
+            indices.TransferFamily ??= indices.GraphicsFamily;
 
             return indices;
         }
@@ -139,10 +140,12 @@ namespace vulcan_01
             };
         }
 
-        private bool IsSuitableDevice(PhysicalDevice device)
+        private bool IsSuitableDevice(PhysicalDevice dvc)
         {
-            return device.EnumerateDeviceExtensionProperties(null).Any(extension => extension.ExtensionName == KhrExtensions.Swapchain)
-                   && FindQueueFamilies(device).IsComplete;
+            var features = dvc.GetFeatures();
+
+            return dvc.EnumerateDeviceExtensionProperties(null).Any(extension => extension.ExtensionName == KhrExtensions.Swapchain)
+                   && FindQueueFamilies(dvc).IsComplete && features.SamplerAnisotropy;
         }
 
         private static uint[] LoadShaderData(string filePath, out int codeSize)
@@ -169,42 +172,47 @@ namespace vulcan_01
 
         private void Cleanup()
         {
-            device.WaitIdle();
-
-            renderFinishedSemaphore.Dispose();
-            renderFinishedSemaphore = null;
-
-            imageAvailableSemaphore.Dispose();
-            imageAvailableSemaphore = null;
-
-            descriptorPool.Dispose();
-            descriptorPool = null;
-            descriptorSet = null;
-
+            device?.WaitIdle();
             CleanupSwapChain();
+
+            textureSampler.Dispose();
+            textureImageView.Dispose();
+
+            textureImage.Dispose();
+            textureImageMemory.Free();
+
+            descriptorSetLayout?.Dispose();
+            descriptorSetLayout = null;
 
             bufferManager.Dispose();
 
-            commandPool.Dispose();
+            renderFinishedSemaphore?.Dispose();
+            renderFinishedSemaphore = null;
+
+            imageAvailableSemaphore?.Dispose();
+            imageAvailableSemaphore = null;
+
+            descriptorPool?.Dispose();
+            descriptorPool = null;
+            descriptorSet = null;
+
+            commandPool?.Dispose();
             commandPool = null;
             commandBuffers = null;
 
-            fragShader.Dispose();
+            fragShader?.Dispose();
             fragShader = null;
 
-            vertShader.Dispose();
+            vertShader?.Dispose();
             vertShader = null;
 
-            descriptorSetLayout.Dispose();
-            descriptorSetLayout = null;
-
-            device.Dispose();
+            device?.Dispose();
             device = null;
 
-            surface.Dispose();
+            surface?.Dispose();
             surface = null;
 
-            instance.Dispose();
+            instance?.Dispose();
             instance = null;
 
             CloseWindow();
@@ -212,41 +220,52 @@ namespace vulcan_01
 
         private void CleanupSwapChain()
         {
+            depthImageView.Dispose();
+            depthImage.Dispose();
+            depthImageMemory.Free();
+
             if (frameBuffers != null)
                 foreach (var frameBuffer in frameBuffers)
                     frameBuffer.Dispose();
             frameBuffers = null;
 
-            pipeline.Dispose();
+            commandPool?.FreeCommandBuffers(commandBuffers);
+
+            pipeline?.Dispose();
             pipeline = null;
 
-            pipelineLayout.Dispose();
+            pipelineLayout?.Dispose();
             pipelineLayout = null;
+
+            renderPass?.Dispose();
+            renderPass = null;
+
+            swapChain?.Dispose();
+            swapChain = null;
+
             if (swapChainImageViews != null)
                 foreach (var imageView in swapChainImageViews)
                     imageView.Dispose();
             swapChainImageViews = null;
 
-            renderPass.Dispose();
-            renderPass = null;
-
-            swapChain.Dispose();
-            swapChain = null;
+            descriptorPool?.Dispose();
         }
 
         private void RecreateSwapChain()
         {
-            device.WaitIdle();
+            device?.WaitIdle();
             CleanupSwapChain();
-            commandPool.FreeCommandBuffers(commandBuffers);
 
-            this.CreateSwapChain();
-            this.CreateImageViews();
-            this.CreateRenderPass();
-            this.CreateGraphicsPipeline();
-            this.CreateFrameBuffers();
-            //bufferManager.ReCreateUniformBuffers();
-            this.CreateCommandBuffers();
+            CreateSwapChain();
+            CreateImageViews();
+            CreateRenderPass();
+            CreateGraphicsPipeline();
+            CreateDepthResources();
+            CreateFrameBuffers();
+            //bufferManager.CreateUniformBuffer();   free in cleanup swapchain if created here
+            CreateDescriptorPool();
+            CreateDescriptorSet();
+            CreateCommandBuffers();
         }
     }
 }
