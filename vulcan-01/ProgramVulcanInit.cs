@@ -480,5 +480,211 @@ namespace vulcan_01
 
             throw new ArgumentOutOfRangeException(nameof(candidates), candidates, "failed to find supported format!");
         }
+
+        private ImageView CreateImageView(Image image, Format format, ImageAspectFlags aspectFlags)
+        {
+            return device.CreateImageView(image, ImageViewType.ImageView2d, format, ComponentMapping.Identity, new()
+            {
+                AspectMask = aspectFlags,
+                BaseMipLevel = 0,
+                LevelCount = 1,
+                BaseArrayLayer = 0,
+                LayerCount = 1,
+            });
+        }
+
+        private void CreateImage(uint width, uint height, Format format, ImageTiling tiling, ImageUsageFlags usage, MemoryPropertyFlags properties, out Image image, out DeviceMemory imageMemory)
+        {
+            image = device.CreateImage(ImageType.Image2d, format, new Extent3D(width, height, 1), 1, 1, SampleCountFlags.SampleCount1, tiling, usage, SharingMode.Exclusive, ArrayProxy<uint>.Null, ImageLayout.Undefined);
+
+            var memRequirements = device.GetImageMemoryRequirements2(new()
+            {
+                Image = image
+            });
+
+            imageMemory = device.AllocateMemory(memRequirements.MemoryRequirements.Size, bufferManager.FindMemoryType(memRequirements.MemoryRequirements.MemoryTypeBits, properties), new()
+            {
+                Image = image,
+            });
+
+            device.BindImageMemory2(new BindImageMemoryInfo
+            {
+                Image = image,
+                Memory = imageMemory,
+                MemoryOffset = 0,
+            });
+        }
+
+        private Image textureImage;
+        private DeviceMemory textureImageMemory;
+
+        private void CreateTextureImage()
+        {
+            unsafe
+            {
+                var img = System.Drawing.Image.FromFile("logo.png");
+                var bm = new Bitmap(img);
+                var scp0 = bm.LockBits(new(0, 0, bm.Width, bm.Height), ImageLockMode.ReadWrite, PixelFormat.Format32bppPArgb);
+
+                uint texWidth = (uint)bm.Width;
+                uint texHeight = (uint)bm.Height;
+                uint imageSize = (uint)(texWidth * texHeight * 4);
+
+                bufferManager.CreateBuffer(imageSize, BufferUsageFlags.TransferSource, MemoryPropertyFlags.HostVisible | MemoryPropertyFlags.HostCached, out var stagingBuffer, out var stagingBufferMemory);
+
+                var map = stagingBufferMemory.Map(0, imageSize, MemoryMapFlags.None);
+
+                ImageHelper.ArgbCopyMap((ImageHelper.Argb32R*)scp0.Scan0.ToPointer(), (ImageHelper.Rgba32*)map.ToPointer(), texWidth * texHeight);
+                //ImageHelper.ArgbCopyMap((byte*)scp0.Scan0.ToPointer(), (byte*)map.ToPointer(), texWidth * texHeight);
+                //System.Buffer.MemoryCopy(scp0.Scan0.ToPointer(), map.ToPointer(), imageSize, imageSize);
+
+                stagingBufferMemory.Unmap();
+                bm.UnlockBits(scp0);
+
+                CreateImage(texWidth, texHeight, Format.R8G8B8A8Srgb, ImageTiling.Optimal, ImageUsageFlags.TransferDestination | ImageUsageFlags.Sampled, MemoryPropertyFlags.DeviceLocal, out textureImage, out textureImageMemory);
+
+                TransitionImageLayout(textureImage, Format.R8G8B8A8Srgb, ImageLayout.Undefined, ImageLayout.TransferDestinationOptimal);
+                CopyBufferToImage(stagingBuffer, textureImage, texWidth, texHeight);
+                TransitionImageLayout(textureImage, Format.R8G8B8A8Srgb, ImageLayout.TransferDestinationOptimal, ImageLayout.ShaderReadOnlyOptimal);
+
+                stagingBuffer.Destroy();
+                stagingBufferMemory.Free();
+            }
+        }
+
+        private CommandBuffer BeginSingleTimeCommands()
+        {
+            var commandBuffer = device.AllocateCommandBuffers(commandPool, CommandBufferLevel.Primary, 1);
+            commandBuffer[0].Begin(CommandBufferUsageFlags.OneTimeSubmit);
+
+            return commandBuffer[0];
+        }
+
+        private void EndSingleTimeCommands(CommandBuffer commandBuffer)
+        {
+            commandBuffer.End();
+
+            graphicsQueue.Submit(new SubmitInfo()
+            {
+                CommandBuffers = new[]
+                {
+                    commandBuffer
+                },
+            }, null);
+
+            graphicsQueue.WaitIdle();
+            commandPool.FreeCommandBuffers(commandBuffer);
+        }
+
+        bool HasStencilComponent(Format format)
+        {
+            return format == Format.D32SFloatS8UInt || format == Format.D24UNormS8UInt;
+        }
+
+        private void TransitionImageLayout(Image image, Format format, ImageLayout oldLayout, ImageLayout newLayout)
+        {
+            CommandBuffer commandBuffer = BeginSingleTimeCommands();
+
+            ImageSubresourceRange subresourceRange = new()
+            {
+                BaseMipLevel = 0,
+                LevelCount = 1,
+                BaseArrayLayer = 0,
+                LayerCount = 1
+            };
+
+            if (newLayout == ImageLayout.DepthStencilAttachmentOptimal)
+            {
+                subresourceRange.AspectMask = ImageAspectFlags.Depth;
+
+                if (HasStencilComponent(format)) subresourceRange.AspectMask |= ImageAspectFlags.Stencil;
+            }
+            else
+            {
+                subresourceRange.AspectMask = ImageAspectFlags.Color;
+            }
+
+            var barrier = new ImageMemoryBarrier
+            {
+                OldLayout = oldLayout,
+                NewLayout = newLayout,
+                Image = image,
+                SubresourceRange = subresourceRange,
+            };
+
+            //barrier.SourceQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED;
+            //barrier.DestinationQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED;
+
+            PipelineStageFlags sourceStage;
+            PipelineStageFlags destinationStage;
+
+            switch (oldLayout)
+            {
+                case ImageLayout.Undefined when newLayout == ImageLayout.TransferDestinationOptimal:
+                    barrier.SourceAccessMask = 0;
+                    barrier.DestinationAccessMask = AccessFlags.TransferWrite;
+
+                    sourceStage = PipelineStageFlags.TopOfPipe;
+                    destinationStage = PipelineStageFlags.Transfer;
+                    break;
+                case ImageLayout.TransferDestinationOptimal when newLayout == ImageLayout.ShaderReadOnlyOptimal:
+                    barrier.SourceAccessMask = AccessFlags.TransferWrite;
+                    barrier.DestinationAccessMask = AccessFlags.ShaderRead;
+
+                    sourceStage = PipelineStageFlags.Transfer;
+                    destinationStage = PipelineStageFlags.FragmentShader;
+                    break;
+                case ImageLayout.Undefined when newLayout == ImageLayout.DepthStencilAttachmentOptimal:
+                    barrier.SourceAccessMask = 0;
+                    barrier.DestinationAccessMask = AccessFlags.DepthStencilAttachmentRead | AccessFlags.DepthStencilAttachmentWrite;
+
+                    sourceStage = PipelineStageFlags.TopOfPipe;
+                    destinationStage = PipelineStageFlags.EarlyFragmentTests;
+                    break;
+                default:
+                    throw new ArgumentException("unsupported layout transition!");
+            }
+
+            commandBuffer.PipelineBarrier(sourceStage, destinationStage, ArrayProxy<MemoryBarrier>.Null, ArrayProxy<BufferMemoryBarrier>.Null, barrier);
+
+            EndSingleTimeCommands(commandBuffer);
+        }
+
+        private void CopyBufferToImage(Buffer buffer, Image image, uint width, uint height)
+        {
+            var commandBuffer = BeginSingleTimeCommands();
+
+            commandBuffer.CopyBufferToImage(buffer, image, ImageLayout.TransferDestinationOptimal, new BufferImageCopy()
+            {
+                BufferOffset = 0,
+                BufferRowLength = 0,
+                BufferImageHeight = 0,
+                ImageOffset = new(),
+                ImageExtent = new(width, height, 0),
+                ImageSubresource = new()
+                {
+                    AspectMask = ImageAspectFlags.Color,
+                    MipLevel = 0,
+                    BaseArrayLayer = 0,
+                    LayerCount = 1,
+                }
+            });
+
+            EndSingleTimeCommands(commandBuffer);
+        }
+
+        private void CreateTextureImageView()
+        {
+            textureImageView = CreateImageView(textureImage, Format.R8G8B8A8Srgb, ImageAspectFlags.Color);
+        }
+
+        private void CreateTextureSampler()
+        {
+            PhysicalDeviceProperties properties = physicalDevice.GetProperties();
+
+            textureSampler = device.CreateSampler(Filter.Linear, Filter.Linear, SamplerMipmapMode.Linear, SamplerAddressMode.Repeat,
+                SamplerAddressMode.Repeat, SamplerAddressMode.Repeat, default, true, properties.Limits.MaxSamplerAnisotropy,
+                false, CompareOp.Always, default, default, BorderColor.IntOpaqueBlack, false);
+        }
     }
 }
