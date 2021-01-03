@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Threading.Tasks;
 using SharpVk;
 using Buffer = SharpVk.Buffer;
 
@@ -125,7 +124,7 @@ namespace vulcan_01
             TransientCommandPool.FreeCommandBuffers(transferBuffers);
         }
 
-        private uint FindMemoryType(uint typeFilter, MemoryPropertyFlags flags)
+        public uint FindMemoryType(uint typeFilter, MemoryPropertyFlags flags)
         {
             var memoryProperties = PhysicalDevice.GetMemoryProperties();
 

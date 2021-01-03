@@ -1,8 +1,4 @@
-﻿using System.Numerics;
-using System.Runtime.InteropServices;
-using GlmSharp;
-using SharpVk.Shanq;
-using SharpVk.Spirv;
+﻿using GlmSharp;
 
 namespace vulcan_01
 {

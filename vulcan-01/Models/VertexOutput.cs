@@ -8,6 +8,6 @@ namespace vulcan_01
     {
         [Location(0)] public vec3 Colour;
 
-        [BuiltIn(BuiltIn.Position)] public vec4 Position;
+        [BuiltIn(BuiltIn.Position), Location(1)] public vec4 Position;
     }
 }
