@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using GlmSharp;
 using SharpVk;
-using SharpVk.Glfw;
 using SharpVk.Khronos;
 
 namespace vulcan_01
@@ -62,7 +59,7 @@ namespace vulcan_01
                         Vertex[] vn = new Vertex[pg.vertices.Length];
                         for (int j = 0; j < vn.Length; j++)
                         {
-                            vn[j] = new Vertex(new((float)(r.NextDouble() * 2 - 1), (float)(r.NextDouble() * 2 - 1), (float)(r.NextDouble() * 2 - 1)), new((float)(r.NextDouble()), (float)(r.NextDouble()), (float)(r.NextDouble())));
+                            vn[j] = new(new vec3((float)(r.NextDouble() * 2 - 1), (float)(r.NextDouble() * 2 - 1), (float)(r.NextDouble() * 2 - 1)), new((float)(r.NextDouble()), (float)(r.NextDouble()), (float)(r.NextDouble())));
                         }
 
                         var bs = pg.bufferManager.CreateCopyBuffer(ref vn, out var sb, out var sm);
@@ -94,6 +91,8 @@ namespace vulcan_01
 
         private void InitVulkan()
         {
+            CreateBufferManager();
+
             CreateInstance();
             CreateSurface();
             CreateDevice();
@@ -103,10 +102,12 @@ namespace vulcan_01
             CreateDescriptorSetLayout();
             CreateShaderModules();
             CreateGraphicsPipeline();
-            CreateFrameBuffers();
             CreateCommandPools();
             CreateDepthResources();
-            CreateBufferManager();
+            CreateFrameBuffers();
+            CreateTextureImage();
+            CreateTextureImageView();
+            CreateTextureSampler();
             bufferManager.AddBuffer(vertices, indices);
             bufferManager.CreateUniformBuffer();
             CreateDescriptorPool();
@@ -150,9 +151,9 @@ namespace vulcan_01
 
             var ubo = new UniformBufferObject
             {
-                Model =/*mat4.Translate(0,-1,0) **/ mat4.Rotate((float)Math.Sin(totalTime) * (float)Math.PI, vec3.UnitZ),
-                View = mat4.LookAt(new(2), vec3.Zero, vec3.UnitZ),
-                Proj = mat4.Perspective((float)Math.PI / 4f, swapChainExtent.Width / (float)swapChainExtent.Height, 0.1f, 10)
+                Model = mat4.Rotate((float)Math.Sin(totalTime) * (float)Math.PI, vec3.UnitZ),
+                View  = mat4.LookAt(new(2), vec3.Zero, vec3.UnitZ),
+                Proj  = mat4.Perspective((float)Math.PI / 4f, swapChainExtent.Width / (float)swapChainExtent.Height, 0.1f, 10)
             };
 
             ubo.Proj[1, 1] *= -1;
