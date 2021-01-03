@@ -6,16 +6,23 @@ namespace vulcan_01
     internal partial class Program
     {
         private readonly Vertex[] vertices = new Vertex[100];
-        //private readonly Vertex[] vertices =
-        //{
-        //    new(new(-0.5f, -0.5f, -.5f), new(1.0f, 0.0f, 0.0f)), new(new(0.5f, -0.5f, .5f), new(0.0f, 1.0f, 0.0f)), new(new(0.5f, 0.5f, -.5f), new(0.0f, 0.0f, 1.0f)), new(new(-0.5f, 0.5f, .5f), new(1.0f, 1.0f, 1.0f)),
-        //};
-
         private readonly ushort[] indices = new ushort[1000];
-
+        
+        //
         //private readonly ushort[] indices =
         //{
         //    0, 1, 2, 2, 3, 0,
+        //};
+        //private readonly Vertex[] vertices = new[]
+        //{
+        //    new Vertex(new vec2(-0.5f, -0.5f), new(1.0f, 0.0f, 0.0f), new(1.0f, 0.0f)),
+        //    new Vertex(new vec2(0.5f, -0.5f), new(0.0f, 1.0f, 0.0f), new(0.0f, 0.0f)), 
+        //    new Vertex(new vec2(0.5f, 0.5f), new(0.0f, 0.0f, 1.0f), new(0.0f, 1.0f)),
+        //    new Vertex(new vec2(-0.5f, 0.5f), new(1.0f, 1.0f, 1.0f), new(1.0f, 1.0f))
+        //};
+        //private readonly Vertex[] vertices =
+        //{
+        //    new(new(-0.5f, -0.5f, -.5f), new(1.0f, 0.0f, 0.0f)), new(new(0.5f, -0.5f, .5f), new(0.0f, 1.0f, 0.0f)), new(new(0.5f, 0.5f, -.5f), new(0.0f, 0.0f, 1.0f)), new(new(-0.5f, 0.5f, .5f), new(1.0f, 1.0f, 1.0f)),
         //};
 
         public async Task AwaitResult(Task<State> task, string name = "unknown")
