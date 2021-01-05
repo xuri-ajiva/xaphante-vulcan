@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using GlmSharp;
 using SharpVk;
 using SharpVk.Khronos;
+using vulcan_01.Render;
 
 namespace vulcan_01
 {
@@ -81,11 +82,13 @@ namespace vulcan_01
             Environment.Exit(0);
         }
 
+        private Camera c = new Camera();
+
         private void Run()
         {
             InitWindow();
             InitVulkan();
-            
+
             initialTimestamp = Stopwatch.GetTimestamp();
             window.MainLoop();
             Cleanup();
@@ -93,7 +96,7 @@ namespace vulcan_01
 
         private void InitWindow()
         {
-            window = new();
+            window = new PlatformWindow();
             window.InitWindow(SurfaceWidth, SurfaceHeight);
             window.OnFrame += OnFrame;
             window.OnResize += delegate
@@ -140,7 +143,7 @@ namespace vulcan_01
         {
             if (swapChain == null) throw NotCreated(swapChain, nameof(swapChain));
             if (commandBuffers == null) throw NotCreated(commandBuffers, nameof(commandBuffers));
-            
+
             var nextImage = swapChain.AcquireNextImage(uint.MaxValue, imageAvailableSemaphore, null);
 
             graphicsQueue.Submit(new SubmitInfo
@@ -175,8 +178,8 @@ namespace vulcan_01
             var ubo = new UniformBufferObject
             {
                 Model = mat4.Rotate((float)Math.Sin(totalTime) * (float)Math.PI, vec3.UnitZ),
-                View = mat4.LookAt(new(2), vec3.Zero, vec3.UnitZ),
-                Proj = mat4.Perspective((float)Math.PI / 4f, swapChainExtent.Width / (float)swapChainExtent.Height, 0.1f, 10)
+                View = c.matrices.view, //mat4.LookAt(new(2), vec3.Zero, vec3.UnitZ),
+                Proj = c.matrices.perspective //mat4.Perspective((float)Math.PI / 4f, swapChainExtent.Width / (float)swapChainExtent.Height, 0.1f, 10)
             };
 
             ubo.Proj[1, 1] *= -1;
