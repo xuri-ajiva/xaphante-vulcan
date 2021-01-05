@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using Microsoft.VisualBasic.CompilerServices;
 using SharpVk;
 using SharpVk.Khronos;
 using SharpVk.Multivendor;
@@ -52,6 +53,7 @@ namespace vulcan_01
         private DeviceMemory depthImageMemory;
         private Image depthImage;
 
+        private IPlatformWindow window;
         #endregion
         #region cpy
 
@@ -215,7 +217,7 @@ namespace vulcan_01
             instance?.Dispose();
             instance = null;
 
-            CloseWindow();
+            window.CloseWindow();
         }
 
         private void CleanupSwapChain()
@@ -266,6 +268,11 @@ namespace vulcan_01
             CreateDescriptorPool();
             CreateDescriptorSet();
             CreateCommandBuffers();
+        }
+
+        private Exception NotCreated<T>(T obj, string name)
+        {
+            return new TypeInitializationException(typeof(T).FullName, new ArgumentException(name));
         }
     }
 }

@@ -35,7 +35,7 @@ namespace vulcan_01
 
             instance = Instance.Create(
                 enabledLayers.ToArray(),
-                GetRequiredInstanceExtensions().Append(ExtExtensions.DebugReport).ToArray(),
+                window.GetRequiredInstanceExtensions().Append(ExtExtensions.DebugReport).ToArray(),
                 applicationInfo: new ApplicationInfo
                 {
                     ApplicationName = "vc-01",
@@ -193,11 +193,11 @@ namespace vulcan_01
 
         private void CreateShaderModules()
         {
-            ShaderModule CreateShader(string path)
+            ShaderModule? CreateShader(string path)
             {
                 var shaderData = LoadShaderData(path, out var codeSize);
 
-                return device.CreateShaderModule(codeSize, shaderData);
+                return device?.CreateShaderModule(codeSize, shaderData);
             }
 
             vertShader = CreateShader(@".\Shaders\vert.spv");

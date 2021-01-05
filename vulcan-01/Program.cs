@@ -5,8 +5,8 @@ namespace vulcan_01
 {
     internal partial class Program
     {
-        private readonly Vertex[] vertices = new Vertex[100];
-        private readonly ushort[] indices = new ushort[1000];
+        private readonly Vertex[] vertices = new Vertex[10];
+        private readonly ushort[] indices = new ushort[30];
         
         //
         //private readonly ushort[] indices =

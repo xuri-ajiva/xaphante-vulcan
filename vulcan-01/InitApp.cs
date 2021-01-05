@@ -85,8 +85,28 @@ namespace vulcan_01
         {
             InitWindow();
             InitVulkan();
-            MainLoop();
+            
+            initialTimestamp = Stopwatch.GetTimestamp();
+            window.MainLoop();
             Cleanup();
+        }
+
+        private void InitWindow()
+        {
+            window = new();
+            window.InitWindow(SurfaceWidth, SurfaceHeight);
+            window.OnFrame += OnFrame;
+            window.OnResize += delegate
+            {
+                RecreateSwapChain();
+            };
+        }
+
+        private void OnFrame(object? sender, EventArgs e)
+        {
+            UpdateApplication();
+            UpdateUniformBuffer();
+            DrawFrame();
         }
 
         private void InitVulkan()
@@ -94,7 +114,7 @@ namespace vulcan_01
             CreateBufferManager();
 
             CreateInstance();
-            CreateSurface();
+            window.CreateSurface(instance ?? throw new InvalidOperationException("Instance was not Created"));
             CreateDevice();
             CreateSwapChain();
             CreateImageViews();
@@ -118,6 +138,9 @@ namespace vulcan_01
 
         private void DrawFrame()
         {
+            if (swapChain == null) throw NotCreated(swapChain, nameof(swapChain));
+            if (commandBuffers == null) throw NotCreated(commandBuffers, nameof(commandBuffers));
+            
             var nextImage = swapChain.AcquireNextImage(uint.MaxValue, imageAvailableSemaphore, null);
 
             graphicsQueue.Submit(new SubmitInfo
@@ -152,8 +175,8 @@ namespace vulcan_01
             var ubo = new UniformBufferObject
             {
                 Model = mat4.Rotate((float)Math.Sin(totalTime) * (float)Math.PI, vec3.UnitZ),
-                View  = mat4.LookAt(new(2), vec3.Zero, vec3.UnitZ),
-                Proj  = mat4.Perspective((float)Math.PI / 4f, swapChainExtent.Width / (float)swapChainExtent.Height, 0.1f, 10)
+                View = mat4.LookAt(new(2), vec3.Zero, vec3.UnitZ),
+                Proj = mat4.Perspective((float)Math.PI / 4f, swapChainExtent.Width / (float)swapChainExtent.Height, 0.1f, 10)
             };
 
             ubo.Proj[1, 1] *= -1;
@@ -174,7 +197,7 @@ namespace vulcan_01
         private void UpdateApplication()
         {
             if (applicationQueue.TryDequeue(out var action))
-                action?.Invoke();
+                action.Invoke();
         }
     }
 }
